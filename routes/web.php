@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
+    return view('index');
+});
+
+
+Route::get('/pr', function () {
     return view('welcome');
 });
+
+Route::get('/prueba', function () {
+    return view('prueba');
+
+})->name('prueba');

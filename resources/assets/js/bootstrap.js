@@ -10,7 +10,7 @@ window._ = require('lodash');
 try {
     window.$ = window.jQuery = require('jquery');
     window.Thether = require('tether');
-    require('bootstrap');
+    require('materialize-css');
 } catch (e) {}
 
 /**
