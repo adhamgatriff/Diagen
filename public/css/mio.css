@@ -1,0 +1,17 @@
+nav{
+	height: 50px !important;
+    line-height: 50px !important;
+    background-color: #4b367c;
+}
+
+.side-nav{
+	top: 50px;
+}
+
+.page-footer{
+
+}
+
+.no-margen {
+	padding: 0 !important;
+}

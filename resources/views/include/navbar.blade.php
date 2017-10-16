@@ -1,3 +1,4 @@
+<div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
@@ -8,13 +9,4 @@
       </ul>
     </div>
   </nav>
-
-
-
-{{--   
-		<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-			<li class="nav-item"><a class="nav-link" href="{{ route('prueba') }}">prueba laravel</a></li>
-			<li class="nav-item"><a class="nav-link"><router-link to="/prueba">Prueba</router-link></a></li>
-			<li class="nav-item"><a class="nav-link"><router-link to="/">no prueba</router-link></a></li>
-		</ul> --}}
-{{-- </header> --}}
+</div>

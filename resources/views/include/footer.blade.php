@@ -1,1 +1,8 @@
-<footer>el footer :D</footer>
+<footer class="page-footer" style="padding-top: 0px; background-color: #503392;">
+  <div class="footer-copyright">
+    <div class="container">
+    © 2017 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
