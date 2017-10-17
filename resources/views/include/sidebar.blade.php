@@ -1,5 +1,5 @@
 {{-- <div class=""> --}}
-<ul id="nav-mobile " class=" side-nav fixed col m3 " style="transform: translateX(0%);">
+<ul id="nav-mobile " class=" side-nav fixed col m3 " style="transform: translateX(0%); background-color: #17141f; ">
   <li class="bold"><a href="about.html" class="waves-effect waves-teal">Sobre Materialize</a></li>
   <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Introducción</a></li>
   <li class="no-padding">
@@ -35,27 +35,6 @@
             <li><a href="navbar.html">Navbar</a></li>
             <li><a href="pagination.html">Pagination</a></li>
             <li><a href="preloader.html">Preloader</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="bold active"><a class="collapsible-header active waves-effect waves-teal">JavaScript</a>
-        <div class="collapsible-body" style="display: block;">
-          <ul>
-            <li><a href="carousel.html">Carousel</a></li>
-            <li><a href="collapsible.html">Collapsible</a></li>
-            <li><a href="dialogs.html">Dialogs</a></li>
-            <li><a href="dropdown.html">Dropdown</a></li>
-            <li><a href="feature-discovery.html">FeatureDiscovery</a></li>
-            <li><a href="media.html">Media</a></li>
-            <li><a href="modals.html">Modals</a></li>
-            <li><a href="parallax.html">Parallax</a></li>
-            <li><a href="pushpin.html">Pushpin</a></li>
-            <li><a href="scrollfire.html">ScrollFire</a></li>
-            <li><a href="scrollspy.html">Scrollspy</a></li>
-            <li class="active"><a href="side-nav.html">SideNav</a></li>
-            <li><a href="tabs.html">Tabs</a></li>
-            <li><a href="transitions.html">Transitions</a></li>
-            <li><a href="waves.html">Waves</a></li>
           </ul>
         </div>
       </li>
