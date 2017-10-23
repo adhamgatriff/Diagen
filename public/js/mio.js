@@ -1,32 +1,11 @@
-var toggle_nav = false; 
-
-
 $(document).ready(function() {
-	$('.page-footer').css('margin-left', $('.side-nav').width());
-
-	if ($(window).width()<=600) {
-		$('.side-show').hide();
-	}
+	  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) { /* Do Stuff*/ }, // A function to be called when sideNav is opened
+      onClose: function(el) { /* Do Stuff*/ }, // A function to be called when sideNav is closed
+    }
+  );
 });
-
-$(window).resize(function(event) {
-// console.log('af');
-	if ($(window).width()<=600) {
-		 $('.side-show').hide();
-	}else{
-		$('.side-show').show();
-	}
-});
-
-$('.top-nav').on('click',() =>{
-	if (toggle_nav) {
-		$('.side-show').hide();
-		toggle_nav= false;
-	}else{
-		$('.side-show').show();
-		toggle_nav= true;
-	}
-
-});
-
-// $('.side-show').removeClass('hide-on-small-only');
