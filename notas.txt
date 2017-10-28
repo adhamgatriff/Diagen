@@ -1,0 +1,8 @@
+morado claro : #4b367c
+morado oscuro: #311f5f
+rosado raro:  #E91E63
+gris claro: #f5f0f0
+gris oscuro: #a2a2a2
+
+
+background: linear-gradient(#4b367c, #181138);

@@ -1,19 +1,28 @@
 nav{
 	height: 50px !important;
     line-height: 50px !important;
-    background-color: #4b367c;
+    background: -webkit-linear-gradient(left, #311f5f 55%, #E91E63);
+    background: -o-linear-gradient(left, #311f5f 55%, #E91E63);
+    background: linear-gradient(to right, #311f5f 55%, #E91E63);
 }
 
 header, main, footer {
-  padding-left: 300px;
+  padding-left: 200px;
 }
 
+footer{
+	background: -webkit-linear-gradient(left, #E91E63, #311f5f 50%);
+	background: -o-linear-gradient(left, #E91E63, #311f5f 50%);
+	background: linear-gradient(to right, #E91E63, #311f5f 50%);
+}
 .navbar-fixed {
     height: 50px !important;
 }
 .side-nav{
-	background-color: #17141f;
-
+	width: 200px !important;
+	background: -webkit-linear-gradient(#311f5f 60%, #E91E63);
+	background: -o-linear-gradient(#311f5f 60%, #E91E63);
+	background: linear-gradient(#311f5f 60%, #E91E63);
 	top:50px;
 	box-shadow: 4px 2px 2px 1px rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
@@ -26,8 +35,8 @@ body {
 	flex-direction: column;
  }
 main {
-flex: 1 0 auto;
-background-color: #fafafa   ;
+	flex: 1 0 auto;
+	background-color: #f5f0f0;
 }
 
 @media only screen and (max-width : 992px) {
