@@ -20,6 +20,10 @@ Route::get('/pr', function () {
     return view('welcome');
 });
 
+Route::get('/Editor', function() {
+    return view('editor.editor');
+});
+
 Route::get('/prueba', function () {
     return view('prueba');
 
