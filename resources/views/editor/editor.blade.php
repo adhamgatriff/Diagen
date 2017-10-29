@@ -57,7 +57,7 @@
 	<script type="text/javascript" src="{{asset('js/js/jquery-3.2.1.min.js')}}"></script>
 </head>
 <body class="geEditor">
-	@include('include.navbar')
+	{{-- @include('include.navbar') --}}
 
 	<script type="text/javascript">
 		var editor;
@@ -152,6 +152,85 @@ $(document).ready(() => {
 
 });	
 
+function XMLToString(oXML)
+{
+ //code for IE
+ if (window.ActiveXObject) {
+ var oString = oXML.xml; return oString;
+ } 
+ // code for Chrome, Safari, Firefox, Opera, etc.
+ else {
+ return (new XMLSerializer()).serializeToString(oXML);
+ }
+ }
+
+
+/**
+ * Adds the label menu items to the given menu and parent.
+ */
+EditorUi.prototype.saveFile = function(forceDialog)
+{
+	if (!forceDialog && this.editor.filename != null)
+	{
+		
+	let nombre = this.editor.getOrCreateFilename();
+		let diagrama = XMLToString(editor.getGraphXml());
+
+		$.ajax({
+			url: '{{ url('api/saveDiagram') }}',
+			type: 'POST',
+			data: { nombre, 
+					diagrama,
+					"_token": "{{ csrf_token() }}",
+					},
+		})
+		.done(function() {
+			console.log("success");
+		});
+		
+
+		this.save(this.editor.getOrCreateFilename());
+	}
+	else
+	{
+		console.log('as');
+
+		var dlg = new FilenameDialog(this, this.editor.getOrCreateFilename(), mxResources.get('save'), mxUtils.bind(this, function(name)
+		{
+
+		let nombre = name;
+		let diagrama = XMLToString(editor.getGraphXml());
+
+		$.ajax({
+			url: '{{ url('api/saveDiagram') }}',
+			type: 'POST',
+			data: { nombre, 
+					diagrama,
+					"_token": "{{ csrf_token() }}",
+					},
+		})
+		.done(function() {
+			console.log("success");
+		});
+
+		this.save(name);
+
+
+		}), null, mxUtils.bind(this, function(name)
+		{
+			if (name != null && name.length > 0)
+			{
+				return true;
+			}
+			
+			mxUtils.confirm(mxResources.get('invalidName'));
+			
+			return false;
+		}));
+		this.showDialog(dlg.container, 300, 100, true, true);
+		dlg.init();
+	}
+};
 
 	</script>
 

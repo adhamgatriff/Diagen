@@ -28,3 +28,11 @@ Route::get('/prueba', function () {
     return view('prueba');
 
 })->name('prueba');
+
+
+Route::post('api/saveDiagram','saveDiagram@store');
+
+
+// Route::post('api/saveDiagram', function() {
+//     return 'oko';
+// });
