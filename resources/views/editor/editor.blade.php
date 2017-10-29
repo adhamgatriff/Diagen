@@ -4,7 +4,7 @@
 	<title>Editor de diagramas</title>
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	{{-- <link rel="stylesheet" href="{{mix('css/app.css')}}"> --}}
-	{{-- <link rel="stylesheet" href="{{ asset('css/mio.css') }}"> --}}
+	<link rel="stylesheet" href="{{ asset('css/miodiagrama.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('styles/grapheditor.css') }}">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -57,7 +57,7 @@
 	<script type="text/javascript" src="{{asset('js/js/jquery-3.2.1.min.js')}}"></script>
 </head>
 <body class="geEditor">
-	{{-- @include('include.navbar') --}}
+	@include('include.navbar')
 
 	<script type="text/javascript">
 		var editor;
