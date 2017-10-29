@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "latto";
+  src: url(../fonts/vendor/lato/latto-Regular.ttf) ;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "openSans";
+  src:  url(../fonts/vendor/open-sans/OpenSans-Regular.ttf);
+  font-weight: 400;
+}
+
+.lato{
+	font-family: "latto";
+
+}
+.opensans{
+	font-family: "openSans";
+
+}
+
 nav{
 	height: 50px !important;
     line-height: 50px !important;
@@ -19,10 +39,18 @@ footer{
     height: 50px !important;
 }
 .side-nav{
-	width: 200px !important;
-	background: -webkit-linear-gradient(#311f5f 60%, #E91E63);
+	
+	/*negro*/
+	background: -webkit-linear-gradient(#19171c, black);
+	background: -o-linear-gradient(#19171c, black);
+	background: linear-gradient(#19171c, black);
+
+	/*morado con el rosado*/
+/*	background: -webkit-linear-gradient(#311f5f 60%, #E91E63);
 	background: -o-linear-gradient(#311f5f 60%, #E91E63);
-	background: linear-gradient(#311f5f 60%, #E91E63);
+	background: linear-gradient(#311f5f 60%, #E91E63);*/
+
+	width: 200px !important;
 	top:50px;
 	box-shadow: 4px 2px 2px 1px rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
@@ -34,6 +62,35 @@ body {
 	min-height: 100vh;
 	flex-direction: column;
  }
+
+
+.degradado{
+	background: linear-gradient(to right, #E91E63,#311f5f);
+ }
+
+
+.waves-effect.waves-moradito .waves-ripple {
+  background-color: rgba(76, 55, 125, 0.85);
+}
+
+.moradito{
+
+      margin: auto;
+	  background: #eee;
+	  border: 3px solid transparent;
+	  -moz-border-image: -moz-linear-gradient(top, #311f5f 0%, #E91E63 100%);
+	  -webkit-border-image: -webkit-linear-gradient(top, #311f5f 0%, #E91E63 100%);
+	  border-image: linear-gradient(to bottom, #311f5f 0%, #E91E63 100%);
+	  border-image-slice: 1;
+	}
+
+.Wradius{
+	border-radius: 20px;
+    padding: 0 1em;
+}
+.btn-flat {
+    padding: 0 1rem;
+}
 main {
 	flex: 1 0 auto;
 	background-color: #f5f0f0;

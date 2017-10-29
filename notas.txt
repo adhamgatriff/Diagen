@@ -5,4 +5,19 @@ gris claro: #f5f0f0
 gris oscuro: #a2a2a2
 
 
-background: linear-gradient(#4b367c, #181138);
+
+flat button sin borde
+<a class="waves-effect waves-moradito btn-flat">Button</a>
+ 
+flat button con borde
+<a class="waves-effect moradito btn-flat ">Button</a>
+
+bton circular de icono
+<a class="btn-floating btn-large waves-effect waves-light degradado"><i class="material-icons">add</i></a>
+
+boton rectangular con color
+<a class="waves-effect waves-light btn degradado"><i class="material-icons left">cloud</i>button</a>
+
+boton redondeado con color
+<a class="waves-effect waves-light btn degradado Wradius"><i class="material-icons left">cloud</i>button</a>
+
