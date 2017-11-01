@@ -16,23 +16,14 @@ Route::get('/', function () {
 });
 
 
-Route::get('/pr', function () {
-    return view('welcome');
-});
-
-Route::get('/Editor', function() {
+Route::get('/editor', function() {
     return view('editor.editor');
 });
-
-Route::get('/prueba', function () {
-    return view('prueba');
-
-})->name('prueba');
 
 
 Route::post('api/saveDiagram','saveDiagram@store');
 
+Auth::routes();
 
-// Route::post('api/saveDiagram', function() {
-//     return 'oko';
-// });
+Route::get('/home', 'HomeController@index')->name('home');
+
