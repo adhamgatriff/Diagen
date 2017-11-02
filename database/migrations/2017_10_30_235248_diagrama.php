@@ -18,6 +18,7 @@ class Diagrama extends Migration
         $table->string('nombre', 60);
         $table->longText('diagrama');
         $table->integer('status');
+        $table->timestamp('updated_at')->nullable();
         $table->timestamp('created_at')->nullable();
       });
     }

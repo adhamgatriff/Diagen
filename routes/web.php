@@ -20,8 +20,9 @@ Route::get('/editor', function() {
     return view('editor.editor');
 });
 
+Route::post('api/saveDiagram','DiagramController@store');
+Route::get('/generar', 'DiagramController@generate');
 
-Route::post('api/saveDiagram','saveDiagram@store');
 
 Auth::routes();
 
