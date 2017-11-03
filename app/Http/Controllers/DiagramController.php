@@ -100,27 +100,56 @@ class DiagramController extends Controller
 
 		$tablas = [];
 		// celdas separalas por celda[id_tabla]
-		$celda = [];
+		$celdas = [];
 		$conexiones = [];
 
 
 		$diagrama = Diagrama::find(1);
-		$diag =simplexml_load_string($diagrama->diagrama);
 
+		$diag =simplexml_load_string($diagrama->diagrama);
 
 		foreach ($diag->root->mxCell as $key => $value) {
 
 			if ((int) $value->attributes()->parent==1) {
 			// tabla o union
 				if ((int) $value->attributes()->source >0 && (int) $value->attributes()->target > 0) {
-				// 	// tabla
+				// union
+					if (empty($conexiones)) {
+
+						$conexiones = [[
+							'id' => (int) $value->attributes()->id,
+							'desde'=> (string) $value->attributes()->source,
+							'hasta'=> (string) $value->attributes()->target
+							]
+						];
+					}else{
+						array_push($conexiones,[
+							'id' => (int) $value->attributes()->id,
+							'desde'=> (string) $value->attributes()->source,
+							'hasta'=> (string) $value->attributes()->target
+						]);
+					}
 				}else {
-				// 	// union
+				// tabla
+					$tablas[] = ['id' => (int) $value->attributes()->id];
 				}
 			}else if ((int) $value->attributes()->parent !=1 && (int) $value->attributes()->parent > 0){
-				// no es tabla
+				// es una celda no tabla
+				if (empty($celdas[(int)$value->attributes()->parent])) {
 
+					$celdas[(int)$value->attributes()->parent] = [[
+						'id' => (int) $value->attributes()->id,
+						'nombre'=> (string) $value->attributes()->value
+						]
+					];
+				}else{
+					array_push($celdas[(int)$value->attributes()->parent],[
+						'id' => (int) $value->attributes()->id,
+						'nombre'=> (string) $value->attributes()->value
+					]);
+				}
 			}
 		}
 	}	
 }
+
