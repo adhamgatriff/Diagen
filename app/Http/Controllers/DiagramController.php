@@ -99,12 +99,10 @@ class DiagramController extends Controller
 		// falta probar con las flechas y con otras esructuras
 
 		$tablas = [];
-		// celdas separalas por celda[id_tabla]
 		$celdas = [];
 		$conexiones = [];
 
-
-		$diagrama = Diagrama::find(1);
+		$diagrama = Diagrama::find(2);
 
 		$diag =simplexml_load_string($diagrama->diagrama);
 
@@ -131,25 +129,64 @@ class DiagramController extends Controller
 					}
 				}else {
 				// tabla
-					$tablas[] = ['id' => (int) $value->attributes()->id];
+					$tablas[] = ['id' => (int) $value->attributes()->id,'nombre'=> (string) $value->attributes()->value];
 				}
-			}else if ((int) $value->attributes()->parent !=1 && (int) $value->attributes()->parent > 0){
+			}else if ((int)$value->attributes()->parent !=1 && (int) $value->attributes()->parent > 0){
 				// es una celda no tabla
 				if (empty($celdas[(int)$value->attributes()->parent])) {
 
-					$celdas[(int)$value->attributes()->parent] = [[
-						'id' => (int) $value->attributes()->id,
-						'nombre'=> (string) $value->attributes()->value
-						]
-					];
+					if (empty($celdas)){
+
+						$celdas[(int)$value->attributes()->parent] = [(int) $value->attributes()->id =>[
+									'id' => (int) $value->attributes()->id,
+									'nombre'=> (string) $value->attributes()->value,
+									'padre' => (int)$value->attributes()->parent
+									]
+								];
+
+					}else {
+
+						foreach ($celdas as $key_ => $celda) {
+
+							foreach ($celda as $k => $adentro) {
+								if ((int)$value->attributes()->parent == $k ) {
+										$celdita = $key_;
+								}
+							}
+						}
+						if (isset($celdita)) {
+
+							if ((string)$value->attributes()->value!= '') {
+
+								array_push($celdas[$celdita][(int)$value->attributes()->parent],[
+									'id' => (int) $value->attributes()->id,
+									'nombre'=> (string) $value->attributes()->value,
+									'padre' => (int)$value->attributes()->parent
+								]);
+							}
+							unset($celdita);
+						}else{
+							if ((string)$value->attributes()->value!= '') {
+							$celdas[(int)$value->attributes()->parent] = [(int) $value->attributes()->id =>[
+										'id' => (int) $value->attributes()->id,
+										'nombre'=> (string) $value->attributes()->value,
+										'padre' => (int)$value->attributes()->parent
+										]
+									];
+							}
+						}
+					}
+
 				}else{
-					array_push($celdas[(int)$value->attributes()->parent],[
-						'id' => (int) $value->attributes()->id,
-						'nombre'=> (string) $value->attributes()->value
-					]);
+					if ((string)$value->attributes()->value!= '') {
+						$celdas[(int)$value->attributes()->parent][(int) $value->attributes()->id] = [
+							'id' => (int) $value->attributes()->id,
+							'nombre'=> (string) $value->attributes()->value,
+							'padre' => (int)$value->attributes()->parent
+						];
+					}
 				}
 			}
 		}
-	}	
+	}
 }
-
