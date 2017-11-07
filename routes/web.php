@@ -21,7 +21,12 @@ Route::get('/editor', function() {
 });
 
 Route::post('api/saveDiagram','DiagramController@store');
-Route::get('/generar', 'DiagramController@generate');
+Route::get('/generar', 'DiagramController@Laucher');
+Route::get('/recibir','DiagramController@generate');
+
+Route::get('export', function() {
+    
+});
 
 
 Auth::routes();

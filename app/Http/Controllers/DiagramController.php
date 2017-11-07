@@ -7,25 +7,6 @@ use App\Diagrama;
 
 class DiagramController extends Controller
 {
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function create()
-	{
-		//
-	}
 
 	/**
 	 * Store a newly created resource in storage.
@@ -40,20 +21,12 @@ class DiagramController extends Controller
 		$diagrama->nombre = $request->nombre;
 		$diagrama->diagrama = $request->diagrama;
 		$diagrama->status = 0;
+		// tipo 0 por los momentos
+		$diagrama->tipo = 0;
 		$diagrama->save();
 		return 'ok';
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	public function show($id)
-	{
-		//
-	}
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -66,28 +39,6 @@ class DiagramController extends Controller
 		//
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	public function update(Request $request, $id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
 
 	public function generate($diagrama=''){
 
@@ -188,5 +139,63 @@ class DiagramController extends Controller
 				}
 			}
 		}
+		
+		$this->tablas = $tablas;
+		$this->celdas = $celdas;
+		$this->conexiones = $conexiones;
+		$this->nombre = $diagrama->nombre;
+
+		// cambiar status por tipo, estatus por ahora mientras se hace el refresh OJOJOJO
+		if ($diagrama->status==0) {
+			// CAMBIAR EL STATUS
+			return true;
+		}else{
+			return false;
+		}
 	}
+	public function EntidadRelacion(){
+
+		$string ='';
+		$filename = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.sql';
+		$f = fopen($filename,'w+');
+
+
+// CREATE TABLE MyGuests (
+// id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+// firstname VARCHAR(30) NOT NULL,
+// lastname VARCHAR(30) NOT NULL,
+// email VARCHAR(50),
+// reg_date TIMESTAMP
+// )
+
+		// puedes hacerlo por parte y luego hacer un altertable me parece lo mejor
+		foreach ($this->tablas as $key => $value) {
+
+			$string .= "CREATE TABLE ".$value['nombre']. "(";
+
+		}
+
+
+
+		fwrite($f,$string);
+		fclose($f);
+
+		return $filename;
+	}
+	public function DiagramaClases(){
+
+
+	}
+	function Laucher() {
+
+      if ($this->generate()) {
+
+      	$f = $this->EntidadRelacion();
+      }else{
+
+      	$f = $this->DiagramaClases();
+      }
+      return response()->download($f)->deleteFileAfterSend(true);
+   }
+
 }
