@@ -169,18 +169,75 @@ class DiagramController extends Controller
 // )
 
 		// puedes hacerlo por parte y luego hacer un altertable me parece lo mejor
-		foreach ($this->tablas as $key => $value) {
+		foreach ($this->tablas as $key => $tabla) {
 
-			$string .= "CREATE TABLE ".$value['nombre']. "(";
+			$string .= "CREATE TABLE ".$tabla['nombre']. " (";
 
+			foreach ($this->celdas as $index => $celda) {
+
+				if ($tabla['id'] == $index) {
+
+					foreach ($celda as $ind => $celditas) {
+
+							$string.= str_slug($celditas['nombre'], '_');
+
+							if (isset($celditas[0])) {
+
+								$string.= ' '.$this->Traduct($celditas[0]['nombre']);
+							}else{
+								$string.= ' VARCHAR(10)';
+							}
+							
+						if ($celditas !== end($celda)){
+							$string.= ",\r\n\t\n";
+						}
+					}
+				}
+			}
+
+			$string.= ");\r\n\r\n";
 		}
 
-
+		// faltan las conexiones
 
 		fwrite($f,$string);
 		fclose($f);
 
 		return $filename;
+	}
+	public function Traduct($tipo){
+
+		$tipo = strtoupper($tipo);
+		$var='';
+
+		if (str_contains($tipo, 'INT')) {
+
+			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'INT')), '('), ')');
+
+			if (is_numeric($aux)) {
+				$var.= 'INT('.$aux.')';
+			}else{
+				$var = 'INT(190)';
+			}
+
+		}else{
+			$var = 'VARCHAR(190)';
+		}
+
+
+// ya funciona se pueden agregar mas cosas como str
+
+		if(str_contains($tipo, 'PK') ){
+
+			$var.=' PRIMARY KEY';
+		
+		}else if(str_contains($tipo, 'AI')){
+
+			$var = 'INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY';
+		}
+
+		return is_string($var) ? $var: false;
+
 	}
 	public function DiagramaClases(){
 

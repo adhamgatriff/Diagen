@@ -24,10 +24,8 @@ Route::post('api/saveDiagram','DiagramController@store');
 Route::get('/generar', 'DiagramController@Laucher');
 Route::get('/recibir','DiagramController@generate');
 
-Route::get('export', function() {
-    
-});
 
+Route::get('trad/{tipo}', ['uses' =>'DiagramController@Traduct']);
 
 Auth::routes();
 
