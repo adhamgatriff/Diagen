@@ -22,7 +22,7 @@ class DiagramController extends Controller
 		$diagrama->diagrama = $request->diagrama;
 		$diagrama->status = 0;
 		// tipo 0 por los momentos
-		$diagrama->tipo = 0;
+		// $diagrama->tipo = 0;
 		$diagrama->save();
 		return 'ok';
 	}
@@ -44,7 +44,7 @@ class DiagramController extends Controller
 
 		// $diag->root->mxCell todas las celdas de las tablas
 		// parent 1 y sin source ni target son tablas
-		// parent 1 con surce y targey conecciones flechas puede ser, si no tiene no agregar
+		// parent 1 con surce y targey conexiones flechas puede ser, si no tiene no agregar
 		// 
 		// para saber a que celda pertenece a que tabla, tienen parent = al id de la tabla.
 		// falta probar con las flechas y con otras esructuras
@@ -53,7 +53,7 @@ class DiagramController extends Controller
 		$celdas = [];
 		$conexiones = [];
 
-		$diagrama = Diagrama::find(2);
+		$diagrama = Diagrama::find(6);
 
 		$diag =simplexml_load_string($diagrama->diagrama);
 
@@ -168,10 +168,9 @@ class DiagramController extends Controller
 // reg_date TIMESTAMP
 // )
 
-		// puedes hacerlo por parte y luego hacer un altertable me parece lo mejor
 		foreach ($this->tablas as $key => $tabla) {
 
-			$string .= "CREATE TABLE ".$tabla['nombre']. " (";
+			$string .= "CREATE TABLE ".$tabla['nombre']. " (\r\n\t\n";
 
 			foreach ($this->celdas as $index => $celda) {
 
@@ -198,7 +197,52 @@ class DiagramController extends Controller
 			$string.= ");\r\n\r\n";
 		}
 
-		// faltan las conexiones
+//conexiones
+
+// ALTER TABLE Orders
+// ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+$cnx = [];
+
+	foreach ($this->conexiones as $cxindex => $conexiones) {
+		foreach ($this->celdas as $idtabla => $c) {
+			foreach ($c as $k => $celdita) {
+
+				if ($conexiones['desde'] == $k) {
+						$cnx[$cxindex]['desde'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
+				}
+				if ($conexiones['hasta'] == $k) {
+						$cnx[$cxindex]['hasta'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
+				}
+			}
+		}					
+	}
+
+
+// tienen que ser primary keys
+// tienen que tener el mismo tipo de datos
+// unsigned tambien
+// validar que no importe mayuscula o minuscula
+// no crees la relacion y ya :D si no cumple con esas condiciones 
+
+
+	foreach ($cnx as $cx => $conex) {
+		$string .= "ALTER TABLE ";
+		
+		foreach ($this->tablas as $key => $tabla) {
+			if ($conex['desde']['idtabla'] == $tabla['id'] ) {
+				$string .= $tabla['nombre']."\r\nADD FOREIGN KEY (".str_slug($conex['desde']['nombre'], '_').") ";
+			}
+			else if ($conex['hasta']['idtabla'] == $tabla['id'] ) {
+				$string .=  "REFERENCES ".$tabla['nombre']."(".str_slug($conex['desde']['nombre'], '_').");\r\n\r\n";
+			}
+		}
+	}
+	$string.= "\r\n\r\n";
+// fin de conexiones
+
+
+		unset($cnx);
 
 		fwrite($f,$string);
 		fclose($f);
