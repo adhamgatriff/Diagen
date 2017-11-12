@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Diagrama;
+use App\UsuarioDiagrama;
+use App\Usuario;
 
 class DiagramController extends Controller
 {
@@ -16,14 +18,39 @@ class DiagramController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		// saber si se esta editando o no; se van a duplicar los rows cada guardado
-		$diagrama = new Diagrama;
-		$diagrama->nombre = $request->nombre;
-		$diagrama->diagrama = $request->diagrama;
-		$diagrama->status = 0;
-		// tipo 0 por los momentos
-		// $diagrama->tipo = 0;
-		$diagrama->save();
+
+		// if ($request->acc=='new') {
+			// dd($request->userid);
+		// dd(Diagrama::where('nombre',$request->nombre)->select('id')->first());
+// dd(UsuarioDiagrama::where(['id_diagrama',$request->id_diagrama])->count());
+
+			$diagrama = new Diagrama;
+			$diagrama->nombre = $request->nombre;
+			$diagrama->diagrama = $request->diagrama;
+			$diagrama->status = 0;
+			$diagrama->tipo = $request->tipo;
+			$diagrama->save();
+
+			$dU = new UsuarioDiagrama;
+			$dU->id_diagrama = $diagrama->id;
+			$dU->id_usuario = $request->userid;
+			$dU->save();
+
+		// }else if($request->acc == 'edit'){
+
+		// dd(UsuarioDiagrama::find($request->id_diagrama)->count());
+
+
+
+		// 	$eud = UsuarioDiagrama::find($request->id_diagrama)->select('id_diagrama');
+		// 	$eud->nombre = $request->nombre;
+		// 	$eud->diagrama = $request->diagrama;
+		// 	$eud->status = 0;
+		// 	$eud->tipo = $request->tipo;
+		// 	$eud->save();
+
+		// }
+		
 		return 'ok';
 	}
 
@@ -56,7 +83,7 @@ class DiagramController extends Controller
 		$errores = false;
 
 
-		$diagrama = Diagrama::find(13);
+		$diagrama = Diagrama::find(16);
 
 		$diag =simplexml_load_string($diagrama->diagrama);
 

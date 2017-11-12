@@ -179,8 +179,12 @@ EditorUi.prototype.saveFile = function(forceDialog)
 		$.ajax({
 			url: '{{ url('api/saveDiagram') }}',
 			type: 'POST',
-			data: { nombre, 
+			data: { 
+					acc: 'new',
+					nombre, 
 					diagrama,
+					userid : '{{Auth::user()->id}}',
+					tipo: 0,
 					"_token": "{{ csrf_token() }}",
 					},
 		})
@@ -204,8 +208,12 @@ EditorUi.prototype.saveFile = function(forceDialog)
 		$.ajax({
 			url: '{{ url('api/saveDiagram') }}',
 			type: 'POST',
-			data: { nombre, 
+			data: { 
+					acc: 'edit',
+					userid : '{{Auth::user()->id}}',
+					nombre, 
 					diagrama,
+					tipo: 0,
 					"_token": "{{ csrf_token() }}",
 					},
 		})

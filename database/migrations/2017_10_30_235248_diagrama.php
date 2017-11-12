@@ -19,7 +19,7 @@ class Diagrama extends Migration
         $table->longText('diagrama');
         $table->integer('status'); //publico 0 privado 1
         $table->integer('tipo'); //0 = entidad relacion, 1 = clases
-         $table->timestamp('updated_at')->nullable();
+        $table->timestamp('updated_at')->nullable();
         $table->timestamp('created_at')->nullable();
       });
     }
