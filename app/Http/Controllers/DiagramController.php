@@ -55,7 +55,8 @@ class DiagramController extends Controller
 		// errores?
 		$errores = false;
 
-		$diagrama = Diagrama::find(11);
+
+		$diagrama = Diagrama::find(12);
 
 		$diag =simplexml_load_string($diagrama->diagrama);
 
@@ -166,10 +167,10 @@ class DiagramController extends Controller
 // email VARCHAR(50),
 // reg_date TIMESTAMP
 // )
-
+// dd($this->celdas);
 		foreach ($this->tablas as $key => $tabla) {
 
-			$string .= "CREATE TABLE ".$tabla['nombre']. " (\r\n\t\n";
+			$string .= "CREATE TABLE ".str_slug($tabla['nombre'],'_'). " (\r\n\t\n";
 
 			foreach ($this->celdas as $index => $celda) {
 
@@ -181,7 +182,7 @@ class DiagramController extends Controller
 
 							if (isset($celditas[0])) {
 
-								$string.= ' '.$this->Traduct($celditas[0]['nombre']);
+								$string.= ' '.$this->Traduct($celditas[0]['nombre'],$celditas['nombre']);
 							}else{
 								$string.= ' VARCHAR(10)';
 							}
@@ -193,7 +194,9 @@ class DiagramController extends Controller
 				}
 			}
 
-			$string.= ");\r\n\r\n";
+			$string.= ",\r\n\t\nPRIMARY KEY(".$this->primary.")\r\n";
+			$string.= ") ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;\r\n\r\n";
+			$this->primary = '';
 		}
 
 //conexiones
@@ -210,11 +213,19 @@ $aux = '';
 				
 				if ($conexiones['desde'] == $k) {
 
-					if (isset($celdita[0])&&str_contains(strtoupper($tipo=$this->Traduct($celdita[0]['nombre'])),'PRIMARY KEY')){
+					if (isset($celdita[0])){
+						$tipo = $this->Traduct($celdita[0]['nombre'],$celdita['nombre']);
+						if (str_contains($this->primary,$celdita['nombre'])) {
 
-						$aux = strtoupper(trim(str_before($tipo,'(')));
-						$cnx[$cxindex]['desde'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
+							$aux = strtoupper(trim(str_before($tipo,'(')));
+							$cnx[$cxindex]['desde'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
 
+						}else{
+							$this->error = true; $conxErr = true;
+							$errores = 'Los campos tienen que ser PRIMARY KEY';
+							break 3;
+
+						}
 					}else{
 
 						$this->error = true; $conxErr = true;
@@ -224,15 +235,22 @@ $aux = '';
 				}
 				if ($conexiones['hasta'] == $k) {
 
-					if (isset($celdita[0])&&str_contains(strtoupper($tipo=$this->Traduct($celdita[0]['nombre'])),'PRIMARY KEY')){
+					if (isset($celdita[0])){
+						$tipo = $this->Traduct($celdita[0]['nombre'],$celdita['nombre']);
+						if (str_contains($this->primary,$celdita['nombre'])) {
+						
+							if ($aux == strtoupper(trim(str_before($tipo,'(')))) {
 
-						if ($aux == strtoupper(trim(str_before($tipo,'(')))) {
+								$cnx[$cxindex]['hasta'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
+							}else{
 
-							$cnx[$cxindex]['hasta'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
+								$this->error = true; $conxErr = true;
+								$errores = 'Los campos no coinciden en el tipo de datos ver: https://docs.microsoft.com/es-es/sql/t-sql/data-types/data-types-transact-sql';
+								break 3;
+							}
 						}else{
-
 							$this->error = true; $conxErr = true;
-							$errores = 'Los campos no coinciden en el tipo de datos ver: https://docs.microsoft.com/es-es/sql/t-sql/data-types/data-types-transact-sql';
+							$errores = 'Los campos tienen que ser PRIMARY KEY';
 							break 3;
 						}
 					}else{
@@ -247,10 +265,7 @@ $aux = '';
 unset($aux);
 
 // ponerle todas las mariqueras que le pone antes al sql 
-// primary keys compuestas
-// validar que no importe mayuscula o minuscula
-// tablas con espacio?
-// no crees la relacion y ya :D si no cumple con esas condiciones 
+// no crees la relacion y ya :D si no cumple con esas condiciones
 // retornar errores, si se puede
 
 	if (!$conxErr) {
@@ -258,10 +273,10 @@ unset($aux);
 			$string .= "ALTER TABLE ";
 			foreach ($this->tablas as $key => $tabla) {
 				if ($conex['desde']['idtabla'] == $tabla['id'] ) {
-					$string .= $tabla['nombre']."\r\nADD FOREIGN KEY (".str_slug($conex['desde']['nombre'], '_').") ";
+					$string .= str_slug($tabla['nombre'],'_')."\r\nADD FOREIGN KEY (".str_slug($conex['desde']['nombre'], '_').") ";
 				}
 				else if ($conex['hasta']['idtabla'] == $tabla['id'] ) {
-					$string .=  "REFERENCES ".$tabla['nombre']."(".str_slug($conex['desde']['nombre'], '_').");\r\n\r\n";
+					$string .=  "REFERENCES ".str_slug($tabla['nombre'],'_')."(".str_slug($conex['desde']['nombre'], '_').");\r\n\r\n";
 				}
 			}
 		}
@@ -280,12 +295,10 @@ unset($aux);
 		fclose($f);
 	}
 		
-
-
 		return $filename;
 	}
 
-	public function Traduct($tipo){
+	public function Traduct($tipo,$cellname){
 
 		$tipo = strtoupper($tipo);
 		$var='';
@@ -309,11 +322,24 @@ unset($aux);
 
 		if(str_contains($tipo, 'PK') ){
 
-			$var.=' PRIMARY KEY';
+			if ($this->primary=='') {
+				$this->primary = str_slug($cellname);
+			}else{
+				$this->primary .= ','.str_slug($cellname);
+			}
+
+			$var.=' UNIQUE';
 		
 		}else if(str_contains($tipo, 'AI')){
 
-			$var = 'INT(6) PRIMARY KEY AUTO_INCREMENT ';
+			$var = 'INT(6) AUTO_INCREMENT';
+
+			if ($this->primary=='') {
+				$this->primary = str_slug($cellname);
+			}else{
+				$this->primary .= ','.str_slug($cellname);
+			}
+
 		}
 
 		return is_string($var) ? $var: false;
@@ -340,5 +366,6 @@ unset($aux);
 
   	$this->erroresLog ='';
 		$this->error = false;
+		$this->primary ='';
   }
 }
