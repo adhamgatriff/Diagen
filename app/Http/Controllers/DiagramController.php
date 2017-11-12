@@ -52,8 +52,10 @@ class DiagramController extends Controller
 		$tablas = [];
 		$celdas = [];
 		$conexiones = [];
+		// errores?
+		$errores = false;
 
-		$diagrama = Diagrama::find(6);
+		$diagrama = Diagrama::find(11);
 
 		$diag =simplexml_load_string($diagrama->diagrama);
 
@@ -156,9 +158,6 @@ class DiagramController extends Controller
 	public function EntidadRelacion(){
 
 		$string ='';
-		$filename = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.sql';
-		$f = fopen($filename,'w+');
-
 
 // CREATE TABLE MyGuests (
 // id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -203,52 +202,89 @@ class DiagramController extends Controller
 // ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
 
 $cnx = [];
-
+$conxErr = false;
+$aux = '';
 	foreach ($this->conexiones as $cxindex => $conexiones) {
 		foreach ($this->celdas as $idtabla => $c) {
 			foreach ($c as $k => $celdita) {
-
+				
 				if ($conexiones['desde'] == $k) {
+
+					if (isset($celdita[0])&&str_contains(strtoupper($tipo=$this->Traduct($celdita[0]['nombre'])),'PRIMARY KEY')){
+
+						$aux = strtoupper(trim(str_before($tipo,'(')));
 						$cnx[$cxindex]['desde'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
+
+					}else{
+
+						$this->error = true; $conxErr = true;
+						$errores = 'Los campos tienen que ser PRIMARY KEY';
+						break 3;
+					}
 				}
 				if ($conexiones['hasta'] == $k) {
-						$cnx[$cxindex]['hasta'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
+
+					if (isset($celdita[0])&&str_contains(strtoupper($tipo=$this->Traduct($celdita[0]['nombre'])),'PRIMARY KEY')){
+
+						if ($aux == strtoupper(trim(str_before($tipo,'(')))) {
+
+							$cnx[$cxindex]['hasta'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
+						}else{
+
+							$this->error = true; $conxErr = true;
+							$errores = 'Los campos no coinciden en el tipo de datos ver: https://docs.microsoft.com/es-es/sql/t-sql/data-types/data-types-transact-sql';
+							break 3;
+						}
+					}else{
+						$this->error = true; $conxErr = true;
+						$errores = 'Los campos tienen que ser PRIMARY KEY';
+						break 3;
+					}
 				}
 			}
 		}					
 	}
+unset($aux);
 
-
-// tienen que ser primary keys
-// tienen que tener el mismo tipo de datos
-// unsigned tambien
+// ponerle todas las mariqueras que le pone antes al sql 
+// primary keys compuestas
 // validar que no importe mayuscula o minuscula
+// tablas con espacio?
 // no crees la relacion y ya :D si no cumple con esas condiciones 
+// retornar errores, si se puede
 
-
-	foreach ($cnx as $cx => $conex) {
-		$string .= "ALTER TABLE ";
-		
-		foreach ($this->tablas as $key => $tabla) {
-			if ($conex['desde']['idtabla'] == $tabla['id'] ) {
-				$string .= $tabla['nombre']."\r\nADD FOREIGN KEY (".str_slug($conex['desde']['nombre'], '_').") ";
-			}
-			else if ($conex['hasta']['idtabla'] == $tabla['id'] ) {
-				$string .=  "REFERENCES ".$tabla['nombre']."(".str_slug($conex['desde']['nombre'], '_').");\r\n\r\n";
+	if (!$conxErr) {
+		foreach ($cnx as $cx => $conex) {
+			$string .= "ALTER TABLE ";
+			foreach ($this->tablas as $key => $tabla) {
+				if ($conex['desde']['idtabla'] == $tabla['id'] ) {
+					$string .= $tabla['nombre']."\r\nADD FOREIGN KEY (".str_slug($conex['desde']['nombre'], '_').") ";
+				}
+				else if ($conex['hasta']['idtabla'] == $tabla['id'] ) {
+					$string .=  "REFERENCES ".$tabla['nombre']."(".str_slug($conex['desde']['nombre'], '_').");\r\n\r\n";
+				}
 			}
 		}
+		$string.= "\r\n\r\n";
+	}else{
+		$this->erroresLog .= $errores;
 	}
-	$string.= "\r\n\r\n";
+	unset($cnx);
 // fin de conexiones
 
+	$filename = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.sql';
+	if (!$this->error) {
 
-		unset($cnx);
-
+		$f = fopen($filename,'w+');
 		fwrite($f,$string);
 		fclose($f);
+	}
+		
+
 
 		return $filename;
 	}
+
 	public function Traduct($tipo){
 
 		$tipo = strtoupper($tipo);
@@ -277,7 +313,7 @@ $cnx = [];
 		
 		}else if(str_contains($tipo, 'AI')){
 
-			$var = 'INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY';
+			$var = 'INT(6) PRIMARY KEY AUTO_INCREMENT ';
 		}
 
 		return is_string($var) ? $var: false;
@@ -296,7 +332,13 @@ $cnx = [];
 
       	$f = $this->DiagramaClases();
       }
-      return response()->download($f)->deleteFileAfterSend(true);
-   }
 
+    return $this->error ? $this->erroresLog : response()->download($f)->deleteFileAfterSend(true);
+  }
+
+  function __construct(){
+
+  	$this->erroresLog ='';
+		$this->error = false;
+  }
 }
