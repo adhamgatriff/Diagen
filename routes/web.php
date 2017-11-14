@@ -11,8 +11,18 @@
 |
 */
 
+
+Route::group(['middleware' => ['auth']], function () {
+
+	Route::get('/principal', function() {
+	    return view('principal');
+	});
+    // meter diagramas aqui
+});
+
+
 Route::get('/', function () {
-    return view('plantilla');
+	return view('landing');
 });
 
 
