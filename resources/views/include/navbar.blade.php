@@ -12,8 +12,13 @@
         @endguest
         @auth
           <li><a href="{{ url('principal') }}">{{ Auth::user()->username }}</a></li>
-          <li><a href="{{ Auth::logout() }}">Salir</a></li>
-
+          <li>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
+            
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+          </li>
         @endauth
       </ul>
     </div>

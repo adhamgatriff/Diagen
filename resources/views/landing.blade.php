@@ -4,4 +4,5 @@
 
 @section('main')
 
+landing
 @endsection
