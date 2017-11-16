@@ -14,7 +14,7 @@
 <body>
 
 	@include('include.navbar')
-	@include('include.sidebar')
+	{{-- @include('include.sidebar') --}}
 		<main id="app">
 			@yield('main')
 		</main>
