@@ -6,7 +6,7 @@ window.MAX_REQUEST_SIZE = window.MAX_REQUEST_SIZE  || 10485760;
 window.MAX_AREA = window.MAX_AREA || 15000 * 15000;
 
 // URLs for save and export
-window.EXPORT_URL = window.EXPORT_URL || '/export';
+window.EXPORT_URL = window.EXPORT_URL || '/imagen';
 window.SAVE_URL = window.SAVE_URL || 'save';
 window.OPEN_URL = window.OPEN_URL || '/open';
 window.RESOURCES_PATH = window.RESOURCES_PATH || 'resources';

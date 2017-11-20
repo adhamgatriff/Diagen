@@ -56,15 +56,17 @@
 	<script type="text/javascript" src="{{asset('js/js/Dialogs.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/js/jquery-3.2.1.min.js')}}"></script>
 </head>
-<body class="geEditor">
+<body class="geEditor" id="editorGeneral">
 	{{-- @include('include.navbar') --}}
 
 	<script type="text/javascript">
-		var editor;
+		var editor, mxeditor;
 		// Extends EditorUi to update I/O action states based on availability of backend
-		(function()
+		(function main (container)
 		{
 			var editorUiInit = EditorUi.prototype.init;
+			var model = new mxGraphModel();
+			var graph = new mxGraph(container, model);
 			
 			EditorUi.prototype.init = function()
 			{
@@ -170,11 +172,15 @@ function XMLToString(oXML)
  */
 EditorUi.prototype.saveFile = function(forceDialog)
 {
+
 	if (!forceDialog && this.editor.filename != null)
 	{
 		
-	let nombre = this.editor.getOrCreateFilename();
+		let nombre = this.editor.getOrCreateFilename();
 		let diagrama = XMLToString(editor.getGraphXml());
+		let enc = new mxCodec(mxUtils.createXmlDocument());
+		let node = enc.encode(editor.graph.view);
+		let xml = mxUtils.getXml(node);
 
 		$.ajax({
 			url: '{{ url('api/saveDiagram') }}',
@@ -185,13 +191,14 @@ EditorUi.prototype.saveFile = function(forceDialog)
 					diagrama,
 					userid : '{{Auth::user()->id}}',
 					tipo: 0,
+					xml,
 					"_token": "{{ csrf_token() }}",
 					},
 		})
-		.done(function() {
+		.done( () => {
 			console.log("success");
 		});
-		
+
 
 		this.save(this.editor.getOrCreateFilename());
 	}
@@ -204,7 +211,10 @@ EditorUi.prototype.saveFile = function(forceDialog)
 
 		let nombre = name;
 		let diagrama = XMLToString(editor.getGraphXml());
-
+		let enc = new mxCodec(mxUtils.createXmlDocument());
+		let node = enc.encode(editor.graph.view);
+		let xml = mxUtils.getXml(node);
+		
 		$.ajax({
 			url: '{{ url('api/saveDiagram') }}',
 			type: 'POST',
@@ -214,12 +224,14 @@ EditorUi.prototype.saveFile = function(forceDialog)
 					nombre, 
 					diagrama,
 					tipo: 0,
+					xml,
 					"_token": "{{ csrf_token() }}",
 					},
 		})
-		.done(function() {
+		.done(() => {
 			console.log("success");
 		});
+
 
 		this.save(name);
 

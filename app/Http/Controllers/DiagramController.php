@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Diagrama;
 use App\UsuarioDiagrama;
 use App\Usuario;
+use Auth;
+
 
 class DiagramController extends Controller
 {
@@ -35,6 +37,13 @@ class DiagramController extends Controller
 			$dU->id_diagrama = $diagrama->id;
 			$dU->id_usuario = $request->userid;
 			$dU->save();
+
+			$filename = Auth::user()->id.$diagrama->id.'.xml';
+			$f = fopen(public_path().'/diagramasXml/'.$filename,'w+');
+			fwrite($f,$request->xml);
+			fclose($f);
+
+			dd(app('App\Http\Controllers\Diagrama2Img')->Convertir($filename));
 
 		// }else if($request->acc == 'edit'){
 

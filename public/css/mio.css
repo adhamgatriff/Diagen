@@ -26,10 +26,10 @@ nav{
     background: linear-gradient(to right, #311f5f 55%, #E91E63);
 }
 
-header, main, footer {
+/*header, main, footer {
   padding-left: 200px;
 }
-
+*/
 footer{
 	background: -webkit-linear-gradient(left, #E91E63, #311f5f 50%);
 	background: -o-linear-gradient(left, #E91E63, #311f5f 50%);
@@ -39,7 +39,6 @@ footer{
     height: 50px !important;
 }
 .side-nav{
-	
 	/*negro*/
 	background: -webkit-linear-gradient(#19171c, black);
 	background: -o-linear-gradient(#19171c, black);
@@ -57,6 +56,13 @@ footer{
 .side-nav li a{
 	color: white;
 }
+
+.card-mio {
+	color: white;
+	background: linear-gradient(#1c0b48 40%, black);
+	padding: 10px !important;
+}
+
 body {
 	display: flex;
 	min-height: 100vh;

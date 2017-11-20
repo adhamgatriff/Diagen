@@ -1271,7 +1271,7 @@ ExportDialog.exportFile = function(editorUi, name, format, bg, s, b)
 			var req = new mxXmlRequest(EXPORT_URL, 'format=' + format +
 				'&filename=' + encodeURIComponent(name) +
 				'&bg=' + ((bg != null) ? bg : 'none') +
-				'&w=' + w + '&h=' + h + '&' + param);
+				'&w=' + w + '&h=' + h + '&' + param,'GET');
 			req.simulate(document, '_blank');
 		}
 		else

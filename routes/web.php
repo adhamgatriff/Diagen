@@ -39,5 +39,8 @@ Route::get('trad/{tipo}', ['uses' =>'DiagramController@Traduct']);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('imagen/{id}','Diagrama2Img@Convertir');
 
+Route::get('exportar', function() {
+    return view('editor.export');
+});

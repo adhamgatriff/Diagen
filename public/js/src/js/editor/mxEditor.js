@@ -708,7 +708,7 @@ mxEditor.prototype.urlPost = '/save';
  * Specifies the URL to be used for creating a bitmap of
  * the graph in the image action.
  */
-mxEditor.prototype.urlImage = null;
+mxEditor.prototype.urlImage = '/imagen';
 
 /**
  * Group: Autolayout
