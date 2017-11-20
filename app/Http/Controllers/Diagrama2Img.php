@@ -11342,8 +11342,10 @@ class Diagrama2Img extends Controller
   	$file = public_path().'/diagramasXml/'.$filename;
 
   	$image =  mxGraphViewImageReader::convertFile($file, "#FFFFFF");
+  	$imgcrop = imagecrop($image, ['x' => 390, 'y' =>525, 'width' => 500, 'height' => 500]);
   	header("Content-Type: image/png");
-  	imagePng($image,public_path().'/diagramasImg/'.substr($filename,0,strpos($filename,'.')).'.png');
+  	imagePng($imgcrop,public_path().'/diagramasImg/'.substr($filename,0,strpos($filename,'.')).'.png');
+
   	
 	}
 }

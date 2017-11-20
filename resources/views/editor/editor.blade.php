@@ -204,7 +204,6 @@ EditorUi.prototype.saveFile = function(forceDialog)
 	}
 	else
 	{
-		console.log('as');
 
 		var dlg = new FilenameDialog(this, this.editor.getOrCreateFilename(), mxResources.get('save'), mxUtils.bind(this, function(name)
 		{
