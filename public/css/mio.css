@@ -57,9 +57,18 @@ footer{
 	color: white;
 }
 
+.card{
+	box-shadow: 3px 4px 13px 4px #888888;
+}
+.card:hover{
+	box-shadow: 6px 8px 12px 4px #888888;
+}
+
 .card-mio {
-	color: white;
-	background: linear-gradient(#1c0b48 40%, black);
+	color: black;
+	/*background: linear-gradient(#1c0b48 40%, black);*/
+	border-top: 1px solid black;
+
 	padding: 10px !important;
 }
 
