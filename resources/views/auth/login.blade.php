@@ -8,7 +8,7 @@
       z-index: 9;
       background: white;
       height: 100%;
-      opacity: 0.9;
+      opacity: 0.7;
   }
 </style>
 
@@ -59,6 +59,7 @@
       </div>
     </div> --}}
     </form>
-      <img src="{{ asset('img/1.jpg') }}" style="position: fixed;">
   </div>
 @endsection
+
+

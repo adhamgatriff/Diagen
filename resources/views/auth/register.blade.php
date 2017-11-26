@@ -7,11 +7,10 @@
       z-index: 9;
       background: white;
       height: 100%;
-      opacity: 0.9;
+      opacity: 0.7;
   }
 </style>
 @section('content')
-
 <div class="row">
     <form class="col m5 offset-m7 s12 formlogin" method="POST" action="{{ route('register') }}">
       <h4 class="center">Registarse</h4>
@@ -81,7 +80,5 @@
         </div>
       </div>
     </form>
-      <img src="{{ asset('img/2.jpg') }}" style="position: fixed;">
   </div>
-
 @endsection

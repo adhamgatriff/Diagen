@@ -14,14 +14,24 @@
     <link rel="stylesheet" href="{{ asset('css/mio.css') }}">
     @yield('mascss')
 </head>
-<body>
+<body id="bodyas" style="background-color: #19171c;">
     <div id="app">
       @include('include.navbar')
-
         @yield('content')
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+          new particle.default(document.getElementById('bodyas'), {
+            dotColor: '#E91E63',
+            lineColor: '#4b367c',
+            density: 9000,
+            parallax: true
+        }); 
+      });
+
+    </script>
 </body>
 </html>
