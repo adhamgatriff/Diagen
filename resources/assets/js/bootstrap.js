@@ -21,6 +21,11 @@ try {
 
 window.axios = require('axios');
 window.validator = require('validator');
+window.particle = require('particleground-light');
+window.granim = require('granim');
+
+
+
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
