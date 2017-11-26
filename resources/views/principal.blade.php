@@ -3,7 +3,7 @@
 @section('title','principal')
 
 @section('main')
-
+@include('flash::message')
 <h3 class="opensans" style="margin-left: 12px;">Tus diagramas</h3>
 	<div class="row">
     @foreach ($datos as $element)
@@ -61,7 +61,7 @@ $('.actUser').on('click', function(event) {
 
   }else if($('#user_email').val() == '' ){
 
-    Materialize.toast('Dejastes tu apellido vacio', 1500)
+    Materialize.toast('Dejastes tu correo vacio', 1500)
     return false;
 
   }else if(!validator.isEmail($('#user_email').val())){
@@ -80,15 +80,23 @@ $('.actUser').on('click', function(event) {
       apellido: $('#user_apellido').val(),
       correo: $('#user_email').val(),
       pass: $('#user_password').val(),
-      pass2: $('#user_password-confirm').val(),
+      pass_confirmation: $('#user_password-confirm').val(),
       _token: '{{ csrf_token()}}' 
 
       },
   })
   .done(function(data) {
-    console.log("success");
+    if(data =='ok'){
+      Materialize.toast('Usuario actualizado', 1500)
+    }else{
+      location.reload();
+    }
+  })
+  .fail(function(data) {
+    $.each(data.responseJSON.errors, function(index, val) {
+      Materialize.toast(val, 1500)
+    });
   });
-
 });
 
 
