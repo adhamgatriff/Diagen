@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\UsuarioDiagrama;
+use App\Usuario;
 
 class Principal extends Controller
 {
@@ -24,7 +25,7 @@ class Principal extends Controller
   							'nombreI' => Auth::user()->id.$value_->id.'.png'
   						];
   	}
-  	return view('principal')->with(['datos' => $diagm ]);
+  	return view('principal')->with(['datos' => $diagm, 'userData' =>Usuario::find(Auth::user()->id) ]);
   }
 
 

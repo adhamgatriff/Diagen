@@ -17,30 +17,30 @@
       <h4 class="center">Registarse</h4>
       {{ csrf_field() }}
       <div class="row">
-        <div class="input-field col s12 {{ $errors->has('name') ? ' has-error' : '' }}">
-          <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
-          <label for="name">Nombre de usuario</label>
-          @if ($errors->has('name'))
+        <div class="input-field col s12 {{ $errors->has('usuario') ? ' has-error' : '' }}">
+          <input id="usuario" type="text" class="form-control" name="usuario" value="{{ old('usuario') }}" required>
+          <label for="usuario">Nombre de usuario</label>
+          @if ($errors->has('usuario'))
               <span class="help-block">
-                  <strong>{{ $errors->first('name') }}</strong>
+                  <strong>{{ $errors->first('usuario') }}</strong>
               </span>
           @endif
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6 {{ $errors->has('nombre') ? ' has-error' : '' }}">
-          <input id="nombre" type="text" class="form-control" name="nombre" value="{{ old('email') }}" required>
-          <label for="email">Nombre</label>
-          @if ($errors->has('email'))
+          <input id="nombre" type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" required>
+          <label for="nombre">Nombre</label>
+          @if ($errors->has('nombre'))
             <span class="help-block">
               <strong>{{ $errors->first('nombre') }}</strong>
             </span>
           @endif
         </div>
         <div class="input-field col s6 {{ $errors->has('apellido') ? ' has-error' : '' }}">
-          <input id="email" type="text" class="form-control" name="apellido" value="{{ old('email') }}" required>
-          <label for="email">Apellido</label>
-          @if ($errors->has('email'))
+          <input id="apellido" type="text" class="form-control" name="apellido" value="{{ old('apellido') }}" required>
+          <label for="apellido">Apellido</label>
+          @if ($errors->has('apellido'))
             <span class="help-block">
               <strong>{{ $errors->first('apellido') }}</strong>
             </span>

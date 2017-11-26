@@ -20,6 +20,7 @@ try {
  */
 
 window.axios = require('axios');
+window.validator = require('validator');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 

@@ -49,7 +49,7 @@ footer{
 	background: -o-linear-gradient(#311f5f 60%, #E91E63);
 	background: linear-gradient(#311f5f 60%, #E91E63);*/
 
-	width: 200px !important;
+	/*width: 200px !important;*/
 	top:50px;
 	box-shadow: 4px 2px 2px 1px rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
@@ -115,6 +115,16 @@ main {
 .input-field label {
  color: #311f5f;
 }
+
+.label-principal{
+    color: #f5f0f0 !important;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + .label-principal {
+ color: #f5f0f0 !important;
+}
+
 /* label focus color */
 .input-field input[type=text]:focus + label {
  color: #311f5f !important;

@@ -11,7 +11,6 @@
         <div class="card">
           <div class="card-image">
             <img src="{{ asset('diagramasImg/'.$element['nombreI']) }}" width="250" height="250">
-            {{-- <span class="card-title">Card Title</span> --}}
               <a class="btn-floating   halfway-fab waves-effect waves-light degradado"><i class="material-icons">edit</i></a>
               <a class="btn-floating  halfway-fab waves-effect waves-light degradado"><i class="material-icons">edit</i></a>
           </div>
@@ -31,14 +30,67 @@
       <h5>Hola!! </h5>
       <p>Veo que no tienes diagramas :( <br>puedes crear uno nuevo presionando este boton.</p>
     </div>
-  </div>    
-@endsection
+  </div>
+
+@include('include.sidenavEu')
+
+  @endsection
 
 @section('script')
 <script type="text/javascript">
   @if (empty($datos))
     $('.tap-target').tapTarget('open');
   @endif
+
+$('.actUser').on('click', function(event) {
+
+  if($('#user_name').val() == '' ){
+
+    Materialize.toast('Nombre de usuario vacio ', 1500)
+    return false;
+
+  }else if($('#user_nombre').val() == ''){
+
+    Materialize.toast('Dejastes tu nombre vacio', 1500)
+    return false;
+  }
+  else if($('#user_apellido').val() == ''){
+
+    Materialize.toast('Dejastes tu apellido vacio', 1500)
+    return false;
+
+  }else if($('#user_email').val() == '' ){
+
+    Materialize.toast('Dejastes tu apellido vacio', 1500)
+    return false;
+
+  }else if(!validator.isEmail($('#user_email').val())){
+
+    Materialize.toast('Email incorrecto', 1500)
+    return false;
+  }
+
+  $.ajax({
+    url: 'updUsers',
+    type: 'POST',
+    data: {
+      id: '{{ Auth::user()->id }}',
+      username: $('#user_name').val(),
+      nombre: $('#user_nombre').val(),
+      apellido: $('#user_apellido').val(),
+      correo: $('#user_email').val(),
+      pass: $('#user_password').val(),
+      pass2: $('#user_password-confirm').val(),
+      _token: '{{ csrf_token()}}' 
+
+      },
+  })
+  .done(function(data) {
+    console.log("success");
+  });
+
+});
+
 
 </script>
 

@@ -15,6 +15,7 @@
 Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('/principal', 'principal@ReturnDiagrams');
+	Route::get('updUsers', 'Principal@updUsuarios');
     // meter diagramas aqui
 });
 
