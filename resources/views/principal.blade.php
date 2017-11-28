@@ -38,6 +38,8 @@
 
 @section('script')
 <script type="text/javascript">
+
+  $('.button-collapse').sideNav();
   @if (empty($datos))
     $('.tap-target').tapTarget('open');
   @endif

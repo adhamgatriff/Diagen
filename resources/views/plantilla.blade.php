@@ -5,6 +5,9 @@
 @section('main')
 <a class="btn-floating btn-large waves-effect waves-light degradado"><i class="material-icons">add</i></a>
 <a class="waves-effect waves-light btn degradado Wradius"><i class="material-icons left">cloud</i>button</a>
+
+<a class="waves-effect waves-light btn degradado Wradius">button</a>
+
 <a class="waves-effect waves-moradito btn-flat">Button</a>
 
 <a class="waves-effect moradito btn-flat ">Button</a>

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('titulo','Registrarse')
 @section('mascss')
 
 <style type="text/css">

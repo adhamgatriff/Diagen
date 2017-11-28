@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('titulo','Login')
+
 @section('mascss')
 
 <style type="text/css">
