@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-	<title>  @yield('title') - diagen</title>
+	<title>  @yield('title') - Diagen</title>
+	<link rel="icon" href="{{ asset('img/ico32x32.ico') }}" type="image/ico" sizes="32x32">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">

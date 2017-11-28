@@ -11765,7 +11765,7 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(28);
-module.exports = __webpack_require__(117);
+module.exports = __webpack_require__(138);
 
 
 /***/ }),
@@ -11774,8 +11774,8 @@ module.exports = __webpack_require__(117);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rutas__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rutas__ = __webpack_require__(133);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -11785,7 +11785,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __webpack_require__(29);
 
-window.Vue = __webpack_require__(109);
+window.Vue = __webpack_require__(130);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -11793,7 +11793,7 @@ window.Vue = __webpack_require__(109);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('navbar', __webpack_require__(110));
+Vue.component('navbar', __webpack_require__(131));
 
 
 
@@ -11837,7 +11837,8 @@ try {
 
 window.axios = __webpack_require__(35);
 window.validator = __webpack_require__(55);
-window.particle = __webpack_require__(132);
+window.particle = __webpack_require__(109);
+window.granim = __webpack_require__(110);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -47035,6 +47036,1107 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Particle = function () {
+  function Particle(element) {
+    var _this = this;
+
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    _classCallCheck(this, Particle);
+
+    this.draw = function () {
+      if (!_this.props.canvasSupport) {
+        return;
+      }
+
+      _this.props.winW = window.innerWidth;
+      _this.props.winH = window.innerHeight;
+
+      // Wipe canvas
+      _this.props.ctx.clearRect(0, 0, _this.props.canvas.width, _this.props.canvas.height);
+
+      // Update particle positions
+      for (var i = 0; i < _this.props.particles.length; i++) {
+        _this.props.particles[i].updatePosition();
+      }
+      // Draw particles
+      for (var _i = 0; _i < _this.props.particles.length; _i++) {
+        _this.props.particles[_i].draw();
+      }
+
+      // Call this function next time screen is redrawn
+      if (!_this.props.paused) {
+        _this.props.raf = requestAnimationFrame(_this.draw);
+      }
+    };
+
+    this.props = {
+      canvasSupport: !!document.createElement('canvas').getContext,
+      particles: [],
+      mouseX: 0,
+      mouseY: 0,
+      desktop: !navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i),
+      orientationSupport: !!window.DeviceOrientationEvent,
+      tiltX: 0,
+      tiltY: 0,
+      pixelRatio: window.devicePixelRatio || 1,
+      paused: false,
+      element: element
+    };
+    this.options = {
+      minSpeedX: options.minSpeedX || 0.1,
+      maxSpeedX: options.maxSpeedX || 0.7,
+      minSpeedY: options.minSpeedY || 0.1,
+      maxSpeedY: options.maxSpeedY || 0.7,
+      directionX: options.directionX || 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
+      directionY: options.directionY || 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
+      density: options.density || 10000, // How many particles will be generated: one particle every n pixels
+      dotColor: options.dotColor || '#666666',
+      lineColor: options.lineColor || '#666666',
+      particleRadius: options.particleRadius || 7, // Dot size
+      lineWidth: options.lineWidth || 1,
+      curvedLines: options.curvedLines || false,
+      proximity: options.proximity || 100, // How close two dots need to be before they join
+      parallax: options.parallax || true,
+      parallaxMultiplier: options.parallaxMultiplier || 5, // The lower the number, the more extreme the parallax effect
+      onInit: options.onInit || undefined,
+      onDestroy: options.onDestroy || undefined
+    };
+    if (!this.props.canvasSupport) {
+      return;
+    }
+
+    //Create canvas
+    this.props.canvas = document.createElement('canvas');
+    this.props.canvas.className = 'pg-canvas';
+    this.props.canvas.style.width = '100%';
+    this.props.canvas.style.height = '100%';
+    this.props.canvas.style.top = 0;
+    this.props.canvas.style.left = 0;
+    this.props.canvas.style.display = 'block';
+    this.props.element.style.position = 'relative';
+    this.props.element.insertBefore(this.props.canvas, this.props.element.firstChild);
+    this.props.ctx = this.props.canvas.getContext('2d');
+    this.styleCanvas();
+
+    // Create particles
+    var numParticles = Math.round(this.props.canvas.width * this.props.canvas.height / this.options.density / Math.pow(this.props.pixelRatio, 2));
+    for (var i = 0; i < numParticles; i++) {
+      var p = new ParticleItem(this.props, this.options);
+      p.setStackPos(i);
+      this.props.particles.push(p);
+    }
+
+    window.addEventListener('resize', function () {
+      _this.resizeHandler();
+    }, false);
+
+    document.addEventListener('mousemove', function (e) {
+      _this.props.mouseX = e.pageX;
+      _this.props.mouseY = e.pageY;
+    }, false);
+
+    if (this.props.orientationSupport && !this.props.desktop) {
+      window.addEventListener('deviceorientation', function () {
+        // Contrain tilt range to [-30,30]
+        _this.props.tiltY = Math.min(Math.max(-event.beta, -30), 30);
+        _this.props.tiltX = Math.min(Math.max(-event.gamma, -30), 30);
+      }, true);
+    }
+
+    this.draw();
+    this.hook('onInit');
+  }
+
+  /**
+   * Style the canvas
+   */
+
+
+  _createClass(Particle, [{
+    key: 'styleCanvas',
+    value: function styleCanvas() {
+      this.props.canvas.width = this.props.element.offsetWidth * this.props.pixelRatio;
+      this.props.canvas.height = this.props.element.offsetHeight * this.props.pixelRatio;
+      this.props.ctx.fillStyle = this.options.dotColor;
+      this.props.ctx.strokeStyle = this.options.lineColor;
+      this.props.ctx.lineWidth = this.options.lineWidth * this.props.pixelRatio;
+    }
+    /**
+     * Draw particles
+     */
+
+  }, {
+    key: 'resizeHandler',
+
+    /**
+     * Add/remove particles.
+     */
+    value: function resizeHandler() {
+      // Resize the canvas
+      this.styleCanvas();
+
+      var elWidth = this.props.element.offsetWidth * this.props.pixelRatio;
+      var elHeight = this.props.element.offsetHeight * this.props.pixelRatio;
+
+      // Remove particles that are outside the canvas
+      for (var i = this.props.particles.length - 1; i >= 0; i--) {
+        if (this.props.particles[i].position.x > elWidth || this.props.particles[i].position.y > elHeight) {
+          this.props.particles.splice(i, 1);
+        }
+      }
+
+      // Adjust particle density
+      var numParticles = Math.round(this.props.canvas.width * this.props.canvas.height / this.options.density / Math.pow(this.props.pixelRatio, 2));
+      if (numParticles > this.props.particles.length) {
+        while (numParticles > this.props.particles.length) {
+          var p = new ParticleItem(this.props, this.options);
+          this.props.particles.push(p);
+        }
+      } else if (numParticles < this.props.particles.length) {
+        this.props.particles.splice(numParticles);
+      }
+
+      // Re-index particles
+      for (var _i2 = this.props.particles.length - 1; _i2 >= 0; _i2--) {
+        this.props.particles[_i2].setStackPos(_i2);
+      }
+    }
+
+    /**
+     * Pause particle system
+     */
+
+  }, {
+    key: 'pause',
+    value: function pause() {
+      this.props.paused = true;
+    }
+
+    /**
+     * Start particle system
+     */
+
+  }, {
+    key: 'start',
+    value: function start() {
+      this.props.paused = false;
+      this.draw();
+    }
+  }, {
+    key: 'option',
+    value: function option(key, val) {
+      if (val) {
+        this.options[key] = val;
+      } else {
+        return this.options[key];
+      }
+    }
+  }, {
+    key: 'destroy',
+    value: function destroy() {
+      // console.log('destroy');
+      this.props.canvas.parentNode.removeChild(this.props.canvas);
+      this.hook('onDestroy');
+    }
+  }, {
+    key: 'hook',
+    value: function hook(hookName) {
+      if (this.options[hookName] !== undefined) {
+        this.options[hookName].call(this.props.element);
+      }
+    }
+    // return {
+    //   option: option,
+    //   destroy: destroy,
+    //   start: start,
+    //   pause: pause
+    // };
+
+  }]);
+
+  return Particle;
+}();
+
+var ParticleItem = function () {
+  function ParticleItem(props, options) {
+    _classCallCheck(this, ParticleItem);
+
+    this.props = props;
+    this.options = options;
+    this.stackPos;
+    this.active = true;
+    this.layer = Math.ceil(Math.random() * 3);
+    this.parallaxOffsetX = 0;
+    this.parallaxOffsetY = 0;
+    // Initial particle position
+    this.position = {
+      x: Math.ceil(Math.random() * this.props.canvas.width),
+      y: Math.ceil(Math.random() * this.props.canvas.height)
+    };
+    // Random particle speed, within min and max values
+    this.speed = {};
+    switch (this.options.directionX) {
+      case 'left':
+        this.speed.x = +(-this.options.maxSpeedX + Math.random() * this.options.maxSpeedX - this.options.minSpeedX).toFixed(2);
+        break;
+      case 'right':
+        this.speed.x = +(Math.random() * this.options.maxSpeedX + this.options.minSpeedX).toFixed(2);
+        break;
+      default:
+        this.speed.x = +(-this.options.maxSpeedX / 2 + Math.random() * this.options.maxSpeedX).toFixed(2);
+        this.speed.x += this.speed.x > 0 ? this.options.minSpeedX : -this.options.minSpeedX;
+        break;
+    }
+    switch (this.options.directionY) {
+      case 'up':
+        this.speed.y = +(-this.options.maxSpeedY + Math.random() * this.options.maxSpeedY - this.options.minSpeedY).toFixed(2);
+        break;
+      case 'down':
+        this.speed.y = +(Math.random() * this.options.maxSpeedY + this.options.minSpeedY).toFixed(2);
+        break;
+      default:
+        this.speed.y = +(-this.options.maxSpeedY / 2 + Math.random() * this.options.maxSpeedY).toFixed(2);
+        this.speed.x += this.speed.y > 0 ? this.options.minSpeedY : -this.options.minSpeedY;
+        break;
+    }
+  }
+  /**
+   * Draw particle
+   */
+
+
+  _createClass(ParticleItem, [{
+    key: 'draw',
+    value: function draw() {
+      // Draw circle
+      this.props.ctx.beginPath();
+      this.props.ctx.arc(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY, this.options.particleRadius * this.props.pixelRatio / 2, 0, Math.PI * 2, true);
+      this.props.ctx.closePath();
+      this.props.ctx.fill();
+
+      // Draw lines
+      this.props.ctx.beginPath();
+      // Iterate over all particles which are higher in the stack than this one
+      for (var i = this.props.particles.length - 1; i > this.stackPos; i--) {
+        var p2 = this.props.particles[i];
+
+        // Pythagorus theorum to get distance between two points
+        var a = this.position.x - p2.position.x;
+        var b = this.position.y - p2.position.y;
+        var dist = Math.sqrt(a * a + b * b).toFixed(2);
+
+        // If the two particles are in proximity, join them
+        if (dist < this.options.proximity * this.props.pixelRatio) {
+          this.props.ctx.moveTo(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY);
+          if (this.options.curvedLines) {
+            this.props.ctx.quadraticCurveTo(Math.max(p2.position.x, p2.position.x), Math.min(p2.position.y, p2.position.y), p2.position.x + p2.parallaxOffsetX, p2.position.y + p2.parallaxOffsetY);
+          } else {
+            this.props.ctx.lineTo(p2.position.x + p2.parallaxOffsetX, p2.position.y + p2.parallaxOffsetY);
+          }
+        }
+      }
+      this.props.ctx.stroke();
+      this.props.ctx.closePath();
+    }
+
+    /**
+     * update particle position
+     */
+
+  }, {
+    key: 'updatePosition',
+    value: function updatePosition() {
+      if (this.options.parallax) {
+        if (this.props.orientationSupport && !this.props.desktop) {
+          // Map tiltX range [-30,30] to range [0,winW]
+          var ratioX = (this.props.winW - 0) / (30 - -30);
+          this.props.pointerX = (this.props.tiltX - -30) * ratioX + 0;
+          // Map tiltY range [-30,30] to range [0,winH]
+          var ratioY = (this.props.winH - 0) / (30 - -30);
+          this.props.pointerY = (this.props.tiltY - -30) * ratioY + 0;
+        } else {
+          this.props.pointerX = this.props.mouseX;
+          this.props.pointerY = this.props.mouseY;
+        }
+        // Calculate parallax offsets
+        this.parallaxTargX = (this.props.pointerX - this.props.winW / 2) / (this.options.parallaxMultiplier * this.layer);
+        this.parallaxOffsetX += (this.parallaxTargX - this.parallaxOffsetX) / 10; // Easing equation
+        this.parallaxTargY = (this.props.pointerY - this.props.winH / 2) / (this.options.parallaxMultiplier * this.layer);
+        this.parallaxOffsetY += (this.parallaxTargY - this.parallaxOffsetY) / 10; // Easing equation
+      }
+
+      var elWidth = this.props.element.offsetWidth * this.props.pixelRatio;
+      var elHeight = this.props.element.offsetHeight * this.props.pixelRatio;
+
+      switch (this.options.directionX) {
+        case 'left':
+          if (this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
+            this.position.x = elWidth - this.parallaxOffsetX;
+          }
+          break;
+        case 'right':
+          if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth) {
+            this.position.x = 0 - this.parallaxOffsetX;
+          }
+          break;
+        default:
+          // If particle has reached edge of canvas, reverse its direction
+          if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth || this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
+            this.speed.x = -this.speed.x;
+          }
+          break;
+      }
+
+      switch (this.options.directionY) {
+        case 'up':
+          if (this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
+            this.position.y = elHeight - this.parallaxOffsetY;
+          }
+          break;
+        case 'down':
+          if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight) {
+            this.position.y = 0 - this.parallaxOffsetY;
+          }
+          break;
+        default:
+          // If particle has reached edge of canvas, reverse its direction
+          if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight || this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
+            this.speed.y = -this.speed.y;
+          }
+          break;
+      }
+
+      // Move particle
+      this.position.x += this.speed.x;
+      this.position.y += this.speed.y;
+    }
+
+    /**
+     * Setter: particle stacking position
+     */
+
+  }, {
+    key: 'setStackPos',
+    value: function setStackPos(i) {
+      this.stackPos = i;
+    }
+  }]);
+
+  return ParticleItem;
+}();
+
+exports.default = Particle;
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(111);
+
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function Granim(options) {
+	this.getElement(options.element);
+	this.x1 = 0;
+	this.y1 = 0;
+	this.name = options.name || false;
+	this.elToSetClassOn = options.elToSetClassOn || 'body';
+	this.direction = options.direction || 'diagonal';
+	this.isPausedWhenNotInView = options.isPausedWhenNotInView || false;
+	this.opacity = options.opacity;
+	this.states = options.states;
+	this.stateTransitionSpeed = options.stateTransitionSpeed || 1000;
+	this.previousTimeStamp = null;
+	this.progress = 0;
+	this.isPaused = false;
+	this.isCleared = false;
+	this.isPausedBecauseNotInView = false;
+	this.iscurrentColorsSet = false;
+	this.context = this.canvas.getContext('2d');
+	this.channels = {};
+	this.channelsIndex = 0;
+	this.activeState = options.defaultStateName || 'default-state';
+	this.isChangingState = false;
+	this.activeColors = [];
+	this.activeColorDiff = [];
+	this.activetransitionSpeed = null;
+	this.currentColors = [];
+	this.eventPolyfill();
+	this.events = {
+		start: new CustomEvent('granim:start'),
+		end: new CustomEvent('granim:end'),
+		gradientChange: function(details) {
+			return new CustomEvent('granim:gradientChange', {
+				detail: {
+					isLooping: details.isLooping,
+					colorsFrom: details.colorsFrom,
+					colorsTo: details.colorsTo,
+					activeState: details.activeState
+				},
+				bubbles: false,
+				cancelable: false
+			})
+		}
+	};
+	this.callbacks = {
+		onStart: typeof options.onStart === 'function' ? options.onStart : false,
+		onGradientChange: typeof options.onGradientChange === 'function' ?
+			options.onGradientChange :
+			false,
+		onEnd: typeof options.onEnd === 'function' ? options.onEnd : false
+	};
+
+	this.getDimensions();
+	this.canvas.setAttribute('width', this.x1);
+	this.canvas.setAttribute('height', this.y1);
+	this.setColors();
+	this.refreshColors();
+	window.addEventListener('resize', this.onResize.bind(this));
+	if (this.isPausedWhenNotInView) {
+		this.pauseWhenNotInView();
+	} else {
+		this.animation = requestAnimationFrame(this.animateColors.bind(this));
+	}
+
+	// Callback and Event
+	if (this.callbacks.onStart) this.callbacks.onStart();
+	this.canvas.dispatchEvent(this.events.start);
+}
+
+Granim.prototype.setColors = __webpack_require__(112);
+
+Granim.prototype.eventPolyfill = __webpack_require__(113);
+
+Granim.prototype.colorDiff = __webpack_require__(114);
+
+Granim.prototype.hexToRgb = __webpack_require__(115);
+
+Granim.prototype.setDirection = __webpack_require__(116);
+
+Granim.prototype.makeGradient = __webpack_require__(117);
+
+Granim.prototype.getDimensions = __webpack_require__(118);
+
+Granim.prototype.getElement = __webpack_require__(119);
+
+Granim.prototype.animateColors = __webpack_require__(120);
+
+Granim.prototype.getLightness = __webpack_require__(121);
+
+Granim.prototype.refreshColors = __webpack_require__(122);
+
+Granim.prototype.changeState = __webpack_require__(123);
+
+Granim.prototype.pause = __webpack_require__(124);
+
+Granim.prototype.play = __webpack_require__(125);
+
+Granim.prototype.clear = __webpack_require__(126);
+
+Granim.prototype.getCurrentColors = __webpack_require__(127);
+
+Granim.prototype.pauseWhenNotInView = __webpack_require__(128);
+
+Granim.prototype.onResize = __webpack_require__(129);
+
+module.exports = Granim;
+
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var _this = this;
+	var colorDiff, nextColors;
+
+	if (!this.channels[this.activeState]) {
+		this.channels[this.activeState] = [];
+	}
+
+	// If the actual channel exist, reassign properties and exit
+	// (each channel is saved to prevent recomputing it each time)
+	if (this.channels[this.activeState][this.channelsIndex] !== undefined) {
+		this.activeColors = this.channels[this.activeState][this.channelsIndex].colors;
+		this.activeColorDiff = this.channels[this.activeState][this.channelsIndex].colorsDiff;
+		return;
+	}
+
+	// Set blank properties
+	this.channels[this.activeState].push([{}]);
+	this.channels[this.activeState][this.channelsIndex].colors = [];
+	this.channels[this.activeState][this.channelsIndex].colorsDiff = [];
+	this.activeColors = [];
+	this.activeColorDiff = [];
+
+	// Go on each gradient of the current state
+	this.states[this.activeState].gradients[this.channelsIndex].forEach(function(color, i, arr) {
+		// Push the hex color converted to rgb on the channel and the active color properties
+		var rgbColor = _this.hexToRgb(color);
+		var activeChannel = _this.channels[_this.activeState];
+
+		activeChannel[_this.channelsIndex].colors.push(rgbColor);
+		_this.activeColors.push(rgbColor);
+
+		// If it's the first channel to be set, set the currentColors
+		if (!_this.iscurrentColorsSet) {
+			_this.currentColors.push(_this.hexToRgb(color));
+		}
+
+		// If it's the last gradient, compute the color diff between the last gradient and the first one,
+		// else between the penultimate one and the last one
+		if (_this.channelsIndex === _this.states[_this.activeState].gradients.length - 1) {
+			colorDiff = _this.colorDiff(
+				activeChannel[_this.channelsIndex].colors[i],
+				activeChannel[0].colors[i]
+			);
+		} else {
+			nextColors = _this.hexToRgb(_this.states[_this.activeState].gradients[_this.channelsIndex + 1][i]);
+			colorDiff = _this.colorDiff(
+				activeChannel[_this.channelsIndex].colors[i], nextColors
+			);
+		}
+
+		activeChannel[_this.channelsIndex].colorsDiff.push(colorDiff);
+		_this.activeColorDiff.push(colorDiff);
+	});
+
+	this.activetransitionSpeed = this.states[this.activeState].transitionSpeed || 5000;
+	this.iscurrentColorsSet = true;
+};
+
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	if ( typeof window.CustomEvent === "function" ) return;
+
+	function CustomEvent (event, params) {
+		params = params || { bubbles: false, cancelable: false, detail: undefined };
+		var evt = document.createEvent('CustomEvent');
+		evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+		return evt;
+	}
+
+	CustomEvent.prototype = window.Event.prototype;
+
+	window.CustomEvent = CustomEvent;
+};
+
+
+/***/ }),
+/* 114 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(colorA, colorB) {
+	var i;
+	var colorDiff = [];
+
+	for (i = 0; i < 3; i++) {
+		colorDiff.push(colorB[i] - colorA[i])
+	}
+
+	return colorDiff;
+};
+
+
+/***/ }),
+/* 115 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(hex) {
+	// Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+	var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+	hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+		return r + r + g + g + b + b;
+	});
+
+	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? [
+		parseInt(result[1], 16),
+		parseInt(result[2], 16),
+		parseInt(result[3], 16)
+	] : null;
+};
+
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var ctx = this.context;
+
+	switch(this.direction) {
+		default:
+		case 'diagonal':
+			return ctx.createLinearGradient(0, 0, this.x1, this.y1);
+			break;
+
+		case 'left-right':
+			return ctx.createLinearGradient(0, 0, this.x1, 0);
+			break;
+
+		case 'top-bottom':
+			return ctx.createLinearGradient(this.x1 / 2, 0, this.x1 / 2, this.y1);
+			break;
+
+		case 'radial':
+			return ctx.createRadialGradient(this.x1 / 2, this.y1 / 2, this.x1 / 2, this.x1 / 2, this.y1 / 2, 0);
+			break;
+	}
+};
+
+
+/***/ }),
+/* 117 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var i;
+	var gradient = this.setDirection();
+	var colorPosition;
+	var elToSetClassOnClass = document.querySelector(this.elToSetClassOn).classList;
+	this.context.clearRect(0, 0, this.x1, this.y1);
+
+	for (i = 0; i < this.currentColors.length; i++) {
+		// Ensure first and last position to be 0 and 100
+		!i ? colorPosition = 0 : colorPosition = ((1 / (this.currentColors.length - 1)) * i).toFixed(2);
+
+		gradient.addColorStop(colorPosition, 'rgba(' +
+			this.currentColors[i][0] + ', ' +
+			this.currentColors[i][1] + ', ' +
+			this.currentColors[i][2] + ', ' +
+			this.opacity[i] + ')'
+		);
+	}
+
+	if (this.name) {
+		if (this.getLightness() === 'light') {
+			elToSetClassOnClass.remove(this.name + '-dark');
+			elToSetClassOnClass.add(this.name + '-light');
+
+		} else {
+			elToSetClassOnClass.remove(this.name + '-light');
+			elToSetClassOnClass.add(this.name + '-dark');
+		}
+	}
+
+	this.context.fillStyle = gradient;
+	this.context.fillRect(0, 0, this.x1, this.y1);
+};
+
+
+/***/ }),
+/* 118 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	this.x1 = this.canvas.offsetWidth;
+	this.y1 = this.canvas.offsetHeight;
+};
+
+
+/***/ }),
+/* 119 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(element) {
+	if (element instanceof HTMLCanvasElement) {
+		this.canvas = element;
+
+	} else if (typeof element === "string") {
+		this.canvas = document.querySelector(element);
+
+	} else {
+		throw new Error('The element you used is neither a String, nor a HTMLCanvasElement');
+	}
+
+	if (!this.canvas) {
+		throw new Error('`' + element + '` could not be found in the DOM');
+	}
+};
+
+
+/***/ }),
+/* 120 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(timestamp) {
+	var wasWindowIdled = timestamp - this.previousTimeStamp > 100;
+	var isLoop = this.states[this.activeState].loop !== undefined ? this.states[this.activeState].loop : true;
+	var progressPercent, isLooping, nextGradient;
+
+	// If tab was inactive then resumed, reset the previous timestamp
+	if (this.previousTimeStamp === null || wasWindowIdled) {
+		this.previousTimeStamp = timestamp;
+	}
+
+	// Compute progress and save the timestamp
+	this.progress = this.progress + (timestamp - this.previousTimeStamp);
+	progressPercent = (this.progress / this.activetransitionSpeed * 100).toFixed(2);
+	this.previousTimeStamp = timestamp;
+
+	// Set the new gradient colors in a property
+	this.refreshColors(progressPercent);
+
+	// Continue the animation or prepare for the next one
+	if (progressPercent < 100) {
+		this.animation = requestAnimationFrame(this.animateColors.bind(this));
+
+	} else {
+		// if the current animation index is inferior to the penultimate gradient
+		// or to the last gradient with the loop mode activated
+		if (this.channelsIndex < this.states[this.activeState].gradients.length - 2 || isLoop) {
+
+			// Set the active transition speed to the active state one after changing state
+			if (this.isChangingState) {
+				this.activetransitionSpeed = this.states[this.activeState].transitionSpeed || 5000;
+			}
+
+			// Resetting properties
+			this.previousTimeStamp = null;
+			this.progress = 0;
+			this.channelsIndex++;
+			isLooping = false;
+
+			// If it's going to loop or if it's the transition after the loop
+			if (this.channelsIndex === this.states[this.activeState].gradients.length - 1) {
+				isLooping = true;
+				
+			} else if (this.channelsIndex === this.states[this.activeState].gradients.length) {
+				this.channelsIndex = 0;
+			}
+
+			// Checking the next gradient to send in args of an event and a callback
+			nextGradient = this.states[this.activeState].gradients[this.channelsIndex + 1] === undefined ?
+				this.states[this.activeState].gradients[0] :
+				this.states[this.activeState].gradients[this.channelsIndex + 1];
+
+			// Compute the colors for the transition and render a new frame
+			this.setColors();
+			this.animation = requestAnimationFrame(this.animateColors.bind(this));
+			
+			// Callback and Event
+			if (this.callbacks.onGradientChange) this.callbacks.onGradientChange({
+				isLooping: isLooping,
+				colorsFrom: this.states[this.activeState].gradients[this.channelsIndex],
+				colorsTo: nextGradient,
+				activeState: this.activeState
+			});
+
+			this.canvas.dispatchEvent(this.events.gradientChange({
+					isLooping: isLooping,
+					colorsFrom: this.states[this.activeState].gradients[this.channelsIndex],
+					colorsTo: nextGradient,
+					activeState: this.activeState
+				})
+			);
+
+		// Else if it was the last gradient on the list and the loop mode is off
+		} else {
+			cancelAnimationFrame(this.animation);
+
+			// Callback and Event
+			if (this.callbacks.onEnd) this.callbacks.onEnd();
+			this.canvas.dispatchEvent(new CustomEvent('granim:end'));
+		}
+	}
+};
+
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var currentColors = this.getCurrentColors();
+	var colorsAverage = [];
+	var gradientAverage = null;
+	var lightnessAverage;
+
+	currentColors.forEach(function(el, i, arr) {
+		// Compute the average lightness of each color
+		// in the current gradient
+		colorsAverage.push(
+			Math.max(el[0], el[1], el[2])
+		)
+	});
+
+	colorsAverage.forEach(function(el, i, arr) {
+		// Add all the average lightness of each color
+		gradientAverage = gradientAverage === null ?
+			el :
+			gradientAverage + el;
+
+		if (i === colorsAverage.length - 1) {
+			// if it's the last lightness average
+			// divide it by the total length to
+			// have the global average lightness
+			lightnessAverage = Math.round(gradientAverage / (i + 1));
+		}
+	});
+
+	return lightnessAverage >= 128 ? 'light' : 'dark';
+};
+
+
+/***/ }),
+/* 122 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(progressPercent) {
+	var activeChannel, j;
+	var _this = this;
+
+	this.activeColors.forEach(function(el, i, arr) {
+		for (j = 0; j < 3; j++) {
+			activeChannel = _this.activeColors[i][j] +
+				Math.ceil(_this.activeColorDiff[i][j] /
+					100 * progressPercent);
+
+			if (activeChannel <= 255 && activeChannel >= 0) {
+				_this.currentColors[i][j] = activeChannel;
+			}
+		}
+	});
+
+	this.makeGradient();
+};
+
+
+/***/ }),
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(state) {
+	var _this = this;
+	var nextColors, colorDiff;
+
+	// Prevent transitioning to the same state
+	if (this.activeState === state) {
+		return;
+	}
+
+	// Setting the good properties for the transition
+	if (!this.isPaused) {
+		this.isPaused = true;
+		this.pause();
+	}
+
+	this.channelsIndex = -1;
+	this.activetransitionSpeed = this.stateTransitionSpeed;
+	this.activeColorDiff = [];
+	this.activeColors = this.getCurrentColors();
+	this.progress = 0;
+	this.previousTimeStamp = null;
+	this.isChangingState = true;
+
+	// Compute the gradient diff between the last frame gradient
+	// and the first one of the new state
+	this.states[state].gradients[0].forEach(function(color, i, arr) {
+		nextColors = _this.hexToRgb(_this.states[state].gradients[0][i]);
+		colorDiff = _this.colorDiff(_this.activeColors[i], nextColors);
+		_this.activeColorDiff.push(colorDiff);
+	});
+
+	// Start the animation
+	this.activeState = state;
+	this.play();
+};
+
+
+/***/ }),
+/* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(state) {
+	var isPausedBecauseNotInView = state === 'isPausedBecauseNotInView';
+	if (this.isCleared) {return;}
+	if (!isPausedBecauseNotInView) this.isPaused = true;
+	cancelAnimationFrame(this.animation);
+};
+
+
+/***/ }),
+/* 125 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(state) {
+	var isPausedBecauseNotInView = state === 'isPausedBecauseNotInView';
+	if (!isPausedBecauseNotInView) {
+		this.isPaused = false;
+	}
+	this.isCleared = false;
+	this.animation = requestAnimationFrame(this.animateColors.bind(this));
+};
+
+
+/***/ }),
+/* 126 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	if (!this.isPaused) {
+		cancelAnimationFrame(this.animation);
+
+	} else {
+		this.isPaused = false;
+	}
+	this.isCleared = true;
+	this.context.clearRect(0, 0, this.x1, this.y1);
+};
+
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var j;
+	var currentColors = [];
+
+	this.currentColors.forEach(function(el, i, arr) {
+		currentColors.push([]);
+
+		for (j = 0; j < 3; j++) {
+			currentColors[i].push(el[j])
+		}
+	});
+
+	// Return a deep copy
+	return currentColors;
+};
+
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var _this = this;
+	var timeout;
+
+	window.addEventListener('scroll', pauseWhenNotInView);
+	pauseWhenNotInView(true);
+
+	function pauseWhenNotInView(init) {
+		if (timeout) clearTimeout(timeout);
+
+		timeout = setTimeout(function() {
+			var elPos = _this.canvas.getBoundingClientRect();
+			var isNotInView =
+				elPos.bottom < 0 ||
+				elPos.right < 0 ||
+				elPos.left > window.innerWidth ||
+				elPos.top > window.innerHeight;
+
+			if (isNotInView) {
+				if (!_this.isPaused && !_this.isPausedBecauseNotInView) {
+					_this.isPausedBecauseNotInView = true;
+					_this.pause('isPausedBecauseNotInView');
+				}
+			} else {
+				if (!_this.isPaused || init === true) {
+					_this.isPausedBecauseNotInView = false;
+					_this.play('isPausedBecauseNotInView');
+				}
+			}
+		}, 300);
+	}
+};
+
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	this.getDimensions();
+	this.canvas.setAttribute('width', this.x1);
+	this.canvas.setAttribute('height', this.y1);
+	this.refreshColors();
+};
+
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/*!
  * Vue.js v2.4.4
  * (c) 2014-2017 Evan You
@@ -57231,7 +58333,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
 
 /***/ }),
-/* 110 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var normalizeComponent = __webpack_require__(9)
@@ -57259,7 +58361,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 111 */
+/* 132 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59889,13 +60991,13 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 112 */
+/* 133 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Nay_vue__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Nay_vue__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Nay_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Nay_vue__);
 
 
@@ -59905,7 +61007,7 @@ var routes = [{ path: '/prueba', component: __WEBPACK_IMPORTED_MODULE_0__compone
 /* harmony default export */ __webpack_exports__["a"] = (routes);
 
 /***/ }),
-/* 113 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -59913,7 +61015,7 @@ var normalizeComponent = __webpack_require__(9)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(114)
+var __vue_template__ = __webpack_require__(135)
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -59951,7 +61053,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 114 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -59971,7 +61073,7 @@ if (false) {
 }
 
 /***/ }),
-/* 115 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -59979,7 +61081,7 @@ var normalizeComponent = __webpack_require__(9)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(116)
+var __vue_template__ = __webpack_require__(137)
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -60017,7 +61119,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 116 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -60037,431 +61139,10 @@ if (false) {
 }
 
 /***/ }),
-/* 117 */
+/* 138 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Particle = function () {
-  function Particle(element) {
-    var _this = this;
-
-    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-    _classCallCheck(this, Particle);
-
-    this.draw = function () {
-      if (!_this.props.canvasSupport) {
-        return;
-      }
-
-      _this.props.winW = window.innerWidth;
-      _this.props.winH = window.innerHeight;
-
-      // Wipe canvas
-      _this.props.ctx.clearRect(0, 0, _this.props.canvas.width, _this.props.canvas.height);
-
-      // Update particle positions
-      for (var i = 0; i < _this.props.particles.length; i++) {
-        _this.props.particles[i].updatePosition();
-      }
-      // Draw particles
-      for (var _i = 0; _i < _this.props.particles.length; _i++) {
-        _this.props.particles[_i].draw();
-      }
-
-      // Call this function next time screen is redrawn
-      if (!_this.props.paused) {
-        _this.props.raf = requestAnimationFrame(_this.draw);
-      }
-    };
-
-    this.props = {
-      canvasSupport: !!document.createElement('canvas').getContext,
-      particles: [],
-      mouseX: 0,
-      mouseY: 0,
-      desktop: !navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i),
-      orientationSupport: !!window.DeviceOrientationEvent,
-      tiltX: 0,
-      tiltY: 0,
-      pixelRatio: window.devicePixelRatio || 1,
-      paused: false,
-      element: element
-    };
-    this.options = {
-      minSpeedX: options.minSpeedX || 0.1,
-      maxSpeedX: options.maxSpeedX || 0.7,
-      minSpeedY: options.minSpeedY || 0.1,
-      maxSpeedY: options.maxSpeedY || 0.7,
-      directionX: options.directionX || 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
-      directionY: options.directionY || 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
-      density: options.density || 10000, // How many particles will be generated: one particle every n pixels
-      dotColor: options.dotColor || '#666666',
-      lineColor: options.lineColor || '#666666',
-      particleRadius: options.particleRadius || 7, // Dot size
-      lineWidth: options.lineWidth || 1,
-      curvedLines: options.curvedLines || false,
-      proximity: options.proximity || 100, // How close two dots need to be before they join
-      parallax: options.parallax || true,
-      parallaxMultiplier: options.parallaxMultiplier || 5, // The lower the number, the more extreme the parallax effect
-      onInit: options.onInit || undefined,
-      onDestroy: options.onDestroy || undefined
-    };
-    if (!this.props.canvasSupport) {
-      return;
-    }
-
-    //Create canvas
-    this.props.canvas = document.createElement('canvas');
-    this.props.canvas.className = 'pg-canvas';
-    this.props.canvas.style.width = '100%';
-    this.props.canvas.style.height = '100%';
-    this.props.canvas.style.top = 0;
-    this.props.canvas.style.left = 0;
-    this.props.canvas.style.display = 'block';
-    this.props.element.style.position = 'relative';
-    this.props.element.insertBefore(this.props.canvas, this.props.element.firstChild);
-    this.props.ctx = this.props.canvas.getContext('2d');
-    this.styleCanvas();
-
-    // Create particles
-    var numParticles = Math.round(this.props.canvas.width * this.props.canvas.height / this.options.density / Math.pow(this.props.pixelRatio, 2));
-    for (var i = 0; i < numParticles; i++) {
-      var p = new ParticleItem(this.props, this.options);
-      p.setStackPos(i);
-      this.props.particles.push(p);
-    }
-
-    window.addEventListener('resize', function () {
-      _this.resizeHandler();
-    }, false);
-
-    document.addEventListener('mousemove', function (e) {
-      _this.props.mouseX = e.pageX;
-      _this.props.mouseY = e.pageY;
-    }, false);
-
-    if (this.props.orientationSupport && !this.props.desktop) {
-      window.addEventListener('deviceorientation', function () {
-        // Contrain tilt range to [-30,30]
-        _this.props.tiltY = Math.min(Math.max(-event.beta, -30), 30);
-        _this.props.tiltX = Math.min(Math.max(-event.gamma, -30), 30);
-      }, true);
-    }
-
-    this.draw();
-    this.hook('onInit');
-  }
-
-  /**
-   * Style the canvas
-   */
-
-
-  _createClass(Particle, [{
-    key: 'styleCanvas',
-    value: function styleCanvas() {
-      this.props.canvas.width = this.props.element.offsetWidth * this.props.pixelRatio;
-      this.props.canvas.height = this.props.element.offsetHeight * this.props.pixelRatio;
-      this.props.ctx.fillStyle = this.options.dotColor;
-      this.props.ctx.strokeStyle = this.options.lineColor;
-      this.props.ctx.lineWidth = this.options.lineWidth * this.props.pixelRatio;
-    }
-    /**
-     * Draw particles
-     */
-
-  }, {
-    key: 'resizeHandler',
-
-    /**
-     * Add/remove particles.
-     */
-    value: function resizeHandler() {
-      // Resize the canvas
-      this.styleCanvas();
-
-      var elWidth = this.props.element.offsetWidth * this.props.pixelRatio;
-      var elHeight = this.props.element.offsetHeight * this.props.pixelRatio;
-
-      // Remove particles that are outside the canvas
-      for (var i = this.props.particles.length - 1; i >= 0; i--) {
-        if (this.props.particles[i].position.x > elWidth || this.props.particles[i].position.y > elHeight) {
-          this.props.particles.splice(i, 1);
-        }
-      }
-
-      // Adjust particle density
-      var numParticles = Math.round(this.props.canvas.width * this.props.canvas.height / this.options.density / Math.pow(this.props.pixelRatio, 2));
-      if (numParticles > this.props.particles.length) {
-        while (numParticles > this.props.particles.length) {
-          var p = new ParticleItem(this.props, this.options);
-          this.props.particles.push(p);
-        }
-      } else if (numParticles < this.props.particles.length) {
-        this.props.particles.splice(numParticles);
-      }
-
-      // Re-index particles
-      for (var _i2 = this.props.particles.length - 1; _i2 >= 0; _i2--) {
-        this.props.particles[_i2].setStackPos(_i2);
-      }
-    }
-
-    /**
-     * Pause particle system
-     */
-
-  }, {
-    key: 'pause',
-    value: function pause() {
-      this.props.paused = true;
-    }
-
-    /**
-     * Start particle system
-     */
-
-  }, {
-    key: 'start',
-    value: function start() {
-      this.props.paused = false;
-      this.draw();
-    }
-  }, {
-    key: 'option',
-    value: function option(key, val) {
-      if (val) {
-        this.options[key] = val;
-      } else {
-        return this.options[key];
-      }
-    }
-  }, {
-    key: 'destroy',
-    value: function destroy() {
-      // console.log('destroy');
-      this.props.canvas.parentNode.removeChild(this.props.canvas);
-      this.hook('onDestroy');
-    }
-  }, {
-    key: 'hook',
-    value: function hook(hookName) {
-      if (this.options[hookName] !== undefined) {
-        this.options[hookName].call(this.props.element);
-      }
-    }
-    // return {
-    //   option: option,
-    //   destroy: destroy,
-    //   start: start,
-    //   pause: pause
-    // };
-
-  }]);
-
-  return Particle;
-}();
-
-var ParticleItem = function () {
-  function ParticleItem(props, options) {
-    _classCallCheck(this, ParticleItem);
-
-    this.props = props;
-    this.options = options;
-    this.stackPos;
-    this.active = true;
-    this.layer = Math.ceil(Math.random() * 3);
-    this.parallaxOffsetX = 0;
-    this.parallaxOffsetY = 0;
-    // Initial particle position
-    this.position = {
-      x: Math.ceil(Math.random() * this.props.canvas.width),
-      y: Math.ceil(Math.random() * this.props.canvas.height)
-    };
-    // Random particle speed, within min and max values
-    this.speed = {};
-    switch (this.options.directionX) {
-      case 'left':
-        this.speed.x = +(-this.options.maxSpeedX + Math.random() * this.options.maxSpeedX - this.options.minSpeedX).toFixed(2);
-        break;
-      case 'right':
-        this.speed.x = +(Math.random() * this.options.maxSpeedX + this.options.minSpeedX).toFixed(2);
-        break;
-      default:
-        this.speed.x = +(-this.options.maxSpeedX / 2 + Math.random() * this.options.maxSpeedX).toFixed(2);
-        this.speed.x += this.speed.x > 0 ? this.options.minSpeedX : -this.options.minSpeedX;
-        break;
-    }
-    switch (this.options.directionY) {
-      case 'up':
-        this.speed.y = +(-this.options.maxSpeedY + Math.random() * this.options.maxSpeedY - this.options.minSpeedY).toFixed(2);
-        break;
-      case 'down':
-        this.speed.y = +(Math.random() * this.options.maxSpeedY + this.options.minSpeedY).toFixed(2);
-        break;
-      default:
-        this.speed.y = +(-this.options.maxSpeedY / 2 + Math.random() * this.options.maxSpeedY).toFixed(2);
-        this.speed.x += this.speed.y > 0 ? this.options.minSpeedY : -this.options.minSpeedY;
-        break;
-    }
-  }
-  /**
-   * Draw particle
-   */
-
-
-  _createClass(ParticleItem, [{
-    key: 'draw',
-    value: function draw() {
-      // Draw circle
-      this.props.ctx.beginPath();
-      this.props.ctx.arc(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY, this.options.particleRadius * this.props.pixelRatio / 2, 0, Math.PI * 2, true);
-      this.props.ctx.closePath();
-      this.props.ctx.fill();
-
-      // Draw lines
-      this.props.ctx.beginPath();
-      // Iterate over all particles which are higher in the stack than this one
-      for (var i = this.props.particles.length - 1; i > this.stackPos; i--) {
-        var p2 = this.props.particles[i];
-
-        // Pythagorus theorum to get distance between two points
-        var a = this.position.x - p2.position.x;
-        var b = this.position.y - p2.position.y;
-        var dist = Math.sqrt(a * a + b * b).toFixed(2);
-
-        // If the two particles are in proximity, join them
-        if (dist < this.options.proximity * this.props.pixelRatio) {
-          this.props.ctx.moveTo(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY);
-          if (this.options.curvedLines) {
-            this.props.ctx.quadraticCurveTo(Math.max(p2.position.x, p2.position.x), Math.min(p2.position.y, p2.position.y), p2.position.x + p2.parallaxOffsetX, p2.position.y + p2.parallaxOffsetY);
-          } else {
-            this.props.ctx.lineTo(p2.position.x + p2.parallaxOffsetX, p2.position.y + p2.parallaxOffsetY);
-          }
-        }
-      }
-      this.props.ctx.stroke();
-      this.props.ctx.closePath();
-    }
-
-    /**
-     * update particle position
-     */
-
-  }, {
-    key: 'updatePosition',
-    value: function updatePosition() {
-      if (this.options.parallax) {
-        if (this.props.orientationSupport && !this.props.desktop) {
-          // Map tiltX range [-30,30] to range [0,winW]
-          var ratioX = (this.props.winW - 0) / (30 - -30);
-          this.props.pointerX = (this.props.tiltX - -30) * ratioX + 0;
-          // Map tiltY range [-30,30] to range [0,winH]
-          var ratioY = (this.props.winH - 0) / (30 - -30);
-          this.props.pointerY = (this.props.tiltY - -30) * ratioY + 0;
-        } else {
-          this.props.pointerX = this.props.mouseX;
-          this.props.pointerY = this.props.mouseY;
-        }
-        // Calculate parallax offsets
-        this.parallaxTargX = (this.props.pointerX - this.props.winW / 2) / (this.options.parallaxMultiplier * this.layer);
-        this.parallaxOffsetX += (this.parallaxTargX - this.parallaxOffsetX) / 10; // Easing equation
-        this.parallaxTargY = (this.props.pointerY - this.props.winH / 2) / (this.options.parallaxMultiplier * this.layer);
-        this.parallaxOffsetY += (this.parallaxTargY - this.parallaxOffsetY) / 10; // Easing equation
-      }
-
-      var elWidth = this.props.element.offsetWidth * this.props.pixelRatio;
-      var elHeight = this.props.element.offsetHeight * this.props.pixelRatio;
-
-      switch (this.options.directionX) {
-        case 'left':
-          if (this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
-            this.position.x = elWidth - this.parallaxOffsetX;
-          }
-          break;
-        case 'right':
-          if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth) {
-            this.position.x = 0 - this.parallaxOffsetX;
-          }
-          break;
-        default:
-          // If particle has reached edge of canvas, reverse its direction
-          if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth || this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
-            this.speed.x = -this.speed.x;
-          }
-          break;
-      }
-
-      switch (this.options.directionY) {
-        case 'up':
-          if (this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
-            this.position.y = elHeight - this.parallaxOffsetY;
-          }
-          break;
-        case 'down':
-          if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight) {
-            this.position.y = 0 - this.parallaxOffsetY;
-          }
-          break;
-        default:
-          // If particle has reached edge of canvas, reverse its direction
-          if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight || this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
-            this.speed.y = -this.speed.y;
-          }
-          break;
-      }
-
-      // Move particle
-      this.position.x += this.speed.x;
-      this.position.y += this.speed.y;
-    }
-
-    /**
-     * Setter: particle stacking position
-     */
-
-  }, {
-    key: 'setStackPos',
-    value: function setStackPos(i) {
-      this.stackPos = i;
-    }
-  }]);
-
-  return ParticleItem;
-}();
-
-exports.default = Particle;
 
 /***/ })
 /******/ ]);
