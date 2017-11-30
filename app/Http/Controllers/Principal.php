@@ -8,14 +8,15 @@ use Illuminate\Validation\Rule;
 use Validator;
 use App\UsuarioDiagrama;
 use App\Usuario;
+use App\Diagrama;
 
 class Principal extends Controller
 {
   public function ReturnDiagrams(){
-
-  	$diagm = [];
+  	// busca los diagramas del usuario logeado
   	$diag = UsuarioDiagrama::where('id_usuario',Auth::user()->id)->get();
-
+    $diagm = [];
+    // extrae los datos que se necesitan de todos los diagramas
   	foreach ($diag as $key => $value) {
   		$value_= $value->diagramas;
   		$diagm[$key] = [
@@ -27,28 +28,30 @@ class Principal extends Controller
 				'nombreI' => Auth::user()->id.$value_->id.'.png'
 			];
   	}
+    // se retorna la vista llamada principal con los datos de los diagramas y del usuario
   	return view('principal')->with(['datos' => $diagm, 'userData' =>Usuario::find(Auth::user()->id) ]);
   }
-  
-  public function updUsuarios(Request $req){
 
+  // metodo de actualizacion de datos del usuario
+  public function updUsuarios(Request $req){
+    // aplicacion de validaciones
     $validator = $req->validate([
       'username' => 'required|string|max:255|unique:usuarios,username,'.Auth::user()->id,
       'correo' => 'required|string|email|max:255|unique:usuarios,email,'.Auth::user()->id,
       'nombre'  => 'string',
       'apellido'=> 'string'
     ]);
-
+    // validaciones opcionales
     $validator->sometimes('pass', 'string|min:6|confirmed', function ($input) {
       return $input->pass != null;
     });
 
     if ($validator->fails()) {
+      // retornar errores por si fallan las validaciones 
       flash($validator->errors())->error();
       return 'no';
-
     }else{
-
+      // si todo esta bien actualiza el usuario en la base de datos
       $user = Usuario::find(Auth::user()->id);
       $user->username = $req->username;
       $user->nombre = $req->nombre;
@@ -57,5 +60,14 @@ class Principal extends Controller
       $user->save();
       return 'ok';
     }
+  }
+
+  public function editGraph(Request $req){
+
+    $filename = Auth::user()->id.$req->data.'1ja.xml';
+    $f = fopen(public_path().'/diagramasXml/'.$filename,'w+');
+    fwrite($f,Diagrama::find($req->data)->diagrama);
+    fclose($f);
+
   }
 }

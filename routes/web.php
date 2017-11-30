@@ -24,6 +24,7 @@ Route::get('/', function () {
 	return view('landing');
 });
 
+Route::post('editGraph', 'Principal@editGraph');
 
 Route::get('/editor', function() {
     return view('editor.editor');
@@ -31,7 +32,6 @@ Route::get('/editor', function() {
 
 Route::post('api/saveDiagram','DiagramController@store');
 Route::get('/generar', 'DiagramController@Laucher');
-Route::get('/recibir','DiagramController@generate');
 Route::get('plantilla', function (){
 	return view('plantilla');
 });

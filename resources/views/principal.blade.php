@@ -11,8 +11,8 @@
         <div class="card">
           <div class="card-image">
             <img src="{{ asset('diagramasImg/'.$element['nombreI']) }}" width="250" height="250">
-              <a class="btn-floating   halfway-fab waves-effect waves-light degradado"><i class="material-icons">edit</i></a>
-              <a class="btn-floating  halfway-fab waves-effect waves-light degradado"><i class="material-icons">edit</i></a>
+              {{-- <a class="btn-floating   halfway-fab waves-effect waves-light degradado"><i class="material-icons">edit</i></a> --}}
+              <a class="btnEditar btn-floating halfway-fab waves-effect waves-light degradado" data-id="{{$element['id']}}"><i class="material-icons">edit</i></a>
           </div>
           <div class="card-content card-mio">
             <p>{{$element['nombre']}}</p>
@@ -38,6 +38,23 @@
 
 @section('script')
 <script type="text/javascript">
+
+
+
+
+$('.btnEditar').on('click', function(event) {
+
+  $.ajax({
+    url: '{{ url('editGraph') }}',
+    type: 'POST',
+    data: {data: $(this).data('id')},
+  })
+  .done(function() {
+    
+  });
+
+});
+
 
   $('.button-collapse').sideNav();
   @if (empty($datos))
@@ -73,7 +90,7 @@ $('.actUser').on('click', function(event) {
   }
 
   $.ajax({
-    url: 'updUsers',
+    url: '{{ url('updUsers') }}',
     type: 'POST',
     data: {
       id: '{{ Auth::user()->id }}',

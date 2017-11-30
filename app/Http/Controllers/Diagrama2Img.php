@@ -11346,6 +11346,8 @@ class Diagrama2Img extends Controller
   	header("Content-Type: image/png");
   	imagePng($image,public_path().'/diagramasImg/'.substr($filename,0,strpos($filename,'.')).'.png');
 
+  	// probar
+  	unlink($file);
   	
 	}
 }

@@ -1,0 +1,7 @@
+
+  var req = mxUtils.load('diagramasXml/13.xml');
+  var root = req.getDocumentElement();
+	editor.setGraphXml(root)
+
+
+editor.setGraphXml((mxUtils.load('diagramasXml/13.xml')).getDocumentElement())

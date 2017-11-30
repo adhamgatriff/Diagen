@@ -18,6 +18,12 @@ class DiagramController extends Controller
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
+
+	private function trimString($string){
+
+		return str_replace('%C2%A0','',urlencode(str_replace(' ','',$string )));
+	}
+
 	public function store(Request $request)
 	{
 
@@ -92,7 +98,7 @@ class DiagramController extends Controller
 		$errores = false;
 
 
-		$diagrama = Diagrama::find(16);
+		$diagrama = Diagrama::find(1);
 
 		$diag =simplexml_load_string($diagrama->diagrama);
 
@@ -252,7 +258,6 @@ $aux = '';
 					if (isset($celdita[0])){
 						$tipo = $this->Traduct($celdita[0]['nombre'],$celdita['nombre']);
 						if (str_contains($this->primary,$celdita['nombre'])) {
-
 							$aux = strtoupper(trim(str_before($tipo,'(')));
 							$cnx[$cxindex]['desde'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
 
@@ -273,8 +278,9 @@ $aux = '';
 
 					if (isset($celdita[0])){
 						$tipo = $this->Traduct($celdita[0]['nombre'],$celdita['nombre']);
-						if (str_contains($this->primary,$celdita['nombre'])) {
-						
+
+						if (str_contains($this->primary,$this->trimString($celdita['nombre']))) {
+																				
 							if ($aux == strtoupper(trim(str_before($tipo,'(')))) {
 
 								$cnx[$cxindex]['hasta'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
@@ -446,7 +452,7 @@ unset($aux);
 				$var = 'CHAR(150)';
 			}
 
-		}else if (str_contains($tipo, 'VARCHAR') || str_contains($tipo, 'VRCH') || str_contains($tipo, 'str')) {
+		}else if (str_contains($tipo, 'VARCHAR') || str_contains($tipo, 'VRCH') || str_contains($tipo, 'STR')) {
 
 			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'VARCHAR')), '('), ')');
 
@@ -495,9 +501,9 @@ unset($aux);
 			if (!isset($noPrimary)) {
 
 				if ($this->primary=='') {
-					$this->primary = str_slug($cellname);
+					$this->primary = $this->trimString(str_slug($cellname));
 				}else{
-					$this->primary .= ','.str_slug($cellname);
+					$this->primary .= ','.$this->trimString(str_slug($cellname));
 				}
 
 				$var.=' UNIQUE';
@@ -511,9 +517,9 @@ unset($aux);
 			$var = 'INT(6) AUTO_INCREMENT UNIQUE';
 
 			if ($this->primary=='') {
-				$this->primary = str_slug($cellname);
+				$this->primary = $this->trimString(str_slug($cellname));
 			}else{
-				$this->primary .= ','.str_slug($cellname);
+				$this->primary .= ','.$this->trimString(str_slug($cellname));
 			}
 
 		}else if(str_contains($tipo, 'NN') || str_contains($tipo, 'NOT NULL')){
