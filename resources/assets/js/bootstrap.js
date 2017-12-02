@@ -23,6 +23,7 @@ window.axios = require('axios');
 window.validator = require('validator');
 window.particle = require('particleground-light');
 window.granim = require('granim');
+window.redirect = require('jquery.redirect');
 
 
 

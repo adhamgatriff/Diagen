@@ -43,16 +43,14 @@
 
 
 $('.btnEditar').on('click', function(event) {
-
   $.ajax({
     url: '{{ url('editGraph') }}',
     type: 'POST',
-    data: {data: $(this).data('id')},
+    data: {data: $(this).data('id'), '_token': '{{ csrf_token()}}' },
   })
-  .done(function() {
-    
+  .done(function(data) {   
+    $.redirect("{{ url('editor') }}",{ edit: true, name: data.filename},'GET');
   });
-
 });
 
 

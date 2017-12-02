@@ -116,42 +116,34 @@
 		})();
 
 
-
 $(document).ready(() => {
 
+	@if (isset($_GET['edit']))
+		editor.setGraphXml((mxUtils.load('diagramasXml/{{$_GET['name']}}ja.xml')).getDocumentElement())
+		$.post('{{ url('dlteAux') }}', {'filename': '{{$_GET['name']}}ja.xml','_token': '{{csrf_token()}}'})
+	@endif
+
 	editor.graph.setAllowLoops(false)
-	
 	editor.graph.addListener(mxEvent.CELLS_ADDED, (sender, evt) => {
-
 		if (evt.properties.cells["0"].children != null ){
-
 			if ( (evt.properties.cells["0"].children).length==0) {
-
 				// console.log('individual');
 			}else{
-
 				if (evt.properties.cells["0"].children["0"].children!= null ) {
-
 					// console.log('agrupaci');
 					evt.properties.cells["0"].setConnectable(false);
 				}else{
-
 					if ((evt.properties.cells["0"].children).length<2)
 						console.log('individi');
 					else
 						evt.properties.cells["0"].setConnectable(false);
 						console.log('agrupacion');	
 				}
-
 			}
-
 		}else{
-
 			// console.log('flecha') 
 		}
-
 	});
-
 });	
 
 function XMLToString(oXML)

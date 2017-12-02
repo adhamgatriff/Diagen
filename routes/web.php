@@ -30,6 +30,8 @@ Route::get('/editor', function() {
     return view('editor.editor');
 });
 
+route::post('dlteAux','Principal@deleteAuxGraph');
+
 Route::post('api/saveDiagram','DiagramController@store');
 Route::get('/generar', 'DiagramController@Laucher');
 Route::get('plantilla', function (){

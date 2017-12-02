@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -64,10 +63,15 @@ class Principal extends Controller
 
   public function editGraph(Request $req){
 
-    $filename = Auth::user()->id.$req->data.'1ja.xml';
+    $filename = Auth::user()->id.$req->data.'ja.xml';
     $f = fopen(public_path().'/diagramasXml/'.$filename,'w+');
     fwrite($f,Diagrama::find($req->data)->diagrama);
     fclose($f);
 
+    return response()->json(['filename' => Auth::user()->id.$req->data]);
+  }
+
+  public function deleteAuxGraph(Request $r){
+    unlink(public_path().'/diagramasXml/'.$r->filename);
   }
 }
