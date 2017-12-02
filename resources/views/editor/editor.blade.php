@@ -122,7 +122,7 @@ $(document).ready(() => {
 		editor.setGraphXml((mxUtils.load('diagramasXml/{{$_GET['name']}}ja.xml')).getDocumentElement())
 		setTimeout( () => {
 			$.post('{{ url('dlteAux') }}', {'filename': '{{$_GET['name']}}ja.xml','_token': '{{csrf_token()}}'})
-		}, 30000);
+		}, 5000);
 		
 	@endif
 

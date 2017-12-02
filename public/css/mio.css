@@ -18,6 +18,8 @@
 
 }
 
+.tinyModal { width: 50% !important ; height: 40% !important ; } 
+
 nav{
 	height: 50px !important;
     line-height: 50px !important;
@@ -210,10 +212,13 @@ main {
   header, main, footer {
     padding-left: 0;
   }
+  .tinyModal { width: 80% !important ; height: 70% !important ; } 
+
 }@media only screen and (min-width: 601px){
 	.navbar-fixed {
 	    height: 50px;
 	}	
+  .tinyModal { width: 50% !important ; height: 53% !important ; } 
 }
 
 ::-webkit-scrollbar {
