@@ -120,7 +120,10 @@ $(document).ready(() => {
 
 	@if (isset($_GET['edit']))
 		editor.setGraphXml((mxUtils.load('diagramasXml/{{$_GET['name']}}ja.xml')).getDocumentElement())
-		$.post('{{ url('dlteAux') }}', {'filename': '{{$_GET['name']}}ja.xml','_token': '{{csrf_token()}}'})
+		setTimeout( () => {
+			$.post('{{ url('dlteAux') }}', {'filename': '{{$_GET['name']}}ja.xml','_token': '{{csrf_token()}}'})
+		}, 30000);
+		
 	@endif
 
 	editor.graph.setAllowLoops(false)
