@@ -7,7 +7,7 @@
 <h3 class="opensans" style="margin-left: 12px;">Tus diagramas</h3>
 	<div class="row">
     @foreach ($datos as $element)
-       <div class="col s6 m3">
+       <div class="col l3 m6 s12">
         <div class="card exportCard" data-tipo='{{$element['tipo']}}'>
           <div class="card-image">
             <img src="{{ asset('diagramasImg/'.$element['nombreI']) }}" width="250" height="250">
@@ -20,6 +20,12 @@
         </div>
       </div>
     @endforeach
+
+  <div class="fixed-action-btn exportMult" style="right: 100px;">
+    <a style="width: 50px;height: 50px;" class="btn-floating btn-large waves-effect waves-light degradado">
+      <i class="material-icons" style="line-height: 50px;">cloud_download</i>
+    </a>
+  </div>
   <div class="fixed-action-btn">
     <a href="{{ url('editor') }}" id="Nuevo" class="btn-floating btn-large waves-effect waves-light degradado">
       <i class="material-icons">add</i>
@@ -27,24 +33,68 @@
   </div>
 
   <!-- Tap Target Structure -->
-  <div class="tap-target " style="background-color: #4b367c;" data-activates="Nuevo">
-    <div class="tap-target-content " style="color: white;">
+  <div class="tap-target" style="background-color: #4b367c;" data-activates="Nuevo">
+    <div class="tap-target-content" style="color: white;">
       <h5>Hola!! </h5>
       <p>Veo que no tienes diagramas :( <br>puedes crear uno nuevo presionando este boton.</p>
     </div>
   </div>
 
-
   <!-- Modal Structure -->
   <div id="mdExpInd" class="modal modal-fixed-footer tinyModal">
     <div class="modal-content">
       <h4>Exportar Diagrama</h4>
-
       <div class="input-field col s12">
         <select id='langSelect'>
         </select>
         <label>Seleccione lenguaje a exportar</label>
       </div>
+      <input type="hidden" id="idd">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat ">Cerrar</a>&nbsp;
+      <a class="waves-effect waves-light btn degradado">
+        <i class="material-icons left">file_download</i>Exportar
+      </a>
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="mdExpMult" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Exportar Varios Diagrama</h4>
+
+        <div class="row">
+          <div class="col s12">
+            <ul class="tabs tabs-fixed-width" style="overflow: hidden;background: none;">
+              <li class="tab col s6 "><a class="active" href="#clases">Diagrama de Clases</a></li>
+              <li class="tab col s6"><a href="#sql">Modelos Entidad-Relacion</a></li>
+            </ul>
+          </div>
+          <div id="clases" class="col s12">
+            <div class="list-graph">
+              <ul>
+                <li>asdf</li>
+                <li>asf</li>
+                <li>as</li>
+                <li>as</li>
+                <li>asf</li>
+                <li>asffg</li>
+              </ul>
+            </div>
+            <div class="input-field col s12">
+              <select id='langSelect'>
+              </select>
+              <label>Seleccione lenguaje a exportar</label>
+            </div>
+
+
+
+
+          </div>
+
+          <div id="sql" class="col s12">Test 2</div>
+        </div>
 
       <input type="hidden" id="idd">
     </div>
@@ -65,7 +115,17 @@
 
 $(document).ready(function() {
   $('#mdExpInd').modal();
+  $('#mdExpMult').modal();
   $('#langSelect').material_select();
+});
+
+
+$('.exportMult').on('click', function(event) {
+
+
+  
+  $('#mdExpMult').modal('open');
+  setTimeout(function() {$('ul.tabs').tabs()}, 250);
 });
 
 $('.exportCard').on('click', function(event) {
@@ -116,6 +176,7 @@ $('.btnEditar').on('click', function(event) {
 
   $('.button-collapse').sideNav();
   @if (empty($datos))
+    $('.exportMult').hide();
     $('.tap-target').tapTarget('open');
   @endif
 

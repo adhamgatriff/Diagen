@@ -20,6 +20,19 @@
 
 .tinyModal { width: 50% !important ; height: 40% !important ; } 
 
+ul.dropdown-content.select-dropdown li span {
+  color: #311f5f; /* no need for !important :) */
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+  background-color: transparent !important;
+  color: #311f5f !important;
+}
+.tabs .tab a {
+  color: rgba(75 , 54, 124, 0.7) !important;
+}
+
+
 nav{
 	height: 50px !important;
     line-height: 50px !important;
@@ -126,6 +139,10 @@ body {
 main {
 	flex: 1 0 auto;
 	background-color: #f5f0f0;
+}
+
+.tabs .indicator {
+    background-color: #E91E63;
 }
 
 /* label color */
