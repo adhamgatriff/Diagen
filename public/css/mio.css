@@ -13,6 +13,16 @@
 	font-family: "latto";
 
 }
+label {
+    font-size: 0.8rem;
+    color: #E91E63;
+}
+
+.checkbox-morado[type="checkbox"].filled-in:checked + label:after{
+     border: 2px solid #4b367c;
+     background-color: #4b367c;
+}
+
 .opensans{
 	font-family: "openSans";
 

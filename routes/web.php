@@ -44,6 +44,8 @@ Auth::routes();
 
 Route::get('imagen/{id}','Diagrama2Img@Convertir');
 
+Route::post('diagUsuario', 'Principal@diagUsuarios');
+
 Route::get('exportar', function() {
     return view('editor.export');
 });

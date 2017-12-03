@@ -61,9 +61,8 @@
 
   <!-- Modal Structure -->
   <div id="mdExpMult" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>Exportar Varios Diagrama</h4>
-
+    <div class="modal-content" style="padding-bottom: 0px;">
+      <h4>Exportar multiples Diagramas</h4>
         <div class="row">
           <div class="col s12">
             <ul class="tabs tabs-fixed-width" style="overflow: hidden;background: none;">
@@ -72,31 +71,35 @@
             </ul>
           </div>
           <div id="clases" class="col s12">
-            <div class="list-graph">
-              <ul>
-                <li>asdf</li>
-                <li>asf</li>
-                <li>as</li>
-                <li>as</li>
-                <li>asf</li>
-                <li>asffg</li>
-              </ul>
+            <div class="list-graph" style="margin-top: 10px;">
+              <div class="row diagHere" style="overflow-y: auto;">
+              </div>
+              <div class="input-field col s12">
+                <select id='classSelect'>
+                  <option value="" disabled selected>Seleccione uno</option>
+                  <option value='2' data-icon="img/python1.png" class="left circle">Python</option>
+                  <option value='3' data-icon="img/p1.png" class="left circle">PHP</option>
+                  <option value='4' data-icon="img/java.jpg" class="left circle">Java</option>
+                </select>
+                <label>Seleccione lenguaje a exportar</label>
+              </div>
             </div>
-            <div class="input-field col s12">
-              <select id='langSelect'>
-              </select>
-              <label>Seleccione lenguaje a exportar</label>
-            </div>
-
-
-
-
           </div>
-
-          <div id="sql" class="col s12">Test 2</div>
-        </div>
-
-      <input type="hidden" id="idd">
+          <div id="sql" class="col s12">
+            <div class="list-graph" style="margin-top: 10px;">
+              <div class="row sqlHere" style="overflow-y: auto;">
+              </div>
+              <div class="input-field col s12">
+                <select id='sqlSelect'>
+                  <option value="" disabled selected>Seleccione uno</option>
+                  <option value='1' data-icon="img/sql2.png" class="left circle">SQL</option>
+                </select>
+                <label>Seleccione lenguaje a exportar</label>
+              </div>
+            </div>
+          </div>
+        <input type="hidden" id="idd">
+      </div>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat ">Cerrar</a>&nbsp;
@@ -116,14 +119,46 @@
 $(document).ready(function() {
   $('#mdExpInd').modal();
   $('#mdExpMult').modal();
-  $('#langSelect').material_select();
+  // $('#langSelect').material_select();
+  $('#classSelect').material_select();
+  $('#sqlSelect').material_select();
+
+  
 });
 
 
 $('.exportMult').on('click', function(event) {
 
+  $.ajax({
+    url: '{{ url('diagUsuario') }}',
+    type: 'POST',
+    data: { '_token': '{{csrf_token()}}' }
+  })
+  .done(function(data) {
+    $('.sqlHere').empty();
+    $('.diagHere').empty();
+    $('.sqlHere').css('height',$('#mdExpMult > div.modal-content').height()-230);
+    $('.diagHere').css('height',$('#mdExpMult > div.modal-content').height()-230);
 
-  
+
+    $.each( data, function(index, val) {
+      if(val.tipo == 0){
+        $('.sqlHere').append(
+          `<div class="col s6" style ='padding: 10px 0 20px 0;'>
+            <input type="checkbox" class="checkbox-morado filled-in" id="${val.id}" />
+            <label for="${val.id}" style = 'font-size: 16px;'>${val.nombre}</label>
+          </div>`);
+
+      }else if(val.tipo ==1){
+        $('.diagHere').append(
+          `<div class="col s6" style ='padding: 10px 0 20px 0;'>
+            <input type="checkbox" class="checkbox-morado filled-in" id="${val.id}" />
+            <label for="${val.id}" style = 'font-size: 16px;'>${val.nombre}</label>
+          </div>`);
+      }
+    });
+  });
+
   $('#mdExpMult').modal('open');
   setTimeout(function() {$('ul.tabs').tabs()}, 250);
 });

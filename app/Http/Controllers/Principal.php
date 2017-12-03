@@ -11,6 +11,18 @@ use App\Diagrama;
 
 class Principal extends Controller
 {
+
+  public function parseNombre(string $st){
+
+    if(strpos($st,'.') === false){
+
+        $nom = $st;
+      }else{
+        $nom = substr($st,0,strpos($st,'.'));
+      }
+      return $nom;
+  }
+
   public function ReturnDiagrams(){
   	// busca los diagramas del usuario logeado
   	$diag = UsuarioDiagrama::where('id_usuario',Auth::user()->id)->get();
@@ -18,9 +30,10 @@ class Principal extends Controller
     // extrae los datos que se necesitan de todos los diagramas
   	foreach ($diag as $key => $value) {
   		$value_= $value->diagramas;
+
   		$diagm[$key] = [
 				'id' 			=> $value_->id,
-				'nombre' 	=> substr($value_->nombre,0,strpos($value_->nombre,'.')) ,
+				'nombre' 	=>  $this->parseNombre($value_->nombre),
 				'tipo' 		=> $value_->tipo,
 				'act' 		=> $value_->updated_at,
 				'cread' 	=> $value_->created_at,
@@ -73,5 +86,19 @@ class Principal extends Controller
 
   public function deleteAuxGraph(Request $r){
     unlink(public_path().'/diagramasXml/'.$r->filename);
+  }
+
+  public function diagUsuarios(){
+
+    $diag= [];
+    $ud = UsuarioDiagrama::where('id_usuario',Auth::user()->id)->get();
+
+    foreach ($ud as $key => $value) {
+      $diag_ = $value->diagramas; 
+      $diag[$key] = ['id' => $diag_->id,'nombre' => $this->parseNombre($diag_->nombre) ,'tipo' => $diag_->tipo];
+      unset($diag_);
+    }
+
+    return response()->json($diag);
   }
 }
