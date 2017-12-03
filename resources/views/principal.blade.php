@@ -58,7 +58,6 @@
       </a>
     </div>
   </div>
-
   <!-- Modal Structure -->
   <div id="mdExpMult" class="modal modal-fixed-footer">
     <div class="modal-content" style="padding-bottom: 0px;">
@@ -66,14 +65,13 @@
         <div class="row">
           <div class="col s12">
             <ul class="tabs tabs-fixed-width" style="overflow: hidden;background: none;">
-              <li class="tab col s6 "><a class="active" href="#clases">Diagrama de Clases</a></li>
-              <li class="tab col s6"><a href="#sql">Modelos Entidad-Relacion</a></li>
+              <li class="tab col s6 dc_"><a class="dc_act" href="#clases">Diagrama de Clases</a></li>
+              <li class="tab col s6 er_"><a class="er_act" href="#sql">Modelos Entidad-Relacion</a></li>
             </ul>
           </div>
           <div id="clases" class="col s12">
             <div class="list-graph" style="margin-top: 10px;">
-              <div class="row diagHere" style="overflow-y: auto;">
-              </div>
+              <div class="row diagHere" style="overflow-y: auto;"></div>
               <div class="input-field col s12">
                 <select id='classSelect'>
                   <option value="" disabled selected>Seleccione uno</option>
@@ -87,8 +85,7 @@
           </div>
           <div id="sql" class="col s12">
             <div class="list-graph" style="margin-top: 10px;">
-              <div class="row sqlHere" style="overflow-y: auto;">
-              </div>
+              <div class="row sqlHere" style="overflow-y: auto;"></div>
               <div class="input-field col s12">
                 <select id='sqlSelect'>
                   <option value="" disabled selected>Seleccione uno</option>
@@ -135,32 +132,40 @@ $('.exportMult').on('click', function(event) {
     data: { '_token': '{{csrf_token()}}' }
   })
   .done(function(data) {
+    let er =0, dc= 0;
     $('.sqlHere').empty();
     $('.diagHere').empty();
     $('.sqlHere').css('height',$('#mdExpMult > div.modal-content').height()-230);
     $('.diagHere').css('height',$('#mdExpMult > div.modal-content').height()-230);
 
-
     $.each( data, function(index, val) {
       if(val.tipo == 0){
+        er++;
         $('.sqlHere').append(
           `<div class="col s6" style ='padding: 10px 0 20px 0;'>
             <input type="checkbox" class="checkbox-morado filled-in" id="${val.id}" />
             <label for="${val.id}" style = 'font-size: 16px;'>${val.nombre}</label>
           </div>`);
-
       }else if(val.tipo ==1){
+        dc++;
         $('.diagHere').append(
           `<div class="col s6" style ='padding: 10px 0 20px 0;'>
             <input type="checkbox" class="checkbox-morado filled-in" id="${val.id}" />
             <label for="${val.id}" style = 'font-size: 16px;'>${val.nombre}</label>
           </div>`);
       }
+      if(er == 0){
+        $('.er_').hide();
+        $('.dc_act').addClass('active');
+        $('ul.tabs').tabs('select_tab', 'clases');
+      }else if(dc==0){
+        $('.dc_').hide();
+        $('.er_act').addClass('active');
+        $('ul.tabs').tabs('select_tab', 'sql');
+      }
     });
   });
-
-  $('#mdExpMult').modal('open');
-  setTimeout(function() {$('ul.tabs').tabs()}, 250);
+$('#mdExpMult').modal('open');
 });
 
 $('.exportCard').on('click', function(event) {
