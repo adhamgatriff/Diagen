@@ -260,14 +260,15 @@ $('.actUser').on('click', function(event) {
       pass: $('#user_password').val(),
       pass_confirmation: $('#user_password-confirm').val(),
       _token: '{{ csrf_token()}}' 
-
-      },
+    },
   })
   .done(function(data) {
     if(data =='ok'){
       Materialize.toast('Usuario actualizado', 1500)
     }else{
-      location.reload();
+      data.forEach( (el) =>{
+        Materialize.toast(el,1500)
+      })
     }
   })
   .fail(function(data) {

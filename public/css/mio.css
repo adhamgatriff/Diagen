@@ -18,6 +18,13 @@ label {
     color: #E91E63;
 }
 
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 10%;
+  left:7%;  
+}
+
 .checkbox-morado[type="checkbox"].filled-in:checked + label:after{
      border: 2px solid #4b367c;
      background-color: #4b367c;

@@ -46,22 +46,24 @@ class Principal extends Controller
 
   // metodo de actualizacion de datos del usuario
   public function updUsuarios(Request $req){
-    // aplicacion de validaciones
-    $validator = $req->validate([
+
+    $validator = Validator::make($req->all(),[
       'username' => 'required|string|max:255|unique:usuarios,username,'.Auth::user()->id,
       'correo' => 'required|string|email|max:255|unique:usuarios,email,'.Auth::user()->id,
       'nombre'  => 'string',
       'apellido'=> 'string'
     ]);
+    
     // validaciones opcionales
     $validator->sometimes('pass', 'string|min:6|confirmed', function ($input) {
       return $input->pass != null;
     });
 
     if ($validator->fails()) {
-      // retornar errores por si fallan las validaciones 
-      flash($validator->errors())->error();
-      return 'no';
+
+    // retornar errores por si fallan las validaciones 
+      return response()->json($validator->errors()->all());
+
     }else{
       // si todo esta bien actualiza el usuario en la base de datos
       $user = Usuario::find(Auth::user()->id);

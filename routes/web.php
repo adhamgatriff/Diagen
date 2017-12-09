@@ -11,14 +11,12 @@
 |
 */
 
-
 Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('/principal', 'principal@ReturnDiagrams');
 	Route::post('updUsers', 'Principal@updUsuarios');
     // meter diagramas aqui
 });
-
 
 Route::get('/', function () {
 	return view('landing');
@@ -27,7 +25,7 @@ Route::get('/', function () {
 Route::post('editGraph', 'Principal@editGraph');
 
 Route::get('/editor', function() {
-    return view('editor.editor');
+   return view('editor.editor');
 });
 
 route::post('dlteAux','Principal@deleteAuxGraph');
@@ -47,5 +45,5 @@ Route::get('imagen/{id}','Diagrama2Img@Convertir');
 Route::post('diagUsuario', 'Principal@diagUsuarios');
 
 Route::get('exportar', function() {
-    return view('editor.export');
+  return view('editor.export');
 });

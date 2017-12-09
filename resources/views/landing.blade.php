@@ -73,12 +73,12 @@
 			
 		</div>
 	</div>
-
 	
-{{-- <div id="segundo"></div> --}}
-<main id="conent" class="container" style="background-color: #f5f0f0; height: 500px; position: relative;    border-radius: 10px;margin-bottom: 10px;">
-</main>
-
+<div class="row">
+	<main id="conent" class="col m10 s12 offset-m1" style="background-color: #f5f0f0; height: 500px; position: relative;    border-radius: 10px;margin-bottom: 10px;">
+	</main>
+	<div class="col m1 hide-on-small-only"></div>
+</div>
 @endsection
 
 @section('script')
