@@ -82,7 +82,7 @@ class DiagramController extends Controller
 		
 	}
 
-	public function generate($diagrama=''){
+	public function generate($id_diag=''){
 
 		// $diag->root->mxCell todas las celdas de las tablas
 		// parent 1 y sin source ni target son tablas
@@ -98,7 +98,7 @@ class DiagramController extends Controller
 		$errores = false;
 
 
-		$diagrama = Diagrama::find(1);
+		$diagrama = Diagrama::find($id_diag);
 
 		$diag =simplexml_load_string($diagrama->diagrama);
 
@@ -235,9 +235,10 @@ class DiagramController extends Controller
 					}
 				}
 			}
-
-			$string.= ",\r\n\t\nPRIMARY KEY(".$this->primary.")\r\n";
-			$string.= ") ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;\r\n\r\n";
+			if ($this->primary != '') {
+				$string.= ",\r\n\t\nPRIMARY KEY(".$this->primary.")";
+			}
+			$string.= "\r\n) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;\r\n\r\n";
 			$this->primary = '';
 		}
 
@@ -263,14 +264,14 @@ $aux = '';
 
 						}else{
 							$this->error = true; $conxErr = true;
-							$errores = 'Los campos tienen que ser PRIMARY KEY';
+							$errores = 'Los campos tienen que ser PRIMARY KEY <a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
 							break 3;
 
 						}
 					}else{
 
 						$this->error = true; $conxErr = true;
-						$errores = 'Los campos tienen que ser PRIMARY KEY';
+						$errores = 'Los campos tienen que ser PRIMARY KEY <a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
 						break 3;
 					}
 				}
@@ -287,17 +288,18 @@ $aux = '';
 							}else{
 
 								$this->error = true; $conxErr = true;
-								$errores = 'Los campos no coinciden en el tipo de datos ver: https://docs.microsoft.com/es-es/sql/t-sql/data-types/data-types-transact-sql';
+								$errores = 'Los campos no coinciden en el tipo de datos <a href="https://docs.microsoft.com/es-es/sql/t-sql/data-types/data-types-transact-sql" target="_blank"><strong>(Mas informacion)</strong></a>
+								 ';
 								break 3;
 							}
 						}else{
 							$this->error = true; $conxErr = true;
-							$errores = 'Los campos tienen que ser PRIMARY KEY';
+							$errores = 'Los campos tienen que ser PRIMARY KEY <a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
 							break 3;
 						}
 					}else{
 						$this->error = true; $conxErr = true;
-						$errores = 'Los campos tienen que ser PRIMARY KEY';
+						$errores = 'Los campos tienen que ser PRIMARY KEY <a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
 						break 3;
 					}
 				}
@@ -343,7 +345,7 @@ unset($aux);
 		$tipo = strtoupper($tipo);
 		$var='';
 		// tipo de dato numerico
-		if (str_contains($tipo, 'INT')) {
+		if (str_contains($tipo, 'INT') || str_contains($tipo, 'IN')) {
 
 			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'INT')), '('), ')');
 
@@ -539,17 +541,19 @@ unset($aux);
 
 
 	}
-	function Laucher() {
+	function Laucher(Request $req) {
 
-      if ($this->generate()) {
+    if ($this->generate($req->id_diag)) {
 
-      	$f = $this->EntidadRelacion();
-      }else{
+    	$f = $this->EntidadRelacion();
+    }else{
 
-      	$f = $this->DiagramaClases();
-      }
+    	$f = $this->DiagramaClases();
+    }
 
-    return $this->error ? $this->erroresLog : response()->download($f)->deleteFileAfterSend(true);
+    return $this->error ? 
+    	view('error')->with(['erroresLog' => $this->erroresLog]): 
+    	response()->download($f)->deleteFileAfterSend(true);
   }
 
   function __construct(){

@@ -31,7 +31,7 @@ Route::get('/editor', function() {
 route::post('dlteAux','Principal@deleteAuxGraph');
 
 Route::post('api/saveDiagram','DiagramController@store');
-Route::get('/generar', 'DiagramController@Laucher');
+Route::get('generar', 'DiagramController@Laucher');
 Route::get('plantilla', function (){
 	return view('plantilla');
 });
