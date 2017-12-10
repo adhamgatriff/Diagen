@@ -24,6 +24,13 @@ class DiagramController extends Controller
 		return str_replace('%C2%A0','',urlencode(str_replace(' ','',$string )));
 	}
 
+	public function delDiagrama(Request $req){
+
+		UsuarioDiagrama::where('id_diagrama',$req->id)->delete();
+		Diagrama::find($req->id)->delete();
+		return 'ok'; 
+	}
+
 	public function store(Request $request)
 	{
 

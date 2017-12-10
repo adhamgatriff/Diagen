@@ -8,10 +8,14 @@
 	<div class="row">
 		@foreach ($datos as $element)
 			 <div class="col l3 m6 s12">
-				<div class="card exportCard" data-tipo='{{$element['tipo']}}' data-id="{{$element['id']}}">
+				<div class="card exportCard" data-tipo='{{$element['tipo']}}' data-id="{{$element['id']}}" >
+					<div class="delete-diag" style="display: none;" data-name='{{$element['nombre']}}'>
+						<a class="btn-floating btn-large waves-effect waves-light red" style="position: absolute;width: 35px;height: 35px;right:-10px;top:-10px;" >
+							<i class="material-icons" style="line-height: 35px;vertical-align: super;">delete</i>
+						</a>
+					</div>
 					<div class="card-image">
 						<img src="{{ asset('diagramasImg/'.$element['nombreI']) }}" width="250" height="250">
-							{{-- <a class="btn-floating   halfway-fab waves-effect waves-light degradado"><i class="material-icons">edit</i></a> --}}
 							<a class="btnEditar btn-floating halfway-fab waves-effect waves-light degradado" data-id="{{$element['id']}}"><i class="material-icons">edit</i></a>
 					</div>
 					<div class="card-content card-mio">
@@ -104,6 +108,17 @@
 			</a>
 		</div>
 	</div>
+  <div id="deleteDmodal" class="modal bottom-sheet">
+    <div class="modal-content">
+      <h4>Borrar diagrama</h4>
+      <p>¿Esta seguro que desea borrar el diagrama "<strong id='ndm'></strong>"?</p>
+      <input type="hidden" id="idddm">
+    </div>
+    <div class="modal-footer">
+    	<a class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    	<a class="waves-effect waves-light btn degradado Wradius borrarDg">Eliminar</a>
+    </div>
+  </div>
 
 	@include('include.sidenavEu')
 
@@ -115,25 +130,38 @@
 $(document).ready(function() {
 	$('#mdExpInd').modal();
 	$('#mdExpMult').modal();
+	$('#deleteDmodal').modal();
 	// $('#langSelect').material_select();
 	$('#classSelect').material_select();
 	$('#sqlSelect').material_select();
-
-	
 });
-
 
 $('.exp-single').on('click', (evnt) => {
-
-	console.log('asd');
-
 	$.redirect("{{ url('generar') }}",{ id_diag: $('#idd').val()},'GET','_blank');
-
 });
 
+$('.exportCard').on('mouseover', function(){  $(this).children('.delete-diag').show(50); })
+$('.exportCard').on('mouseleave', function(){  $(this).children('.delete-diag').hide(50); })
 
+$('.delete-diag').on('click', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	$('#idddm').val($(this).parent().data('id'));
+	$('#ndm').text($(this).data('name'));
+	$('#deleteDmodal').modal('open');
+});
 
-$('.exportMult').on('click', function(event) {
+$('.borrarDg').on('click', () =>{
+
+	$.post('{{ url('delDiag') }}', {id: $('#idddm').val(),'_token': '{{csrf_token()}}'}, function(data) {
+		if(data == 'ok'){
+			Materialize.toast('Diagrama eliminado',1300)
+			location.reload();
+		}
+	});
+});
+
+$('.exportMult').on('click',(event) => {
 
 	$.ajax({
 		url: '{{ url('diagUsuario') }}',
