@@ -16,7 +16,9 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/principal', 'principal@ReturnDiagrams');
 	Route::post('updUsers', 'Principal@updUsuarios');
 	Route::post('delDiag', 'DiagramController@delDiagrama');
-    // meter diagramas aqui
+    Route::get('/editor', function() {
+	   return view('editor.editor');
+	});
 });
 
 Route::get('/', function () {
@@ -25,14 +27,14 @@ Route::get('/', function () {
 
 Route::post('editGraph', 'Principal@editGraph');
 
-Route::get('/editor', function() {
-   return view('editor.editor');
-});
+
 
 route::post('dlteAux','Principal@deleteAuxGraph');
 
 Route::post('api/saveDiagram','DiagramController@store');
 Route::get('generar', 'DiagramController@Laucher');
+Route::post('generarpost', 'DiagramController@Laucher');
+
 Route::get('plantilla', function (){
 	return view('plantilla');
 });

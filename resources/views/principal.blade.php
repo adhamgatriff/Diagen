@@ -261,7 +261,6 @@ $('.exportCard').on('click', function(event) {
 });
 
 
-
 $('.btnEditar').on('click', function(event) {
 	event.preventDefault();
 	event.stopPropagation();

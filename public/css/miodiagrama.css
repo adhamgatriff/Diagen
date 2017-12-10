@@ -48,7 +48,7 @@ input:not([type]){
       height: 1rem;
 }
 
-select{
+select:not(.muereSlct){
   height: 1rem;
   display: unset;
 }

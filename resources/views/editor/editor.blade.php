@@ -69,7 +69,16 @@
 		<div class="modal-content">
 			<h4>Exportar Diagrama</h4>
 			<div class="input-field col s12">
-				<select id='langSelect'>
+				<select id='langSelect' class="muereSlct">
+					@if ($_GET['t']==1)
+						<option value="" disabled selected>Seleccione uno</option>
+						<option value='2' data-icon="img/python1.png" class="left circle">Python</option>
+						<option value='3' data-icon="img/p1.png" class="left circle">PHP</option>
+						<option value='4' data-icon="img/java.jpg" class="left circle">Java</option>
+					@elseif($_GET['t']==0)
+							<option value="" disabled selected>Seleccione uno</option>
+							<option value='1' data-icon="img/sql2.png" class="left circle">SQL</option>
+					@endif
 				</select>
 				<label>Seleccione lenguaje a exportar</label>
 			</div>
@@ -85,10 +94,6 @@
 
 	<script type="text/javascript">
 
-		$(document).ready(function() {
-			$('#mdExpInd').modal();
-			$('#langSelect').material_select();
-		});
 		var editor, mxeditor;
 		// Extends EditorUi to update I/O action states based on availability of backend
 		(function main (container)
@@ -141,11 +146,12 @@
 			{
 				document.body.innerHTML = '<center style="margin-top:10%;">Error cargando los archivos. Please check browser console.</center>';
 			});
-
 		})();
 
 
 $(document).ready(() => {
+	$('#mdExpInd').modal();
+	$('#langSelect').material_select();
 
 	@if (isset($_GET['edit']))
 		editor.setGraphXml((mxUtils.load('diagramasXml/{{$_GET['name']}}ja.xml')).getDocumentElement())
@@ -178,18 +184,22 @@ $(document).ready(() => {
 	});
 });	
 
-function XMLToString(oXML)
-{
+
+
+function XMLToString(oXML){
  //code for IE
  if (window.ActiveXObject) {
  var oString = oXML.xml; return oString;
  } 
  // code for Chrome, Safari, Firefox, Opera, etc.
  else {
- return (new XMLSerializer()).serializeToString(oXML);
- }
- }
+ 	return (new XMLSerializer()).serializeToString(oXML);
+	}
+}
 
+$('.exp-single').on('click', (evnt) => {
+	$.redirect("{{ url('generar') }}",{ diag_c: encodeURI(XMLToString(editor.getGraphXml())),name:encodeURI(this.editor.getOrCreateFilename()),t: {{$_GET['t']}} },'GET','_blank');
+});
 
 /**
  * Adds the label menu items to the given menu and parent.
@@ -222,13 +232,9 @@ EditorUi.prototype.saveFile = function(forceDialog)
 		.done( () => {
 			console.log("success");
 		});
-
-
 		this.save(this.editor.getOrCreateFilename());
 	}
-	else
-	{
-
+	else{
 		var dlg = new FilenameDialog(this, this.editor.getOrCreateFilename(), mxResources.get('save'), mxUtils.bind(this, function(name)
 		{
 

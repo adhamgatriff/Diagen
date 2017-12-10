@@ -82,7 +82,7 @@ Actions.prototype.init = function()
 		ui.saveFile(true); 
 		}, null, null, 'Ctrl+Shift+S').isEnabled = isGraphEnabled;
 
-	this.addAction('export...', function() { ui.showDialog(new ExportDialog(ui).container, 300, 230, true, true); });
+	this.addAction('export...', function() { $('#mdExpInd').modal('open'); });
 	this.addAction('editDiagram...', function()
 	{
 		var dlg = new EditDiagramDialog(ui);

@@ -89,7 +89,7 @@ class DiagramController extends Controller
 		
 	}
 
-	public function generate($id_diag=''){
+	public function generate($id_diag='',$dxml= '', $nam_='',$t=''){
 
 		// $diag->root->mxCell todas las celdas de las tablas
 		// parent 1 y sin source ni target son tablas
@@ -104,10 +104,18 @@ class DiagramController extends Controller
 		// errores?
 		$errores = false;
 
+		if ($dxml!='') {
+			$diag =simplexml_load_string($dxml);
+			$this->nombre = $nam_;
+			$tipo = $t;
+		}else{
+			$diagrama = Diagrama::find($id_diag);
+			$diag = simplexml_load_string($diagrama->diagrama);
+			$this->nombre = $diagrama->nombre;
+			$tipo = $diagrama->tipo;
+		}
 
-		$diagrama = Diagrama::find($id_diag);
-
-		$diag =simplexml_load_string($diagrama->diagrama);
+		// dd($diag);
 
 		foreach ($diag->root->mxCell as $key => $value) {
 
@@ -195,10 +203,10 @@ class DiagramController extends Controller
 		$this->tablas = $tablas;
 		$this->celdas = $celdas;
 		$this->conexiones = $conexiones;
-		$this->nombre = $diagrama->nombre;
+		
 
 		// cambiar status por tipo, estatus por ahora mientras se hace el refresh OJOJOJO
-		if ($diagrama->status==0) {
+		if ($tipo ==0 ) {
 			// CAMBIAR EL STATUS
 			return true;
 		}else{
@@ -550,7 +558,19 @@ unset($aux);
 	}
 	function Laucher(Request $req) {
 
-    if ($this->generate($req->id_diag)) {
+	// diag_c diagrama xml
+	// id_diag diagrama para buscarlo
+		
+		if(isset($req->diag_c)) {
+			$dxml = urldecode($req->diag_c);
+			$name= urldecode($req->name);
+			$t = $req->t;
+		}else{
+			$dxml='';$name='';$t='';
+		}
+
+
+    if ($this->generate($req->id_diag,$dxml,$name,$t)) {
 
     	$f = $this->EntidadRelacion();
     }else{

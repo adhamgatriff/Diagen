@@ -11,7 +11,7 @@
     <title>Ups!!</title>
 
     <!-- Styles -->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/mio.css') }}">
     @yield('mascss')
@@ -21,12 +21,10 @@
       <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-
-          <a @guest href="{{ url('/') }}" @endguest @auth href="{{ url('/principal') }}" @endauth class="brand-logo">
+          <a @guest href="{{ url('/')}}" @endguest @auth href="{{ url('/principal') }}" @endauth class="brand-logo">
             <img src="{{ asset('img/logo2.png') }}" style="width: 17%;margin-left: 10px;">
           </a>
           <a href="#" data-activates="slide-out-" class="button-collapse"><i class="material-icons">menu</i></a>
-         
         </div>
       </nav>
     </div>
@@ -34,24 +32,21 @@
         <div class="col m12 s12 ">
           <h2 class="center" style="color: white;position: sticky;">Ups!!</h2>
           <p class="center flow-text" style="color:white;position: sticky;">
-            Algo ha salido mal generando tu diagrama :(
+            Pagina no encontrada :(
+						<p class="center flow-text" style="color:white;position: sticky;">
+							Si intentabas exportar un diagrama vuelve a cargar esta pagina :D
+						</p>
           </p>
-          <div class="container" style="background-color: white;border-radius: 5px; padding: 10px; position: sticky;">
-            <p style="font-size: 17px;">{!! $erroresLog !!}</p> 
-          </div>
-          @auth
-            @isset ($_GET['id_diag'])
-              <div align="center" style="margin-top: 20px;">
-                <a class="waves-effect waves-light btn degradado btnEditar">
-                  <i class="material-icons left">edit</i>Editar diagrama
-                </a>
-              </div>
-            @endisset
-          @endauth
         </div>
       </div>
+      @auth
+      	<div align="center" style="margin-top: 20px;">
+	        <a href="{{ url('principal') }}" class="waves-effect waves-light btn degradado btnEditar">
+	          Volver al menu principal
+	        </a>
+	      </div>
+      @endauth
     </div>
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript">
@@ -62,23 +57,7 @@
             density: 9000,
             parallax: true
         }); 
-
-        // $('.container').css('height',$('.pg-canvas').height()-350);
       });
-  @isset ($_GET['id_diag'])
-    $('.btnEditar').on('click', function(event) {
-
-      $.ajax({
-        url: '{{ url('editGraph') }}',
-        type: 'POST',
-        data: {data: {{$_GET['id_diag']}} , '_token': '{{ csrf_token()}}' },
-      })
-      .done(function(data) {   
-        $.redirect("{{ url('editor') }}",{ edit: true, name: data.filename},'GET');
-      });
-    });
-  @endisset
-
     </script>
 </body>
 </html>
