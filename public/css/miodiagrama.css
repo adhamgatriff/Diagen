@@ -31,3 +31,24 @@
 body{
 	font-family: "Roboto";
 }
+
+*, *:before, *:after {
+    -webkit-box-sizing: unset;
+    box-sizing: unset;
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked,[type="radio"]:not(:checked), [type="radio"]:checked {
+    position: unset;
+    opacity: 1;
+    pointer-events: none;
+}
+
+input:not([type]){
+      border-bottom: none;
+      height: 1rem;
+}
+
+select{
+  height: 1rem;
+  display: unset;
+}

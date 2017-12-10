@@ -24,7 +24,7 @@
 				</div>
 			</div>
 		@endforeach
-
+	</div>
 	<div class="fixed-action-btn exportMult" style="right: 100px;">
 		<a style="width: 50px;height: 50px;" class="btn-floating btn-large waves-effect waves-light degradado">
 			<i class="material-icons" style="line-height: 50px;">cloud_download</i>

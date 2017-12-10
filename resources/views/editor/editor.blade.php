@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app()->getLocale() }}">
 <head>
 	<title>Editor de diagramas</title>
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	{{-- <link rel="stylesheet" href="{{mix('css/app.css')}}"> --}}
+	<link rel="stylesheet" href="{{mix('css/app.css')}}">
+	<link rel="stylesheet" href="{{ asset('css/mio.css') }}">
+	<link rel="icon" href="{{ asset('img/ico32x32.ico') }}" type="image/ico" sizes="32x32">
 	<link rel="stylesheet" href="{{ asset('css/miodiagrama.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('styles/grapheditor.css') }}">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -55,9 +57,13 @@
 	<script type="text/javascript" src="{{asset('js/js/Toolbar.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/js/Dialogs.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/js/jquery-3.2.1.min.js')}}"></script>
+	<script src='{{mix("js/app.js")}}'></script>
+	<script type="text/javascript" src="{{ asset('js/mio.js') }}"></script>
 </head>
-<body class="geEditor" id="editorGeneral">
-	{{-- @include('include.navbar') --}}
+<body>
+	@include('editor.navdiagrama')
+	<div class="geEditor" id="editorGeneral">
+
 
 	<script type="text/javascript">
 		var editor, mxeditor;
@@ -246,7 +252,7 @@ EditorUi.prototype.saveFile = function(forceDialog)
 	}
 };
 
-	</script>
-
+		</script>
+	</div>
 </body>
 </html>

@@ -175,15 +175,18 @@
 	opacity: .5;
 }
 .gePrimaryBtn {
-	background-color: #4d90fe;
-	background-image: linear-gradient(#4d90fe 0px,#4787ed 100%);
-	border: 1px solid #3079ed;
+	/*background-color: #4d90fe;*/
+	background: linear-gradient(to right, #E91E63,#311f5f);
+	/*background-image: linear-gradient(#4d90fe 0px,#4787ed 100%);*/
+	/*border: 1px solid #3079ed;*/
 	color: #fff;
+	font-size: 13px;
+    font-weight: 300;
 }
 .gePrimaryBtn:hover, .gePrimaryBtn:focus {
-	background-color: #357ae8;
-	background-image: linear-gradient(#4d90fe 0px,#357ae8 100%);
-	border: 1px solid #2f5bb7;
+	background: #4b367c;
+	/*background-image: linear-gradient(#4d90fe 0px,#357ae8 100%);*/
+	/*border: 1px solid #2f5bb7;*/
 	color: #fff;
 }
 .gePrimaryBtn:disabled {
@@ -195,6 +198,7 @@
 	text-decoration:none;
 }
 .geMenubarContainer {
+	top: 30px !important;
 	background-color:#ffffff;
 }
 .geMenubar {
@@ -224,6 +228,7 @@
 	border:1px solid #d5d5d5 !important;
 }
 .geToolbarContainer {
+	top: 60px !important;
 	background:whiteSmoke;
 	border-bottom:1px solid #e0e0e0;
 }
@@ -312,6 +317,7 @@ div.mxWindow .geButton {
 	border-style: solid;
 	border-color: #e5e5e5;
 	border-width: 1px 0px 0px 1px;
+	top: 95px !important;
 }
 .geSidebarContainer {
 	background:#ffffff;
@@ -319,6 +325,7 @@ div.mxWindow .geButton {
 	position:absolute;
 	border-top:1px solid #e5e5e5;
 	overflow:auto;
+	top: 95px !important;
 }
 .geSidebar {
 	background:whiteSmoke;
@@ -417,6 +424,7 @@ div.mxWindow .geButton {
 	white-space:nowrap;
 }
 .geHsplit {
+	top: 95px !important;
 	cursor:col-resize;
 	background-color:#e5e5e5;
 	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHBAMAAADdS/HjAAAAGFBMVEUzMzP///9tbW1QUFCKiopBQUF8fHxfX1/IXlmXAAAAHUlEQVQImWMQEGAQFWUQFmYQF2cQEmIQE2MQEQEACy4BF67hpEwAAAAASUVORK5CYII=);
