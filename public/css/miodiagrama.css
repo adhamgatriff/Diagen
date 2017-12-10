@@ -32,7 +32,7 @@ body{
 	font-family: "Roboto";
 }
 
-*, *:before, *:after {
+*:not(.modal), *:before, *:after {
     -webkit-box-sizing: unset;
     box-sizing: unset;
 }
@@ -51,4 +51,9 @@ input:not([type]){
 select{
   height: 1rem;
   display: unset;
+}
+
+.modal.modal-fixed-footer .modal-content, .modal .modal-footer {
+    width: -webkit-fill-available;
+    width: -moz-available;
 }

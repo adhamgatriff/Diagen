@@ -30,21 +30,34 @@
 			<i class="material-icons" style="line-height: 50px;">cloud_download</i>
 		</a>
 	</div>
-	<div class="fixed-action-btn">
-		<a href="{{ url('editor') }}" id="Nuevo" class="btn-floating btn-large waves-effect waves-light degradado">
+	<div class="fixed-action-btn modal-trigger" href="#modaladd">
+		<a id="Nuevo" class="btn-floating btn-large waves-effect waves-light degradado">
 			<i class="material-icons">add</i>
 		</a>
 	</div>
-
-	<!-- Tap Target Structure -->
 	<div class="tap-target" style="background-color: #4b367c;" data-activates="Nuevo">
 		<div class="tap-target-content" style="color: white;">
 			<h5>Hola!! </h5>
 			<p>Veo que no tienes diagramas :( <br>puedes crear uno nuevo presionando este boton.</p>
 		</div>
 	</div>
-
-	<!-- Modal Structure -->
+  <div id="modaladd" class="modal">
+    <div class="modal-content">
+      <h5>Nuevo diagrama</h5>
+      <div class="input-field col s12" style="margin: 50px 0 70px 0;">
+				<select id='ediSelect'>
+					<option value="" disabled selected>Seleccione uno</option>
+					<option value="0">Modelo Entidad-Relacion</option>
+					<option value="1">Diagrama de Clases</option>
+				</select>
+				<label>Seleccione el tipo de diagrama a crear</label>
+			</div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+      <a class="waves-effect waves-light btn degradado Wradius goEdit">Ir al editor</a>
+    </div>
+  </div>
 	<div id="mdExpInd" class="modal modal-fixed-footer tinyModal">
 		<div class="modal-content">
 			<h4>Exportar Diagrama</h4>
@@ -62,7 +75,6 @@
 			</a>
 		</div>
 	</div>
-	<!-- Modal Structure -->
 	<div id="mdExpMult" class="modal modal-fixed-footer">
 		<div class="modal-content" style="padding-bottom: 0px;">
 			<h4>Exportar multiples Diagramas</h4>
@@ -130,10 +142,23 @@
 $(document).ready(function() {
 	$('#mdExpInd').modal();
 	$('#mdExpMult').modal();
+	$('.modal').modal();
 	$('#deleteDmodal').modal();
-	// $('#langSelect').material_select();
+	$('#ediSelect').material_select();
 	$('#classSelect').material_select();
 	$('#sqlSelect').material_select();
+});
+
+
+$('.goEdit').on('click', () => {
+
+	if($('#ediSelect').val()==''){
+
+		Materialize.toast('Seleccione un tipo de diagrama',1000);
+	}else{
+		$.redirect("{{ url('editor') }}",{t: $('#ediSelect').val()},'GET');
+	}
+
 });
 
 $('.exp-single').on('click', (evnt) => {
@@ -240,14 +265,15 @@ $('.exportCard').on('click', function(event) {
 $('.btnEditar').on('click', function(event) {
 	event.preventDefault();
 	event.stopPropagation();
-
+	console.log();
+	let m = $(this).parent().parent().data('tipo');
 	$.ajax({
 		url: '{{ url('editGraph') }}',
 		type: 'POST',
 		data: {data: $(this).data('id'), '_token': '{{ csrf_token()}}' },
 	})
 	.done(function(data) {   
-		$.redirect("{{ url('editor') }}",{ edit: true, name: data.filename},'GET');
+		$.redirect("{{ url('editor') }}",{edit:true, name: data.filename,t: m},'GET');
 	});
 });
 

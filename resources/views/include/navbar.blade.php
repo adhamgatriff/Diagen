@@ -3,7 +3,7 @@
     <div class="nav-wrapper">
 
       <a @guest href="{{ url('/') }}" @endguest @auth href="{{ url('/principal') }}" @endauth class="brand-logo">
-        <img src="{{ asset('img/logo2.png') }}" style="width: 17%;margin-left: 10px;">
+        <img src="{{ asset('img/logo2.png') }}" style="width: 75px;margin-left: 10px;">
       </a>
       <a href="#" data-activates="slide-out-" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">

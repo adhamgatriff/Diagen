@@ -63,9 +63,32 @@
 <body>
 	@include('editor.navdiagrama')
 	<div class="geEditor" id="editorGeneral">
-
+	</div>
+	<!-- Modal Structure -->
+	<div id="mdExpInd" class="modal modal-fixed-footer tinyModal">
+		<div class="modal-content">
+			<h4>Exportar Diagrama</h4>
+			<div class="input-field col s12">
+				<select id='langSelect'>
+				</select>
+				<label>Seleccione lenguaje a exportar</label>
+			</div>
+			<input type="hidden" id="idd">
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat ">Cerrar</a>&nbsp;
+			<a class="waves-effect waves-light btn degradado exp-single">
+				<i class="material-icons left">file_download</i>Exportar
+			</a>
+		</div>
+	</div>
 
 	<script type="text/javascript">
+
+		$(document).ready(function() {
+			$('#mdExpInd').modal();
+			$('#langSelect').material_select();
+		});
 		var editor, mxeditor;
 		// Extends EditorUi to update I/O action states based on availability of backend
 		(function main (container)
@@ -253,6 +276,6 @@ EditorUi.prototype.saveFile = function(forceDialog)
 };
 
 		</script>
-	</div>
+
 </body>
 </html>
