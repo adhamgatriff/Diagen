@@ -115,8 +115,6 @@ class DiagramController extends Controller
 			$tipo = $diagrama->tipo;
 		}
 
-		// dd($diag);
-
 		foreach ($diag->root->mxCell as $key => $value) {
 
 			if ((int) $value->attributes()->parent==1) {
@@ -140,7 +138,9 @@ class DiagramController extends Controller
 					}
 				}else {
 				// tabla
-					$tablas[] = ['id' => (int) $value->attributes()->id,'nombre'=> (string) $value->attributes()->value];
+					if (!str_contains((string) $value->attributes()->style,'shape')) {
+						$tablas[] = ['id' => (int) $value->attributes()->id,'nombre'=> (string) $value->attributes()->value];
+					}
 				}
 			}else if ((int)$value->attributes()->parent !=1 && (int) $value->attributes()->parent > 0){
 				// es una celda no tabla
@@ -581,7 +581,7 @@ unset($aux);
     	return view('error')->with(['erroresLog' => $this->erroresLog]);
     }else{
     	$d = Diagrama::find($req->id_diag);
-    	if($d->status==1){$d->delete();}
+    	// if($d->status==1){$d->delete();}
     	return response()->download($f)->deleteFileAfterSend(true);
     }	
   }
