@@ -263,15 +263,15 @@ $('.exportCard').on('click', function(event) {
 $('.btnEditar').on('click', function(event) {
 	event.preventDefault();
 	event.stopPropagation();
-	console.log();
+	let as = $(this).data('id') 
 	let m = $(this).parent().parent().data('tipo');
 	$.ajax({
 		url: '{{ url('editGraph') }}',
 		type: 'POST',
 		data: {data: $(this).data('id'), '_token': '{{ csrf_token()}}' },
 	})
-	.done(function(data) {   
-		$.redirect("{{ url('editor') }}",{edit:true, name: data.filename,t: m},'GET');
+	.done(function(data) {  
+		$.redirect("{{ url('editor') }}",{edit:true, name: data.filename,id:as,t: m},'GET','_blank');
 	});
 });
 

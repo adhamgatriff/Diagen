@@ -205,9 +205,11 @@ $('.exp-single').on('click', (evnt) => {
 /**
  * Adds the label menu items to the given menu and parent.
  */
+var id_diagrama;
 EditorUi.prototype.saveFile = function(forceDialog)
 {
 
+	
 	if (!forceDialog && this.editor.filename != null)
 	{
 		
@@ -217,23 +219,45 @@ EditorUi.prototype.saveFile = function(forceDialog)
 		let node = enc.encode(editor.graph.view);
 		let xml = mxUtils.getXml(node);
 
+	@if (isset($_GET['id']))
 		$.ajax({
 			url: '{{ url('api/saveDiagram') }}',
 			type: 'POST',
 			data: { 
-					acc: 'new',
+					id_diagrama: {{$_GET['id']}},
+					acc: 'edit',
 					nombre, 
 					diagrama,
-					userid : '{{Auth::user()->id}}',
-					tipo: 0,
 					xml,
 					"_token": "{{ csrf_token() }}",
 					},
 		})
 		.done( () => {
-			console.log("success");
+			Materialize.toast('Diagrama editado correctamente', 1500)
 		});
+
+		@else
+			$.ajax({
+				url: '{{ url('api/saveDiagram') }}',
+				type: 'POST',
+				data: { 
+						acc: 'edit',
+						nombre,
+						id_diagrama: id_diagrama, 
+						diagrama,
+						xml,
+						"_token": "{{ csrf_token() }}",
+						},
+			})
+			.done( (data) => {
+				
+				Materialize.toast('Diagrama guardado', 1500)
+			});
+
+	@endif
+
 		this.save(this.editor.getOrCreateFilename());
+
 	}
 	else{
 		var dlg = new FilenameDialog(this, this.editor.getOrCreateFilename(), mxResources.get('save'), mxUtils.bind(this, function(name)
@@ -245,26 +269,47 @@ EditorUi.prototype.saveFile = function(forceDialog)
 		let node = enc.encode(editor.graph.view);
 		let xml = mxUtils.getXml(node);
 		
-		$.ajax({
-			url: '{{ url('api/saveDiagram') }}',
-			type: 'POST',
-			data: { 
-					acc: 'edit',
-					userid : '{{Auth::user()->id}}',
-					nombre, 
-					diagrama,
-					tipo: 0,
-					xml,
-					"_token": "{{ csrf_token() }}",
-					},
-		})
-		.done(() => {
-			console.log("success");
-		});
+		@if (isset($_GET['id']))
+			$.ajax({
+				url: '{{ url('api/saveDiagram') }}',
+				type: 'POST',
+				data: { 
+						acc: 'edit',
+						id_diagrama: {{$_GET['id']}},
+						nombre, 
+						diagrama,
+						xml,
+						"_token": "{{ csrf_token() }}",
+						},
+			})
+			.done( () => {
+				Materialize.toast('Diagrama editado correctamente', 1500)
+			});
 
+			@else
+			// usar el id que devolvio el primer guardado
+				$.ajax({
+					url: '{{ url('api/saveDiagram') }}',
+					type: 'POST',
+					data: { 
+							acc: 'new',
+							userid : '{{Auth::user()->id}}',
+							nombre, 
+							diagrama,
+							tipo: 0,
+							xml,
+							"_token": "{{ csrf_token() }}",
+							},
+				})
+				.done((data) => {
+					
+					id_diagrama = parseInt(data);
+					console.log(id_diagrama);
+					Materialize.toast('Diagrama editado correctamente', 1500)
+				});
 
-		this.save(name);
-
+		@endif
+			this.save(name);
 
 		}), null, mxUtils.bind(this, function(name)
 		{

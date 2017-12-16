@@ -34,7 +34,7 @@ class DiagramController extends Controller
 	public function store(Request $request)
 	{
 
-		// if ($request->acc=='new') {
+		if ($request->acc=='new') {
 			// dd($request->userid);
 		// dd(Diagrama::where('nombre',$request->nombre)->select('id')->first());
 // dd(UsuarioDiagrama::where(['id_diagrama',$request->id_diagrama])->count());
@@ -56,22 +56,27 @@ class DiagramController extends Controller
 			fwrite($f,$request->xml);
 			fclose($f);
 
-			dd(app('App\Http\Controllers\Diagrama2Img')->Convertir($filename));
+			return $diagrama->id;
 
-		// }else if($request->acc == 'edit'){
+			app('App\Http\Controllers\Diagrama2Img')->Convertir($filename);
+
+		}else if($request->acc == 'edit'){
 
 		// dd(UsuarioDiagrama::find($request->id_diagrama)->count());
 
+			$eud = Diagrama::find($request->id_diagrama);
+			$eud->nombre = $request->nombre;
+			$eud->diagrama = $request->diagrama;
+			$eud->status = 0;
+			$eud->save();
 
+			$filename = Auth::user()->id.$request->id_diagrama.'.xml';
+			$f = fopen(public_path().'/diagramasXml/'.$filename,'w+');
+			fwrite($f,$request->xml);
+			fclose($f);
 
-		// 	$eud = UsuarioDiagrama::find($request->id_diagrama)->select('id_diagrama');
-		// 	$eud->nombre = $request->nombre;
-		// 	$eud->diagrama = $request->diagrama;
-		// 	$eud->status = 0;
-		// 	$eud->tipo = $request->tipo;
-		// 	$eud->save();
-
-		// }
+			app('App\Http\Controllers\Diagrama2Img')->Convertir($filename);
+		}
 		
 		return 'ok';
 	}
