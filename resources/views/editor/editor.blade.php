@@ -184,8 +184,6 @@ $(document).ready(() => {
 	});
 });	
 
-
-
 function XMLToString(oXML){
  //code for IE
  if (window.ActiveXObject) {
@@ -198,7 +196,10 @@ function XMLToString(oXML){
 }
 
 $('.exp-single').on('click', (evnt) => {
-	$.redirect("{{ url('generar') }}",{ diag_c: encodeURI(XMLToString(editor.getGraphXml())),name:encodeURI(this.editor.getOrCreateFilename()),t: {{$_GET['t']}} },'GET','_blank');
+
+	$.post('{{ url('exportByEditor') }}',{ diag_c: XMLToString(editor.getGraphXml()),name:this.editor.getOrCreateFilename(),t: {{$_GET['t']}},_token:'{{csrf_token()}}' }, function(data, textStatus, xhr) {
+		$.redirect("{{ url('generar') }}",{ id_diag: data},'GET','_blank');
+	});
 });
 
 /**

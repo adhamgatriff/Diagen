@@ -270,10 +270,10 @@ $aux = '';
 			foreach ($c as $k => $celdita) {
 				
 				if ($conexiones['desde'] == $k) {
-
 					if (isset($celdita[0])){
-						$tipo = $this->Traduct($celdita[0]['nombre'],$celdita['nombre']);
-						if (str_contains($this->primary,$celdita['nombre'])) {
+						$tipo = $this->Traduct($celdita[0]['nombre'],str_slug($celdita['nombre'], '_'));
+
+						if (str_contains($this->primary,str_slug($celdita['nombre'], '_'))) {
 							$aux = strtoupper(trim(str_before($tipo,'(')));
 							$cnx[$cxindex]['desde'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
 
@@ -286,22 +286,22 @@ $aux = '';
 					}else{
 
 						$this->error = true; $conxErr = true;
-						$errores = 'Los campos tienen que ser PRIMARY KEY <a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
+						$errores = 'Los campos tienen que ser PRIMARY KEY<a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
 						break 3;
 					}
 				}
 				if ($conexiones['hasta'] == $k) {
 
 					if (isset($celdita[0])){
-						$tipo = $this->Traduct($celdita[0]['nombre'],$celdita['nombre']);
+						$tipo = $this->Traduct($celdita[0]['nombre'],str_slug($celdita['nombre'], '_'));
 
-						if (str_contains($this->primary,$this->trimString($celdita['nombre']))) {
-																				
+						if (str_contains($this->primary,str_slug($celdita['nombre'], '_'))) {
+										
 							if ($aux == strtoupper(trim(str_before($tipo,'(')))) {
 
 								$cnx[$cxindex]['hasta'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
 							}else{
-
+								dd($conexiones);
 								$this->error = true; $conxErr = true;
 								$errores = 'Los campos no coinciden en el tipo de datos <a href="https://docs.microsoft.com/es-es/sql/t-sql/data-types/data-types-transact-sql" target="_blank"><strong>(Mas informacion)</strong></a>
 								 ';
@@ -518,9 +518,9 @@ unset($aux);
 			if (!isset($noPrimary)) {
 
 				if ($this->primary=='') {
-					$this->primary = $this->trimString(str_slug($cellname));
+					$this->primary = $this->trimString(str_slug($cellname, '_'));
 				}else{
-					$this->primary .= ','.$this->trimString(str_slug($cellname));
+					$this->primary .= ','.$this->trimString(str_slug($cellname, '_'));
 				}
 
 				$var.=' UNIQUE';
@@ -534,9 +534,9 @@ unset($aux);
 			$var = 'INT(6) AUTO_INCREMENT UNIQUE';
 
 			if ($this->primary=='') {
-				$this->primary = $this->trimString(str_slug($cellname));
+				$this->primary = $this->trimString(str_slug($cellname, '_'));
 			}else{
-				$this->primary .= ','.$this->trimString(str_slug($cellname));
+				$this->primary .= ','.$this->trimString(str_slug($cellname, '_'));
 			}
 
 		}else if(str_contains($tipo, 'NN') || str_contains($tipo, 'NOT NULL')){
@@ -569,7 +569,6 @@ unset($aux);
 			$dxml='';$name='';$t='';
 		}
 
-
     if ($this->generate($req->id_diag,$dxml,$name,$t)) {
 
     	$f = $this->EntidadRelacion();
@@ -578,9 +577,13 @@ unset($aux);
     	$f = $this->DiagramaClases();
     }
 
-    return $this->error ? 
-    	view('error')->with(['erroresLog' => $this->erroresLog]): 
-    	response()->download($f)->deleteFileAfterSend(true);
+    if ($this->error ) {
+    	return view('error')->with(['erroresLog' => $this->erroresLog]);
+    }else{
+    	$d = Diagrama::find($req->id_diag);
+    	if($d->status==1){$d->delete();}
+    	return response()->download($f)->deleteFileAfterSend(true);
+    }	
   }
 
   function __construct(){

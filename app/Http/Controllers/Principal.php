@@ -30,15 +30,16 @@ class Principal extends Controller
     // extrae los datos que se necesitan de todos los diagramas
   	foreach ($diag as $key => $value) {
   		$value_= $value->diagramas;
-
-  		$diagm[$key] = [
-				'id' 			=> $value_->id,
-				'nombre' 	=>  $this->parseNombre($value_->nombre),
-				'tipo' 		=> $value_->tipo,
-				'act' 		=> $value_->updated_at,
-				'cread' 	=> $value_->created_at,
-				'nombreI' => Auth::user()->id.$value_->id.'.png'
-			];
+      if ($value_->status==0) {
+    		$diagm[$key] = [
+  				'id' 			=> $value_->id,
+  				'nombre' 	=>  $this->parseNombre($value_->nombre),
+  				'tipo' 		=> $value_->tipo,
+  				'act' 		=> $value_->updated_at,
+  				'cread' 	=> $value_->created_at,
+  				'nombreI' => Auth::user()->id.$value_->id.'.png'
+  			];
+      }
   	}
     // se retorna la vista llamada principal con los datos de los diagramas y del usuario
   	return view('principal')->with(['datos' => $diagm, 'userData' =>Usuario::find(Auth::user()->id) ]);

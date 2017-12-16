@@ -158,7 +158,6 @@ $('.goEdit').on('click', () => {
 	}else{
 		$.redirect("{{ url('editor') }}",{t: $('#ediSelect').val()},'GET');
 	}
-
 });
 
 $('.exp-single').on('click', (evnt) => {
