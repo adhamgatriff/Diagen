@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Diagrama;
+use Image;
 /**
  * Copyright (c) 2006-2013, Gaudenz Alder
  */
@@ -11342,10 +11343,17 @@ class Diagrama2Img extends Controller
   	$file = public_path().'/diagramasXml/'.$filename;
 
   	$image =  mxGraphViewImageReader::convertFile($file, "#FFFFFF");
-  	// $imgcrop = imagecrop($image, ['x' => 390, 'y' =>525, 'width' => 500, 'height' => 500]);
-  	header("Content-Type: image/png");
-  	imagePng($image,public_path().'/diagramasImg/'.substr($filename,0,strpos($filename,'.')).'.png');
 
+  	$img = Image::make($image);
+  	$img->heighten(1004);
+  	$img->widen(839);
+  	$tamA = 300;
+  	$tamL = 250;
+  	
+  	$img->crop($tamA, $tamL,$img->width()-$tamA,$img->height()-$tamL);
+
+  	header("Content-Type: image/png");
+  	$img->save(public_path().'/diagramasImg/'.substr($filename,0,strpos($filename,'.')).'.png');
   	// probar
   	unlink($file);
   	

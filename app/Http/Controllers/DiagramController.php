@@ -35,9 +35,6 @@ class DiagramController extends Controller
 	{
 
 		if ($request->acc=='new') {
-			// dd($request->userid);
-		// dd(Diagrama::where('nombre',$request->nombre)->select('id')->first());
-// dd(UsuarioDiagrama::where(['id_diagrama',$request->id_diagrama])->count());
 
 			$diagrama = new Diagrama;
 			$diagrama->nombre = $request->nombre;
@@ -56,13 +53,11 @@ class DiagramController extends Controller
 			fwrite($f,$request->xml);
 			fclose($f);
 
-			return $diagrama->id;
-
 			app('App\Http\Controllers\Diagrama2Img')->Convertir($filename);
 
-		}else if($request->acc == 'edit'){
+			return $diagrama->id;
 
-		// dd(UsuarioDiagrama::find($request->id_diagrama)->count());
+		}else if($request->acc == 'edit'){
 
 			$eud = Diagrama::find($request->id_diagrama);
 			$eud->nombre = $request->nombre;
