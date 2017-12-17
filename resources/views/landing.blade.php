@@ -72,8 +72,8 @@
 		</div>
 	</div>
 	
-<div class="row">
-	<main id="conent" class="col m10 s12 offset-m1" style="background-color: #f5f0f0; position: relative;border-radius: 10px;margin-bottom: 10px;">
+	<div class="row" style="margin-bottom: 0px;">
+		<main id="conent" class="col m10 s12 offset-m1" style="background-color: #f5f0f0; position: relative;border-radius: 10px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
 
 	{{-- inf general --}}
 		<h4 style="font-weight: 400;padding-left: 5px;">Informacion General</h4>
@@ -85,7 +85,7 @@
 			apoyo en el proceso de desarrollo de software por programadores profesionales.
 		</p>
 
-{{-- caract --}}
+	{{-- caract --}}
 		<div>
 			<h4 style="font-weight: 300;text-align: center;">Caracteristicas</h4>
 			<div class="row" style="margin-top: 40px;">
@@ -179,15 +179,24 @@ $(document).ready(function() {
 	    }
 	});
 
-	
-
-	graficaDiag(); //mer vs dC
-	diagCreadosxUsuarios() 
-
+	datos();
 });
 
+function datos(){
 
-function diagCreadosxUsuarios() {
+	let m = new Array();
+	$.ajax({
+		url: '{{ url('api/datosDiag') }}',
+		type: 'POST',
+		data: {_token: '{{csrf_token()}}'}
+	})
+	.done( data => {
+		graficaDiag(data.er,data.dc); 
+		diagCreadosxUsuarios(data.dt,data.us) 
+	});
+}
+
+function diagCreadosxUsuarios(dt,us) {
 	var myTorta = echarts.init(document.getElementById('graph2'));
 		option = {
 			grid: {
@@ -227,15 +236,15 @@ function diagCreadosxUsuarios() {
 	            show: false
 	          }
 	        },
-	        data: [{value:335, name:'Usuarios'},
-	        				{value:335, name:'Diagramas'}]
+	        data: [{value:us, name:'Usuarios'},
+	        				{value:dt, name:'Diagramas'}]
 	      }
 	    ]
 		};
 	myTorta.setOption(option);
 }
 
-function graficaDiag(){
+function graficaDiag(er,dc){
 
 	var myTorta = echarts.init(document.getElementById('graph1'));
 	option = {
@@ -276,8 +285,8 @@ function graficaDiag(){
             show: false
           }
         },
-        data: [{value:335, name:'Entidad-Relacion'},
-        				{value:335, name:'Clases'}]
+        data: [{value:er, name:'Entidad-Relacion'},
+        				{value:dc, name:'Clases'}]
       }
     ]
 	};

@@ -11,10 +11,10 @@
 </head>
 <body>
 	{{-- @include('include.navbar') --}}
-	<main id="app" style="background-color: #19171c">
+	<main id="app" style="background-color: #19171c;margin-bottom: 0px;">
 		@yield('main')
 	</main>
-	@include('include.footer')
+	@include('include.footer_landing')
 	<script src='{{mix("js/app.js")}}'></script>
 	<script type="text/javascript" src="{{ asset('js/mio.js') }}"></script>
 	

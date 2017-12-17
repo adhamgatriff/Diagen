@@ -1,8 +1,8 @@
 <footer class="page-footer" style="padding-top: 0px;">
   <div class="footer-copyright">
     <div class="container">
-    © 2017 Copyright Adham Gatriff  
-    <a class="grey-text text-lighten-4 right" href="#!"></a>
+    © 2018 Copyright Adham Gatriff  
+    <a class="grey-text text-lighten-4 right">version 0.50 BETA</a>
     </div>
   </div>
 </footer>

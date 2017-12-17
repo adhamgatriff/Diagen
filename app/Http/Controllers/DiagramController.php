@@ -31,6 +31,16 @@ class DiagramController extends Controller
 		return 'ok'; 
 	}
 
+	public function datos(){
+
+		$us = Usuario::count();
+		$dt = Diagrama::count();
+		$er = Diagrama::where('tipo', 0)->count();
+		$cs = Diagrama::where('tipo', 1)->count();
+
+		return response()->json(['us'=> $us,'dt'=>$dt,'dc'=>$cs,'er'=>$er]);
+	}
+
 	public function store(Request $request)
 	{
 

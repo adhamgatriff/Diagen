@@ -32,6 +32,8 @@ route::post('dlteAux','Principal@deleteAuxGraph');
 route::post('exportByEditor','editorController@show');
 
 Route::post('api/saveDiagram','DiagramController@store');
+Route::post('api/datosDiag','DiagramController@datos');
+
 Route::get('generar', 'DiagramController@Laucher');
 Route::post('generarpost', 'DiagramController@Laucher');
 
