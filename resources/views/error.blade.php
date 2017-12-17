@@ -62,8 +62,6 @@
             density: 9000,
             parallax: true
         }); 
-
-        // $('.container').css('height',$('.pg-canvas').height()-350);
       });
   @isset ($_GET['id_diag'])
     $('.btnEditar').on('click', function(event) {
@@ -74,11 +72,11 @@
         data: {data: {{$_GET['id_diag']}} , '_token': '{{ csrf_token()}}' },
       })
       .done(function(data) {   
-        $.redirect("{{ url('editor') }}",{ edit: true, name: data.filename},'GET');
+        $.redirect("{{ url('editor') }}",{ edit: true, name: data.filename,t:data.tipo},'GET','_blank');
       });
     });
   @endisset
 
-    </script>
+  </script>
 </body>
 </html>

@@ -48,7 +48,12 @@
 	<script type="text/javascript" src="{{asset('js/src/js/mxClient.js') }}"></script>
 	<script type="text/javascript" src="{{asset('js/js/EditorUi.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/js/Editor.js')}}"></script>
+	@php 
+		include(public_path('js/js/Sidebar.php'));
+	@endphp
 	<script type="text/javascript" src="{{asset('js/js/Sidebar.js')}}"></script>
+
+
 	<script type="text/javascript" src="{{asset('js/js/Graph.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/js/Shapes.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/js/Actions.js')}}"></script>

@@ -1,3 +1,4 @@
+<script type="text/javascript">
 /**
  * Copyright (c) 2006-2012, JGraph Ltd
  */
@@ -97,8 +98,11 @@ Sidebar.prototype.init = function()
 	// this.addBasicPalette(dir);
 	// this.addStencilPalette('arrows', mxResources.get('arrows'), dir + '/arrows.xml',
 	// 	';whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2');
-	this.addUmlPalette(true);
-	this.addErPalette(true);
+	<?php if($_GET['t']==1){ ?>
+		this.addUmlPalette(true);
+	<?php }else if($_GET['t']==0){ ?>
+		this.addErPalette(true);
+	<?php } ?>
 	// this.addBpmnPalette(dir, false);
 	// this.addStencilPalette('flowchart', 'Flowchart', dir + '/flowchart.xml',
 	// 	';whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2');
@@ -4242,3 +4246,4 @@ Sidebar.prototype.destroy = function()
 		this.pointerOutHandler = null;
 	}
 };
+</script>

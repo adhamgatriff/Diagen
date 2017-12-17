@@ -8,11 +8,9 @@
 		<div class="navbar">
 		  <nav style="box-shadow: none; background: none;">
 		    <div class="nav-wrapper">
-{{-- 		      <a @guest href="{{ url('/') }}" @endguest @auth href="{{ url('/principal') }}" @endauth class="brand-logo">Logo
-		      </a> --}}
 		      <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
-			      	<li><a href="">Documentacion</a></li>
+			      	<li><a href="resources/Doc.pdf" target="_blank">Documentacion</a></li>
 		        @guest
 		        	<a href="{{ url('login') }}" class="waves-effect waves-light btn Wradius" style="background: white;color: #311f5f;box-shadow: 3px 3px 20px 0px #000;">Ingresar</a>
 		        	<a href="{{ url('register') }}" class="waves-effect waves-light btn Wradius" style="background: white;color: #E91E63;box-shadow: 3px 3px 20px 0px #000;">Registrarse</a>
@@ -75,7 +73,77 @@
 	</div>
 	
 <div class="row">
-	<main id="conent" class="col m10 s12 offset-m1" style="background-color: #f5f0f0; height: 500px; position: relative;    border-radius: 10px;margin-bottom: 10px;">
+	<main id="conent" class="col m10 s12 offset-m1" style="background-color: #f5f0f0; position: relative;border-radius: 10px;margin-bottom: 10px;">
+
+	{{-- inf general --}}
+		<h4 style="font-weight: 400;padding-left: 5px;">Informacion General</h4>
+		<p class="flow-text" style="text-align: justify;padding: 0 20px 0 20px">
+			Generador de código fuente de Sql, Php, Python y Java a partir de diagramas
+			entidad-relación y diagramas de clases creados por el usuario, destinado a ser utilizado
+			como herramienta de enseñanza para los estudiantes de bases de datos y programación
+			III en la carrera de Ingeniería de Sistemas del I.U.P.S.M extensión Barinas o como
+			apoyo en el proceso de desarrollo de software por programadores profesionales.
+		</p>
+
+{{-- caract --}}
+		<div>
+			<h4 style="font-weight: 300;text-align: center;">Caracteristicas</h4>
+			<div class="row" style="margin-top: 40px;">
+
+				<div class="col s12 m4"  style="color:#E91E63">
+          <div class="center promo">
+            <i class="large material-icons">flash_on</i>
+            <p class="promo-caption">Rapidez</p>
+          </div>
+        </div>
+        <div class="col s12 m4"  style="color:#4b367c">
+          <div class="center promo">
+            <i class="large material-icons">pan_tool</i>
+            <p class="promo-caption">Versatilidad</p>
+          </div>
+        </div>
+        <div class="col s12 m4" style="color:#E91E63">
+          <div class="center promo">
+            <i class="large material-icons">storage</i>
+            <p class="promo-caption">Almacenamiento</p>
+          </div>
+        </div>
+        <div class="col s12 m4" style="color:#4b367c">
+          <div class="center promo">
+            <i class="large material-icons">airline_seat_individual_suite</i>
+            <p class="promo-caption">Comodidad</p>
+          </div>
+        </div>
+        <div class="col s12 m4" style="color:#E91E63">
+          <div class="center promo">
+            <i class="large material-icons">event_available</i>
+            <p class="promo-caption">Disponibilidad</p>
+          </div>
+        </div>
+        <div class="col s12 m4" style="color:#4b367c">
+          <div class="center promo">
+            <i class="large material-icons">style</i>
+            <p class="promo-caption">Estilo</p>
+          </div>
+        </div>
+			</div>
+	{{-- 2 geraficas pequeñas --}}
+
+			<div style="margin-top: 40px;margin-bottom: 20px;">
+				<h4 style="font-weight: 300;text-align: center;">Informacion del sistema</h4>
+
+				<div class="col s12 m6" style="margin-bottom: 15px;">
+					<h5 style="font-weight: 400;text-align: center;">Diagramas creados:  ER vs Clases </h5>
+					<div class="col s12" id="graph1" style="height: 300px;background-color:#f5f0f0"></div>
+				</div> 	
+
+				<div class="col s12 m6" style="margin-bottom: 15px;">
+					<h5 style="font-weight: 400;text-align: center;">Balance cantidad de diagramas por usuario</h5>
+					<div class="col s12" id="graph2" style="height: 300px;background-color:#f5f0f0"></div>
+				</div> 
+
+			</div>
+		</div>
 	</main>
 	<div class="col m1 hide-on-small-only"></div>
 </div>
@@ -110,7 +178,112 @@ $(document).ready(function() {
         }
 	    }
 	});
+
+	
+
+	graficaDiag(); //mer vs dC
+	diagCreadosxUsuarios() 
+
 });
+
+
+function diagCreadosxUsuarios() {
+	var myTorta = echarts.init(document.getElementById('graph2'));
+		option = {
+			grid: {
+
+			},
+	    tooltip: {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b}: {c} ({d}%)"
+	    },
+	    legend: {
+	        orient: 'vertical',
+	        x: 'left',
+	        data: ['Usuarios','Diagramas']
+	    },
+	    series: [
+	      {
+	        name:'Cantidad',
+	        type:'pie',
+	        color: ['#E91E63','#311f5f'],
+	        radius: ['55%', '90%'],
+	        avoidLabelOverlap: false,
+	        label: {
+	          normal: {
+	            show: false,
+	            position: 'center'
+	          },
+	          emphasis: {
+	              show: true,
+	              textStyle: {
+	                fontSize: '18',
+	                fontWeight: 'bold'
+	              }
+	          }
+	        },
+	        labelLine: {
+	          normal: {
+	            show: false
+	          }
+	        },
+	        data: [{value:335, name:'Usuarios'},
+	        				{value:335, name:'Diagramas'}]
+	      }
+	    ]
+		};
+	myTorta.setOption(option);
+}
+
+function graficaDiag(){
+
+	var myTorta = echarts.init(document.getElementById('graph1'));
+	option = {
+		grid: {
+
+		},
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data: ['Entidad-Relacion','Clases']
+    },
+    series: [
+      {
+        name:'Cantidad',
+        type:'pie',
+        color: ['#E91E63','#311f5f'],
+        radius: ['55%', '90%'],
+        avoidLabelOverlap: false,
+        label: {
+          normal: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+              show: true,
+              textStyle: {
+                fontSize: '18',
+                fontWeight: 'bold'
+              }
+          }
+        },
+        labelLine: {
+          normal: {
+            show: false
+          }
+        },
+        data: [{value:335, name:'Entidad-Relacion'},
+        				{value:335, name:'Clases'}]
+      }
+    ]
+	};
+
+	myTorta.setOption(option);
+}
 	
 </script>
 

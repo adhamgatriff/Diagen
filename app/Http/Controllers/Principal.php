@@ -81,10 +81,11 @@ class Principal extends Controller
 
     $filename = Auth::user()->id.$req->data.'ja.xml';
     $f = fopen(public_path().'/diagramasXml/'.$filename,'w+');
-    fwrite($f,Diagrama::find($req->data)->diagrama);
+    $dd = Diagrama::find($req->data);
+    fwrite($f,$dd->diagrama);
     fclose($f);
 
-    return response()->json(['filename' => Auth::user()->id.$req->data]);
+    return response()->json(['filename' => Auth::user()->id.$req->data,'tipo'=>$dd->tipo]);
   }
 
   public function deleteAuxGraph(Request $r){

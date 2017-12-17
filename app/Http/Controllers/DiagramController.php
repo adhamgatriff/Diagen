@@ -360,7 +360,7 @@ unset($aux);
 		$tipo = strtoupper($tipo);
 		$var='';
 		// tipo de dato numerico
-		if (str_contains($tipo, 'INT') || str_contains($tipo, 'IN')) {
+		if (str_contains($tipo, 'INT') || str_contains($tipo, 'IN')|| str_contains($tipo, 'IT')) {
 
 			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'INT')), '('), ')');
 
