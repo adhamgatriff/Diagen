@@ -13,7 +13,7 @@
 
 Route::group(['middleware' => ['auth']], function () {
 
-	Route::get('/principal', 'principal@ReturnDiagrams');
+	Route::get('/principal', 'Principal@ReturnDiagrams');
 	Route::post('updUsers', 'Principal@updUsuarios');
 	Route::post('delDiag', 'DiagramController@delDiagrama');
   Route::get('/editor', function() {
