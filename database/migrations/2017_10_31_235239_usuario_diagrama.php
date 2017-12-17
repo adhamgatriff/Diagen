@@ -14,6 +14,7 @@ class UsuarioDiagrama extends Migration
 	public function up()
 	{
 		Schema::create('usuario_diagrama', function (Blueprint $table) {
+			$table->increments('id');
 			$table->integer('id_usuario')->unsigned();
 			$table->integer('id_diagrama')->unsigned();
 			$table->timestamp('created_at')->nullable();

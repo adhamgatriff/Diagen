@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Diagrama extends Model
 {
-    public function usuarios()
-    {
-        return $this->hasMany('App\UsuarioDiagrama','id_diagrama');
-    }
+	protected $table = 'diagramas';
+	protected $primaryKey = 'id';
+
+  public function usuarios()
+  {
+      return $this->hasMany('App\UsuarioDiagrama','id_diagrama');
+  }
 }
