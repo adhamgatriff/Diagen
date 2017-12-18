@@ -365,6 +365,26 @@ unset($aux);
 		return $filename;
 	}
 
+	public function ValidData($tipo='',$dato=''){
+
+		if($tipo == '' || $dato ==''){
+			return $dato.'(1)';
+		}else{
+			$aux = abs(round(intval(trim(str_before(str_after(substr($tipo,strpos($tipo, $dato)),'('),')')))));
+
+			if (is_numeric($aux)) {
+				if ($aux < 255 && $aux > 0) {
+					$var= $dato.'('.$aux.')';
+				}else{
+					$var= $dato.'(190)';
+				}
+			}else{
+				$var = $dato.'(100)';
+			}
+			return $var;
+		}
+	}
+
 	public function Traduct($tipo,$cellname){
 
 		$tipo = strtoupper($tipo);
@@ -372,73 +392,31 @@ unset($aux);
 		// tipo de dato numerico
 		if (str_contains($tipo, 'INT') || str_contains($tipo, 'IN')|| str_contains($tipo, 'IT')) {
 
-			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'INT')), '('), ')');
-
-			if (is_numeric($aux)) {
-				$var= 'INT('.$aux.')';
-			}else{
-				$var = 'INT(10)';
-			}
+			$var = $this->ValidData($tipo,'INT');
 
 		}else if (str_contains($tipo, 'SMALLINT')|| str_contains($tipo, 'SINT')) {
 
-			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'SMALLINT')), '('), ')');
-
-			if (is_numeric($aux)) {
-				$var= 'SMALLINT('.$aux.')';
-			}else{
-				$var = 'SMALLINT(10)';
-			}
+			$var = $this->ValidData($tipo,'SMALLINT');
 
 		}else if (str_contains($tipo, 'TINYINT')|| str_contains($tipo, 'TINT')) {
 
-			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'TINYINT')), '('), ')');
-
-			if (is_numeric($aux)) {
-				$var= 'TINYINT('.$aux.')';
-			}else{
-				$var = 'TINYINT(10)';
-			}
+			$var = $this->ValidData($tipo,'TINYINT');
 
 		}else if (str_contains($tipo, 'MEDIUMINT')|| str_contains($tipo, 'MINT')) {
 
-			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'MEDIUMINT')), '('), ')');
-
-			if (is_numeric($aux)) {
-				$var= 'MEDIUMINT('.$aux.')';
-			}else{
-				$var = 'MEDIUMINT(10)';
-			}
+			$var = $this->ValidData($tipo,'MEDIUMINT');
 
 		}else if (str_contains($tipo, 'BIGINT')|| str_contains($tipo, 'BINT')) {
 
-			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'BIGINT')), '('), ')');
-
-			if (is_numeric($aux)) {
-				$var= 'BIGINT('.$aux.')';
-			}else{
-				$var = 'BIGINT(10)';
-			}
+			$var = $this->ValidData($tipo,'BIGINT');
 
 		}else if (str_contains($tipo, 'DECIMAL')|| str_contains($tipo, 'DEC')) {
 
-			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'DECIMAL')), '('), ')');
-
-			if (is_numeric($aux)) {
-				$var= 'DECIMAL('.$aux.')';
-			}else{
-				$var = 'DECIMAL(10)';
-			}
+			$var = $this->ValidData($tipo,'DECIMAL');
 
 		}else if (str_contains($tipo, 'FLOAT')|| str_contains($tipo, 'FT')) {
 
-			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'FLOAT')), '('), ')');
-
-			if (is_numeric($aux)) {
-				$var= 'FLOAT('.$aux.')';
-			}else{
-				$var = 'FLOAT(10)';
-			}
+			$var = $this->ValidData($tipo,'FLOAT');
 
 		}else if (str_contains($tipo, 'DOUBLE')|| str_contains($tipo, 'DBL')) {
 
@@ -471,23 +449,11 @@ unset($aux);
 		// tipo de datos string
 		}else if (str_contains($tipo, 'CHAR') || str_contains($tipo, 'CHR')) {
 
-			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'CHAR')), '('), ')');
-
-			if (is_numeric($aux)) {
-				$var= 'CHAR('.$aux.')';
-			}else{
-				$var = 'CHAR(150)';
-			}
+			$var = $this->ValidData($tipo,'CHAR');
 
 		}else if (str_contains($tipo, 'VARCHAR') || str_contains($tipo, 'VRCH') || str_contains($tipo, 'STR')) {
 
-			$aux =  str_before(str_after(substr($tipo,strpos($tipo, 'VARCHAR')), '('), ')');
-
-			if (is_numeric($aux)) {
-				$var= 'VARCHAR('.$aux.')';
-			}else{
-				$var = 'VARCHAR(150)';
-			}
+			$var = $this->ValidData($tipo,'VARCHAR');
 
 		}else if (str_contains($tipo, 'TINYBLOB')|| str_contains($tipo, 'TB')) {
 
