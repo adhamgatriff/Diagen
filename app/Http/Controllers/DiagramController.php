@@ -60,22 +60,20 @@ class DiagramController extends Controller
 			$diagrama->tipo = $request->tipo;
 			$diagrama->save();
 
-			$dU = new UsuarioDiagrama;
-
-			$dU->id_diagrama = DB::getPdo()->lastInsertId();
-
+			// $dU = new UsuarioDiagrama;
+			// $dU->id_diagrama = DB::getPdo()->lastInsertId();
 			// $dU->id_diagrama = $diagrama->id;
-			$dU->id_usuario = $request->userid;
-			$dU->save();
+			// $dU->id_usuario = $request->userid;
+			// $dU->save();
 
-			$filename = Auth::user()->id.$dU->id_diagrama.'.xml';
+			$filename = Auth::user()->id.$diagrama->id.'.xml';
 			$f = fopen(public_path().'/diagramasXml/'.$filename,'w+');
 			fwrite($f,$request->xml);
 			fclose($f);
 
 			app('App\Http\Controllers\Diagrama2Img')->Convertir($filename);
 
-			return $dU->id_diagrama;
+			return $diagrama->id;
 
 		}else if($request->acc == 'edit'){
 
