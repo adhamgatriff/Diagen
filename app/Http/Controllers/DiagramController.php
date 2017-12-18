@@ -7,6 +7,7 @@ use App\Diagrama;
 use App\UsuarioDiagrama;
 use App\Usuario;
 use Auth;
+use DB;
 
 
 class DiagramController extends Controller
@@ -41,6 +42,12 @@ class DiagramController extends Controller
 		return response()->json(['us'=> $us,'dt'=>$dt,'dc'=>$cs,'er'=>$er]);
 	}
 
+	protected function getNextStatementId()
+	{
+    $next_id = DB::select("select nextval('sq_statementcont_seq')");
+    return intval($next_id['0']->nextval);
+	}
+
 	public function store(Request $request)
 	{
 
@@ -54,18 +61,21 @@ class DiagramController extends Controller
 			$diagrama->save();
 
 			$dU = new UsuarioDiagrama;
-			$dU->id_diagrama = $diagrama->id;
+
+			$dU->id_diagrama = DB::getPdo()->lastInsertId();
+
+			// $dU->id_diagrama = $diagrama->id;
 			$dU->id_usuario = $request->userid;
 			$dU->save();
 
-			$filename = Auth::user()->id.$diagrama->id.'.xml';
+			$filename = Auth::user()->id.$dU->id_diagrama.'.xml';
 			$f = fopen(public_path().'/diagramasXml/'.$filename,'w+');
 			fwrite($f,$request->xml);
 			fclose($f);
 
 			app('App\Http\Controllers\Diagrama2Img')->Convertir($filename);
 
-			return $diagrama->id;
+			return $dU->id_diagrama;
 
 		}else if($request->acc == 'edit'){
 
