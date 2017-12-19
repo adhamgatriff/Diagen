@@ -7,6 +7,7 @@
       <a href="#" data-activates="slide-out-" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         @auth
+          <li><a href="resources/Doc.pdf" target="_blank">Manual de Usuario</a></li>
           <li><a href="{{ url('principal') }}">{{ Auth::user()->username }}</a></li>
           <li>
             <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>

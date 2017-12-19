@@ -488,7 +488,6 @@ unset($aux);
 			$var = 'VARCHAR(190)';
 		}
 
-
 		if(str_contains($tipo, 'PK') || str_contains($tipo, 'PRIMARY KEY') ){
 
 			if (!isset($noPrimary)) {

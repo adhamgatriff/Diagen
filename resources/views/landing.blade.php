@@ -10,7 +10,7 @@
 		    <div class="nav-wrapper">
 		      <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
-			      	<li><a href="resources/Doc.pdf" target="_blank">Documentacion</a></li>
+			      	<li><a href="resources/Doc.pdf" target="_blank">Manual de Usuario</a></li>
 		        @guest
 		        	<a href="{{ url('login') }}" class="waves-effect waves-light btn Wradius" style="background: white;color: #311f5f;box-shadow: 3px 3px 20px 0px #000;">Ingresar</a>
 		        	<a href="{{ url('register') }}" class="waves-effect waves-light btn Wradius" style="background: white;color: #E91E63;box-shadow: 3px 3px 20px 0px #000;">Registrarse</a>
@@ -32,7 +32,7 @@
 		        @endauth
 		      </ul>
 		      <ul class="side-nav" id="mobile">
-			      <li><a href="">Documentacion</a></li>
+			      <li><a href="">Manual de Usuario</a></li>
 		        @guest
 		          <li><a href="{{ url('login') }}">Ingresar</a></li>
 		          <li><a href="{{ url('register') }}">Registrarse</a></li>
