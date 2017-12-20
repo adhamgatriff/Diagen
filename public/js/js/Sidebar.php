@@ -1143,43 +1143,404 @@ Sidebar.prototype.addUmlPalette = function(expand)
 	// Avoids having to bind all functions to "this"
 	var sb = this;
 
-	// Reusable cells
-	var field = new mxCell('+ field: type', new mxGeometry(0, 0, 100, 26), 'text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;');
-	field.vertex = true;
+	var row = new mxCell('Fila', new mxGeometry(0, 0, 40, 26), 'text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;');
+		row.vertex = true;
 
-	var divider = new mxCell('', new mxGeometry(0, 0, 40, 8), 'line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;');
-	divider.vertex = true;
 	
 	// Default tags
 	var dt = 'uml static class ';
+
 	
 	var fns = [
-   		// this.createVertexTemplateEntry('html=1;', 110, 50, 'Object', 'Object', null, null, dt + 'object instance'),
-   		// this.createVertexTemplateEntry('html=1;', 110, 50, '&laquo;interface&raquo;<br><b>Name</b>', 'Interface', null, null, dt + 'interface object instance annotated annotation'),
+
 	 	
 		// las clases
-	 	this.addEntry(dt + 'object instance', function()
-		{
-			var cell = new mxCell('Classname', new mxGeometry(0, 0, 160, 90),
-		    	'swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;');
-			cell.vertex = true;
-			cell.insert(field.clone());
-			cell.insert(divider.clone());
-			cell.insert(sb.cloneCell(field, '+ method(type): type'));
+
+		this.addEntry(dt + 'table section subsection', function()
+   		{
+   			var cell1 = new mxCell('Metodo()', new mxGeometry(0, 0, 120, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+
+				return sb.createVertexTemplateFromCells([cell1], cell1.geometry.width, cell1.geometry.height, 'Fila'); 
+   		}),
+						this.addEntry(dt + 'table section subsection', function()
+   		{
+				var cell = new mxCell('Clase', new mxGeometry(0, 0, 160, 30),
+		    	'swimlane;fontStyle=0;fontColor=#FFFFFF;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#E91E63;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;');
+				cell.vertex = true;
 			
-			return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'Class'); 
-		}),
-		this.addEntry(dt + 'section subsection', function()
-		{
-			var cell = new mxCell('Classname', new mxGeometry(0, 0, 140, 110),
-		    	'swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;');
-			cell.vertex = true;
-			cell.insert(field.clone());
-			cell.insert(field.clone());
-			cell.insert(field.clone());
+   			var cell1 = new mxCell('Metodo1()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+			return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'ER Tabla 1'); 
+   		}),
+
+			this.addEntry(dt + 'table section subsection', function()
+   		{
+				var cell = new mxCell('Clase', new mxGeometry(0, 0, 160, 60),
+		    	'swimlane;fontStyle=0;fontColor=#FFFFFF;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#E91E63;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;');
+				cell.vertex = true;
 			
-			return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'Class 2');
-		}),
+   			var cell1 = new mxCell('Metodo1()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo2()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+			return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'ER Tabla 1'); 
+   		}),
+
+   	 	this.addEntry(dt + 'table section subsection', function()
+   		{
+				var cell = new mxCell('Clase', new mxGeometry(0, 0, 160, 112),
+		    	'swimlane;fontStyle=0;fontColor=#FFFFFF;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#E91E63;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;');
+				cell.vertex = true;
+			
+   			var cell1 = new mxCell('Metodo1()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo2()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+   			
+   			var cell1 = new mxCell('Metodo3()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '-');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+			return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'ER Tabla 1'); 
+   		}),
+   		this.addEntry(dt + 'table section subsection', function()
+   		{
+				var cell = new mxCell('Clase', new mxGeometry(0, 0, 160, 112),
+		    	'swimlane;fontStyle=0;fontColor=#FFFFFF;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#E91E63;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;');
+				cell.vertex = true;
+			
+   			var cell1 = new mxCell('Metodo1()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo2()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+   			
+   			var cell1 = new mxCell('Metodo3()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '-');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo4()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '-');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+
+			return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'ER Tabla 1'); 
+   		}),
+   		this.addEntry(dt + 'table section subsection', function()
+   		{
+				var cell = new mxCell('Clase', new mxGeometry(0, 0, 160, 112),
+		    	'swimlane;fontStyle=0;fontColor=#FFFFFF;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#E91E63;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;');
+				cell.vertex = true;
+			
+   			var cell1 = new mxCell('Metodo1()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo2()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+   			
+   			var cell1 = new mxCell('Metodo3()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '-');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo4()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo5()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+
+			return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'ER Tabla 1'); 
+   		}),
+
+   		this.addEntry(dt + 'table section subsection', function()
+   		{
+				var cell = new mxCell('Clase', new mxGeometry(0, 0, 160, 112),
+		    	'swimlane;fontStyle=0;fontColor=#FFFFFF;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#E91E63;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;');
+				cell.vertex = true;
+			
+   			var cell1 = new mxCell('Metodo1()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo2()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+   			
+   			var cell1 = new mxCell('Metodo3()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '-');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo4()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo5()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '-');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo6()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+			return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'ER Tabla 1'); 
+   		}),
+
+   		this.addEntry(dt + 'table section subsection', function()
+   		{
+				var cell = new mxCell('Clase', new mxGeometry(0, 0, 160, 112),
+		    	'swimlane;fontStyle=0;fontColor=#FFFFFF;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#E91E63;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;');
+				cell.vertex = true;
+			
+   			var cell1 = new mxCell('Metodo1()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo2()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+   			
+   			var cell1 = new mxCell('Metodo3()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '-');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo4()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo5()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '-');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo6()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '+');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+
+   			var cell1 = new mxCell('Metodo7()', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=42;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
+   			cell1.vertex = true;
+
+   			var cell11 = sb.cloneCell(row, '-');
+   			cell11.connectable = false;
+   			cell11.style = 'shape=partialRectangle;fontStyle=1;top=0;left=0;bottom=0;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;part=1;'
+   			cell11.geometry.width = 30;
+   			cell11.geometry.height = 30;
+   			cell1.insert(cell11);
+   			cell.insert(cell1);
+			return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'ER Tabla 1'); 
+   		}),
+   		
+   		
 		// fin de las clases 
 
 		// this.addEntry(dt + 'item member method function variable field attribute label', function()
@@ -1621,9 +1982,9 @@ Sidebar.prototype.addUmlPalette = function(expand)
 
    	 	this.addEntry(dt + 'table section subsection', function()
    		{
-			var cell = new mxCell('Tabla', new mxGeometry(0, 0, 160, 112),
+				var cell = new mxCell('Tabla', new mxGeometry(0, 0, 160, 112),
 		    	'swimlane;fontStyle=0;fontColor=#FFFFFF;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#311f5f;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;');
-			cell.vertex = true;
+				cell.vertex = true;
 			
    			var cell1 = new mxCell('Fila 1', new mxGeometry(0, 0, 90, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=60;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
    			cell1.vertex = true;
