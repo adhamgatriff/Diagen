@@ -171,14 +171,14 @@ trait DiagER{
 
 		$string ='';
 
-// CREATE TABLE MyGuests (
-// id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-// firstname VARCHAR(30) NOT NULL,
-// lastname VARCHAR(30) NOT NULL,
-// email VARCHAR(50),
-// reg_date TIMESTAMP
-// )
-// dd($this->celdas);
+		// CREATE TABLE MyGuests (
+		// id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		// firstname VARCHAR(30) NOT NULL,
+		// lastname VARCHAR(30) NOT NULL,
+		// email VARCHAR(50),
+		// reg_date TIMESTAMP
+		// )
+		
 		foreach ($this->tablas as $key => $tabla) {
 
 			$string .= "CREATE TABLE ".str_slug($tabla['nombre'],'_'). " (\r\n\t\n";
@@ -189,14 +189,14 @@ trait DiagER{
 
 					foreach ($celda as $ind => $celditas) {
 
-							$string.= str_slug($celditas['nombre'], '_');
+						$string.= str_slug($celditas['nombre'], '_');
 
-							if (isset($celditas[0])) {
+						if (isset($celditas[0])) {
 
-								$string.= ' '.$this->Traduct($celditas[0]['nombre'],$celditas['nombre']);
-							}else{
-								$string.= ' VARCHAR(10)';
-							}
+							$string.= ' '.$this->Traduct($celditas[0]['nombre'],$celditas['nombre']);
+						}else{
+							$string.= ' VARCHAR(10)';
+						}
 							
 						if ($celditas !== end($celda)){
 							$string.= ",\r\n\t\n";
@@ -211,14 +211,14 @@ trait DiagER{
 			$this->primary = '';
 		}
 
-//conexiones
+	//conexiones
 
-// ALTER TABLE Orders
-// ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+	// ALTER TABLE Orders
+	// ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
 
-$cnx = [];
-$conxErr = false;
-$aux = '';
+	$cnx = [];
+	$conxErr = false;
+	$aux = '';
 	foreach ($this->conexiones as $cxindex => $conexiones) {
 		foreach ($this->celdas as $idtabla => $c) {
 			foreach ($c as $k => $celdita) {
