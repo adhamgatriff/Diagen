@@ -18,7 +18,7 @@ trait DiagClases{
 		}else if (str_contains($tipo, 'PRIV')|| str_contains($tipo, 'PRIVATE')|| str_contains($tipo, '-')) {
 
 			if($lng == 3){ $var = 'private function'; }
-			else if($lng == 2){ $var = ''; }
+			else if($lng == 2){ $var = '__'; }
 			else if($lng == 4){ $var = '';}
 
 		}else{
@@ -56,6 +56,10 @@ trait DiagClases{
 	private function genPhp(){
 		// \r\n <- enter
 		// \t\n <- tab
+
+		// pon el constructor para que no se vea vacio en last
+		// el nombre del archivo tiene que ser el mismo de la clase...
+
 		$codigo = "<?php\r\n\r\n\t";
 
 		foreach ($this->tablas as $key => $tabla) {
@@ -88,16 +92,40 @@ trait DiagClases{
 
 	}
 	private function genPython(){
+
+		$codigo = '';
+
+		foreach ($this->tablas as $key => $tabla) {
+			
+			$codigo .= "class ".ucfirst(str_slug($tabla['nombre'],'_')).":\r\r";
+
+			foreach ($this->celdas as $index => $celda) {
+
+				if ($tabla['id'] == $index) {
+
+					foreach ($celda as $ind => $celditas) {
+
+						if (isset($celditas[0])) {
+
+							$codigo.= "\tdef ".$this->TraductCls($celditas[0]['nombre'],2);
+						}
+
+						$codigo.= ucfirst(str_slug($celditas['nombre'], '_')."():\r\t\tpass\r\r");
+					}
+				}
+			}
+		}
 		
 		return $codigo;
 
 	}
 	private function genJava(){
 		
+		$codigo = '';
+
+
+
 		return $codigo;
 	}
-
-
-
 
 }
