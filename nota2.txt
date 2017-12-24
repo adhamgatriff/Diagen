@@ -5,3 +5,10 @@
 
 
 editor.setGraphXml((mxUtils.load('diagramasXml/13.xml')).getDocumentElement())
+
+
+	1 SQL
+	2 Python
+	3 PHP
+	4 Java
+	

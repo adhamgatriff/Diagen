@@ -203,7 +203,7 @@ function XMLToString(oXML){
 $('.exp-single').on('click', (evnt) => {
 
 	$.post('{{ url('exportByEditor') }}',{ diag_c: XMLToString(editor.getGraphXml()),name:this.editor.getOrCreateFilename(),t: {{$_GET['t']}},_token:'{{csrf_token()}}' }, function(data, textStatus, xhr) {
-		$.redirect("{{ url('generar') }}",{ id_diag: data},'GET','_blank');
+		$.redirect("{{ url('generar') }}",{ id_diag: data,lng:$('#langSelect').val()},'GET','_blank');
 	});
 });
 

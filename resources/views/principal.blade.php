@@ -161,7 +161,7 @@ $('.goEdit').on('click', () => {
 });
 
 $('.exp-single').on('click', (evnt) => {
-	$.redirect("{{ url('generar') }}",{ id_diag: $('#idd').val()},'GET','_blank');
+	$.redirect("{{ url('generar') }}",{ id_diag: $('#idd').val(),lng:$('#langSelect').val() },'GET','_blank');
 });
 
 $('.exportCard').on('mouseover', function(){  $(this).children('.delete-diag').show(50); })
