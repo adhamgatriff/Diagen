@@ -37,7 +37,12 @@ trait DiagClases{
 				}
 
 			}else if($lng==4){
-
+				for ($i=0; $i < $num; $i++) { 
+					$str .= ' String var'.($i+1);
+					if ($i < $num-1) {
+						$str .=',';
+					}
+				}
 			}
 
 			return $str;
@@ -185,7 +190,12 @@ trait DiagClases{
 							$codigo.= 'public function';
 						}
 
-						$codigo.= ' '.ucfirst(str_slug($celditas['nombre'], '_')."() {}\r\n\t\n");
+						$codigo.= ' '.ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
+
+						$codigo.= 
+							$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),4);
+
+						$codigo.=	") {}\r\n\t\n";
 					}
 				}
 			}
