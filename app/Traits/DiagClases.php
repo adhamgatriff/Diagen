@@ -3,6 +3,38 @@ namespace App\Traits;
  
 trait DiagClases{
 
+	private function addPar(int $num=0,int $lng=3){
+
+		$str = '';
+
+		if ($num==0) {
+
+		}else{
+
+			$num = ($num > 6) ? 6 : $num;  
+
+			if($lng==2){
+
+			}else if($lng==3){
+
+				for ($i=0; $i < $num; $i++) { 
+
+					$str .= ' $var'.($i+1);
+
+					if ($i < $num-1) {
+						$str .=',';
+					}
+				}
+
+			}else if($lng==4){
+
+			}
+
+			return $str;
+		}
+
+	}
+
 	public function TraductCls($tipo,$lng){
 
 		$tipo = strtoupper($tipo);
@@ -52,6 +84,7 @@ trait DiagClases{
 
 	private function genPhp(){
 
+		// dd($this->tablas,$this->celdas);
 		// pon el constructor para que no se vea vacio en last
 		// el nombre del archivo tiene que ser el mismo de la clase...
 
@@ -74,7 +107,11 @@ trait DiagClases{
 							$codigo.= 'public function';
 						}
 
-						$codigo.= ' '.ucfirst(str_slug($celditas['nombre'], '_')."() {}\r\n\t\n");
+						$codigo.= ' '.ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
+
+						$codigo.= 
+							$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),3);
+						$codigo.=	") {}\r\n\t\n";
 					}
 				}
 			}
@@ -84,7 +121,6 @@ trait DiagClases{
 
 		$codigo .= '?>';
 		return $codigo;
-
 	}
 	private function genPython(){
 
