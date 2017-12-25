@@ -7,7 +7,7 @@ trait DiagClases{
 
 		$str = '';
 
-		if ($num==0) {
+		if ($num == 0 && $lng != 2) {
 
 		}else{
 
@@ -15,12 +15,22 @@ trait DiagClases{
 
 			if($lng==2){
 
+				$str .= ' self';
+				for ($i=0; $i < $num; $i++) { 
+					if($i==0){
+						$str .= ', var'.($i+1);
+					}else{
+						$str .= ' var'.($i+1);
+					}
+					if ($i < $num-1) {
+						$str .=',';
+					}
+				}
+
 			}else if($lng==3){
 
 				for ($i=0; $i < $num; $i++) { 
-
 					$str .= ' $var'.($i+1);
-
 					if ($i < $num-1) {
 						$str .=',';
 					}
@@ -141,7 +151,11 @@ trait DiagClases{
 							$codigo.= "\tdef ".$this->TraductCls($celditas[0]['nombre'],2);
 						}
 
-						$codigo.= ucfirst(str_slug($celditas['nombre'], '_')."():\r\t\tpass\r\r");
+						$codigo.= ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
+
+						$codigo.= 
+							$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),2);
+						$codigo.=	"):\r\t\tpass\r\r";
 					}
 				}
 			}
