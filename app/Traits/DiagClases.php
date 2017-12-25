@@ -7,29 +7,26 @@ trait DiagClases{
 
 		$tipo = strtoupper($tipo);
 		$var='';
-		// tipo de dato numerico
+		
 		if (str_contains($tipo, 'PUB') || str_contains($tipo, 'PUBLIC')|| str_contains($tipo, '+')) {
 
 			if($lng == 3){ $var = 'public function'; }
 			else if($lng == 2){ $var = ''; }
-			else if($lng == 4){ $var = '';}
+			else if($lng == 4){ $var = 'public void';}
 			
-
 		}else if (str_contains($tipo, 'PRIV')|| str_contains($tipo, 'PRIVATE')|| str_contains($tipo, '-')) {
 
 			if($lng == 3){ $var = 'private function'; }
 			else if($lng == 2){ $var = '__'; }
-			else if($lng == 4){ $var = '';}
+			else if($lng == 4){ $var = 'private void';}
 
 		}else{
 
 			if($lng == 3){ $var = 'public function'; }
 			else if($lng == 2){ $var = ''; }
-			else if($lng == 4){ $var = '';}
+			else if($lng == 4){ $var = 'public void';}
 		}
-
 		return is_string($var) ? $var: false;
-
 	}
 
 	public function DiagramaClases(int $lng=3){
@@ -54,8 +51,6 @@ trait DiagClases{
 	}
 
 	private function genPhp(){
-		// \r\n <- enter
-		// \t\n <- tab
 
 		// pon el constructor para que no se vea vacio en last
 		// el nombre del archivo tiene que ser el mismo de la clase...
@@ -115,17 +110,37 @@ trait DiagClases{
 				}
 			}
 		}
-		
 		return $codigo;
-
 	}
 	private function genJava(){
 		
 		$codigo = '';
 
+		foreach ($this->tablas as $key => $tabla) {
+			
+			$codigo .= "public class ".ucfirst(str_slug($tabla['nombre'],'_'))." {\r\r";
 
+			$codigo .= "\tpublic ".ucfirst(str_slug($tabla['nombre'],'_'))."() {}\r\n\t\n";
 
+			foreach ($this->celdas as $index => $celda) {
+
+				if ($tabla['id'] == $index) {
+
+					foreach ($celda as $ind => $celditas) {
+
+						if (isset($celditas[0])) {
+
+							$codigo.= "\t".$this->TraductCls($celditas[0]['nombre'],4);
+						}else{
+							$codigo.= 'public function';
+						}
+
+						$codigo.= ' '.ucfirst(str_slug($celditas['nombre'], '_')."() {}\r\n\t\n");
+					}
+				}
+			}
+			$codigo .= "}\r\n";
+		}
 		return $codigo;
 	}
-
 }
