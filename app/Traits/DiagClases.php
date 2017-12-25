@@ -14,7 +14,6 @@ trait DiagClases{
 			$num = ($num > 6) ? 6 : $num;  
 
 			if($lng==2){
-
 				$str .= ' self';
 				for ($i=0; $i < $num; $i++) { 
 					if($i==0){
@@ -28,14 +27,12 @@ trait DiagClases{
 				}
 
 			}else if($lng==3){
-
 				for ($i=0; $i < $num; $i++) { 
 					$str .= ' $var'.($i+1);
 					if ($i < $num-1) {
 						$str .=',';
 					}
 				}
-
 			}else if($lng==4){
 				for ($i=0; $i < $num; $i++) { 
 					$str .= ' String var'.($i+1);
@@ -44,10 +41,8 @@ trait DiagClases{
 					}
 				}
 			}
-
 			return $str;
 		}
-
 	}
 
 	public function TraductCls($tipo,$lng){
@@ -108,6 +103,7 @@ trait DiagClases{
 		foreach ($this->tablas as $key => $tabla) {
 			
 			$codigo .= "class ".ucfirst(str_slug($tabla['nombre'],'_'))." {\r\r";
+			$codigo .= "\t\tfunction __construct() {}\r\n\t\n";
 
 			foreach ($this->celdas as $index => $celda) {
 
@@ -144,6 +140,8 @@ trait DiagClases{
 		foreach ($this->tablas as $key => $tabla) {
 			
 			$codigo .= "class ".ucfirst(str_slug($tabla['nombre'],'_')).":\r\r";
+
+			$codigo .= "\tdef __init__(self):\r\t\tpass\r\r"; 
 
 			foreach ($this->celdas as $index => $celda) {
 
