@@ -233,37 +233,37 @@ class DiagramController extends Controller
 	// diag_c diagrama xml
 	// id_diag diagrama para buscarlo
 
-    if ($this->generate($req->id_diag)) {
-    	$f = $this->EntidadRelacion();
-    }else{
-    	$f = $this->DiagramaClases($req->lng);
-    }
+		if ($this->generate($req->id_diag)) {
+			$f = $this->EntidadRelacion();
+		}else{
+			$f = $this->DiagramaClases($req->lng);
+		}
 
-    if ($this->error ) {
-    	return view('error')->with(['erroresLog' => $this->erroresLog]);
-    }else{
-    	$d = Diagrama::find($req->id_diag);
-    	if($d->status==1){
+		if ($this->error ) {
+			return view('error')->with(['erroresLog' => $this->erroresLog]);
+		}else{
+			$d = Diagrama::find($req->id_diag);
+			if($d->status==1){
 
-    		$d->delete();
-    		$fm = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.zip';
+				$d->delete();
+				$fm = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.zip';
 
-    		Zipper::make('myzip/'.$fm)->add($f)->close();
-    		
+				Zipper::make('myzip/'.$fm)->add($f)->close();
+				
 				array_map("unlink", $f);
 
-    		return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);
+				return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);
 				
-    	}else{
+			}else{
 				return response()->download($f)->deleteFileAfterSend(true);
-    	}
-    }	
-  }
+			}
+		}	
+	}
 
-  function __construct(){
+	function __construct(){
 
-  	$this->erroresLog ='';
+		$this->erroresLog ='';
 		$this->error = false;
 		$this->primary ='';
-  }
+	}
 }

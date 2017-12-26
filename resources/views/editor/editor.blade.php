@@ -213,8 +213,6 @@ $('.exp-single').on('click', (evnt) => {
 var id_diagrama;
 EditorUi.prototype.saveFile = function(forceDialog)
 {
-
-	
 	if (!forceDialog && this.editor.filename != null)
 	{
 		
@@ -256,7 +254,7 @@ EditorUi.prototype.saveFile = function(forceDialog)
 			})
 			.done( (data) => {
 				
-				Materialize.toast('Diagrama guardado', 1500)
+				Materialize.toast('Diagrama editado correctamente', 1500)
 			});
 
 	@endif
@@ -301,7 +299,7 @@ EditorUi.prototype.saveFile = function(forceDialog)
 							userid : '{{Auth::user()->id}}',
 							nombre, 
 							diagrama,
-							tipo: 0,
+							tipo: {{$_GET['t']}},
 							xml,
 							"_token": "{{ csrf_token() }}",
 							},
@@ -309,8 +307,7 @@ EditorUi.prototype.saveFile = function(forceDialog)
 				.done((data) => {
 					
 					id_diagrama = parseInt(data);
-					console.log(id_diagrama);
-					Materialize.toast('Diagrama editado correctamente', 1500)
+					Materialize.toast('Diagrama guardado', 1500)
 				});
 
 		@endif

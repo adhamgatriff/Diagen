@@ -215,16 +215,20 @@ $('.exportMult').on('click',(event) => {
 						<label for="${val.id}" style = 'font-size: 16px;'>${val.nombre}</label>
 					</div>`);
 			}
-			if(er == 0){
-				$('.er_').hide();
-				$('.dc_act').addClass('active');
-				$('ul.tabs').tabs('select_tab', 'clases');
-			}else if(dc==0){
-				$('.dc_').hide();
-				$('.er_act').addClass('active');
-				$('ul.tabs').tabs('select_tab', 'sql');
-			}
 		});
+		if(er == 0){
+			$('.er_').hide();
+			$('.dc_act').addClass('active');
+			$('ul.tabs').tabs('select_tab', 'clases');
+		}else if(dc==0){
+			$('.dc_').hide();
+			$('.er_act').addClass('active');
+			$('ul.tabs').tabs('select_tab', 'sql');
+		}else{
+			$('.er_act').addClass('active');
+			$('ul.tabs').tabs('select_tab', 'sql');
+		}
+		
 	});
 $('#mdExpMult').modal('open');
 });
