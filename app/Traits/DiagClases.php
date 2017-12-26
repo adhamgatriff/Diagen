@@ -45,7 +45,6 @@ trait DiagClases{
 			return $str;
 		}
 	}
-
 	public function TraductCls($tipo,$lng){
 
 		$tipo = strtoupper($tipo);
@@ -71,7 +70,6 @@ trait DiagClases{
 		}
 		return is_string($var) ? $var: false;
 	}
-
 	public function returnExt(int $lng=3){
 
     if($lng == 2){ $ext = '.py'; }else if($lng == 3){ $ext = '.php';}
@@ -79,143 +77,126 @@ trait DiagClases{
 
 		return $ext;
 	}
-
 	public function DiagramaClases(int $lng=3){
 
 		$filesName= [];
 
 		if($lng == 2) {
-			$filename = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.py';
-			$string = $this->genPython();
+			$ext = '.py'; $method = 'python';
 		}else if($lng == 3){
-
-			foreach ($this->tablas as $key => $tabla) {
-
-				unset($f,$string);
-				$filesName[$key] = Auth::user()->id.$key.$tabla['nombre'].'.php';
-				$string = $this->genPhp($tabla);
-
-				if (!$this->error) {
-					$f = fopen($filesName[$key],'w+');
-					fwrite($f,$string);
-					fclose($f);
-				}
-
-			}
-
-
+			$ext = '.php'; $method = 'php';
 		}else if($lng == 4){
-			$filename = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.class';
-			$string = $this->genJava();
+			$ext = '.class'; $method = 'java';
 		}
 
+		foreach ($this->tablas as $key => $tabla) {
+
+			unset($f,$string);
+			$filesName[$key] = $tabla['nombre'].Auth::user()->id.$key.$ext;
+
+			if ($method == 'php') {
+				$string = $this->genPhp($tabla);
+			}else if($method == 'python'){
+				$string = $this->genPython($tabla);
+			}else if ($method == 'java') {
+				$string = $this->genJava($tabla);
+			}
+			
+			if (!$this->error) {
+				$f = fopen($filesName[$key],'w+');
+				fwrite($f,$string);
+				fclose($f);
+			}
+		}
 		return $filesName;
 	}
-
 	private function genPhp($tabla){
 
-		// dd($this->tablas);
-		$codigo = "<?php\r\n\r\n\t";
+		$codigo = "<?php\r\n\r\n\tclass ".ucfirst(str_slug($tabla['nombre'],'_'))." {\r\r";
+		$codigo .= "\t\tfunction __construct() {}\r\n\t\n";
 
-		// foreach ($this->tablas as $key => $tabla) {
-			
-			$codigo .= "class ".ucfirst(str_slug($tabla['nombre'],'_'))." {\r\r";
-			$codigo .= "\t\tfunction __construct() {}\r\n\t\n";
+		foreach ($this->celdas as $index => $celda) {
 
-			foreach ($this->celdas as $index => $celda) {
+			if ($tabla['id'] == $index) {
 
-				if ($tabla['id'] == $index) {
+				foreach ($celda as $ind => $celditas) {
 
-					foreach ($celda as $ind => $celditas) {
+					if (isset($celditas[0])) {
 
-						if (isset($celditas[0])) {
-
-							$codigo.= "\t\t".$this->TraductCls($celditas[0]['nombre'],3);
-						}else{
-							$codigo.= 'public function';
-						}
-
-						$codigo.= ' '.ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
-
-						$codigo.= 
-							$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),3);
-						$codigo.=	") {}\r\n\t\n";
+						$codigo.= "\t\t".$this->TraductCls($celditas[0]['nombre'],3);
+					}else{
+						$codigo.= 'public function';
 					}
+
+					$codigo.= ' '.ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
+
+					$codigo.= 
+						$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),3);
+					$codigo.=	") {}\r\n\t\n";
 				}
 			}
+		}
 
-			$codigo .= "}\r\n";
-		// }
+		$codigo .= "}\r\n?>";
 
-		$codigo .= '?>';
 		return $codigo;
 	}
-	private function genPython(){
+	private function genPython($tabla){
 
 		$codigo = '';
+		$codigo .= "class ".ucfirst(str_slug($tabla['nombre'],'_')).":\r\r";
+		$codigo .= "\tdef __init__(self):\r\t\tpass\r\r"; 
 
-		foreach ($this->tablas as $key => $tabla) {
-			
-			$codigo .= "class ".ucfirst(str_slug($tabla['nombre'],'_')).":\r\r";
+		foreach ($this->celdas as $index => $celda) {
 
-			$codigo .= "\tdef __init__(self):\r\t\tpass\r\r"; 
+			if ($tabla['id'] == $index) {
 
-			foreach ($this->celdas as $index => $celda) {
+				foreach ($celda as $ind => $celditas) {
 
-				if ($tabla['id'] == $index) {
+					if (isset($celditas[0])) {
 
-					foreach ($celda as $ind => $celditas) {
-
-						if (isset($celditas[0])) {
-
-							$codigo.= "\tdef ".$this->TraductCls($celditas[0]['nombre'],2);
-						}
-
-						$codigo.= ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
-
-						$codigo.= 
-							$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),2);
-						$codigo.=	"):\r\t\tpass\r\r";
+						$codigo.= "\tdef ".$this->TraductCls($celditas[0]['nombre'],2);
 					}
+
+					$codigo.= ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
+
+					$codigo.= 
+						$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),2);
+					$codigo.=	"):\r\t\tpass\r\r";
 				}
 			}
 		}
 		return $codigo;
 	}
-	private function genJava(){
+	private function genJava($tabla){
 		
 		$codigo = '';
+		$codigo .= "public class ".ucfirst(str_slug($tabla['nombre'],'_'))." {\r\r";
+		$codigo .= "\tpublic ".ucfirst(str_slug($tabla['nombre'],'_'))."() {}\r\n\t\n";
 
-		foreach ($this->tablas as $key => $tabla) {
-			
-			$codigo .= "public class ".ucfirst(str_slug($tabla['nombre'],'_'))." {\r\r";
+		foreach ($this->celdas as $index => $celda) {
 
-			$codigo .= "\tpublic ".ucfirst(str_slug($tabla['nombre'],'_'))."() {}\r\n\t\n";
+			if ($tabla['id'] == $index) {
 
-			foreach ($this->celdas as $index => $celda) {
+				foreach ($celda as $ind => $celditas) {
 
-				if ($tabla['id'] == $index) {
+					if (isset($celditas[0])) {
 
-					foreach ($celda as $ind => $celditas) {
-
-						if (isset($celditas[0])) {
-
-							$codigo.= "\t".$this->TraductCls($celditas[0]['nombre'],4);
-						}else{
-							$codigo.= 'public function';
-						}
-
-						$codigo.= ' '.ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
-
-						$codigo.= 
-							$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),4);
-
-						$codigo.=	") {}\r\n\t\n";
+						$codigo.= "\t".$this->TraductCls($celditas[0]['nombre'],4);
+					}else{
+						$codigo.= 'public function';
 					}
+
+					$codigo.= ' '.ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
+
+					$codigo.= 
+						$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),4);
+
+					$codigo.=	") {}\r\n\t\n";
 				}
 			}
-			$codigo .= "}\r\n";
 		}
+		$codigo .= "}\r\n";
 		return $codigo;
 	}
 }

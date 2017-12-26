@@ -249,8 +249,10 @@ class DiagramController extends Controller
     		$fm = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.zip';
 
     		Zipper::make('myzip/'.$fm)->add($f)->close();
+    		
+				array_map("unlink", $f);
 
-    		return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);      
+    		return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);
 				
     	}else{
 				return response()->download($f)->deleteFileAfterSend(true);
