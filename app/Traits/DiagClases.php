@@ -1,5 +1,6 @@
 <?php  
 namespace App\Traits;
+use Auth;
  
 trait DiagClases{
 
@@ -71,36 +72,52 @@ trait DiagClases{
 		return is_string($var) ? $var: false;
 	}
 
+	public function returnExt(int $lng=3){
+
+    if($lng == 2){ $ext = '.py'; }else if($lng == 3){ $ext = '.php';}
+		else if($lng == 4){ $ext = '.class'; }else{ $ext = '.php';}
+
+		return $ext;
+	}
+
 	public function DiagramaClases(int $lng=3){
+
+		$filesName= [];
 
 		if($lng == 2) {
 			$filename = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.py';
 			$string = $this->genPython();
 		}else if($lng == 3){
-			$filename = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.php';
-			$string = $this->genPhp();
+
+			foreach ($this->tablas as $key => $tabla) {
+
+				unset($f,$string);
+				$filesName[$key] = Auth::user()->id.$key.$tabla['nombre'].'.php';
+				$string = $this->genPhp($tabla);
+
+				if (!$this->error) {
+					$f = fopen($filesName[$key],'w+');
+					fwrite($f,$string);
+					fclose($f);
+				}
+
+			}
+
+
 		}else if($lng == 4){
 			$filename = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.class';
 			$string = $this->genJava();
 		}
 
-		if (!$this->error) {
-			$f = fopen($filename,'w+');
-			fwrite($f,$string);
-			fclose($f);
-		}
-		return $filename;
+		return $filesName;
 	}
 
-	private function genPhp(){
+	private function genPhp($tabla){
 
-		// dd($this->tablas,$this->celdas);
-		// pon el constructor para que no se vea vacio en last
-		// el nombre del archivo tiene que ser el mismo de la clase...
-
+		// dd($this->tablas);
 		$codigo = "<?php\r\n\r\n\t";
 
-		foreach ($this->tablas as $key => $tabla) {
+		// foreach ($this->tablas as $key => $tabla) {
 			
 			$codigo .= "class ".ucfirst(str_slug($tabla['nombre'],'_'))." {\r\r";
 			$codigo .= "\t\tfunction __construct() {}\r\n\t\n";
@@ -128,7 +145,7 @@ trait DiagClases{
 			}
 
 			$codigo .= "}\r\n";
-		}
+		// }
 
 		$codigo .= '?>';
 		return $codigo;

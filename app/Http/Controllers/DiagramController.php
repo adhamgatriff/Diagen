@@ -9,6 +9,7 @@ use App\Usuario;
 use Auth;
 use App\Traits\DiagClases;
 use App\Traits\DiagER;
+use Zipper;
 
 
 class DiagramController extends Controller
@@ -110,7 +111,6 @@ class DiagramController extends Controller
 		// parent 1 con surce y targey conexiones flechas puede ser, si no tiene no agregar
 		// 
 		// para saber a que celda pertenece a que tabla, tienen parent = al id de la tabla.
-		// falta probar con las flechas y con otras esructuras
 
 		$tablas = [];
 		$celdas = [];
@@ -121,7 +121,11 @@ class DiagramController extends Controller
 
 		$diagrama = Diagrama::find($id_diag);
 		$diag = simplexml_load_string($diagrama->diagrama);
+
+// aqui para el nombre de las clases
 		$this->nombre = $diagrama->nombre;
+
+
 		$tipo = $diagrama->tipo;
 
 		foreach ($diag->root->mxCell as $key => $value) {
@@ -239,8 +243,18 @@ class DiagramController extends Controller
     	return view('error')->with(['erroresLog' => $this->erroresLog]);
     }else{
     	$d = Diagrama::find($req->id_diag);
-    	// if($d->status==1){$d->delete();}
-    	return response()->download($f)->deleteFileAfterSend(true);
+    	if($d->status==1){
+
+    		$d->delete();
+    		$fm = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.zip';
+
+    		Zipper::make('myzip/'.$fm)->add($f)->close();
+
+    		return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);      
+				
+    	}else{
+				return response()->download($f)->deleteFileAfterSend(true);
+    	}
     }	
   }
 

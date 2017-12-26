@@ -170,10 +170,10 @@ $(document).ready(() => {
 	editor.graph.addListener(mxEvent.CELLS_ADDED, (sender, evt) => {
 		if (evt.properties.cells["0"].children != null ){
 			if ( (evt.properties.cells["0"].children).length==0) {
-				// console.log('individual');
+				console.log('individual');
 			}else{
 				if (evt.properties.cells["0"].children["0"].children!= null ) {
-					// console.log('agrupaci');
+					console.log('agrupaci');
 					evt.properties.cells["0"].setConnectable(false);
 				}else{
 					if ((evt.properties.cells["0"].children).length<2)
