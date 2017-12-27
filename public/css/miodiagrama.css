@@ -33,19 +33,19 @@ body{
 }
 
 *:not(.modal), *:before, *:after {
-    -webkit-box-sizing: unset;
-    box-sizing: unset;
+  -webkit-box-sizing: unset;
+  box-sizing: unset;
 }
 
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked,[type="radio"]:not(:checked), [type="radio"]:checked {
-    position: unset;
-    opacity: 1;
-    pointer-events: none;
+  position: unset;
+  opacity: 1;
+  pointer-events: none;
 }
 
 input:not([type]){
-      border-bottom: none;
-      height: 1rem;
+  border-bottom: none;
+  height: 1rem;
 }
 
 select:not(.muereSlct){
@@ -54,6 +54,23 @@ select:not(.muereSlct){
 }
 
 .modal.modal-fixed-footer .modal-content, .modal .modal-footer {
-    width: -webkit-fill-available;
-    width: -moz-available;
+  width: -webkit-fill-available;
+  width: -moz-available;
 }
+
+div.geDialog > table > tbody > tr:nth-child(2) > td{
+  text-align: center;
+  padding-top: 5px !important;
+}
+
+div.geDialog > table > tbody > tr:nth-child(1) > td:nth-child(2) > input {
+  margin: 0 0 4px;
+}
+
+
+.geSidebarContainer .geToolbarContainer {
+    top: 0px !important;
+
+}
+
+body > div:nth-child(17) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3)
