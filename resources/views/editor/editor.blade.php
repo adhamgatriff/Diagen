@@ -171,26 +171,59 @@ $(document).ready(() => {
 	@endif
 
 	editor.graph.setAllowLoops(false)
-	editor.graph.addListener(mxEvent.CELLS_ADDED, (sender, evt) => {
-		if (evt.properties.cells["0"].children != null ){
-			if ( (evt.properties.cells["0"].children).length==0) {
-				console.log('individual');
+
+	@if ($_GET['t']==0)
+		editor.graph.addListener(mxEvent.CELLS_ADDED, (sender, evt) => {
+			if (evt.properties.cells["0"].children != null ){
+				if ( (evt.properties.cells["0"].children).length==0) {
+					console.log('individual');
+				}else{
+					if (evt.properties.cells["0"].children["0"].children!= null ) {
+						console.log('agrupaci');
+						evt.properties.cells["0"].setConnectable(false);
+					}else{
+						if ((evt.properties.cells["0"].children).length<2)
+							console.log('individi');
+						else
+							evt.properties.cells["0"].setConnectable(false);
+							console.log('agrupacion');	
+					}
+				}
 			}else{
-				if (evt.properties.cells["0"].children["0"].children!= null ) {
-					console.log('agrupaci');
+				// console.log('flecha') 
+			}
+		});
+		@else
+			editor.graph.addListener(mxEvent.CELLS_ADDED, (sender, evt) => {
+			if (evt.properties.cells["0"].children != null ){
+				if ((evt.properties.cells["0"].children).length==0) {
+					console.log('individual');
 					evt.properties.cells["0"].setConnectable(false);
 				}else{
-					if ((evt.properties.cells["0"].children).length<2)
-						console.log('individi');
-					else
-						evt.properties.cells["0"].setConnectable(false);
-						console.log('agrupacion');	
+					if (evt.properties.cells["0"].children["0"].children!= null ) {
+						console.log('agrupacion');
+						(evt.properties.cells["0"].children).forEach( (ind)=>{
+							ind.setConnectable(false);
+						});
+					}else{
+						if ((evt.properties.cells["0"].children).length<2){
+							console.log('individi');
+							evt.properties.cells["0"].setConnectable(false);
+						}
+						else{
+							(evt.properties.cells["0"].children).forEach( (ind)=>{
+								ind.setConnectable(false);
+							});
+						console.log('agrupacion');
+						}	
+					}
 				}
+			}else{
+				// console.log('flecha') 
 			}
-		}else{
-			// console.log('flecha') 
-		}
-	});
+		});
+	@endif
+
 });	
 
 function XMLToString(oXML){
