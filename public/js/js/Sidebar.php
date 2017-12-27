@@ -1175,7 +1175,8 @@ Sidebar.prototype.addUmlPalette = function(expand)
 				var cell = new mxCell('Interface', new mxGeometry(0, 0, 120, 30),
 		    	'swimlane;fontStyle=0;fontColor=#FFFFFF;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#311f5f;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;gradientColor=#E91E63;gradientDirection=west;');
 				cell.vertex = true;
-			
+				cell.isInterface = true;
+
    			var cell1 = new mxCell('Metodo1()', new mxGeometry(0, 0, 120, 30), 'shape=partialRectangle;top=0;left=0;right=0;bottom=0;align=left;verticalAlign=middle;fillColor=none;spacingLeft=30;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;dropTarget=0;fontStyle=5;');
    			cell1.vertex = true
    			cell.insert(cell1);
@@ -1188,7 +1189,7 @@ Sidebar.prototype.addUmlPalette = function(expand)
    			cell1.vertex = true
    			cell.insert(cell1);
 
-			return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'ER Tabla 1'); 
+			return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'Interfaz'); 
    		}),
 
 			this.addEntry(dt + 'table section subsection', function()

@@ -164,7 +164,6 @@ trait DiagER{
 		}
 
 		return is_string($var) ? $var: false;
-
 	}
 
 	public function EntidadRelacion(){
@@ -216,49 +215,54 @@ trait DiagER{
 	// ALTER TABLE Orders
 	// ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
 
-	$cnx = [];
-	$conxErr = false;
-	$aux = '';
-	foreach ($this->conexiones as $cxindex => $conexiones) {
-		foreach ($this->celdas as $idtabla => $c) {
-			foreach ($c as $k => $celdita) {
-				
-				if ($conexiones['desde'] == $k) {
-					if (isset($celdita[0])){
-						$tipo = $this->Traduct($celdita[0]['nombre'],str_slug($celdita['nombre'], '_'));
+		$cnx = [];
+		$conxErr = false;
+		$aux = '';
+		foreach ($this->conexiones as $cxindex => $conexiones) {
+			foreach ($this->celdas as $idtabla => $c) {
+				foreach ($c as $k => $celdita) {
+					
+					if ($conexiones['desde'] == $k) {
+						if (isset($celdita[0])){
+							$tipo = $this->Traduct($celdita[0]['nombre'],str_slug($celdita['nombre'], '_'));
 
-						if (str_contains($this->primary,str_slug($celdita['nombre'], '_'))) {
-							$aux = strtoupper(trim(str_before($tipo,'(')));
-							$cnx[$cxindex]['desde'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
+							if (str_contains($this->primary,str_slug($celdita['nombre'], '_'))) {
+								$aux = strtoupper(trim(str_before($tipo,'(')));
+								$cnx[$cxindex]['desde'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
 
-						}else{
-							$this->error = true; $conxErr = true;
-							$errores = 'Los campos tienen que ser PRIMARY KEY <a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
-							break 3;
-
-						}
-					}else{
-
-						$this->error = true; $conxErr = true;
-						$errores = 'Los campos tienen que ser PRIMARY KEY<a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
-						break 3;
-					}
-				}
-				if ($conexiones['hasta'] == $k) {
-
-					if (isset($celdita[0])){
-						$tipo = $this->Traduct($celdita[0]['nombre'],str_slug($celdita['nombre'], '_'));
-
-						if (str_contains($this->primary,str_slug($celdita['nombre'], '_'))) {
-										
-							if ($aux == strtoupper(trim(str_before($tipo,'(')))) {
-
-								$cnx[$cxindex]['hasta'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
 							}else{
-								dd($conexiones);
 								$this->error = true; $conxErr = true;
-								$errores = 'Los campos no coinciden en el tipo de datos <a href="https://docs.microsoft.com/es-es/sql/t-sql/data-types/data-types-transact-sql" target="_blank"><strong>(Mas informacion)</strong></a>
-								 ';
+								$errores = 'Los campos tienen que ser PRIMARY KEY <a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
+								break 3;
+
+							}
+						}else{
+
+							$this->error = true; $conxErr = true;
+							$errores = 'Los campos tienen que ser PRIMARY KEY<a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
+							break 3;
+						}
+					}
+					if ($conexiones['hasta'] == $k) {
+
+						if (isset($celdita[0])){
+							$tipo = $this->Traduct($celdita[0]['nombre'],str_slug($celdita['nombre'], '_'));
+
+							if (str_contains($this->primary,str_slug($celdita['nombre'], '_'))) {
+											
+								if ($aux == strtoupper(trim(str_before($tipo,'(')))) {
+
+									$cnx[$cxindex]['hasta'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
+								}else{
+									dd($conexiones);
+									$this->error = true; $conxErr = true;
+									$errores = 'Los campos no coinciden en el tipo de datos <a href="https://docs.microsoft.com/es-es/sql/t-sql/data-types/data-types-transact-sql" target="_blank"><strong>(Mas informacion)</strong></a>
+									 ';
+									break 3;
+								}
+							}else{
+								$this->error = true; $conxErr = true;
+								$errores = 'Los campos tienen que ser PRIMARY KEY <a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
 								break 3;
 							}
 						}else{
@@ -266,16 +270,11 @@ trait DiagER{
 							$errores = 'Los campos tienen que ser PRIMARY KEY <a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
 							break 3;
 						}
-					}else{
-						$this->error = true; $conxErr = true;
-						$errores = 'Los campos tienen que ser PRIMARY KEY <a href="https://www.w3schools.com/sql/sql_primarykey.asp" target="_blank"><strong>(Mas informacion)</strong></a>';
-						break 3;
 					}
 				}
-			}
-		}					
-	}
-unset($aux);
+			}					
+		}
+		unset($aux);
 
 // retornar errores, si se puede
 

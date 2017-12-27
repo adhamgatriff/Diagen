@@ -112,8 +112,12 @@ trait DiagClases{
 	}
 	private function genPhp($tabla){
 
-		$codigo = "<?php\r\n\r\n\tclass ".ucfirst(str_slug($tabla['nombre'],'_'))." {\r\r";
-		$codigo .= "\t\tfunction __construct() {}\r\n\t\n";
+		if($tabla['interfaz']){
+			$codigo = "<?php\r\n\r\n\tinterface ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
+		}else{
+			$codigo = "<?php\r\n\r\n\tclass ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
+			$codigo .= "\t\tfunction __construct() {}\r\n\t\n";
+		}
 
 		foreach ($this->celdas as $index => $celda) {
 
@@ -125,10 +129,10 @@ trait DiagClases{
 
 						$codigo.= "\t\t".$this->TraductCls($celditas[0]['nombre'],3);
 					}else{
-						$codigo.= 'public function';
+						$codigo.= "\t\tpublic function";
 					}
 
-					$codigo.= ' '.ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
+					$codigo.= ' '.ucfirst(camel_case(str_before($celditas['nombre'],'(')))."(";
 
 					$codigo.= 
 						$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),3);
@@ -143,9 +147,17 @@ trait DiagClases{
 	}
 	private function genPython($tabla){
 
-		$codigo = '';
-		$codigo .= "class ".ucfirst(str_slug($tabla['nombre'],'_')).":\r\r";
-		$codigo .= "\tdef __init__(self):\r\t\tpass\r\r"; 
+
+		if($tabla['interfaz']){
+
+			$codigo ="from abc import ABCMeta, abstractmethod\r\r";
+			$codigo .="class ".ucfirst(camel_case($tabla['nombre'])).":\r\t__metaclass__ = ABCMeta\r\r";
+
+		}else{
+			$codigo = "class ".ucfirst(camel_case($tabla['nombre'])).":\r\r";
+			$codigo .= "\tdef __init__(self):\r\t\tpass\r\r"; 
+		}
+		
 
 		foreach ($this->celdas as $index => $celda) {
 
@@ -154,11 +166,13 @@ trait DiagClases{
 				foreach ($celda as $ind => $celditas) {
 
 					if (isset($celditas[0])) {
-
 						$codigo.= "\tdef ".$this->TraductCls($celditas[0]['nombre'],2);
+					}else{
+						$codigo.= ($tabla['interfaz']) ? "\t@abstractmethod\r": "";
+						$codigo.= "\tdef ";
 					}
 
-					$codigo.= ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
+					$codigo.= ucfirst(camel_case(str_before($celditas['nombre'],'(')))."(";
 
 					$codigo.= 
 						$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),2);
@@ -170,9 +184,12 @@ trait DiagClases{
 	}
 	private function genJava($tabla){
 		
-		$codigo = '';
-		$codigo .= "public class ".ucfirst(str_slug($tabla['nombre'],'_'))." {\r\r";
-		$codigo .= "\tpublic ".ucfirst(str_slug($tabla['nombre'],'_'))."() {}\r\n\t\n";
+		if($tabla['interfaz']){
+			$codigo = "interface ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
+		}else{
+			$codigo = "public class ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
+			$codigo .= "\tpublic ".ucfirst(camel_case($tabla['nombre']))."() {}\r\n\t\n";
+		}
 
 		foreach ($this->celdas as $index => $celda) {
 
@@ -184,10 +201,10 @@ trait DiagClases{
 
 						$codigo.= "\t".$this->TraductCls($celditas[0]['nombre'],4);
 					}else{
-						$codigo.= 'public function';
+						$codigo.= "\tpublic void";
 					}
 
-					$codigo.= ' '.ucfirst(str_slug(str_before($celditas['nombre'],'('), '_'))."(";
+					$codigo.= ' '.ucfirst(camel_case(str_before($celditas['nombre'],'(')))."(";
 
 					$codigo.= 
 						$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),4);

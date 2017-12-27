@@ -11,7 +11,6 @@ use App\Traits\DiagClases;
 use App\Traits\DiagER;
 use Zipper;
 
-
 class DiagramController extends Controller
 {
 
@@ -122,9 +121,8 @@ class DiagramController extends Controller
 		$diagrama = Diagrama::find($id_diag);
 		$diag = simplexml_load_string($diagrama->diagrama);
 
-// aqui para el nombre de las clases
+		// aqui para el nombre de las clases
 		$this->nombre = $diagrama->nombre;
-
 
 		$tipo = $diagrama->tipo;
 
@@ -152,7 +150,10 @@ class DiagramController extends Controller
 				}else {
 				// tabla
 					if (!str_contains((string) $value->attributes()->style,'shape')) {
-						$tablas[] = ['id' => (int) $value->attributes()->id,'nombre'=> (string) $value->attributes()->value];
+						$tablas[] = ['id' => (int) $value->attributes()->id,
+												'nombre'=> (string) $value->attributes()->value,
+												'interfaz' => (int) $value->attributes()->isInterface
+											];
 					}
 				}
 			}else if ((int)$value->attributes()->parent !=1 && (int) $value->attributes()->parent > 0){
@@ -217,7 +218,6 @@ class DiagramController extends Controller
 		$this->celdas = $celdas;
 		$this->conexiones = $conexiones;
 		
-
 		// cambiar status por tipo, estatus por ahora mientras se hace el refresh OJOJOJO
 		if ($tipo ==0 ) {
 			// CAMBIAR EL STATUS
