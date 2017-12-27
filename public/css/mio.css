@@ -36,6 +36,7 @@ label {
 }
 
 .tinyModal { width: 50% !important ; height: 40% !important ; } 
+.tinyModalEdit { width: 50% !important ; height: 40% !important ; } 
 
 ul.dropdown-content.select-dropdown li span {
   color: #311f5f; /* no need for !important :) */

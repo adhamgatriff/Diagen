@@ -298,7 +298,7 @@ unset($aux);
 	unset($cnx);
 // fin de conexiones
 
-	$filename = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.sql';
+	$filename = $this->nombre.'.sql';
 	if (!$this->error) {
 
 		$f = fopen($filename,'w+');

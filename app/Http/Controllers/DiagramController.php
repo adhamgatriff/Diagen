@@ -246,7 +246,7 @@ class DiagramController extends Controller
 			if($d->status==1){
 
 				$d->delete();
-				$fm = substr($this->nombre,0,strpos($this->nombre,'.')-1).'.zip';
+				$fm = $this->nombre.'.zip';
 
 				Zipper::make('myzip/'.$fm)->add($f)->close();
 				

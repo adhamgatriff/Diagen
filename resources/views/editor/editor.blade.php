@@ -51,9 +51,7 @@
 	@php 
 		include(public_path('js/js/Sidebar.php'));
 	@endphp
-	<script type="text/javascript" src="{{asset('js/js/Sidebar.js')}}"></script>
-
-
+	{{-- <script type="text/javascript" src="{{asset('js/js/Sidebar.js')}}"></script> --}}
 	<script type="text/javascript" src="{{asset('js/js/Graph.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/js/Shapes.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/js/Actions.js')}}"></script>
@@ -70,10 +68,16 @@
 	<div class="geEditor" id="editorGeneral">
 	</div>
 	<!-- Modal Structure -->
-	<div id="mdExpInd" class="modal modal-fixed-footer tinyModal">
+	<div id="mdExpInd" class="modal modal-fixed-footer tinyModalEdit">
 		<div class="modal-content">
 			<h4>Exportar Diagrama</h4>
-			<div class="input-field col s12">
+			<div class="row">
+				<div class="input-field col s12 m6" style="margin-top: 40px;">
+	        <input id="filename_" type="text">
+	        <label for="filename_">Nombre del archivo</label>
+	      </div>
+
+			<div class="input-field col s12 m6" style="margin-top: 40px;">
 				<select id='langSelect' class="muereSlct">
 					@if ($_GET['t']==1)
 						<option value="" disabled selected>Seleccione uno</option>
@@ -85,7 +89,8 @@
 							<option value='1' data-icon="img/sql2.png" class="left circle">SQL</option>
 					@endif
 				</select>
-				<label>Seleccione lenguaje a exportar</label>
+				<label>Seleccione lenguaje</label>
+			</div>
 			</div>
 			<input type="hidden" id="idd">
 		</div>
@@ -119,7 +124,6 @@
 					{
 						var enabled = req.getStatus() != 404;
 						this.actions.get('open').setEnabled(enabled || Graph.fileSupport);
-						this.actions.get('import').setEnabled(enabled || Graph.fileSupport);
 						this.actions.get('save').setEnabled(enabled || Graph.fileSupport);
 						this.actions.get('saveAs').setEnabled(enabled || Graph.fileSupport);
 						this.actions.get('export').setEnabled(enabled || Graph.fileSupport);
@@ -202,9 +206,19 @@ function XMLToString(oXML){
 
 $('.exp-single').on('click', (evnt) => {
 
-	$.post('{{ url('exportByEditor') }}',{ diag_c: XMLToString(editor.getGraphXml()),name:this.editor.getOrCreateFilename(),t: {{$_GET['t']}},_token:'{{csrf_token()}}' }, function(data, textStatus, xhr) {
-		$.redirect("{{ url('generar') }}",{ id_diag: data,lng:$('#langSelect').val()},'GET','_blank');
+	if(!$('#langSelect').val()){
+		Materialize.toast('Lenguaje no seleccionado',1300)
+		return false;
+	}else if($('#filename_').val()==''){
+		Materialize.toast('Ingrese un nombre',1300)
+		return false;
+	}else{
+		$.post('{{ url('exportByEditor') }}',{ diag_c: XMLToString(editor.getGraphXml()),t:{{$_GET['t']}},name: $('#filename_').val(),_token:'{{csrf_token()}}' }, 
+			function(data, textStatus, xhr) {
+				$.redirect("{{ url('generar') }}",{ id_diag: data,lng:$('#langSelect').val()},'GET','_blank');
 	});
+	}
+
 });
 
 /**
@@ -236,7 +250,7 @@ EditorUi.prototype.saveFile = function(forceDialog)
 					},
 		})
 		.done( () => {
-			Materialize.toast('Diagrama editado correctamente', 1500)
+			Materialize.toast('Diagrama salvado correctamente', 1500)
 		});
 
 		@else
@@ -245,8 +259,9 @@ EditorUi.prototype.saveFile = function(forceDialog)
 				type: 'POST',
 				data: { 
 						acc: 'edit',
+						id_diagrama, 
 						nombre,
-						id_diagrama: id_diagrama, 
+						
 						diagrama,
 						xml,
 						"_token": "{{ csrf_token() }}",
