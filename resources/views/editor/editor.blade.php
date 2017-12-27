@@ -214,7 +214,7 @@ $(document).ready(() => {
 							(evt.properties.cells["0"].children).forEach( (ind)=>{
 								ind.setConnectable(false);
 							});
-						console.log('agrupacion');
+							console.log('agrupacion');
 						}	
 					}
 				}
