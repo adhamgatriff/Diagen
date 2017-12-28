@@ -111,22 +111,37 @@ trait DiagClases{
 		return $filesName;
 	}
 	private function HandleConexion($idTabla, int $lng=3){
-		// validar error, claro que si;
 
 		$conx ='';
 		foreach ($this->conexiones as $key => $conexion) {
-			
+			$conexion['tipo'] = ($conexion['tipo']=='')?'ext':$conexion['tipo'];
 			if ($conexion['desde'] == $idTabla) {
 				if ($conexion['tipo']=='ext') {
-					if ($lng==3) {
-						$conx.=' extends '.$this->tablas[$conexion['hasta']]['nombre'];
-					}else if($lng==4){
-						$conx.=' extends '.$this->tablas[$conexion['hasta']]['nombre'];
-					}else if($lng==2){
-						$conx.='('.$this->tablas[$conexion['hasta']]['nombre'].')';
+					if ($this->tablas[$conexion['desde']]['interfaz']==0 && $this->tablas[$conexion['hasta']]['interfaz']==0) {
+						if($lng==3){
+							$conx.=' extends '.$this->tablas[$conexion['hasta']]['nombre'];
+						}else if($lng==4){
+							$conx.=' extends '.$this->tablas[$conexion['hasta']]['nombre'];
+						}else if($lng==2){
+							$conx.='('.$this->tablas[$conexion['hasta']]['nombre'].')';
+						}
+					}else{
+						$this->error= true;
+						$this->erroresLog.='Para usar extends las conexiones deben ser entre clases';
 					}
 				}else if($conexion['tipo']=='imp'){
-
+					if ($this->tablas[$conexion['hasta']]['interfaz']==1 && $this->tablas[$conexion['desde']]['interfaz']==0) {
+						if($lng==3){
+							$conx.=' implements '.$this->tablas[$conexion['hasta']]['nombre'];
+						}else if($lng==4){
+							$conx.=' implements '.$this->tablas[$conexion['hasta']]['nombre'];
+						}else if($lng==2){
+							$conx.='('.$this->tablas[$conexion['hasta']]['nombre'].')';
+						}
+					}else{
+						$this->error= true;
+						$this->erroresLog.='Para implementar una interfaz tiene que ser desde una clase hacia una interfaz';
+					}
 				}
 			}
 		}
