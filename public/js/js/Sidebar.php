@@ -1868,100 +1868,55 @@ Sidebar.prototype.addUmlPalette = function(expand)
 			
 		// 	return sb.createEdgeTemplateFromCells([edge], 80, 0, 'Return');
 		// }),
-		this.addEntry('uml relation', function()
-		{
-			var edge = new mxCell('name', new mxGeometry(0, 0, 0, 0), 'endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;');
-			edge.geometry.setTerminalPoint(new mxPoint(0, 0), true);
-			edge.geometry.setTerminalPoint(new mxPoint(160, 0), false);
-			edge.geometry.relative = true;
-			edge.geometry.x = -1;
-			edge.edge = true;
-			
-	    	var cell = new mxCell('1', new mxGeometry(-1, 0, 0, 0), 'resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontSize=10;');
-	    	cell.geometry.relative = true;
-	    	cell.setConnectable(false);
-	    	cell.vertex = true;
-	    	edge.insert(cell);
-	    	
-			return sb.createEdgeTemplateFromCells([edge], 160, 0, 'Relation 1');
-		}),
-		this.addEntry('uml association', function()
-		{
-			var edge = new mxCell('', new mxGeometry(0, 0, 0, 0), 'endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;');
-			edge.geometry.setTerminalPoint(new mxPoint(0, 0), true);
-			edge.geometry.setTerminalPoint(new mxPoint(160, 0), false);
-			edge.geometry.relative = true;
-			edge.edge = true;
-			
-	    	var cell1 = new mxCell('parent', new mxGeometry(-1, 0, 0, 0), 'resizable=0;html=1;align=left;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontSize=10;');
-	    	cell1.geometry.relative = true;
-	    	cell1.setConnectable(false);
-	    	cell1.vertex = true;
-	    	edge.insert(cell1);
-			
-	    	var cell2 = new mxCell('child', new mxGeometry(1, 0, 0, 0), 'resizable=0;html=1;align=right;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontSize=10;');
-	    	cell2.geometry.relative = true;
-	    	cell2.setConnectable(false);
-	    	cell2.vertex = true;
-	    	edge.insert(cell2);
-	    	
-			return sb.createEdgeTemplateFromCells([edge], 160, 0, 'Association 1');
-		}),
+
 		this.addEntry('uml aggregation', function()
 		{
-			var edge = new mxCell('1', new mxGeometry(0, 0, 0, 0), 'endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;');
+			var edge = new mxCell('', new mxGeometry(0, 0, 0, 0), 'endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;');
 			edge.geometry.setTerminalPoint(new mxPoint(0, 0), true);
 			edge.geometry.setTerminalPoint(new mxPoint(160, 0), false);
 			edge.geometry.relative = true;
 			edge.geometry.x = -1;
 			edge.geometry.y = 3;
 			edge.edge = true;
+			edge.tipoconexion = 'agg';
 		
-			return sb.createEdgeTemplateFromCells([edge], 160, 0, 'Aggregation 1');
+			return sb.createEdgeTemplateFromCells([edge], 160, 0, 'Agregación');
 		}),
 		this.addEntry('uml composition', function()
 		{
-			var edge = new mxCell('1', new mxGeometry(0, 0, 0, 0), 'endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;');
+			var edge = new mxCell('', new mxGeometry(0, 0, 0, 0), 'endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;');
 			edge.geometry.setTerminalPoint(new mxPoint(0, 0), true);
 			edge.geometry.setTerminalPoint(new mxPoint(160, 0), false);
 			edge.geometry.relative = true;
 			edge.geometry.x = -1;
 			edge.geometry.y = 3;
 			edge.edge = true;
-			
-			return sb.createEdgeTemplateFromCells([edge], 160, 0, 'Composition 1');
+			edge.tipoconexion = 'com';
+
+			return sb.createEdgeTemplateFromCells([edge], 160, 0, 'Composición');
 		}),
-		this.addEntry('uml relation', function()
+		this.addEntry('uml composition', function()
 		{
-			var edge = new mxCell('Relation', new mxGeometry(0, 0, 0, 0), 'endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;');
+			var edge = new mxCell('Extends', new mxGeometry(0, 0, 0, 0), 'endArrow=block;endSize=16;endFill=0;html=1;');
 			edge.geometry.setTerminalPoint(new mxPoint(0, 0), true);
 			edge.geometry.setTerminalPoint(new mxPoint(160, 0), false);
-			edge.geometry.relative = true;
 			edge.edge = true;
-			
-	    	var cell1 = new mxCell('0..n', new mxGeometry(-1, 0, 0, 0), 'resizable=0;html=1;align=left;verticalAlign=top;labelBackgroundColor=#ffffff;fontSize=10;');
-	    	cell1.geometry.relative = true;
-	    	cell1.setConnectable(false);
-	    	cell1.vertex = true;
-	    	edge.insert(cell1);
-			
-	    	var cell2 = new mxCell('1', new mxGeometry(1, 0, 0, 0), 'resizable=0;html=1;align=right;verticalAlign=top;labelBackgroundColor=#ffffff;fontSize=10;');
-	    	cell2.geometry.relative = true;
-	    	cell2.setConnectable(false);
-	    	cell2.vertex = true;
-	    	edge.insert(cell2);
-	    	
-			return sb.createEdgeTemplateFromCells([edge], 160, 0, 'Relation 2');
+			edge.tipoconexion = 'ext';
+
+			return sb.createEdgeTemplateFromCells([edge], 160, 0, 'Generalizacion');
 		}),
-		this.createEdgeTemplateEntry('endArrow=open;endSize=12;dashed=1;html=1;', 160, 0, 'Use', 'Dependency', null, 'uml dependency use'),
-		this.createEdgeTemplateEntry('endArrow=block;endSize=16;endFill=0;html=1;', 160, 0, 'Extends', 'Generalization', null, 'uml generalization extend'),
-	 	this.createEdgeTemplateEntry('endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;', 160, 0, '', 'Association 2', null, 'uml association'),
-	 	this.createEdgeTemplateEntry('endArrow=open;startArrow=circlePlus;endFill=0;startFill=0;endSize=8;html=1;', 160, 0, '', 'Inner Class', null, 'inner class'),
-	 	this.createEdgeTemplateEntry('endArrow=open;startArrow=cross;endFill=0;startFill=0;endSize=8;startSize=10;html=1;', 160, 0, '', 'Terminate', null, 'terminate'),
-	 	this.createEdgeTemplateEntry('endArrow=block;dashed=1;endFill=0;endSize=12;html=1;', 160, 0, '', 'Implementation', null, 'realization implementation'),
-	 	this.createEdgeTemplateEntry('endArrow=diamondThin;endFill=0;endSize=24;html=1;', 160, 0, '', 'Aggregation 2', null, 'aggregation'),
-	 	this.createEdgeTemplateEntry('endArrow=diamondThin;endFill=1;endSize=24;html=1;', 160, 0, '', 'Composition 2', null, 'composition'),
-	 	this.createEdgeTemplateEntry('endArrow=open;endFill=1;endSize=12;html=1;', 160, 0, '', 'Association 3', null, 'association')
+
+		this.addEntry('uml composition', function()
+		{
+			var edge = new mxCell('Implements', new mxGeometry(0, 0, 0, 0), 'endArrow=block;endSize=16;endFill=0;html=1;');
+			edge.geometry.setTerminalPoint(new mxPoint(0, 0), true);
+			edge.geometry.setTerminalPoint(new mxPoint(160, 0), false);
+			edge.edge = true;
+			edge.tipoconexion = 'imp';
+
+			return sb.createEdgeTemplateFromCells([edge], 160, 0, 'Generalizacion de Interfaz');
+		}),
+
 	];
 	
 	this.addPaletteFunctions('uml', mxResources.get('uml'), expand || false, fns);

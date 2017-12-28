@@ -137,14 +137,16 @@ class DiagramController extends Controller
 						$conexiones = [[
 							'id' => (int) $value->attributes()->id,
 							'desde'=> (string) $value->attributes()->source,
-							'hasta'=> (string) $value->attributes()->target
+							'hasta'=> (string) $value->attributes()->target,
+							'tipo'=> (string) $value->attributes()->tipoconexion
 							]
 						];
 					}else{
 						array_push($conexiones,[
 							'id' => (int) $value->attributes()->id,
 							'desde'=> (string) $value->attributes()->source,
-							'hasta'=> (string) $value->attributes()->target
+							'hasta'=> (string) $value->attributes()->target,
+							'tipo'=> (string) $value->attributes()->tipoconexion
 						]);
 					}
 				}else {
