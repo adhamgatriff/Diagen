@@ -110,13 +110,41 @@ trait DiagClases{
 		}
 		return $filesName;
 	}
+	private function HandleConexion($idTabla, int $lng=3){
+		// validar error, claro que si;
+
+		$conx ='';
+		foreach ($this->conexiones as $key => $conexion) {
+			
+			if ($conexion['desde'] == $idTabla) {
+				if ($conexion['tipo']=='ext') {
+					if ($lng==3) {
+						$conx.=' extends '.$this->tablas[$conexion['hasta']]['nombre'];
+					}else if($lng==4){
+						$conx.=' extends '.$this->tablas[$conexion['hasta']]['nombre'];
+					}else if($lng==2){
+						$conx.='('.$this->tablas[$conexion['hasta']]['nombre'].')';
+					}
+				}else if($conexion['tipo']=='imp'){
+
+				}
+			}
+		}
+
+		return $conx;
+	}
 	private function genPhp($tabla){
 
 		if($tabla['interfaz']){
+			// validar que sea implements
+
 			$codigo = "<?php\r\n\r\n\tinterface ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
 		}else{
-			$codigo = "<?php\r\n\r\n\tclass ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
-			$codigo .= "\t\tfunction __construct() {}\r\n\t\n";
+			$codigo = "<?php\r\n\r\n\tclass ".ucfirst(camel_case($tabla['nombre']));
+			$codigo.= $this->HandleConexion($tabla['id'],3);
+
+			// validat que sea extends
+			$codigo .= " {\r\r\t\tfunction __construct() {}\r\n\t\n";
 		}
 
 		foreach ($this->celdas as $index => $celda) {
@@ -144,51 +172,15 @@ trait DiagClases{
 		$codigo .= "}\r\n?>";
 
 		return $codigo;
-	}
-	private function genPython($tabla){
-
-
-		if($tabla['interfaz']){
-
-			$codigo ="from abc import ABCMeta, abstractmethod\r\r";
-			$codigo .="class ".ucfirst(camel_case($tabla['nombre'])).":\r\t__metaclass__ = ABCMeta\r\r";
-
-		}else{
-			$codigo = "class ".ucfirst(camel_case($tabla['nombre'])).":\r\r";
-			$codigo .= "\tdef __init__(self):\r\t\tpass\r\r"; 
-		}
-		
-
-		foreach ($this->celdas as $index => $celda) {
-
-			if ($tabla['id'] == $index) {
-
-				foreach ($celda as $ind => $celditas) {
-
-					if (isset($celditas[0])) {
-						$codigo.= "\tdef ".$this->TraductCls($celditas[0]['nombre'],2);
-					}else{
-						$codigo.= ($tabla['interfaz']) ? "\t@abstractmethod\r": "";
-						$codigo.= "\tdef ";
-					}
-
-					$codigo.= ucfirst(camel_case(str_before($celditas['nombre'],'(')))."(";
-
-					$codigo.= 
-						$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),2);
-					$codigo.=	"):\r\t\tpass\r\r";
-				}
-			}
-		}
-		return $codigo;
-	}
+	}	
 	private function genJava($tabla){
 		
 		if($tabla['interfaz']){
 			$codigo = "interface ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
 		}else{
-			$codigo = "public class ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
-			$codigo .= "\tpublic ".ucfirst(camel_case($tabla['nombre']))."() {}\r\n\t\n";
+			$codigo = "public class ".ucfirst(camel_case($tabla['nombre']));
+			$codigo.= $this->HandleConexion($tabla['id'],4);
+			$codigo .= " {\r\r\tpublic ".ucfirst(camel_case($tabla['nombre']))."() {}\r\n\t\n";
 		}
 
 		foreach ($this->celdas as $index => $celda) {
@@ -216,4 +208,42 @@ trait DiagClases{
 		$codigo .= "}\r\n";
 		return $codigo;
 	}
+	private function genPython($tabla){
+
+		if($tabla['interfaz']){
+
+			$codigo ="from abc import ABCMeta, abstractmethod\r\r";
+			$codigo .="class ".ucfirst(camel_case($tabla['nombre'])).":\r\t__metaclass__ = ABCMeta\r\r";
+
+		}else{
+			$codigo = "class ".ucfirst(camel_case($tabla['nombre']));
+			$codigo.= $this->HandleConexion($tabla['id'],2);
+			$codigo .= ":\r\r\tdef __init__(self):\r\t\tpass\r\r"; 
+		}
+		
+
+		foreach ($this->celdas as $index => $celda) {
+
+			if ($tabla['id'] == $index) {
+
+				foreach ($celda as $ind => $celditas) {
+
+					if (isset($celditas[0])) {
+						$codigo.= "\tdef ".$this->TraductCls($celditas[0]['nombre'],2);
+					}else{
+						$codigo.= ($tabla['interfaz']) ? "\t@abstractmethod\r": "";
+						$codigo.= "\tdef ";
+					}
+
+					$codigo.= ucfirst(camel_case(str_before($celditas['nombre'],'(')))."(";
+
+					$codigo.= 
+						$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),2);
+					$codigo.=	"):\r\t\tpass\r\r";
+				}
+			}
+		}
+		return $codigo;
+	}
+
 }

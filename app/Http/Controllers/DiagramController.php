@@ -152,7 +152,7 @@ class DiagramController extends Controller
 				}else {
 				// tabla
 					if (!str_contains((string) $value->attributes()->style,'shape')) {
-						$tablas[] = ['id' => (int) $value->attributes()->id,
+						$tablas[(int) $value->attributes()->id] = ['id' => (int) $value->attributes()->id,
 												'nombre'=> (string) $value->attributes()->value,
 												'interfaz' => (int) $value->attributes()->isInterface
 											];
