@@ -150,7 +150,7 @@ trait DiagClases{
 	}
 	private function HandleAggCom($idTabla, int $lng=3){
 
-		$import = []; $variable =[]; $method= [];
+		$import = []; $variable =[]; $method= [];$insConstr= [];
 
 		foreach ($this->conexiones as $key => $conexion) {
 			unset($tablaHasta);
@@ -160,12 +160,15 @@ trait DiagClases{
 				if ($conexion['tipo']=='agg') {
 					if ($this->tablas[$conexion['desde']]['interfaz']==0 && $this->tablas[$conexion['hasta']]['interfaz']==0) {
 						if($lng==3){
-							$variable[$key] ='private $_'.$tablaHasta.'= array();';
 
+							$variable[$key] ='private $_'.strtolower($tablaHasta).'= array();';
 							$method[$key]= 'public function add'.ucfirst(camel_case($tablaHasta)).'('.ucfirst(camel_case($tablaHasta)).' $'.$tablaHasta.'){'."\n\n\t\t\t";
 							$method[$key].= '$this->_'.$tablaHasta.'[] = $'.$tablaHasta.';'."\n\t\t}\n\n";
 
 						}else if($lng==4){
+							$variable[$key] ='public '.ucfirst(camel_case($tablaHasta)).' '.strtolower($tablaHasta);
+							$method[$key]= 'public void add'.ucfirst(camel_case($tablaHasta)).' ('.ucfirst(camel_case($tablaHasta)).' '.strtolower(substr($tablaHasta,0,1)).'){'."\n\n\t\t";
+							$method[$key].= strtolower($tablaHasta).' = '.strtolower(substr($tablaHasta,0,1)).';'."\n\t}\n\n";
 
 						}else if($lng==2){
 
@@ -177,12 +180,13 @@ trait DiagClases{
 				}else if($conexion['tipo']=='com'){ //nombre tentativo
 					if ($this->tablas[$conexion['desde']]['interfaz']==0 && $this->tablas[$conexion['hasta']]['interfaz']==0) {
 						if($lng==3){
-							$variable[$key] ='private '.$tablaHasta.';';
-
+							$variable[$key] ='private $_'.strtolower($tablaHasta).';';
 							$method[$key]= 'public function add'.ucfirst(camel_case($tablaHasta)).'(){'."\n\n\t\t\t";
 							$method[$key].= '$this->_'.$tablaHasta.' = new '.ucfirst(camel_case($tablaHasta)).'();'."\n\t\t}\n\n";
 
 						}else if($lng==4){
+							
+							$insConstr[$key]= strtolower($tablaHasta).' = new '.ucfirst(camel_case($tablaHasta)).'();'."\n\t";
 
 						}else if($lng==2){
 
@@ -197,7 +201,7 @@ trait DiagClases{
 					if($lng==3){
 						$import[$key] = "require_once '".ucfirst(camel_case($tablaHasta)).".php';";
 					}else if($lng==4){
-
+						$variable[$key] ='public '.ucfirst(camel_case($tablaHasta)).' '.strtolower($tablaHasta);
 					}else if($lng==2){
 
 					}
@@ -205,7 +209,7 @@ trait DiagClases{
 			}
 		}
 
-		return [ 'import' => $import, 'variable' => $variable, 'method' => $method];
+		return [ 'import' => $import, 'variable' => $variable, 'method' => $method,'insConstr' => $insConstr];
 	}
 	private function genPhp($tabla){
 
@@ -229,8 +233,8 @@ trait DiagClases{
 			$codigo.= $this->HandleConexion($tabla['id'],3)."{\n\n";
 			if(count($arri['variable'])>0){
 				foreach ($arri['variable'] as $indi => $value) {
-					if (!last($arri['variable'])==$ind) {
-						$codigo .=  "\t\t".$value."";
+					if (!last($arri['variable'])==$indi) {
+						$codigo .=  "\t\t".$value."\n";
 					}else{
 						$codigo .=  "\t\t".$value."\n";
 					}
@@ -263,32 +267,57 @@ trait DiagClases{
 	}	
 	private function genJava($tabla){
 		
+		$arri = $this->HandleAggCom($tabla['id'],4);
+
 		if($tabla['interfaz']){
 			$codigo = "interface ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
 		}else{
 			$codigo = "public class ".ucfirst(camel_case($tabla['nombre']));
-			$codigo.= $this->HandleConexion($tabla['id'],4);
-			$codigo .= " {\r\r\tpublic ".ucfirst(camel_case($tabla['nombre']))."() {}\r\n\t\n";
+			$codigo.= $this->HandleConexion($tabla['id'],4)." {\r\r\t";
+
+			if(count($arri['variable'])>0){
+				foreach ($arri['variable'] as $indi => $value) {
+					if (!last($arri['variable'])==$indi) {
+						$codigo .= $value.";\n";
+					}else{
+						$codigo .= "\t".$value.";\n";
+					}
+				}
+			}
+
+			$codigo .= "\r\r\tpublic ".ucfirst(camel_case($tabla['nombre']))."() {";
+			
+			if(count($arri['insConstr'])>0){
+				foreach ($arri['insConstr'] as $inda => $value) {
+					if (!last($arri['insConstr'])==$inda) {
+						$codigo .= "\n\t\t".$value."";
+					}else{
+						$codigo .= "\t\t".$value."\n";
+					}
+				}
+			}
+
+			$codigo.="}\r\n\n";
+
+			if(count($arri['method'])>0){
+				foreach ($arri['method'] as $in => $value) {
+					$codigo .=  "\t".$value;
+				}
+			}
 		}
 
 		foreach ($this->celdas as $index => $celda) {
-
 			if ($tabla['id'] == $index) {
-
 				foreach ($celda as $ind => $celditas) {
-
 					if (isset($celditas[0])) {
-
 						$codigo.= "\t".$this->TraductCls($celditas[0]['nombre'],4);
 					}else{
 						$codigo.= "\tpublic void";
 					}
 
 					$codigo.= ' '.ucfirst(camel_case(str_before($celditas['nombre'],'(')))."(";
-
 					$codigo.= 
 						$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),4);
-
 					$codigo.=	") {}\r\n\t\n";
 				}
 			}
