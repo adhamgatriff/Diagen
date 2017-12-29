@@ -171,6 +171,9 @@ trait DiagClases{
 							$method[$key].= strtolower($tablaHasta).' = '.strtolower(substr($tablaHasta,0,1)).';'."\n\t}\n\n";
 
 						}else if($lng==2){
+							$variable[$key] = strtolower($tablaHasta).'= '.ucfirst(camel_case($tablaHasta)).'()';
+							$method[$key]= 'def add'.ucfirst(camel_case($tablaHasta)).'(self, '.strtolower($tablaHasta).')'."\n\t\t";
+							$method[$key].= 'pass'."\n\t\t\n";
 
 						}
 					}else{
@@ -185,10 +188,12 @@ trait DiagClases{
 							$method[$key].= '$this->_'.$tablaHasta.' = new '.ucfirst(camel_case($tablaHasta)).'();'."\n\t\t}\n\n";
 
 						}else if($lng==4){
-							
 							$insConstr[$key]= strtolower($tablaHasta).' = new '.ucfirst(camel_case($tablaHasta)).'();'."\n\t";
 
 						}else if($lng==2){
+							$variable[$key] = strtolower($tablaHasta).' = None';
+							$method[$key]= 'def add'.ucfirst(camel_case($tablaHasta)).'(self)'."\n\t\t";
+							$method[$key].= 'self.'.strtolower($tablaHasta)."= ".ucfirst(camel_case($tablaHasta))."()\n\t\t\n";
 
 						}
 					}else{
@@ -327,6 +332,8 @@ trait DiagClases{
 	}
 	private function genPython($tabla){
 
+		$arri = $this->HandleAggCom($tabla['id'],2);
+
 		if($tabla['interfaz']){
 
 			$codigo ="from abc import ABCMeta, abstractmethod\r\r";
@@ -334,10 +341,27 @@ trait DiagClases{
 
 		}else{
 			$codigo = "class ".ucfirst(camel_case($tabla['nombre']));
-			$codigo.= $this->HandleConexion($tabla['id'],2);
-			$codigo .= ":\r\r\tdef __init__(self):\r\t\tpass\r\r"; 
+			$codigo.= $this->HandleConexion($tabla['id'],2).":\n\n";
+
+			if(count($arri['variable'])>0){
+				foreach ($arri['variable'] as $andx => $value) {
+					if (!last($arri['variable'])==$andx) {
+						$codigo .=  "\t".$value."\n";
+					}else{
+						$codigo .=  "\t".$value."\n";
+					}
+				}
+			}
+
+			$codigo .= "\r\r\tdef __init__(self):\r\t\tpass\r\r"; 
+
+			if(count($arri['method'])>0){
+				foreach ($arri['method'] as $in => $value) {
+					$codigo .=  "\t".$value;
+				}
+			}
+
 		}
-		
 
 		foreach ($this->celdas as $index => $celda) {
 
