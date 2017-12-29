@@ -148,44 +148,117 @@ trait DiagClases{
 
 		return $conx;
 	}
-	private function genPhp($tabla){
+	private function HandleAggCom($idTabla, int $lng=3){
 
-		if($tabla['interfaz']){
-			// validar que sea implements
+		$import = []; $variable =[]; $method= [];
 
-			$codigo = "<?php\r\n\r\n\tinterface ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
-		}else{
-			$codigo = "<?php\r\n\r\n\tclass ".ucfirst(camel_case($tabla['nombre']));
-			$codigo.= $this->HandleConexion($tabla['id'],3);
+		foreach ($this->conexiones as $key => $conexion) {
+			unset($tablaHasta);
+			$tablaHasta = $this->tablas[$conexion['hasta']]['nombre'];
 
-			// validat que sea extends
-			$codigo .= " {\r\r\t\tfunction __construct() {}\r\n\t\n";
+			if ($conexion['desde'] == $idTabla) {
+				if ($conexion['tipo']=='agg') {
+					if ($this->tablas[$conexion['desde']]['interfaz']==0 && $this->tablas[$conexion['hasta']]['interfaz']==0) {
+						if($lng==3){
+							$variable[$key] ='private $_'.$tablaHasta.'= array();';
+
+							$method[$key]= 'public function add'.ucfirst(camel_case($tablaHasta)).'('.ucfirst(camel_case($tablaHasta)).' $'.$tablaHasta.'){'."\n\n\t\t\t";
+							$method[$key].= '$this->_'.$tablaHasta.'[] = $'.$tablaHasta.';'."\n\t\t}\n\n";
+
+						}else if($lng==4){
+
+						}else if($lng==2){
+
+						}
+					}else{
+						$this->error= true;
+						$this->erroresLog.='Esta relacion solo se puede hacer entre clases';
+					}
+				}else if($conexion['tipo']=='com'){ //nombre tentativo
+					if ($this->tablas[$conexion['desde']]['interfaz']==0 && $this->tablas[$conexion['hasta']]['interfaz']==0) {
+						if($lng==3){
+							$variable[$key] ='private '.$tablaHasta.';';
+
+							$method[$key]= 'public function add'.ucfirst(camel_case($tablaHasta)).'(){'."\n\n\t\t\t";
+							$method[$key].= '$this->_'.$tablaHasta.' = new '.ucfirst(camel_case($tablaHasta)).'();'."\n\t\t}\n\n";
+
+						}else if($lng==4){
+
+						}else if($lng==2){
+
+						}
+					}else{
+						$this->error= true;
+						$this->erroresLog.='Esta relacion solo se puede hacer entre clases';
+					}
+				}
+
+				if($conexion['tipo']=='agg' || $conexion['tipo']=='com'){
+					if($lng==3){
+						$import[$key] = "require_once '".ucfirst(camel_case($tablaHasta)).".php';";
+					}else if($lng==4){
+
+					}else if($lng==2){
+
+					}
+				}
+			}
 		}
 
+		return [ 'import' => $import, 'variable' => $variable, 'method' => $method];
+	}
+	private function genPhp($tabla){
+
+		$arri = $this->HandleAggCom($tabla['id'],3);
+
+		if($tabla['interfaz']){
+			$codigo = "<?php\r\n\r\n\tinterface ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
+		}else{
+
+			$codigo = "<?php";
+			if(count($arri['import'])>0){
+				foreach ($arri['import'] as $ind => $value) {
+					if (!last($arri['import'])==$ind) {
+						$codigo .=  "\r\n\r\n\t".$value;
+					}else{
+						$codigo .= "\n\t".$value."";
+					}
+				}
+			}
+			$codigo .= "\r\n\r\n\tclass ".ucfirst(camel_case($tabla['nombre']));
+			$codigo.= $this->HandleConexion($tabla['id'],3)."{\n\n";
+			if(count($arri['variable'])>0){
+				foreach ($arri['variable'] as $indi => $value) {
+					if (!last($arri['variable'])==$ind) {
+						$codigo .=  "\t\t".$value."";
+					}else{
+						$codigo .=  "\t\t".$value."\n";
+					}
+				}
+			}
+			$codigo .= "\r\r\t\tfunction __construct() {}\r\n\t\n";
+			if(count($arri['method'])>0){
+				foreach ($arri['method'] as $in => $value) {
+					$codigo .=  "\t\t".$value;
+				}
+			}
+		}
 		foreach ($this->celdas as $index => $celda) {
-
 			if ($tabla['id'] == $index) {
-
 				foreach ($celda as $ind => $celditas) {
-
 					if (isset($celditas[0])) {
-
 						$codigo.= "\t\t".$this->TraductCls($celditas[0]['nombre'],3);
 					}else{
 						$codigo.= "\t\tpublic function";
 					}
-
 					$codigo.= ' '.ucfirst(camel_case(str_before($celditas['nombre'],'(')))."(";
-
 					$codigo.= 
 						$this->addPar(abs(round(intval(trim(str_before(str_after($celditas['nombre'],'('),')'))))),3);
 					$codigo.=	") {}\r\n\t\n";
 				}
 			}
 		}
-
 		$codigo .= "}\r\n?>";
-
 		return $codigo;
 	}	
 	private function genJava($tabla){
