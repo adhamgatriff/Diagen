@@ -105,19 +105,11 @@ class DiagramController extends Controller
 
 	public function generate($id_diag=''){
 
-		// $diag->root->mxCell todas las celdas de las tablas
-		// parent 1 y sin source ni target son tablas
-		// parent 1 con surce y targey conexiones flechas puede ser, si no tiene no agregar
-		// 
-		// para saber a que celda pertenece a que tabla, tienen parent = al id de la tabla.
-
 		$tablas = [];
 		$celdas = [];
 		$conexiones = [];
 		// errores?
 		$errores = false;
-
-
 		$diagrama = Diagrama::find($id_diag);
 		$diag = simplexml_load_string($diagrama->diagrama);
 
@@ -219,7 +211,6 @@ class DiagramController extends Controller
 		$this->celdas = $celdas;
 		$this->conexiones = $conexiones;
 		
-		// cambiar status por tipo, estatus por ahora mientras se hace el refresh OJOJOJO
 		if ($tipo ==0) {
 			// CAMBIAR EL STATUS
 			return true;
@@ -271,6 +262,7 @@ class DiagramController extends Controller
 	}
 
 	function launcherMultiple(Request $req){
+		$fm = $req->name.'.zip';
 
 		if ($req->tipo == 'er') {
 			$sql_ = [];
@@ -279,16 +271,24 @@ class DiagramController extends Controller
 				$sql_[$key] = $this->EntidadRelacion();
 			}
 
-			$fm = $req->name.'.zip';
+		
 			Zipper::make('myzip/'.$fm)->add($sql_)->close();
 			array_map("unlink", $sql_);
 			return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);
-			return 'myzip/'.$fm;
 
 		}else if($req->tipo == 'dc'){
-
+			$dc_ = [];
+			foreach ($req->diags as $ke => $va) {
+				$this->generate($va);
+				$aux = $this->DiagramaClases($req->lng);
+				Zipper::make($this->nombre.'.zip')->add($aux)->close();
+				$dc_[$ke] = $this->nombre.'.zip';
+				array_map("unlink", $aux);
+			}
+			Zipper::make('myzip/'.$fm)->add($dc_)->close();
+			array_map("unlink", $dc_);
+			return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);
 		}
-
 	}
 
 	public function unlinkZip(request $req){
