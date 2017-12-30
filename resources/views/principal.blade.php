@@ -88,7 +88,7 @@
 					<div id="clases" class="col s12">
 						<div class="list-graph" style="margin-top: 10px;">
 							<div class="row diagHere" style="overflow-y: auto;"></div>
-							<div class="input-field col s12">
+							<div class="input-field col s6">
 								<select id='classSelect'>
 									<option value="" disabled selected>Seleccione uno</option>
 									<option value='2' data-icon="img/python1.png" class="left circle">Python</option>
@@ -97,17 +97,25 @@
 								</select>
 								<label>Seleccione lenguaje a exportar</label>
 							</div>
+							<div class="input-field col s6">
+								<input class="ExpNameFile" id="ExpNameFil" type="text">
+          			<label for="ExpNameFil">Nombre del archivo</label>
+							</div>
 						</div>
 					</div>
 					<div id="sql" class="col s12">
 						<div class="list-graph" style="margin-top: 10px;">
 							<div class="row sqlHere" style="overflow-y: auto;"></div>
-							<div class="input-field col s12">
+							<div class="input-field col s6">
 								<select id='sqlSelect'>
 									<option value="" disabled selected>Seleccione uno</option>
 									<option value='1' data-icon="img/sql2.png" class="left circle">SQL</option>
 								</select>
 								<label>Seleccione lenguaje a exportar</label>
+							</div>
+							<div class="input-field col s6">
+								<input class="ExpNameFile" id='expnamefi' type="text">
+          			<label for="expnamefi">Nombre del archivo</label>
 							</div>
 						</div>
 					</div>
@@ -150,10 +158,21 @@ $(document).ready(function() {
 });
 
 $('.btn_expMult').on('click', evnt =>{
+	var nameDiag;
 
 	let diags = new Array(); let i = 0;
 
 	if($('ul.tabs .active').data('tipo')=='er'){
+
+		if($('#sql .ExpNameFile').val() ==''){
+			Materialize.toast('Ingrese el nombre del archivo',1300)
+			return false;
+		}
+		if($('#sqlSelect').val()=='' || $('#sqlSelect').val() === null ){
+			Materialize.toast('Seleccione un lenguaje a exportar',1300)
+			return false;
+		}
+		nameDiag = $('#sql .ExpNameFile').val()
 		$('.sqlHere > .col').each((inx,e)=> {
 			if($(e).children('input').is(':checked')){
 				diags[i] = ~~($(e).children('input').attr('id'));
@@ -161,6 +180,15 @@ $('.btn_expMult').on('click', evnt =>{
 			} 
 		});
 	}else if($('ul.tabs .active').data('tipo')=='dc'){
+		if($('#classSelect').val()=='' || $('#classSelect').val() === null){
+			Materialize.toast('Seleccione un lenguaje a exportar',1300)
+			return false;
+		}
+		if($('#clases .ExpNameFile').val()==''){
+			Materialize.toast('Ingrese el nombre del archivo',1300)
+			return false;
+		}
+		nameDiag = $('#clases .ExpNameFile').val()
 		$('.diagHere > .col').each((inx,e)=> {
 			if($(e).children('input').is(':checked')){
 				diags[i] = ~~($(e).children('input').attr('id'));
@@ -168,14 +196,13 @@ $('.btn_expMult').on('click', evnt =>{
 			} 
 		});
 	}
-	// validar que se seleccione un lenguaje
 
 	if(!diags.length == 0){
 
 		$.redirect("{{ url('expMultiple') }}",{
 			tipo: $('ul.tabs .active').data('tipo'),
 			diags,
-			'name': 'tdaviano',
+			'name': nameDiag,
 			'lng': $('#classSelect').val()
 		},'GET','_blank');
 
@@ -195,6 +222,11 @@ $('.goEdit').on('click', () => {
 });
 
 $('.exp-single').on('click', evnt => {
+
+	if($('#langSelect').val()=='' || $('#langSelect').val() === null){
+			Materialize.toast('Seleccione un lenguaje a exportar',1300)
+			return false;
+		}
 	$.redirect("{{ url('generar') }}",{ id_diag: $('#idd').val(),lng:$('#langSelect').val() },'GET','_blank');
 });
 
