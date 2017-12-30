@@ -37,6 +37,11 @@ Route::post('api/datosDiag','DiagramController@datos');
 Route::get('generar', 'DiagramController@Laucher');
 Route::post('generarpost', 'DiagramController@Laucher');
 
+
+Route::get('expMultiple', 'DiagramController@launcherMultiple');
+Route::post('unlinkZip', 'DiagramController@unlinkZip');
+
+
 Route::get('plantilla', function (){
 	return view('plantilla');
 });

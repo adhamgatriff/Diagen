@@ -81,8 +81,8 @@
 				<div class="row">
 					<div class="col s12">
 						<ul class="tabs tabs-fixed-width" style="overflow: hidden;background: none;">
-							<li class="tab col s6 dc_"><a class="dc_act" href="#clases">Diagrama de Clases</a></li>
-							<li class="tab col s6 er_"><a class="er_act" href="#sql">Modelos Entidad-Relacion</a></li>
+							<li class="tab col s6 dc_"><a data-tipo="dc" class="dc_act" href="#clases">Diagrama de Clases</a></li>
+							<li class="tab col s6 er_"><a data-tipo="er" class="er_act" href="#sql">Modelos Entidad-Relacion</a></li>
 						</ul>
 					</div>
 					<div id="clases" class="col s12">
@@ -115,7 +115,7 @@
 		</div>
 		<div class="modal-footer">
 			<a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat ">Cerrar</a>&nbsp;
-			<a class="waves-effect waves-light btn degradado">
+			<a class="waves-effect waves-light btn degradado btn_expMult">
 				<i class="material-icons left">file_download</i>Exportar
 			</a>
 		</div>
@@ -149,6 +149,40 @@ $(document).ready(function() {
 	$('#sqlSelect').material_select();
 });
 
+$('.btn_expMult').on('click', evnt =>{
+
+	let diags = new Array(); let i = 0;
+
+	if($('ul.tabs .active').data('tipo')=='er'){
+		$('.sqlHere > .col').each((inx,e)=> {
+			if($(e).children('input').is(':checked')){
+				diags[i] = ~~($(e).children('input').attr('id'));
+				i++
+			} 
+		});
+	}else if($('ul.tabs .active').data('tipo')=='dc'){
+		$('.diagHere > .col').each((inx,e)=> {
+			if($(e).children('input').is(':checked')){
+				diags[i] = ~~($(e).children('input').attr('id'));
+				i++
+			} 
+		});
+	}
+	// validar que se seleccione un lenguaje
+
+	if(!diags.length == 0){
+
+		$.redirect("{{ url('expMultiple') }}",{
+			tipo: $('ul.tabs .active').data('tipo'),
+			diags,
+			'name': 'tdaviano',
+			'lng': $('#classSelect').val()
+		},'GET','_blank');
+
+	}else{
+		Materialize.toast("No selecciono ningun diagrama",1200)
+	}
+});
 
 $('.goEdit').on('click', () => {
 
@@ -160,7 +194,7 @@ $('.goEdit').on('click', () => {
 	}
 });
 
-$('.exp-single').on('click', (evnt) => {
+$('.exp-single').on('click', evnt => {
 	$.redirect("{{ url('generar') }}",{ id_diag: $('#idd').val(),lng:$('#langSelect').val() },'GET','_blank');
 });
 
@@ -242,19 +276,22 @@ $('.exportCard').on('click', function(event) {
 	if($(this).data('tipo')==0){
 
 		$('#langSelect')
-			.append(`<option value="" disabled selected>Seleccione uno</option>
-								<option value='1' data-icon="img/sql2.png" class="left circle">SQL</option>`); 
+			.append(`
+				<option value="" disabled selected>Seleccione uno</option>
+				<option value='1' data-icon="img/sql2.png" class="left circle">SQL</option>`
+			); 
+
 		$('#langSelect').material_select();
 
 	}else if($(this).data('tipo')==1){
 
 		$('#langSelect')
 			.append(`
-							<option value="" disabled selected>Seleccione uno</option>
-							<option value='2' data-icon="img/python1.png" class="left circle">Python</option>
-							<option value='3' data-icon="img/p1.png" class="left circle">PHP</option>
-							<option value='4' data-icon="img/java.jpg" class="left circle">Java</option>`
-							); 
+				<option value="" disabled selected>Seleccione uno</option>
+				<option value='2' data-icon="img/python1.png" class="left circle">Python</option>
+				<option value='3' data-icon="img/p1.png" class="left circle">PHP</option>
+				<option value='4' data-icon="img/java.jpg" class="left circle">Java</option>`
+			); 
 
 		$('#langSelect').material_select();
 	}
@@ -344,7 +381,5 @@ $('.actUser').on('click', function(event) {
 	});
 });
 
-
 </script>
-
 @endsection

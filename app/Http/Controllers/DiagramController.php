@@ -220,7 +220,7 @@ class DiagramController extends Controller
 		$this->conexiones = $conexiones;
 		
 		// cambiar status por tipo, estatus por ahora mientras se hace el refresh OJOJOJO
-		if ($tipo ==0 ) {
+		if ($tipo ==0) {
 			// CAMBIAR EL STATUS
 			return true;
 		}else{
@@ -247,11 +247,9 @@ class DiagramController extends Controller
 			$d = Diagrama::find($req->id_diag);
 
 			if($d->status==1){
-
 				$d->delete();
 				if ($d->tipo == 0) { //sql
 					return response()->download($f)->deleteFileAfterSend(true);
-
 				}else { //class
 					$fm = $this->nombre.'.zip';
 					Zipper::make('myzip/'.$fm)->add($f)->close();
@@ -270,6 +268,31 @@ class DiagramController extends Controller
 				}
 			}
 		}	
+	}
+
+	function launcherMultiple(Request $req){
+
+		if ($req->tipo == 'er') {
+			$sql_ = [];
+			foreach ($req->diags as $key => $val) {
+				$this->generate($val);
+				$sql_[$key] = $this->EntidadRelacion();
+			}
+
+			$fm = $req->name.'.zip';
+			Zipper::make('myzip/'.$fm)->add($sql_)->close();
+			array_map("unlink", $sql_);
+			return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);
+			return 'myzip/'.$fm;
+
+		}else if($req->tipo == 'dc'){
+
+		}
+
+	}
+
+	public function unlinkZip(request $req){
+		unlink('myzip/'.$req->name.'.zip');
 	}
 
 	function __construct(){
