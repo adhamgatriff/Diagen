@@ -203,7 +203,6 @@ class DiagramController extends Controller
 							}
 						}
 					}
-
 				}else{
 					if ((string)$value->attributes()->value!= '') {
 						$celdas[(int)$value->attributes()->parent][(int) $value->attributes()->id] = [
@@ -229,15 +228,16 @@ class DiagramController extends Controller
 		}
 	}
 
-
 	function Laucher(Request $req) {
 
 	// diag_c diagrama xml
 	// id_diag diagrama para buscarlo
 
 		if ($this->generate($req->id_diag)) {
+			unset($f);
 			$f = $this->EntidadRelacion();
 		}else{
+			unset($f);
 			$f = $this->DiagramaClases($req->lng);
 		}
 
@@ -245,19 +245,29 @@ class DiagramController extends Controller
 			return view('error')->with(['erroresLog' => $this->erroresLog]);
 		}else{
 			$d = Diagrama::find($req->id_diag);
+
 			if($d->status==1){
 
 				$d->delete();
-				$fm = $this->nombre.'.zip';
+				if ($d->tipo == 0) { //sql
+					return response()->download($f)->deleteFileAfterSend(true);
 
-				Zipper::make('myzip/'.$fm)->add($f)->close();
-				
-				array_map("unlink", $f);
+				}else { //class
+					$fm = $this->nombre.'.zip';
+					Zipper::make('myzip/'.$fm)->add($f)->close();
+					array_map("unlink", $f);
+					return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);
+				}
 
-				return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);
-				
 			}else{
-				return response()->download($f)->deleteFileAfterSend(true);
+				if ($d->tipo == 0) {
+					return response()->download($f)->deleteFileAfterSend(true);
+				}else{
+					$fm = $this->nombre.'.zip';
+					Zipper::make('myzip/'.$fm)->add($f)->close();
+					array_map("unlink", $f);
+					return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);
+				}
 			}
 		}	
 	}
