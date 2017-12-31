@@ -11341,14 +11341,15 @@ class Diagrama2Img extends Controller
   public function Convertir(String $filename) {
 
   	$file = public_path().'/diagramasXml/'.$filename;
-
   	$image =  mxGraphViewImageReader::convertFile($file, "#FFFFFF");
 
   	$img = Image::make($image);
-  	$img->heighten(1004);
-  	$img->widen(839);
-  	$tamA = 300;
-  	$tamL = 250;
+  	// $height = $img->height();
+  	// $width = $img->width();
+  	// $img->heighten(1004);
+  	// $img->widen(839);
+  	$tamA = 319;
+  	$tamL = 213;
   	
   	$img->crop($tamA, $tamL,$img->width()-$tamA,$img->height()-$tamL);
 
