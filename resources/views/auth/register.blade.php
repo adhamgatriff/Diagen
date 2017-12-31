@@ -13,11 +13,12 @@
 </style>
 @section('content')
 <div class="row">
-    <form class="col m5 offset-m7 s12 formlogin" method="POST" action="{{ route('register') }}">
+    <form class="col l5 m9 m5 offset-l7 offset-m3 s12 formlogin" method="POST" action="{{ route('register') }}">
       <h4 class="center">Registarse</h4>
       {{ csrf_field() }}
       <div class="row">
         <div class="input-field col s12 {{ $errors->has('usuario') ? ' has-error' : '' }}">
+          <i class="material-icons prefix">account_box</i>
           <input id="usuario" type="text" class="form-control" name="usuario" value="{{ old('usuario') }}" required>
           <label for="usuario">Nombre de usuario</label>
           @if ($errors->has('usuario'))
@@ -29,6 +30,7 @@
       </div>
       <div class="row">
         <div class="input-field col s6 {{ $errors->has('nombre') ? ' has-error' : '' }}">
+          <i class="material-icons prefix">face</i>
           <input id="nombre" type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" required>
           <label for="nombre">Nombre</label>
           @if ($errors->has('nombre'))
@@ -38,6 +40,7 @@
           @endif
         </div>
         <div class="input-field col s6 {{ $errors->has('apellido') ? ' has-error' : '' }}">
+          <i class="material-icons prefix">perm_identity</i>
           <input id="apellido" type="text" class="form-control" name="apellido" value="{{ old('apellido') }}" required>
           <label for="apellido">Apellido</label>
           @if ($errors->has('apellido'))
@@ -50,6 +53,7 @@
 
       <div class="row">
         <div class="input-field col s12 {{ $errors->has('email') ? ' has-error' : '' }}">
+          <i class="material-icons prefix">email</i>
           <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
           <label for="email">Email</label>
           @if ($errors->has('email'))
@@ -61,6 +65,7 @@
       </div>
       <div class="row">
         <div class="input-field col s6 {{ $errors->has('password') ? ' has-error' : '' }}">
+          <i class="material-icons prefix">vpn_key</i>
           <input id="password" type="password" class="form-control" name="password" required>
           <label for="password">Contraseña</label>
           @if ($errors->has('password'))
@@ -70,6 +75,7 @@
           @endif
         </div>
         <div class="input-field col s6 ">
+          <i class="material-icons prefix">vpn_key</i>
           <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
           <label for="password-confirm">Repita la contraseña</label>
         </div>

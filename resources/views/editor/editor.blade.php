@@ -69,8 +69,13 @@
 	</div>
 	<!-- Modal Structure -->
 	<div id="mdExpInd" class="modal modal-fixed-footer tinyModalEdit">
-		<div class="modal-content">
-			<h4>Exportar Diagrama</h4>
+		<div class="titulo-generico">
+  		<h4 class="opensans">
+  			Exportar Diagrama
+  		</h4>
+  	</div>
+		<div class="modal-content" style="padding-top: 0px;
+    padding-bottom: 0px;">
 			<div class="row">
 				<div class="input-field col s12 m6" style="margin-top: 40px;">
 	        <input id="filename_" type="text">

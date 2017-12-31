@@ -42,8 +42,12 @@
 		</div>
 	</div>
   <div id="modaladd" class="modal">
-    <div class="modal-content">
-      <h5>Nuevo diagrama</h5>
+  	<div class="titulo-generico">
+  		<h4 class="opensans">
+  			Nuevo diagrama
+  		</h4>
+  	</div>
+    <div class="modal-content" style="padding-top: 0px;">
       <div class="input-field col s12" style="margin: 50px 0 70px 0;">
 				<select id='ediSelect'>
 					<option value="" disabled selected>Seleccione uno</option>
@@ -58,9 +62,11 @@
       <a class="waves-effect waves-light btn degradado Wradius goEdit">Ir al editor</a>
     </div>
   </div>
-	<div id="mdExpInd" class="modal modal-fixed-footer tinyModal">
+	<div id="mdExpInd" class="modal modal-fixed-footer tinyModal">			
+		<div class="titulo-generico">
+			<h4 class="opensans">Exportar Diagrama</h4>
+		</div>
 		<div class="modal-content">
-			<h4>Exportar Diagrama</h4>
 			<div class="input-field col s12">
 				<select id='langSelect'>
 				</select>
@@ -76,8 +82,12 @@
 		</div>
 	</div>
 	<div id="mdExpMult" class="modal modal-fixed-footer">
-		<div class="modal-content" style="padding-bottom: 0px;">
-			<h4>Exportar multiples Diagramas</h4>
+		<div class="titulo-generico">
+  		<h4 class="opensans">
+  			Exportar multiples Diagramas
+  		</h4>
+  	</div>
+		<div class="modal-content" style="padding-bottom: 0px;padding-top: 0px;">
 				<div class="row">
 					<div class="col s12">
 						<ul class="tabs tabs-fixed-width" style="overflow: hidden;background: none;">
@@ -129,9 +139,11 @@
 		</div>
 	</div>
   <div id="deleteDmodal" class="modal bottom-sheet">
-    <div class="modal-content">
-      <h4>Borrar diagrama</h4>
-      <p>¿Esta seguro que desea borrar el diagrama "<strong id='ndm'></strong>"?</p>
+    <div class="titulo-generico" >
+      <h4 class="opensans">Borrar diagrama</h4>
+    	</div>
+    <div class="modal-content" style="padding: 1px 5px 8px 15px;">
+      <p class="flow-text">¿Esta seguro que desea borrar el diagrama "<strong id='ndm'></strong>"?</p>
       <input type="hidden" id="idddm">
     </div>
     <div class="modal-footer">

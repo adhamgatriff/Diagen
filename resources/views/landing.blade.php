@@ -8,8 +8,8 @@
 		<div class="navbar">
 		  <nav style="box-shadow: none; background: none;">
 		    <div class="nav-wrapper">
-		      <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-		      <ul class="right hide-on-med-and-down">
+		      <a href="#" data-activates="mobile" class="button-collapse show-on-small"><i class="material-icons">menu</i></a>
+		      <ul class="right hide-on-small-only">
 			      	<li><a href="resources/Doc.pdf" target="_blank">Manual de Usuario</a></li>
 		        @guest
 		        	<a href="{{ url('login') }}" class="waves-effect waves-light btn Wradius" style="background: white;color: #311f5f;box-shadow: 3px 3px 20px 0px #000;">Ingresar</a>
@@ -60,10 +60,10 @@
 	<div class="row" style="margin-top: 60px;">
 		<div class="col m11 s12 offset-m1" style=" position: relative;">
 			<div class="row">
-				<div class="col m6 s12" style="width: inherit;">
+				<div class="col m12 l6" style="width: inherit;">
 					<img class="responsive-img" src="{{ asset('img/logo3.png') }}" style="min-width: 25%;width: 65%;display:block;margin: 0 auto;">
 				</div>
-				<div class="col m6 hide-on-small-only">
+				<div class="col m12 l6 hide-on-small-only">
 					<h1 style="font-weight: 300;color: white;text-align: center;text-shadow: 5px 3px 7px #0a0a0a;">Diagen</h1>
 					<h4 style="color: white;font-weight: 200;text-align: center;text-shadow: 5px 3px 3px #0a0a0a;">Generador a partir de diagramas</h4>
 				</div>
@@ -90,37 +90,37 @@
 			<h4 style="font-weight: 300;text-align: center;">Caracteristicas</h4>
 			<div class="row" style="margin-top: 40px;">
 
-				<div class="col s12 m4"  style="color:#E91E63">
+				<div class="col s6 m4"  style="color:#E91E63">
           <div class="center promo">
             <i class="large material-icons">flash_on</i>
             <p class="promo-caption">Rapidez</p>
           </div>
         </div>
-        <div class="col s12 m4"  style="color:#4b367c">
+        <div class="col s6 m4"  style="color:#4b367c">
           <div class="center promo">
             <i class="large material-icons">pan_tool</i>
             <p class="promo-caption">Versatilidad</p>
           </div>
         </div>
-        <div class="col s12 m4" style="color:#E91E63">
+        <div class="col s6 m4" style="color:#E91E63">
           <div class="center promo">
             <i class="large material-icons">storage</i>
             <p class="promo-caption">Almacenamiento</p>
           </div>
         </div>
-        <div class="col s12 m4" style="color:#4b367c">
+        <div class="col s6 m4" style="color:#4b367c">
           <div class="center promo">
             <i class="large material-icons">airline_seat_individual_suite</i>
             <p class="promo-caption">Comodidad</p>
           </div>
         </div>
-        <div class="col s12 m4" style="color:#E91E63">
+        <div class="col s6 m4" style="color:#E91E63">
           <div class="center promo">
             <i class="large material-icons">event_available</i>
             <p class="promo-caption">Disponibilidad</p>
           </div>
         </div>
-        <div class="col s12 m4" style="color:#4b367c">
+        <div class="col s6 m4" style="color:#4b367c">
           <div class="center promo">
             <i class="large material-icons">style</i>
             <p class="promo-caption">Estilo</p>
