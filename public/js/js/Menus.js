@@ -414,7 +414,7 @@ Menus.prototype.init = function()
 		this.addSubmenu('distribute', menu, parent);
 		menu.addSeparator(parent);
 		this.addSubmenu('navigation', menu, parent);
-		this.addSubmenu('insert', menu, parent);
+		// this.addSubmenu('insert', menu, parent);
 		this.addSubmenu('layout', menu, parent);
 		this.addMenuItems(menu, ['-', 'group', 'ungroup', 'removeFromGroup', '-', 'clearWaypoints', 'autosize'], parent);
 	}))).isEnabled = isGraphEnabled;
@@ -459,7 +459,7 @@ Menus.prototype.init = function()
 	})));
 	this.put('file', new Menu(mxUtils.bind(this, function(menu, parent)
 	{
-		this.addMenuItems(menu, ['new', 'open', '-', 'save', 'saveAs', '-', 'import', 'export', '-', 'pageSetup', 'print'], parent);
+		this.addMenuItems(menu, [ 'open', '-', 'save', 'saveAs', '-', 'export', '-', 'pageSetup'], parent);
 	})));
 	this.put('edit', new Menu(mxUtils.bind(this, function(menu, parent)
 	{
