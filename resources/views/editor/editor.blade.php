@@ -8,7 +8,7 @@
 	<link rel="icon" href="{{ asset('img/ico32x32.ico') }}" type="image/ico" sizes="32x32">
 	<link rel="stylesheet" href="{{ asset('css/miodiagrama.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('styles/grapheditor.css') }}">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/material-design-icons/iconfont/material-icons.css')}}">
 
 	<script type="text/javascript">
 		// Parses URL parameters. Supported parameters are:

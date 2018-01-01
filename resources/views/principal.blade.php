@@ -8,14 +8,14 @@
 	<div class="row">
 		@foreach ($datos as $element)
 			 <div class="col l3 m6 s12">
-				<div class="card exportCard" data-tipo='{{$element['tipo']}}' data-id="{{$element['id']}}" >
+				<div class="card exportCard" data-tipo="{{$element['tipo']}}" data-id="{{$element['id']}}" >
 					<div class="delete-diag" style="display: none;" data-name='{{$element['nombre']}}'>
 						<a class="btn-floating btn-large waves-effect waves-light red" style="position: absolute;width: 35px;height: 35px;right:-10px;top:-10px;" >
 							<i class="material-icons" style="line-height: 35px;vertical-align: super;">delete</i>
 						</a>
 					</div>
 					<div class="card-image">
-						<img src="{{ asset('diagramasImg/'.$element['nombreI']) }}" width="250" height="250">
+						<img src="{{ asset('diagramasImg/'.$element['nombreI']) }}" class="responsive-img">
 							<a class="btnEditar btn-floating halfway-fab waves-effect waves-light degradado" data-id="{{$element['id']}}"><i class="material-icons">edit</i></a>
 					</div>
 					<div class="card-content card-mio">
