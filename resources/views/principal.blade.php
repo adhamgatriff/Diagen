@@ -1,7 +1,5 @@
 @extends('include.base')
-
 @section('title','principal')
-
 @section('main')
 @include('flash::message')
 <h3 class="opensans" style="margin-left: 12px;">Tus diagramas</h3>
@@ -424,6 +422,5 @@ $('.actUser').on('click', function(event) {
 		});
 	});
 });
-
 </script>
 @endsection
