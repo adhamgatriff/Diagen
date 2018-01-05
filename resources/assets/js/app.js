@@ -16,9 +16,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-
-
-Vue.component('navbar', require('./components/layout/Navbar.vue'));
+Vue.component('navbarDg', require('./components/layout/Navbar.vue'));
+Vue.component('footerDg', require('./components/layout/Footer.vue'));
 
 import VueRouter from 'vue-router'
 import routes from './rutas'

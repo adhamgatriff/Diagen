@@ -41,7 +41,6 @@ Route::post('generarpost', 'DiagramController@Laucher');
 Route::get('expMultiple', 'DiagramController@launcherMultiple');
 Route::post('unlinkZip', 'DiagramController@unlinkZip');
 
-
 Route::get('plantilla', function (){
 	return view('plantilla');
 });

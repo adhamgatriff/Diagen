@@ -18,7 +18,7 @@
 </head>
 <body id="bodyas" style="background-color: #19171c;">
 	<div id="app">
-	  @include('include.navbar')
+	  <navbar-dg logeado="{{ Auth::check() ? '1':'0' }}"></navbar-dg>
 		@yield('content')
 	</div>
 

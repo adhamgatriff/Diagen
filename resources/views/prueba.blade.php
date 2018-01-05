@@ -3,8 +3,5 @@
 @section('title','laravel')
 
 @section('main')
-
-	@guest
-		<router-view></router-view>
-	@endguest
+	<router-view></router-view>
 @endsection

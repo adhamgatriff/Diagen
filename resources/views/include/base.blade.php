@@ -12,13 +12,11 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/material-design-icons/iconfont/material-icons.css')}}">
 </head>
 <body>
-
-	@include('include.navbar')
-	{{-- @include('include.sidebar') --}}
 		<main id="app">
+			<navbar-dg logeado="{{ Auth::check() ? '1':'0' }}"></navbar-dg>	
 			@yield('main')
+			<footer-dg></footer-dg>
 		</main>
-	@include('include.footer')
 	</div>
 	<script src='{{mix("js/app.js")}}'></script>
 	<script type="text/javascript" src="{{ asset('js/mio.js') }}"></script>
