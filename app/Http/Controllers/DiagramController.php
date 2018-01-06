@@ -29,7 +29,8 @@ class DiagramController extends Controller
 	}
 
 	public function delDiagrama(Request $req){
-
+		
+		unlink('diagramasImg/'.Auth::user()->id.$req->id.'.png');
 		UsuarioDiagrama::where('id_diagrama',$req->id)->delete();
 		Diagrama::find($req->id)->delete();
 		return 'ok'; 

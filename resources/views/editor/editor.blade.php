@@ -162,17 +162,22 @@
 			});
 		})();
 
+	@if (isset($_GET['edit']))
+	setTimeout( () => {
+		$.post('{{ url('dlteAux') }}', {'filename': '{{$_GET['name']}}ja.xml','_token': '{{csrf_token()}}'})
+	}, 5000);
+	@endif
 
 $(document).ready(() => {
 	$('#mdExpInd').modal();
 	$('#langSelect').material_select();
 
 	@if (isset($_GET['edit']))
-		editor.setGraphXml((mxUtils.load('diagramasXml/{{$_GET['name']}}ja.xml')).getDocumentElement())
-		setTimeout( () => {
-			$.post('{{ url('dlteAux') }}', {'filename': '{{$_GET['name']}}ja.xml','_token': '{{csrf_token()}}'})
-		}, 5000);
-		
+		setTimeout(()=>{
+
+			editor.setGraphXml((mxUtils.load('diagramasXml/{{$_GET['name']}}ja.xml')).getDocumentElement())
+		},10)
+
 	@endif
 
 	editor.graph.setAllowLoops(false)
