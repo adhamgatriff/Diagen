@@ -130,7 +130,8 @@ body {
  }
 
 .pg-canvas {
-	position: absolute;
+  position: absolute;
+  background-color: black;
 }
 #primer{
 	width: 100%;

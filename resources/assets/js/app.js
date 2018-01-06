@@ -18,6 +18,8 @@ window.Vue = require('vue');
 
 Vue.component('navbarDg', require('./components/layout/Navbar.vue'));
 Vue.component('footerDg', require('./components/layout/Footer.vue'));
+// Vue.component('footerLand', require('./components/layout/FooterLng.vue'));
+// Vue.component('landingDg', require('./components/Landing.vue'));
 
 import VueRouter from 'vue-router'
 import routes from './rutas'
@@ -25,11 +27,17 @@ import routes from './rutas'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-	routes,
-	mode: 'history'
+	routes
 })
 
 const app = new Vue({
-    el: '#app',
-    router
+	el: '#app',
+	router,
+	watch: {
+		'$route' (to, from) {
+			setTimeout(() => {
+				part.resizeHandler()							
+			}, 0);
+		}
+	}
 });

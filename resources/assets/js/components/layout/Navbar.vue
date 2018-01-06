@@ -2,14 +2,17 @@
 <div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a 
-        class="brand-logo">
+			<router-link class="brand-logo" to="/">
 				<img src="img/logo2.png" style="width: 75px;margin-left: 10px;">
-			</a>
+			</router-link>
 			<a href="#" data-activates="slide-out-" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down" v-if="logeado =='0'">
-        <li><a href="">Ingresar</a></li>
-        <li><a href="">Registrarse</a></li>
+        <li>
+					<router-link class="" to="/ingreso">Ingresar</router-link>
+				</li>
+				<li>
+					<router-link class="" to="/registro">Registrarse</router-link>
+				</li>
 			</ul>
       <ul class="right hide-on-med-and-down" v-else>
 				 <li>
@@ -49,7 +52,7 @@
 <script>
 export default {
   props: {
-    logeado: { type: String, Required: true }
+    logeado: { type: Number, Required: true }
   },
 }
 </script>

@@ -22,7 +22,7 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::get('/', function () {
-	return view('landing');
+	return view('index');
 });
 
 Route::post('editGraph', 'Principal@editGraph');

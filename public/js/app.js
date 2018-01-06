@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 190);
+/******/ 	return __webpack_require__(__webpack_require__.s = 192);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -753,7 +753,7 @@ var _config = __webpack_require__(5);
 
 var __DEV__ = _config.__DEV__;
 
-var zrender = __webpack_require__(57);
+var zrender = __webpack_require__(58);
 
 var zrUtil = __webpack_require__(0);
 
@@ -761,25 +761,25 @@ var colorTool = __webpack_require__(24);
 
 var env = __webpack_require__(12);
 
-var timsort = __webpack_require__(79);
+var timsort = __webpack_require__(80);
 
 var Eventful = __webpack_require__(32);
 
-var GlobalModel = __webpack_require__(306);
+var GlobalModel = __webpack_require__(316);
 
-var ExtensionAPI = __webpack_require__(331);
+var ExtensionAPI = __webpack_require__(341);
 
 var CoordinateSystemManager = __webpack_require__(23);
 
-var OptionManager = __webpack_require__(332);
+var OptionManager = __webpack_require__(342);
 
-var backwardCompat = __webpack_require__(333);
+var backwardCompat = __webpack_require__(343);
 
 var ComponentModel = __webpack_require__(14);
 
 var SeriesModel = __webpack_require__(16);
 
-var ComponentView = __webpack_require__(83);
+var ComponentView = __webpack_require__(84);
 
 var ChartView = __webpack_require__(28);
 
@@ -791,9 +791,9 @@ var _throttle = __webpack_require__(33);
 
 var throttle = _throttle.throttle;
 
-var seriesColor = __webpack_require__(335);
+var seriesColor = __webpack_require__(345);
 
-var loadingDefault = __webpack_require__(336);
+var loadingDefault = __webpack_require__(346);
 
 /*!
  * ECharts, a javascript interactive chart library.
@@ -2694,7 +2694,7 @@ exports.setCanvasCreator = setCanvasCreator;
 exports.registerMap = registerMap;
 exports.getMap = getMap;
 exports.dataTool = dataTool;
-var ___ec_export = __webpack_require__(135);
+var ___ec_export = __webpack_require__(136);
 (function () {
     for (var key in ___ec_export) {
         if (___ec_export.hasOwnProperty(key)) {
@@ -2709,7 +2709,7 @@ var ___ec_export = __webpack_require__(135);
 
 var zrUtil = __webpack_require__(0);
 
-var pathTool = __webpack_require__(310);
+var pathTool = __webpack_require__(320);
 
 var colorTool = __webpack_require__(24);
 
@@ -2719,65 +2719,65 @@ var vector = __webpack_require__(8);
 
 var Path = __webpack_require__(13);
 
-var Transformable = __webpack_require__(78);
+var Transformable = __webpack_require__(79);
 
-var Image = __webpack_require__(45);
+var Image = __webpack_require__(47);
 
 exports.Image = Image;
 
-var Group = __webpack_require__(58);
+var Group = __webpack_require__(59);
 
 exports.Group = Group;
 
-var Text = __webpack_require__(46);
+var Text = __webpack_require__(48);
 
 exports.Text = Text;
 
-var Circle = __webpack_require__(315);
+var Circle = __webpack_require__(325);
 
 exports.Circle = Circle;
 
-var Sector = __webpack_require__(316);
+var Sector = __webpack_require__(326);
 
 exports.Sector = Sector;
 
-var Ring = __webpack_require__(317);
+var Ring = __webpack_require__(327);
 
 exports.Ring = Ring;
 
-var Polygon = __webpack_require__(318);
+var Polygon = __webpack_require__(328);
 
 exports.Polygon = Polygon;
 
-var Polyline = __webpack_require__(321);
+var Polyline = __webpack_require__(331);
 
 exports.Polyline = Polyline;
 
-var Rect = __webpack_require__(322);
+var Rect = __webpack_require__(332);
 
 exports.Rect = Rect;
 
-var Line = __webpack_require__(323);
+var Line = __webpack_require__(333);
 
 exports.Line = Line;
 
-var BezierCurve = __webpack_require__(324);
+var BezierCurve = __webpack_require__(334);
 
 exports.BezierCurve = BezierCurve;
 
-var Arc = __webpack_require__(325);
+var Arc = __webpack_require__(335);
 
 exports.Arc = Arc;
 
-var CompoundPath = __webpack_require__(326);
+var CompoundPath = __webpack_require__(336);
 
 exports.CompoundPath = CompoundPath;
 
-var LinearGradient = __webpack_require__(133);
+var LinearGradient = __webpack_require__(134);
 
 exports.LinearGradient = LinearGradient;
 
-var RadialGradient = __webpack_require__(327);
+var RadialGradient = __webpack_require__(337);
 
 exports.RadialGradient = RadialGradient;
 
@@ -4321,7 +4321,7 @@ if (typeof dev === 'undefined') {
 
 var __DEV__ = dev;
 exports.__DEV__ = __DEV__;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45)))
 
 /***/ }),
 /* 6 */
@@ -6160,13 +6160,13 @@ var env = __webpack_require__(12);
 
 var clazzUtil = __webpack_require__(26);
 
-var lineStyleMixin = __webpack_require__(307);
+var lineStyleMixin = __webpack_require__(317);
 
-var areaStyleMixin = __webpack_require__(308);
+var areaStyleMixin = __webpack_require__(318);
 
-var textStyleMixin = __webpack_require__(309);
+var textStyleMixin = __webpack_require__(319);
 
-var itemStyleMixin = __webpack_require__(328);
+var itemStyleMixin = __webpack_require__(338);
 
 /**
  * @module echarts/model/Model
@@ -6478,15 +6478,15 @@ module.exports = _default;
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Displayable = __webpack_require__(60);
+var Displayable = __webpack_require__(61);
 
 var zrUtil = __webpack_require__(0);
 
 var PathProxy = __webpack_require__(40);
 
-var pathContain = __webpack_require__(311);
+var pathContain = __webpack_require__(321);
 
-var Pattern = __webpack_require__(123);
+var Pattern = __webpack_require__(124);
 
 var getCanvasPattern = Pattern.prototype.getCanvasPattern;
 var abs = Math.abs;
@@ -6836,13 +6836,13 @@ var zrUtil = __webpack_require__(0);
 
 var Model = __webpack_require__(11);
 
-var componentUtil = __webpack_require__(82);
+var componentUtil = __webpack_require__(83);
 
 var clazzUtil = __webpack_require__(26);
 
 var layout = __webpack_require__(7);
 
-var boxLayoutMixin = __webpack_require__(329);
+var boxLayoutMixin = __webpack_require__(339);
 
 /**
  * Component model
@@ -8237,7 +8237,7 @@ listProto.TRANSFERABLE_METHODS = ['cloneShallow', 'downSample', 'map']; // Metho
 listProto.CHANGABLE_METHODS = ['filterSelf'];
 var _default = List;
 module.exports = _default;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45)))
 
 /***/ }),
 /* 16 */
@@ -8267,7 +8267,7 @@ var modelUtil = __webpack_require__(6);
 
 var ComponentModel = __webpack_require__(14);
 
-var colorPaletteMixin = __webpack_require__(134);
+var colorPaletteMixin = __webpack_require__(135);
 
 var _layout = __webpack_require__(7);
 
@@ -8579,7 +8579,7 @@ module.exports = _default;
 
 
 var bind = __webpack_require__(103);
-var isBuffer = __webpack_require__(200);
+var isBuffer = __webpack_require__(202);
 
 /*global toString:true*/
 
@@ -9069,17 +9069,17 @@ var zrUtil = __webpack_require__(0);
 
 var textContain = __webpack_require__(22);
 
-var OrdinalScale = __webpack_require__(338);
+var OrdinalScale = __webpack_require__(348);
 
-var IntervalScale = __webpack_require__(64);
+var IntervalScale = __webpack_require__(65);
 
-var Scale = __webpack_require__(63);
+var Scale = __webpack_require__(64);
 
 var numberUtil = __webpack_require__(4);
 
-__webpack_require__(339);
+__webpack_require__(349);
 
-__webpack_require__(340);
+__webpack_require__(350);
 
 /**
  * Get axis scale extent before niced.
@@ -9872,7 +9872,7 @@ module.exports = _default;
 
 var BoundingRect = __webpack_require__(10);
 
-var imageHelper = __webpack_require__(80);
+var imageHelper = __webpack_require__(81);
 
 var _util = __webpack_require__(0);
 
@@ -10606,7 +10606,7 @@ module.exports = _default;
 /* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var LRU = __webpack_require__(121);
+var LRU = __webpack_require__(122);
 
 var kCSSColorTable = {
   'transparent': [0, 0, 0, 0],
@@ -12190,9 +12190,9 @@ exports.quadraticProjectPoint = quadraticProjectPoint;
 
 var zrUtil = __webpack_require__(0);
 
-var Group = __webpack_require__(58);
+var Group = __webpack_require__(59);
 
-var componentUtil = __webpack_require__(82);
+var componentUtil = __webpack_require__(83);
 
 var clazzUtil = __webpack_require__(26);
 
@@ -14063,7 +14063,7 @@ var __DEV__ = _config.__DEV__;
 
 var echarts = __webpack_require__(1);
 
-var axisPointerModelHelper = __webpack_require__(67);
+var axisPointerModelHelper = __webpack_require__(68);
 
 /**
  * Base class of AxisView.
@@ -14796,11 +14796,11 @@ var curve = __webpack_require__(27);
 
 var vec2 = __webpack_require__(8);
 
-var bbox = __webpack_require__(81);
+var bbox = __webpack_require__(82);
 
 var BoundingRect = __webpack_require__(10);
 
-var _config = __webpack_require__(59);
+var _config = __webpack_require__(60);
 
 var dpr = _config.devicePixelRatio;
 
@@ -15828,9 +15828,145 @@ module.exports = _default;
 
 /***/ }),
 /* 44 */
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _config = __webpack_require__(59);
+var _config = __webpack_require__(60);
 
 var debugMode = _config.debugMode;
 
@@ -15854,16 +15990,16 @@ var _default = log;
 module.exports = _default;
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Displayable = __webpack_require__(60);
+var Displayable = __webpack_require__(61);
 
 var BoundingRect = __webpack_require__(10);
 
 var zrUtil = __webpack_require__(0);
 
-var imageHelper = __webpack_require__(80);
+var imageHelper = __webpack_require__(81);
 
 /**
  * @alias zrender/graphic/Image
@@ -15950,16 +16086,16 @@ var _default = ZImage;
 module.exports = _default;
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Displayable = __webpack_require__(60);
+var Displayable = __webpack_require__(61);
 
 var zrUtil = __webpack_require__(0);
 
 var textContain = __webpack_require__(22);
 
-var textHelper = __webpack_require__(61);
+var textHelper = __webpack_require__(62);
 
 /**
  * @alias zrender/graphic/Text
@@ -16026,12 +16162,12 @@ var _default = Text;
 module.exports = _default;
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
 
-var SymbolClz = __webpack_require__(65);
+var SymbolClz = __webpack_require__(66);
 
 /**
  * @module echarts/chart/helper/SymbolDraw
@@ -16152,7 +16288,7 @@ var _default = SymbolDraw;
 module.exports = _default;
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -16161,9 +16297,9 @@ var zrUtil = __webpack_require__(0);
 
 var graphic = __webpack_require__(2);
 
-__webpack_require__(85);
+__webpack_require__(86);
 
-__webpack_require__(350);
+__webpack_require__(360);
 
 // Grid view
 echarts.extendComponentView({
@@ -16191,7 +16327,7 @@ echarts.registerPreprocessor(function (option) {
 });
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -16258,7 +16394,7 @@ exports.aboveViewRoot = aboveViewRoot;
 exports.wrapTreePathInfo = wrapTreePathInfo;
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports) {
 
 /**
@@ -16344,22 +16480,22 @@ function restrict(value, extend) {
 module.exports = _default;
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var axisPointerModelHelper = __webpack_require__(67);
+var axisPointerModelHelper = __webpack_require__(68);
 
-var axisTrigger = __webpack_require__(478);
+var axisTrigger = __webpack_require__(488);
 
-__webpack_require__(479);
+__webpack_require__(489);
 
-__webpack_require__(480);
+__webpack_require__(490);
 
-__webpack_require__(171);
+__webpack_require__(172);
 
 // CartesianAxisPointer is not supposed to be required here. But consider
 // echarts.simple.js and online build tooltip, which only require gridSimple,
@@ -16392,7 +16528,7 @@ echarts.registerAction({
 }, axisTrigger);
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -16407,9 +16543,9 @@ var env = __webpack_require__(12);
 
 var modelUtil = __webpack_require__(6);
 
-var helper = __webpack_require__(95);
+var helper = __webpack_require__(96);
 
-var AxisProxy = __webpack_require__(534);
+var AxisProxy = __webpack_require__(544);
 
 var each = zrUtil.each;
 var eachAxisDim = helper.eachAxisDim;
@@ -16926,10 +17062,10 @@ var _default = DataZoomModel;
 module.exports = _default;
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ComponentView = __webpack_require__(83);
+var ComponentView = __webpack_require__(84);
 
 var _default = ComponentView.extend({
   type: 'dataZoom',
@@ -16998,34 +17134,7 @@ var _default = ComponentView.extend({
 module.exports = _default;
 
 /***/ }),
-/* 54 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -27241,9 +27350,9 @@ jQuery.nodeName = nodeName;
 // https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
 
 if ( true ) {
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() {
 		return jQuery;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+	}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 }
 
@@ -27285,7 +27394,7 @@ return jQuery;
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27299,6 +27408,7 @@ var alpha = exports.alpha = {
   'cs-CZ': /^[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]+$/i,
   'da-DK': /^[A-ZÆØÅ]+$/i,
   'de-DE': /^[A-ZÄÖÜß]+$/i,
+  'el-GR': /^[Α-ω]+$/i,
   'es-ES': /^[A-ZÁÉÍÑÓÚÜ]+$/i,
   'fr-FR': /^[A-ZÀÂÆÇÉÈÊËÏÎÔŒÙÛÜŸ]+$/i,
   'it-IT': /^[A-ZÀÉÈÌÎÓÒÙ]+$/i,
@@ -27322,6 +27432,7 @@ var alphanumeric = exports.alphanumeric = {
   'cs-CZ': /^[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]+$/i,
   'da-DK': /^[0-9A-ZÆØÅ]+$/i,
   'de-DE': /^[0-9A-ZÄÖÜß]+$/i,
+  'el-GR': /^[0-9Α-ω]+$/i,
   'es-ES': /^[0-9A-ZÁÉÍÑÓÚÜ]+$/i,
   'fr-FR': /^[0-9A-ZÀÂÆÇÉÈÊËÏÎÔŒÙÛÜŸ]+$/i,
   'it-IT': /^[0-9A-ZÀÉÈÌÎÓÒÙ]+$/i,
@@ -27366,7 +27477,7 @@ for (var _locale, _i = 0; _i < arabicLocales.length; _i++) {
 
 // Source: https://en.wikipedia.org/wiki/Decimal_mark
 var dotDecimal = exports.dotDecimal = [];
-var commaDecimal = exports.commaDecimal = ['cs-CZ', 'da-DK', 'de-DE', 'es-ES', 'fr-FR', 'it-IT', 'hu-HU', 'nb-NO', 'nn-NO', 'nl-NL', 'pl-Pl', 'pt-PT', 'ru-RU', 'sr-RS@latin', 'sr-RS', 'sv-SE', 'tr-TR', 'uk-UA'];
+var commaDecimal = exports.commaDecimal = ['cs-CZ', 'da-DK', 'de-DE', 'el-GR', 'es-ES', 'fr-FR', 'it-IT', 'hu-HU', 'nb-NO', 'nn-NO', 'nl-NL', 'pl-Pl', 'pt-PT', 'ru-RU', 'sr-RS@latin', 'sr-RS', 'sv-SE', 'tr-TR', 'uk-UA'];
 
 for (var _i2 = 0; _i2 < dotDecimal.length; _i2++) {
   decimal[dotDecimal[_i2]] = decimal['en-US'];
@@ -27381,24 +27492,24 @@ alphanumeric['pt-BR'] = alphanumeric['pt-PT'];
 decimal['pt-BR'] = decimal['pt-PT'];
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var guid = __webpack_require__(118);
+var guid = __webpack_require__(119);
 
 var env = __webpack_require__(12);
 
 var zrUtil = __webpack_require__(0);
 
-var Handler = __webpack_require__(295);
+var Handler = __webpack_require__(305);
 
-var Storage = __webpack_require__(297);
+var Storage = __webpack_require__(307);
 
-var Painter = __webpack_require__(301);
+var Painter = __webpack_require__(311);
 
-var Animation = __webpack_require__(303);
+var Animation = __webpack_require__(313);
 
-var HandlerProxy = __webpack_require__(304);
+var HandlerProxy = __webpack_require__(314);
 
 /*!
 * ZRender, a high performance 2d drawing library.
@@ -27819,12 +27930,12 @@ exports.getInstance = getInstance;
 exports.registerPainter = registerPainter;
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Element = __webpack_require__(119);
+var Element = __webpack_require__(120);
 
 var BoundingRect = __webpack_require__(10);
 
@@ -28136,7 +28247,7 @@ var _default = Group;
 module.exports = _default;
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports) {
 
 var dpr = 1; // If in browser environment
@@ -28165,16 +28276,16 @@ exports.debugMode = debugMode;
 exports.devicePixelRatio = devicePixelRatio;
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Style = __webpack_require__(122);
+var Style = __webpack_require__(123);
 
-var Element = __webpack_require__(119);
+var Element = __webpack_require__(120);
 
-var RectText = __webpack_require__(125);
+var RectText = __webpack_require__(126);
 
 /**
  * 可绘制的图形基类
@@ -28419,7 +28530,7 @@ var _default = Displayable;
 module.exports = _default;
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -28433,9 +28544,9 @@ var isObject = _util.isObject;
 
 var textContain = __webpack_require__(22);
 
-var roundRectHelper = __webpack_require__(126);
+var roundRectHelper = __webpack_require__(127);
 
-var imageHelper = __webpack_require__(80);
+var imageHelper = __webpack_require__(81);
 
 // TODO: Have not support 'start', 'end' yet.
 var VALID_TEXT_ALIGN = {
@@ -28859,7 +28970,7 @@ exports.getFill = getFill;
 exports.needDrawText = needDrawText;
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports) {
 
 /**
@@ -28882,7 +28993,7 @@ var _default = Gradient;
 module.exports = _default;
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var clazzUtil = __webpack_require__(26);
@@ -29051,16 +29162,16 @@ var _default = Scale;
 module.exports = _default;
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var numberUtil = __webpack_require__(4);
 
 var formatUtil = __webpack_require__(9);
 
-var Scale = __webpack_require__(63);
+var Scale = __webpack_require__(64);
 
-var helper = __webpack_require__(136);
+var helper = __webpack_require__(137);
 
 /**
  * Interval scale
@@ -29254,7 +29365,7 @@ var _default = IntervalScale;
 module.exports = _default;
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -29269,7 +29380,7 @@ var _number = __webpack_require__(4);
 
 var parsePercent = _number.parsePercent;
 
-var _labelHelper = __webpack_require__(140);
+var _labelHelper = __webpack_require__(141);
 
 var findLabelValueDim = _labelHelper.findLabelValueDim;
 
@@ -29573,12 +29684,12 @@ var _default = SymbolClz;
 module.exports = _default;
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var axisDefault = __webpack_require__(143);
+var axisDefault = __webpack_require__(144);
 
 var ComponentModel = __webpack_require__(14);
 
@@ -29621,7 +29732,7 @@ function _default(axisName, BaseAxisModelClass, axisTypeDefaulter, extraDefaultO
 module.exports = _default;
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -29916,7 +30027,7 @@ exports.getAxisPointerModel = getAxisPointerModel;
 exports.makeKey = makeKey;
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports) {
 
 function _default(seriesType, ecModel) {
@@ -29947,7 +30058,7 @@ function _default(seriesType, ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -29958,7 +30069,7 @@ var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var Geo = __webpack_require__(377);
+var Geo = __webpack_require__(387);
 
 var layout = __webpack_require__(7);
 
@@ -30148,7 +30259,7 @@ var _default = geoCreator;
 module.exports = _default;
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -30157,7 +30268,7 @@ var Eventful = __webpack_require__(32);
 
 var eventTool = __webpack_require__(25);
 
-var interactionMutex = __webpack_require__(150);
+var interactionMutex = __webpack_require__(151);
 
 /**
  * @alias module:echarts/component/helper/RoamController
@@ -30339,14 +30450,14 @@ var _default = RoamController;
 module.exports = _default;
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var List = __webpack_require__(15);
 
 var completeDimensions = __webpack_require__(21);
 
-var WhiskerBoxDraw = __webpack_require__(444);
+var WhiskerBoxDraw = __webpack_require__(454);
 
 var zrUtil = __webpack_require__(0);
 
@@ -30448,7 +30559,7 @@ exports.seriesModelMixin = seriesModelMixin;
 exports.viewMixin = viewMixin;
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -30673,7 +30784,7 @@ exports.makeRectShape = makeRectShape;
 exports.makeSectorShape = makeSectorShape;
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -30820,14 +30931,14 @@ exports.replaceVisualOption = replaceVisualOption;
 exports.applyVisual = applyVisual;
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(17);
-var normalizeHeaderName = __webpack_require__(203);
+var normalizeHeaderName = __webpack_require__(204);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -30843,10 +30954,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(104);
+    adapter = __webpack_require__(105);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(104);
+    adapter = __webpack_require__(105);
   }
   return adapter;
 }
@@ -30917,10 +31028,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(202)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(104)))
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30945,7 +31056,7 @@ function toDate(date) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30973,7 +31084,7 @@ function toString(input) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31040,7 +31151,7 @@ function isFQDN(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var matrix = __webpack_require__(18);
@@ -31328,7 +31439,7 @@ var _default = Transformable;
 module.exports = _default;
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports) {
 
 // https://github.com/mziccard/node-timsort
@@ -31997,10 +32108,10 @@ function sort(array, compare, lo, hi) {
 module.exports = sort;
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var LRU = __webpack_require__(121);
+var LRU = __webpack_require__(122);
 
 var globalImageCache = new LRU(50);
 /**
@@ -32090,7 +32201,7 @@ exports.createOrUpdateImage = createOrUpdateImage;
 exports.isImageReady = isImageReady;
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var vec2 = __webpack_require__(8);
@@ -32316,7 +32427,7 @@ exports.fromQuadratic = fromQuadratic;
 exports.fromArc = fromArc;
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -32502,12 +32613,12 @@ exports.enableSubTypeDefaulter = enableSubTypeDefaulter;
 exports.enableTopologicalTravel = enableTopologicalTravel;
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Group = __webpack_require__(58);
+var Group = __webpack_require__(59);
 
-var componentUtil = __webpack_require__(82);
+var componentUtil = __webpack_require__(83);
 
 var clazzUtil = __webpack_require__(26);
 
@@ -32546,7 +32657,7 @@ var _default = Component;
 module.exports = _default;
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports) {
 
 function _default(seriesType, ecModel) {
@@ -32582,7 +32693,7 @@ function _default(seriesType, ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -32599,13 +32710,13 @@ var getLayoutRect = _layout.getLayoutRect;
 
 var axisHelper = __webpack_require__(19);
 
-var Cartesian2D = __webpack_require__(346);
+var Cartesian2D = __webpack_require__(356);
 
-var Axis2D = __webpack_require__(348);
+var Axis2D = __webpack_require__(358);
 
 var CoordinateSystem = __webpack_require__(23);
 
-__webpack_require__(349);
+__webpack_require__(359);
 
 /**
  * Grid is a region which contains at most 4 cartesian systems
@@ -33183,7 +33294,7 @@ var _default = Grid;
 module.exports = _default;
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -33481,7 +33592,7 @@ var _default = barLayoutGrid;
 module.exports = _default;
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -33566,7 +33677,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports) {
 
 // Pick color from palette for each data item.
@@ -33612,7 +33723,7 @@ function _default(seriesType, ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports) {
 
 var IRRELEVANT_EXCLUDES = {
@@ -33635,12 +33746,12 @@ function onIrrelevantElement(e, api, targetCoordSysModel) {
 exports.onIrrelevantElement = onIrrelevantElement;
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
 
-var LineGroup = __webpack_require__(91);
+var LineGroup = __webpack_require__(92);
 
 /**
  * @module echarts/chart/helper/LineDraw
@@ -33724,7 +33835,7 @@ var _default = LineDraw;
 module.exports = _default;
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -33733,7 +33844,7 @@ var vector = __webpack_require__(8);
 
 var symbolUtil = __webpack_require__(20);
 
-var LinePath = __webpack_require__(406);
+var LinePath = __webpack_require__(416);
 
 var graphic = __webpack_require__(2);
 
@@ -34079,7 +34190,7 @@ var _default = Line;
 module.exports = _default;
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -34092,7 +34203,7 @@ var Eventful = __webpack_require__(32);
 
 var graphic = __webpack_require__(2);
 
-var interactionMutex = __webpack_require__(150);
+var interactionMutex = __webpack_require__(151);
 
 var DataDiffer = __webpack_require__(41);
 
@@ -34951,7 +35062,7 @@ var _default = BrushController;
 module.exports = _default;
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -34960,7 +35071,7 @@ var clazzUtil = __webpack_require__(26);
 
 var graphic = __webpack_require__(2);
 
-var axisPointerModelHelper = __webpack_require__(67);
+var axisPointerModelHelper = __webpack_require__(68);
 
 var eventTool = __webpack_require__(25);
 
@@ -35443,7 +35554,7 @@ var _default = BaseAxisPointer;
 module.exports = _default;
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -35452,7 +35563,7 @@ var __DEV__ = _config.__DEV__;
 
 var zrUtil = __webpack_require__(0);
 
-var Polar = __webpack_require__(507);
+var Polar = __webpack_require__(517);
 
 var _number = __webpack_require__(4);
 
@@ -35465,7 +35576,7 @@ var niceScaleExtent = _axisHelper.niceScaleExtent;
 
 var CoordinateSystem = __webpack_require__(23);
 
-__webpack_require__(510);
+__webpack_require__(520);
 
 // TODO Axis scale
 // 依赖 PolarModel 做预处理
@@ -35576,7 +35687,7 @@ var polarCreator = {
 CoordinateSystem.register('polar', polarCreator);
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -35716,7 +35827,7 @@ exports.eachAxisDim = eachAxisDim;
 exports.createLinkedNodesFinder = createLinkedNodesFinder;
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -35846,7 +35957,7 @@ var _default = MarkerModel;
 module.exports = _default;
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -36028,7 +36139,7 @@ exports.dimValueGetter = dimValueGetter;
 exports.numCalculate = numCalculate;
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -36065,10 +36176,10 @@ var _default = echarts.extendComponentView({
 module.exports = _default;
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _core = __webpack_require__(100);
+var _core = __webpack_require__(101);
 
 var createElement = _core.createElement;
 
@@ -36078,9 +36189,9 @@ var BoundingRect = __webpack_require__(10);
 
 var textContain = __webpack_require__(22);
 
-var textHelper = __webpack_require__(61);
+var textHelper = __webpack_require__(62);
 
-var Text = __webpack_require__(46);
+var Text = __webpack_require__(48);
 
 // TODO
 // 1. shadow
@@ -36567,7 +36678,7 @@ exports.image = svgImage;
 exports.text = svgText;
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports) {
 
 var svgURI = 'http://www.w3.org/2000/svg';
@@ -36577,103 +36688,6 @@ function createElement(name) {
 }
 
 exports.createElement = createElement;
-
-/***/ }),
-/* 101 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
 
 /***/ }),
 /* 102 */
@@ -36723,18 +36737,208 @@ module.exports = function bind(fn, thisArg) {
 
 /***/ }),
 /* 104 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(17);
-var settle = __webpack_require__(204);
-var buildURL = __webpack_require__(206);
-var parseHeaders = __webpack_require__(207);
-var isURLSameOrigin = __webpack_require__(208);
-var createError = __webpack_require__(105);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(209);
+var settle = __webpack_require__(205);
+var buildURL = __webpack_require__(207);
+var parseHeaders = __webpack_require__(208);
+var isURLSameOrigin = __webpack_require__(209);
+var createError = __webpack_require__(106);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(210);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -36831,7 +37035,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(210);
+      var cookies = __webpack_require__(211);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -36909,13 +37113,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(205);
+var enhanceError = __webpack_require__(206);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -36934,7 +37138,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36946,7 +37150,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36972,7 +37176,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36996,7 +37200,7 @@ function toFloat(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37035,7 +37239,7 @@ function isByteLength(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37122,7 +37326,7 @@ function isIP(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37161,7 +37365,7 @@ function isInt(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37187,7 +37391,7 @@ function isFullWidth(str) {
 }
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37213,7 +37417,7 @@ function isHalfWidth(str) {
 }
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37239,7 +37443,7 @@ function isHexadecimal(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37264,7 +37468,7 @@ function ltrim(str, chars) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37295,7 +37499,7 @@ function rtrim(str, chars) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37319,7 +37523,7 @@ function blacklist(str, chars) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports) {
 
 /**
@@ -37336,16 +37540,16 @@ function _default() {
 module.exports = _default;
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var guid = __webpack_require__(118);
+var guid = __webpack_require__(119);
 
 var Eventful = __webpack_require__(32);
 
-var Transformable = __webpack_require__(78);
+var Transformable = __webpack_require__(79);
 
-var Animatable = __webpack_require__(298);
+var Animatable = __webpack_require__(308);
 
 var zrUtil = __webpack_require__(0);
 
@@ -37604,10 +37808,10 @@ var _default = Element;
 module.exports = _default;
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Clip = __webpack_require__(299);
+var Clip = __webpack_require__(309);
 
 var color = __webpack_require__(24);
 
@@ -38253,7 +38457,7 @@ var _default = Animator;
 module.exports = _default;
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports) {
 
 // Simple LRU cache use doubly linked list
@@ -38460,7 +38664,7 @@ var _default = LRU;
 module.exports = _default;
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports) {
 
 var STYLE_COMMON_PROPS = [['shadowBlur', 0], ['shadowOffsetX', 0], ['shadowOffsetY', 0], ['shadowColor', '#000'], ['lineCap', 'butt'], ['lineJoin', 'miter'], ['miterLimit', 10]]; // var SHADOW_PROPS = STYLE_COMMON_PROPS.slice(0, 4);
@@ -38912,7 +39116,7 @@ var _default = Style;
 module.exports = _default;
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports) {
 
 var Pattern = function (image, repeat) {
@@ -38932,7 +39136,7 @@ var _default = Pattern;
 module.exports = _default;
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports) {
 
 var _default = typeof window !== 'undefined' && (window.requestAnimationFrame && window.requestAnimationFrame.bind(window) || // https://github.com/ecomfe/zrender/issues/189#issuecomment-224919809
@@ -38943,10 +39147,10 @@ window.msRequestAnimationFrame && window.msRequestAnimationFrame.bind(window) ||
 module.exports = _default;
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var textHelper = __webpack_require__(61);
+var textHelper = __webpack_require__(62);
 
 var BoundingRect = __webpack_require__(10);
 
@@ -39003,7 +39207,7 @@ var _default = RectText;
 module.exports = _default;
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports) {
 
 function buildPath(ctx, shape) {
@@ -39089,7 +39293,7 @@ function buildPath(ctx, shape) {
 exports.buildPath = buildPath;
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports) {
 
 /**
@@ -39133,7 +39337,7 @@ function containStroke(x0, y0, x1, y1, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _curve = __webpack_require__(27);
@@ -39171,7 +39375,7 @@ function containStroke(x0, y0, x1, y1, x2, y2, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports) {
 
 var PI2 = Math.PI * 2;
@@ -39189,7 +39393,7 @@ function normalizeRadian(angle) {
 exports.normalizeRadian = normalizeRadian;
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports) {
 
 function windingLine(x0, y0, x1, y1, x, y) {
@@ -39216,7 +39420,7 @@ function windingLine(x0, y0, x1, y1, x, y) {
 module.exports = windingLine;
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var env = __webpack_require__(12);
@@ -39277,12 +39481,12 @@ function _default(orignalBrush) {
 module.exports = _default;
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var smoothSpline = __webpack_require__(319);
+var smoothSpline = __webpack_require__(329);
 
-var smoothBezier = __webpack_require__(320);
+var smoothBezier = __webpack_require__(330);
 
 function buildPath(ctx, shape, closePath) {
   var points = shape.points;
@@ -39319,12 +39523,12 @@ function buildPath(ctx, shape, closePath) {
 exports.buildPath = buildPath;
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Gradient = __webpack_require__(62);
+var Gradient = __webpack_require__(63);
 
 /**
  * x, y, x2, y2 are all percent from 0 to 1
@@ -39358,7 +39562,7 @@ var _default = LinearGradient;
 module.exports = _default;
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _clazz = __webpack_require__(26);
@@ -39398,10 +39602,10 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var zrender = __webpack_require__(57);
+var zrender = __webpack_require__(58);
 
 exports.zrender = zrender;
 
@@ -39436,7 +39640,7 @@ var _throttle = __webpack_require__(33);
 var throttle = _throttle.throttle;
 exports.throttle = _throttle.throttle;
 
-var ecHelper = __webpack_require__(337);
+var ecHelper = __webpack_require__(347);
 
 exports.helper = ecHelper;
 
@@ -39456,7 +39660,7 @@ var _env = __webpack_require__(12);
 
 exports.env = _env;
 
-var _parseGeoJson = __webpack_require__(137);
+var _parseGeoJson = __webpack_require__(138);
 
 exports.parseGeoJson = _parseGeoJson;
 
@@ -39470,7 +39674,7 @@ zrUtil.each(['map', 'each', 'filter', 'indexOf', 'inherits', 'reduce', 'filter',
 exports.util = ecUtil;
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var numberUtil = __webpack_require__(4);
@@ -39582,12 +39786,12 @@ exports.fixExtent = fixExtent;
 exports.intervalScaleGetTicks = intervalScaleGetTicks;
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Region = __webpack_require__(138);
+var Region = __webpack_require__(139);
 
 /**
  * Parse and decode geo json
@@ -39702,16 +39906,16 @@ function _default(geoJson) {
 module.exports = _default;
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var BoundingRect = __webpack_require__(10);
 
-var bbox = __webpack_require__(81);
+var bbox = __webpack_require__(82);
 
 var vec2 = __webpack_require__(8);
 
-var polygonContain = __webpack_require__(139);
+var polygonContain = __webpack_require__(140);
 
 /**
  * @module echarts/coord/geo/Region
@@ -39870,10 +40074,10 @@ var _default = Region;
 module.exports = _default;
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var windingLine = __webpack_require__(130);
+var windingLine = __webpack_require__(131);
 
 var EPSILON = 1e-8;
 
@@ -39908,7 +40112,7 @@ function contain(points, x, y) {
 exports.contain = contain;
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _model = __webpack_require__(6);
@@ -39939,14 +40143,14 @@ function findLabelValueDim(data) {
 exports.findLabelValueDim = findLabelValueDim;
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
 
 var vec2 = __webpack_require__(8);
 
-var fixClipWithShadow = __webpack_require__(131);
+var fixClipWithShadow = __webpack_require__(132);
 
 // Poly path support NaN point
 var vec2Min = vec2.min;
@@ -40169,14 +40373,14 @@ exports.Polyline = Polyline;
 exports.Polygon = Polygon;
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var ComponentModel = __webpack_require__(14);
 
-var axisModelCreator = __webpack_require__(66);
+var axisModelCreator = __webpack_require__(67);
 
 var axisModelCommonMixin = __webpack_require__(42);
 
@@ -40243,7 +40447,7 @@ var _default = AxisModel;
 module.exports = _default;
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -40399,7 +40603,7 @@ var _default = axisDefault;
 module.exports = _default;
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -40472,7 +40676,7 @@ function layout(gridModel, axisModel, opt) {
 exports.layout = layout;
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var SeriesModel = __webpack_require__(16);
@@ -40539,7 +40743,7 @@ var _default = SeriesModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
@@ -40567,7 +40771,7 @@ function fixPosition(style, labelPositionOutside) {
 exports.setLabel = setLabel;
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -40612,7 +40816,7 @@ function _default(seriesType, actionInfos) {
 module.exports = _default;
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -40623,7 +40827,7 @@ var matrix = __webpack_require__(18);
 
 var BoundingRect = __webpack_require__(10);
 
-var Transformable = __webpack_require__(78);
+var Transformable = __webpack_require__(79);
 
 /**
  * Simple view coordinate system
@@ -40890,16 +41094,16 @@ var _default = View;
 module.exports = _default;
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var RoamController = __webpack_require__(70);
+var RoamController = __webpack_require__(71);
 
-var roamHelper = __webpack_require__(151);
+var roamHelper = __webpack_require__(152);
 
-var _cursorHelper = __webpack_require__(89);
+var _cursorHelper = __webpack_require__(90);
 
 var onIrrelevantElement = _cursorHelper.onIrrelevantElement;
 
@@ -41227,7 +41431,7 @@ var _default = MapDraw;
 module.exports = _default;
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -41274,7 +41478,7 @@ exports.release = release;
 exports.isTaken = isTaken;
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports) {
 
 /**
@@ -41328,14 +41532,14 @@ exports.updateViewOnPan = updateViewOnPan;
 exports.updateViewOnZoom = updateViewOnZoom;
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var _roamHelper = __webpack_require__(153);
+var _roamHelper = __webpack_require__(154);
 
 var updateCenterAndZoom = _roamHelper.updateCenterAndZoom;
 
@@ -41379,7 +41583,7 @@ echarts.registerAction({
 });
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports) {
 
 /**
@@ -41431,7 +41635,7 @@ function updateCenterAndZoom(view, payload, zoomLimit) {
 exports.updateCenterAndZoom = updateCenterAndZoom;
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -41440,7 +41644,7 @@ var Model = __webpack_require__(11);
 
 var List = __webpack_require__(15);
 
-var linkList = __webpack_require__(155);
+var linkList = __webpack_require__(156);
 
 var completeDimensions = __webpack_require__(21);
 
@@ -41935,7 +42139,7 @@ var _default = Tree;
 module.exports = _default;
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -42068,7 +42272,7 @@ var _default = linkList;
 module.exports = _default;
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var layout = __webpack_require__(7);
@@ -42347,15 +42551,15 @@ exports.radialCoordinate = radialCoordinate;
 exports.getViewRect = getViewRect;
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _traversalHelper = __webpack_require__(392);
+var _traversalHelper = __webpack_require__(402);
 
 var eachAfter = _traversalHelper.eachAfter;
 var eachBefore = _traversalHelper.eachBefore;
 
-var _layoutHelper = __webpack_require__(156);
+var _layoutHelper = __webpack_require__(157);
 
 var init = _layoutHelper.init;
 var firstWalk = _layoutHelper.firstWalk;
@@ -42460,16 +42664,16 @@ function _default(seriesModel, api) {
 module.exports = _default;
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var List = __webpack_require__(15);
 
-var Graph = __webpack_require__(404);
+var Graph = __webpack_require__(414);
 
-var linkList = __webpack_require__(155);
+var linkList = __webpack_require__(156);
 
 var completeDimensions = __webpack_require__(21);
 
@@ -42539,7 +42743,7 @@ function _default(nodes, edges, hostModel, directed, beforeLink) {
 module.exports = _default;
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var vec2 = __webpack_require__(8);
@@ -42578,7 +42782,7 @@ exports.simpleLayout = simpleLayout;
 exports.simpleLayoutEdge = simpleLayoutEdge;
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var vec2 = __webpack_require__(8);
@@ -42629,7 +42833,7 @@ function circularLayout(seriesModel) {
 exports.circularLayout = circularLayout;
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -42638,13 +42842,13 @@ var zrUtil = __webpack_require__(0);
 
 var throttleUtil = __webpack_require__(33);
 
-var parallelPreprocessor = __webpack_require__(426);
+var parallelPreprocessor = __webpack_require__(436);
 
-__webpack_require__(162);
+__webpack_require__(163);
 
-__webpack_require__(429);
+__webpack_require__(439);
 
-__webpack_require__(431);
+__webpack_require__(441);
 
 var CLICK_THRESHOLD = 5; // > 4
 // Parallel view
@@ -42737,10 +42941,10 @@ function checkTrigger(view, triggerOn) {
 echarts.registerPreprocessor(parallelPreprocessor);
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Parallel = __webpack_require__(427);
+var Parallel = __webpack_require__(437);
 
 var CoordinateSystem = __webpack_require__(23);
 
@@ -42776,12 +42980,12 @@ CoordinateSystem.register('parallel', {
 });
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var BoundingRect = __webpack_require__(10);
 
-var _cursorHelper = __webpack_require__(89);
+var _cursorHelper = __webpack_require__(90);
 
 var onIrrelevantElement = _cursorHelper.onIrrelevantElement;
 
@@ -42821,7 +43025,7 @@ exports.makeLinearBrushOtherExtent = makeLinearBrushOtherExtent;
 exports.makeRectIsTargetByCursor = makeRectIsTargetByCursor;
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -42929,12 +43133,12 @@ function nest() {
 module.exports = nest;
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
 
-var Line = __webpack_require__(91);
+var Line = __webpack_require__(92);
 
 var zrUtil = __webpack_require__(0);
 
@@ -43109,7 +43313,7 @@ var _default = EffectLine;
 module.exports = _default;
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
@@ -43190,27 +43394,27 @@ var _default = Polyline;
 module.exports = _default;
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(473);
+__webpack_require__(483);
 
-__webpack_require__(476);
+__webpack_require__(486);
 
-__webpack_require__(477);
+__webpack_require__(487);
 
-__webpack_require__(51);
+__webpack_require__(53);
 
-__webpack_require__(481);
+__webpack_require__(491);
 
 echarts.extendComponentView({
   type: 'single'
 });
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -43274,7 +43478,7 @@ function layout(axisModel, opt) {
 exports.layout = layout;
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -43331,7 +43535,7 @@ function _default(finder, ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -43458,16 +43662,16 @@ exports.register = register;
 exports.unregister = unregister;
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
 
-var BaseAxisPointer = __webpack_require__(93);
+var BaseAxisPointer = __webpack_require__(94);
 
-var viewHelper = __webpack_require__(72);
+var viewHelper = __webpack_require__(73);
 
-var cartesianAxisHelper = __webpack_require__(144);
+var cartesianAxisHelper = __webpack_require__(145);
 
 var AxisView = __webpack_require__(36);
 
@@ -43576,7 +43780,7 @@ var _default = CartesianAxisPointer;
 module.exports = _default;
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -43767,7 +43971,7 @@ var _default = LegendModel;
 module.exports = _default;
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -43784,7 +43988,7 @@ var createSymbol = _symbol.createSymbol;
 
 var graphic = __webpack_require__(2);
 
-var _listComponent = __webpack_require__(174);
+var _listComponent = __webpack_require__(175);
 
 var makeBackground = _listComponent.makeBackground;
 
@@ -44063,7 +44267,7 @@ function dispatchDownplayAction(seriesModel, dataName, api) {
 module.exports = _default;
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _layout = __webpack_require__(7);
@@ -44122,7 +44326,7 @@ exports.layout = layout;
 exports.makeBackground = makeBackground;
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -44135,7 +44339,7 @@ var graphic = __webpack_require__(2);
 
 var modelUtil = __webpack_require__(6);
 
-var brushHelper = __webpack_require__(163);
+var brushHelper = __webpack_require__(164);
 
 var each = zrUtil.each;
 var indexOf = zrUtil.indexOf;
@@ -44507,7 +44711,7 @@ var _default = BrushTargetManager;
 module.exports = _default;
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(14);
@@ -44518,7 +44722,7 @@ Component.registerSubTypeDefaulter('dataZoom', function () {
 });
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -44569,14 +44773,14 @@ function filterSingleAxis(dimNames, axisIndex, dataZoomModel) {
 }
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var helper = __webpack_require__(95);
+var helper = __webpack_require__(96);
 
 echarts.registerAction('dataZoom', function (payload, ecModel) {
   var linkedNodesFinder = helper.createLinkedNodesFinder(zrUtil.bind(ecModel.eachComponent, ecModel, 'dataZoom'), helper.eachAxisDim, function (model, dimNames) {
@@ -44600,7 +44804,7 @@ echarts.registerAction('dataZoom', function (payload, ecModel) {
 });
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -44650,7 +44854,7 @@ function has(obj, name) {
 module.exports = _default;
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(14);
@@ -44661,14 +44865,14 @@ Component.registerSubTypeDefaulter('visualMap', function (option) {
 });
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var visualSolution = __webpack_require__(73);
+var visualSolution = __webpack_require__(74);
 
 var VisualMapping = __webpack_require__(37);
 
@@ -44735,7 +44939,7 @@ function getColorVisual(seriesModel, visualMapModel, value, valueState) {
 }
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -44744,11 +44948,11 @@ var zrUtil = __webpack_require__(0);
 
 var env = __webpack_require__(12);
 
-var visualDefault = __webpack_require__(183);
+var visualDefault = __webpack_require__(184);
 
 var VisualMapping = __webpack_require__(37);
 
-var visualSolution = __webpack_require__(73);
+var visualSolution = __webpack_require__(74);
 
 var modelUtil = __webpack_require__(6);
 
@@ -45226,7 +45430,7 @@ var _default = VisualMapModel;
 module.exports = _default;
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -45281,7 +45485,7 @@ var _default = visualDefault;
 module.exports = _default;
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -45439,7 +45643,7 @@ var _default = echarts.extendComponentView({
 module.exports = _default;
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -45502,7 +45706,7 @@ exports.getItemAlign = getItemAlign;
 exports.convertDataIndex = convertDataIndex;
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -45523,7 +45727,7 @@ echarts.registerAction(actionInfo, function (payload, ecModel) {
 });
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -45635,7 +45839,7 @@ exports.clear = clear;
 exports.count = count;
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var env = __webpack_require__(12);
@@ -45688,10 +45892,10 @@ exports.createNode = createNode;
 exports.initVML = initVML;
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _core = __webpack_require__(100);
+var _core = __webpack_require__(101);
 
 var createElement = _core.createElement;
 
@@ -45699,11 +45903,11 @@ var zrUtil = __webpack_require__(0);
 
 var Path = __webpack_require__(13);
 
-var ZImage = __webpack_require__(45);
+var ZImage = __webpack_require__(47);
 
-var ZText = __webpack_require__(46);
+var ZText = __webpack_require__(48);
 
-var _graphic = __webpack_require__(99);
+var _graphic = __webpack_require__(100);
 
 var svgPath = _graphic.path;
 var svgImage = _graphic.image;
@@ -45952,21 +46156,68 @@ var _default = Definable;
 module.exports = _default;
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(191);
-module.exports = __webpack_require__(599);
+var disposed = false
+var normalizeComponent = __webpack_require__(44)
+/* script */
+var __vue_script__ = __webpack_require__(597)
+/* template */
+var __vue_template__ = __webpack_require__(598)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\layout\\Navbar.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3879865b", Component.options)
+  } else {
+    hotAPI.reload("data-v-3879865b", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
 
 
 /***/ }),
-/* 191 */
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(193);
+module.exports = __webpack_require__(618);
+
+
+/***/ }),
+/* 193 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(593);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rutas__ = __webpack_require__(594);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(601);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rutas__ = __webpack_require__(602);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -45974,9 +46225,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(192);
+__webpack_require__(194);
 
-window.Vue = __webpack_require__(584);
+window.Vue = __webpack_require__(594);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -45984,8 +46235,10 @@ window.Vue = __webpack_require__(584);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('navbarDg', __webpack_require__(585));
-Vue.component('footerDg', __webpack_require__(616));
+Vue.component('navbarDg', __webpack_require__(191));
+Vue.component('footerDg', __webpack_require__(599));
+// Vue.component('footerLand', require('./components/layout/FooterLng.vue'));
+// Vue.component('landingDg', require('./components/Landing.vue'));
 
 
 
@@ -45993,21 +46246,27 @@ Vue.component('footerDg', __webpack_require__(616));
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
-  routes: __WEBPACK_IMPORTED_MODULE_1__rutas__["a" /* default */],
-  mode: 'history'
+	routes: __WEBPACK_IMPORTED_MODULE_1__rutas__["a" /* default */]
 });
 
 var app = new Vue({
-  el: '#app',
-  router: router
+	el: '#app',
+	router: router,
+	watch: {
+		'$route': function $route(to, from) {
+			setTimeout(function () {
+				part.resizeHandler();
+			}, 0);
+		}
+	}
 });
 
 /***/ }),
-/* 192 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(193);
+window._ = __webpack_require__(195);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -46016,9 +46275,9 @@ window._ = __webpack_require__(193);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(55);
-  window.Thether = __webpack_require__(194);
-  __webpack_require__(195);
+  window.$ = window.jQuery = __webpack_require__(56);
+  window.Thether = __webpack_require__(196);
+  __webpack_require__(197);
 } catch (e) {}
 
 /**
@@ -46027,12 +46286,12 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(198);
-window.validator = __webpack_require__(218);
-window.particle = __webpack_require__(272);
-window.granim = __webpack_require__(273);
-window.redirect = __webpack_require__(293);
-window.echarts = __webpack_require__(294);
+window.axios = __webpack_require__(200);
+window.validator = __webpack_require__(219);
+window.particle = __webpack_require__(274);
+window.granim = __webpack_require__(275);
+window.redirect = __webpack_require__(303);
+window.echarts = __webpack_require__(304);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -46066,7 +46325,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 193 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -63137,9 +63396,9 @@ if (token) {
 
     // Define as an anonymous module so, through path mapping, it can be
     // referenced as the "underscore" module.
-    !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
+    !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
       return _;
-    }.call(exports, __webpack_require__, exports, module),
+    }).call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
   }
   // Check for `exports` after `define` in case a build optimizer adds it.
@@ -63155,13 +63414,13 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54), __webpack_require__(102)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45), __webpack_require__(102)(module)))
 
 /***/ }),
-/* 194 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! tether 1.4.0 */
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! tether 1.4.3 */
 
 (function(root, factory) {
   if (true) {
@@ -63244,7 +63503,7 @@ function getScrollParents(el) {
     var overflowX = _style.overflowX;
     var overflowY = _style.overflowY;
 
-    if (/(auto|scroll)/.test(overflow + overflowY + overflowX)) {
+    if (/(auto|scroll|overlay)/.test(overflow + overflowY + overflowX)) {
       if (position !== 'absolute' || ['relative', 'absolute', 'fixed'].indexOf(style.position) >= 0) {
         parents.push(parent);
       }
@@ -63643,7 +63902,7 @@ var position = function position() {
 };
 
 function now() {
-  if (typeof performance !== 'undefined' && typeof performance.now !== 'undefined') {
+  if (typeof performance === 'object' && typeof performance.now === 'function') {
     return performance.now();
   }
   return +new Date();
@@ -64415,7 +64674,9 @@ var TetherClass = (function (_Evented) {
 
       if (!moved) {
         if (this.options.bodyElement) {
-          this.options.bodyElement.appendChild(this.element);
+          if (this.element.parentNode !== this.options.bodyElement) {
+            this.options.bodyElement.appendChild(this.element);
+          }
         } else {
           var offsetParentIsBody = true;
           var currentNode = this.element.parentNode;
@@ -64979,7 +65240,7 @@ return Tether;
 
 
 /***/ }),
-/* 195 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -64995,7 +65256,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 if (typeof jQuery === 'undefined') {
   // Check if require is a defined function.
   if (true) {
-    jQuery = $ = __webpack_require__(55);
+    jQuery = $ = __webpack_require__(56);
     // Else use the dollar sign alias.
   } else {
     jQuery = $;
@@ -65011,9 +65272,9 @@ if (typeof jQuery === 'undefined') {
 
 (function (factory) {
   if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(55)], __WEBPACK_AMD_DEFINE_RESULT__ = function ($) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(56)], __WEBPACK_AMD_DEFINE_RESULT__ = (function ($) {
       return factory($);
-    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+    }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
   } else if (typeof module === "object" && typeof module.exports === "object") {
     exports = factory(require('jquery'));
@@ -66201,13 +66462,13 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
       }
     }, destroy: function () {
       this.element && lc(this, !1), this.handlers = {}, this.session = {}, this.input.destroy(), this.element = null;
-    } }, n(hc, { INPUT_START: O, INPUT_MOVE: P, INPUT_END: Q, INPUT_CANCEL: R, STATE_POSSIBLE: Rb, STATE_BEGAN: Sb, STATE_CHANGED: Tb, STATE_ENDED: Ub, STATE_RECOGNIZED: Vb, STATE_CANCELLED: Wb, STATE_FAILED: Xb, DIRECTION_NONE: S, DIRECTION_LEFT: T, DIRECTION_RIGHT: U, DIRECTION_UP: V, DIRECTION_DOWN: W, DIRECTION_HORIZONTAL: X, DIRECTION_VERTICAL: Y, DIRECTION_ALL: Z, Manager: kc, Input: ab, TouchAction: Pb, TouchInput: Eb, MouseInput: rb, PointerEventInput: wb, TouchMouseInput: Gb, SingleTouchInput: Ab, Recognizer: Yb, AttrRecognizer: ac, Tap: gc, Pan: bc, Swipe: fc, Pinch: cc, Rotate: ec, Press: dc, on: t, off: u, each: m, merge: o, extend: n, inherit: p, bindFn: q, prefixed: B }), "function" == g && __webpack_require__(196) ? !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+    } }, n(hc, { INPUT_START: O, INPUT_MOVE: P, INPUT_END: Q, INPUT_CANCEL: R, STATE_POSSIBLE: Rb, STATE_BEGAN: Sb, STATE_CHANGED: Tb, STATE_ENDED: Ub, STATE_RECOGNIZED: Vb, STATE_CANCELLED: Wb, STATE_FAILED: Xb, DIRECTION_NONE: S, DIRECTION_LEFT: T, DIRECTION_RIGHT: U, DIRECTION_UP: V, DIRECTION_DOWN: W, DIRECTION_HORIZONTAL: X, DIRECTION_VERTICAL: Y, DIRECTION_ALL: Z, Manager: kc, Input: ab, TouchAction: Pb, TouchInput: Eb, MouseInput: rb, PointerEventInput: wb, TouchMouseInput: Gb, SingleTouchInput: Ab, Recognizer: Yb, AttrRecognizer: ac, Tap: gc, Pan: bc, Swipe: fc, Pinch: cc, Rotate: ec, Press: dc, on: t, off: u, each: m, merge: o, extend: n, inherit: p, bindFn: q, prefixed: B }), "function" == g && __webpack_require__(198) ? !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
     return hc;
-  }.call(exports, __webpack_require__, exports, module),
+  }).call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "undefined" != typeof module && module.exports ? module.exports = hc : a[c] = hc;
 }(window, document, "Hammer");;(function (factory) {
   if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(55), __webpack_require__(197)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(56), __webpack_require__(199)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -75016,7 +75277,7 @@ if (Vel) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(102)(module)))
 
 /***/ }),
-/* 196 */
+/* 198 */
 /***/ (function(module, exports) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
@@ -75025,7 +75286,7 @@ module.exports = __webpack_amd_options__;
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ }),
-/* 197 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.7 - 2016-04-22
@@ -77661,9 +77922,9 @@ var freeGlobal = (typeof window !== 'undefined' ? window : (typeof self !== 'und
 freeGlobal.Hammer = Hammer;
 
 if (true) {
-    !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
+    !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
         return Hammer;
-    }.call(exports, __webpack_require__, exports, module),
+    }).call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 } else if (typeof module != 'undefined' && module.exports) {
     module.exports = Hammer;
@@ -77675,13 +77936,13 @@ if (true) {
 
 
 /***/ }),
-/* 198 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(199);
+module.exports = __webpack_require__(201);
 
 /***/ }),
-/* 199 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77689,8 +77950,8 @@ module.exports = __webpack_require__(199);
 
 var utils = __webpack_require__(17);
 var bind = __webpack_require__(103);
-var Axios = __webpack_require__(201);
-var defaults = __webpack_require__(74);
+var Axios = __webpack_require__(203);
+var defaults = __webpack_require__(75);
 
 /**
  * Create an instance of Axios
@@ -77723,15 +77984,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(107);
-axios.CancelToken = __webpack_require__(216);
-axios.isCancel = __webpack_require__(106);
+axios.Cancel = __webpack_require__(108);
+axios.CancelToken = __webpack_require__(217);
+axios.isCancel = __webpack_require__(107);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(217);
+axios.spread = __webpack_require__(218);
 
 module.exports = axios;
 
@@ -77740,7 +78001,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 200 */
+/* 202 */
 /***/ (function(module, exports) {
 
 /*!
@@ -77767,18 +78028,18 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 201 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(74);
+var defaults = __webpack_require__(75);
 var utils = __webpack_require__(17);
-var InterceptorManager = __webpack_require__(211);
-var dispatchRequest = __webpack_require__(212);
-var isAbsoluteURL = __webpack_require__(214);
-var combineURLs = __webpack_require__(215);
+var InterceptorManager = __webpack_require__(212);
+var dispatchRequest = __webpack_require__(213);
+var isAbsoluteURL = __webpack_require__(215);
+var combineURLs = __webpack_require__(216);
 
 /**
  * Create a new instance of Axios
@@ -77860,197 +78121,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 202 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78069,13 +78140,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(105);
+var createError = __webpack_require__(106);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -78102,7 +78173,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78130,7 +78201,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78205,7 +78276,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78249,7 +78320,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78324,7 +78395,7 @@ module.exports = (
 
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78367,7 +78438,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78427,7 +78498,7 @@ module.exports = (
 
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78486,16 +78557,16 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(17);
-var transformData = __webpack_require__(213);
-var isCancel = __webpack_require__(106);
-var defaults = __webpack_require__(74);
+var transformData = __webpack_require__(214);
+var isCancel = __webpack_require__(107);
+var defaults = __webpack_require__(75);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -78572,7 +78643,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78599,7 +78670,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78620,7 +78691,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78641,13 +78712,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(107);
+var Cancel = __webpack_require__(108);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -78705,7 +78776,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78739,7 +78810,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78749,273 +78820,277 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toDate = __webpack_require__(75);
+var _toDate = __webpack_require__(76);
 
 var _toDate2 = _interopRequireDefault(_toDate);
 
-var _toFloat = __webpack_require__(108);
+var _toFloat = __webpack_require__(109);
 
 var _toFloat2 = _interopRequireDefault(_toFloat);
 
-var _toInt = __webpack_require__(219);
+var _toInt = __webpack_require__(220);
 
 var _toInt2 = _interopRequireDefault(_toInt);
 
-var _toBoolean = __webpack_require__(220);
+var _toBoolean = __webpack_require__(221);
 
 var _toBoolean2 = _interopRequireDefault(_toBoolean);
 
-var _equals = __webpack_require__(221);
+var _equals = __webpack_require__(222);
 
 var _equals2 = _interopRequireDefault(_equals);
 
-var _contains = __webpack_require__(222);
+var _contains = __webpack_require__(223);
 
 var _contains2 = _interopRequireDefault(_contains);
 
-var _matches = __webpack_require__(223);
+var _matches = __webpack_require__(224);
 
 var _matches2 = _interopRequireDefault(_matches);
 
-var _isEmail = __webpack_require__(224);
+var _isEmail = __webpack_require__(225);
 
 var _isEmail2 = _interopRequireDefault(_isEmail);
 
-var _isURL = __webpack_require__(225);
+var _isURL = __webpack_require__(226);
 
 var _isURL2 = _interopRequireDefault(_isURL);
 
-var _isMACAddress = __webpack_require__(226);
+var _isMACAddress = __webpack_require__(227);
 
 var _isMACAddress2 = _interopRequireDefault(_isMACAddress);
 
-var _isIP = __webpack_require__(110);
+var _isIP = __webpack_require__(111);
 
 var _isIP2 = _interopRequireDefault(_isIP);
 
-var _isFQDN = __webpack_require__(77);
+var _isFQDN = __webpack_require__(78);
 
 var _isFQDN2 = _interopRequireDefault(_isFQDN);
 
-var _isBoolean = __webpack_require__(227);
+var _isBoolean = __webpack_require__(228);
 
 var _isBoolean2 = _interopRequireDefault(_isBoolean);
 
-var _isAlpha = __webpack_require__(228);
+var _isAlpha = __webpack_require__(229);
 
 var _isAlpha2 = _interopRequireDefault(_isAlpha);
 
-var _isAlphanumeric = __webpack_require__(229);
+var _isAlphanumeric = __webpack_require__(230);
 
 var _isAlphanumeric2 = _interopRequireDefault(_isAlphanumeric);
 
-var _isNumeric = __webpack_require__(230);
+var _isNumeric = __webpack_require__(231);
 
 var _isNumeric2 = _interopRequireDefault(_isNumeric);
 
-var _isPort = __webpack_require__(231);
+var _isPort = __webpack_require__(232);
 
 var _isPort2 = _interopRequireDefault(_isPort);
 
-var _isLowercase = __webpack_require__(232);
+var _isLowercase = __webpack_require__(233);
 
 var _isLowercase2 = _interopRequireDefault(_isLowercase);
 
-var _isUppercase = __webpack_require__(233);
+var _isUppercase = __webpack_require__(234);
 
 var _isUppercase2 = _interopRequireDefault(_isUppercase);
 
-var _isAscii = __webpack_require__(234);
+var _isAscii = __webpack_require__(235);
 
 var _isAscii2 = _interopRequireDefault(_isAscii);
 
-var _isFullWidth = __webpack_require__(112);
+var _isFullWidth = __webpack_require__(113);
 
 var _isFullWidth2 = _interopRequireDefault(_isFullWidth);
 
-var _isHalfWidth = __webpack_require__(113);
+var _isHalfWidth = __webpack_require__(114);
 
 var _isHalfWidth2 = _interopRequireDefault(_isHalfWidth);
 
-var _isVariableWidth = __webpack_require__(235);
+var _isVariableWidth = __webpack_require__(236);
 
 var _isVariableWidth2 = _interopRequireDefault(_isVariableWidth);
 
-var _isMultibyte = __webpack_require__(236);
+var _isMultibyte = __webpack_require__(237);
 
 var _isMultibyte2 = _interopRequireDefault(_isMultibyte);
 
-var _isSurrogatePair = __webpack_require__(237);
+var _isSurrogatePair = __webpack_require__(238);
 
 var _isSurrogatePair2 = _interopRequireDefault(_isSurrogatePair);
 
-var _isInt = __webpack_require__(111);
+var _isInt = __webpack_require__(112);
 
 var _isInt2 = _interopRequireDefault(_isInt);
 
-var _isFloat = __webpack_require__(238);
+var _isFloat = __webpack_require__(239);
 
 var _isFloat2 = _interopRequireDefault(_isFloat);
 
-var _isDecimal = __webpack_require__(239);
+var _isDecimal = __webpack_require__(240);
 
 var _isDecimal2 = _interopRequireDefault(_isDecimal);
 
-var _isHexadecimal = __webpack_require__(114);
+var _isHexadecimal = __webpack_require__(115);
 
 var _isHexadecimal2 = _interopRequireDefault(_isHexadecimal);
 
-var _isDivisibleBy = __webpack_require__(240);
+var _isDivisibleBy = __webpack_require__(241);
 
 var _isDivisibleBy2 = _interopRequireDefault(_isDivisibleBy);
 
-var _isHexColor = __webpack_require__(241);
+var _isHexColor = __webpack_require__(242);
 
 var _isHexColor2 = _interopRequireDefault(_isHexColor);
 
-var _isISRC = __webpack_require__(242);
+var _isISRC = __webpack_require__(243);
 
 var _isISRC2 = _interopRequireDefault(_isISRC);
 
-var _isMD = __webpack_require__(243);
+var _isMD = __webpack_require__(244);
 
 var _isMD2 = _interopRequireDefault(_isMD);
 
-var _isHash = __webpack_require__(244);
+var _isHash = __webpack_require__(245);
 
 var _isHash2 = _interopRequireDefault(_isHash);
 
-var _isJSON = __webpack_require__(245);
+var _isJSON = __webpack_require__(246);
 
 var _isJSON2 = _interopRequireDefault(_isJSON);
 
-var _isEmpty = __webpack_require__(246);
+var _isEmpty = __webpack_require__(247);
 
 var _isEmpty2 = _interopRequireDefault(_isEmpty);
 
-var _isLength = __webpack_require__(247);
+var _isLength = __webpack_require__(248);
 
 var _isLength2 = _interopRequireDefault(_isLength);
 
-var _isByteLength = __webpack_require__(109);
+var _isByteLength = __webpack_require__(110);
 
 var _isByteLength2 = _interopRequireDefault(_isByteLength);
 
-var _isUUID = __webpack_require__(248);
+var _isUUID = __webpack_require__(249);
 
 var _isUUID2 = _interopRequireDefault(_isUUID);
 
-var _isMongoId = __webpack_require__(249);
+var _isMongoId = __webpack_require__(250);
 
 var _isMongoId2 = _interopRequireDefault(_isMongoId);
 
-var _isAfter = __webpack_require__(250);
+var _isAfter = __webpack_require__(251);
 
 var _isAfter2 = _interopRequireDefault(_isAfter);
 
-var _isBefore = __webpack_require__(251);
+var _isBefore = __webpack_require__(252);
 
 var _isBefore2 = _interopRequireDefault(_isBefore);
 
-var _isIn = __webpack_require__(252);
+var _isIn = __webpack_require__(253);
 
 var _isIn2 = _interopRequireDefault(_isIn);
 
-var _isCreditCard = __webpack_require__(253);
+var _isCreditCard = __webpack_require__(254);
 
 var _isCreditCard2 = _interopRequireDefault(_isCreditCard);
 
-var _isISIN = __webpack_require__(254);
+var _isISIN = __webpack_require__(255);
 
 var _isISIN2 = _interopRequireDefault(_isISIN);
 
-var _isISBN = __webpack_require__(255);
+var _isISBN = __webpack_require__(256);
 
 var _isISBN2 = _interopRequireDefault(_isISBN);
 
-var _isISSN = __webpack_require__(256);
+var _isISSN = __webpack_require__(257);
 
 var _isISSN2 = _interopRequireDefault(_isISSN);
 
-var _isMobilePhone = __webpack_require__(257);
+var _isMobilePhone = __webpack_require__(258);
 
 var _isMobilePhone2 = _interopRequireDefault(_isMobilePhone);
 
-var _isCurrency = __webpack_require__(258);
+var _isCurrency = __webpack_require__(259);
 
 var _isCurrency2 = _interopRequireDefault(_isCurrency);
 
-var _isISO = __webpack_require__(259);
+var _isISO = __webpack_require__(260);
 
 var _isISO2 = _interopRequireDefault(_isISO);
 
-var _isISO31661Alpha = __webpack_require__(260);
+var _isISO31661Alpha = __webpack_require__(261);
 
 var _isISO31661Alpha2 = _interopRequireDefault(_isISO31661Alpha);
 
-var _isBase = __webpack_require__(261);
+var _isBase = __webpack_require__(262);
 
 var _isBase2 = _interopRequireDefault(_isBase);
 
-var _isDataURI = __webpack_require__(262);
+var _isDataURI = __webpack_require__(263);
 
 var _isDataURI2 = _interopRequireDefault(_isDataURI);
 
-var _isLatLong = __webpack_require__(263);
+var _isMimeType = __webpack_require__(264);
+
+var _isMimeType2 = _interopRequireDefault(_isMimeType);
+
+var _isLatLong = __webpack_require__(265);
 
 var _isLatLong2 = _interopRequireDefault(_isLatLong);
 
-var _isPostalCode = __webpack_require__(264);
+var _isPostalCode = __webpack_require__(266);
 
 var _isPostalCode2 = _interopRequireDefault(_isPostalCode);
 
-var _ltrim = __webpack_require__(115);
+var _ltrim = __webpack_require__(116);
 
 var _ltrim2 = _interopRequireDefault(_ltrim);
 
-var _rtrim = __webpack_require__(116);
+var _rtrim = __webpack_require__(117);
 
 var _rtrim2 = _interopRequireDefault(_rtrim);
 
-var _trim = __webpack_require__(265);
+var _trim = __webpack_require__(267);
 
 var _trim2 = _interopRequireDefault(_trim);
 
-var _escape = __webpack_require__(266);
+var _escape = __webpack_require__(268);
 
 var _escape2 = _interopRequireDefault(_escape);
 
-var _unescape = __webpack_require__(267);
+var _unescape = __webpack_require__(269);
 
 var _unescape2 = _interopRequireDefault(_unescape);
 
-var _stripLow = __webpack_require__(268);
+var _stripLow = __webpack_require__(270);
 
 var _stripLow2 = _interopRequireDefault(_stripLow);
 
-var _whitelist = __webpack_require__(269);
+var _whitelist = __webpack_require__(271);
 
 var _whitelist2 = _interopRequireDefault(_whitelist);
 
-var _blacklist = __webpack_require__(117);
+var _blacklist = __webpack_require__(118);
 
 var _blacklist2 = _interopRequireDefault(_blacklist);
 
-var _isWhitelisted = __webpack_require__(270);
+var _isWhitelisted = __webpack_require__(272);
 
 var _isWhitelisted2 = _interopRequireDefault(_isWhitelisted);
 
-var _normalizeEmail = __webpack_require__(271);
+var _normalizeEmail = __webpack_require__(273);
 
 var _normalizeEmail2 = _interopRequireDefault(_normalizeEmail);
 
-var _toString = __webpack_require__(76);
+var _toString = __webpack_require__(77);
 
 var _toString2 = _interopRequireDefault(_toString);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var version = '9.1.2';
+var version = '9.2.0';
 
 var validator = {
   version: version,
@@ -79073,6 +79148,7 @@ var validator = {
   isISO31661Alpha2: _isISO31661Alpha2.default,
   isBase64: _isBase2.default,
   isDataURI: _isDataURI2.default,
+  isMimeType: _isMimeType2.default,
   isLatLong: _isLatLong2.default,
   ltrim: _ltrim2.default,
   rtrim: _rtrim2.default,
@@ -79091,7 +79167,7 @@ exports.default = validator;
 module.exports = exports['default'];
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79115,7 +79191,7 @@ function toInt(str, radix) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79142,7 +79218,7 @@ function toBoolean(str, strict) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79166,7 +79242,7 @@ function equals(str, comparison) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79181,7 +79257,7 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _toString = __webpack_require__(76);
+var _toString = __webpack_require__(77);
 
 var _toString2 = _interopRequireDefault(_toString);
 
@@ -79194,7 +79270,7 @@ function contains(str, elem) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79221,7 +79297,7 @@ function matches(str, pattern, modifiers) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79240,11 +79316,11 @@ var _merge = __webpack_require__(38);
 
 var _merge2 = _interopRequireDefault(_merge);
 
-var _isByteLength = __webpack_require__(109);
+var _isByteLength = __webpack_require__(110);
 
 var _isByteLength2 = _interopRequireDefault(_isByteLength);
 
-var _isFQDN = __webpack_require__(77);
+var _isFQDN = __webpack_require__(78);
 
 var _isFQDN2 = _interopRequireDefault(_isFQDN);
 
@@ -79316,7 +79392,7 @@ function isEmail(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79331,11 +79407,11 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _isFQDN = __webpack_require__(77);
+var _isFQDN = __webpack_require__(78);
 
 var _isFQDN2 = _interopRequireDefault(_isFQDN);
 
-var _isIP = __webpack_require__(110);
+var _isIP = __webpack_require__(111);
 
 var _isIP2 = _interopRequireDefault(_isIP);
 
@@ -79469,7 +79545,7 @@ function isURL(url, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79495,7 +79571,7 @@ function isMACAddress(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79519,7 +79595,7 @@ function isBoolean(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79534,7 +79610,7 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _alpha = __webpack_require__(56);
+var _alpha = __webpack_require__(57);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -79550,7 +79626,7 @@ function isAlpha(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79565,7 +79641,7 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _alpha = __webpack_require__(56);
+var _alpha = __webpack_require__(57);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -79581,7 +79657,7 @@ function isAlphanumeric(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79607,7 +79683,7 @@ function isNumeric(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79618,7 +79694,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = isPort;
 
-var _isInt = __webpack_require__(111);
+var _isInt = __webpack_require__(112);
 
 var _isInt2 = _interopRequireDefault(_isInt);
 
@@ -79630,7 +79706,7 @@ function isPort(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79654,7 +79730,7 @@ function isLowercase(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79678,7 +79754,7 @@ function isUppercase(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79706,7 +79782,7 @@ function isAscii(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79721,9 +79797,9 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _isFullWidth = __webpack_require__(112);
+var _isFullWidth = __webpack_require__(113);
 
-var _isHalfWidth = __webpack_require__(113);
+var _isHalfWidth = __webpack_require__(114);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -79734,7 +79810,7 @@ function isVariableWidth(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79762,7 +79838,7 @@ function isMultibyte(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79788,7 +79864,7 @@ function isSurrogatePair(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79803,7 +79879,7 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _alpha = __webpack_require__(56);
+var _alpha = __webpack_require__(57);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -79819,7 +79895,7 @@ function isFloat(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79838,7 +79914,7 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _alpha = __webpack_require__(56);
+var _alpha = __webpack_require__(57);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -79866,7 +79942,7 @@ function isDecimal(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79881,7 +79957,7 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _toFloat = __webpack_require__(108);
+var _toFloat = __webpack_require__(109);
 
 var _toFloat2 = _interopRequireDefault(_toFloat);
 
@@ -79894,7 +79970,7 @@ function isDivisibleBy(str, num) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79920,7 +79996,7 @@ function isHexColor(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79947,7 +80023,7 @@ function isISRC(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79973,7 +80049,7 @@ function isMD5(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80014,7 +80090,7 @@ function isHash(str, algorithm) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80045,7 +80121,7 @@ function isJSON(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80069,7 +80145,7 @@ function isEmpty(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80109,7 +80185,7 @@ function isLength(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80143,7 +80219,7 @@ function isUUID(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80158,7 +80234,7 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _isHexadecimal = __webpack_require__(114);
+var _isHexadecimal = __webpack_require__(115);
 
 var _isHexadecimal2 = _interopRequireDefault(_isHexadecimal);
 
@@ -80171,7 +80247,7 @@ function isMongoId(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80186,7 +80262,7 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _toDate = __webpack_require__(75);
+var _toDate = __webpack_require__(76);
 
 var _toDate2 = _interopRequireDefault(_toDate);
 
@@ -80203,7 +80279,7 @@ function isAfter(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80218,7 +80294,7 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _toDate = __webpack_require__(75);
+var _toDate = __webpack_require__(76);
 
 var _toDate2 = _interopRequireDefault(_toDate);
 
@@ -80235,7 +80311,7 @@ function isBefore(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80253,7 +80329,7 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _toString = __webpack_require__(76);
+var _toString = __webpack_require__(77);
 
 var _toString2 = _interopRequireDefault(_toString);
 
@@ -80280,7 +80356,7 @@ function isIn(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80331,7 +80407,7 @@ function isCreditCard(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80385,7 +80461,7 @@ function isISIN(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80448,7 +80524,7 @@ function isISBN(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80512,7 +80588,7 @@ function isISSN(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80540,7 +80616,7 @@ var phones = {
   'cs-CZ': /^(\+?420)? ?[1-9][0-9]{2} ?[0-9]{3} ?[0-9]{3}$/,
   'da-DK': /^(\+?45)?\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2}$/,
   'de-DE': /^(\+?49[ \.\-])?([\(]{1}[0-9]{1,6}[\)])?([0-9 \.\-\/]{3,20})((x|ext|extension)[ ]?[0-9]{1,4})?$/,
-  'el-GR': /^(\+?30)?(69\d{8})$/,
+  'el-GR': /^(\+?30|0)?(69\d{8})$/,
   'en-AU': /^(\+?61|0)4\d{8}$/,
   'en-GB': /^(\+?44|0)7\d{9}$/,
   'en-HK': /^(\+?852\-?)?[456789]\d{3}\-?\d{4}$/,
@@ -80550,6 +80626,7 @@ var phones = {
   'en-NZ': /^(\+?64|0)2\d{7,9}$/,
   'en-PK': /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/,
   'en-RW': /^(\+?250|0)?[7]\d{8}$/,
+  'en-SG': /^(\+65)?[89]\d{7}$/,
   'en-TZ': /^(\+?255|0)?[67]\d{8}$/,
   'en-UG': /^(\+?256|0)?[7]\d{8}$/,
   'en-US': /^(\+?1)?[2-9]\d{2}[2-9](?!11)\d{6}$/,
@@ -80613,7 +80690,7 @@ function isMobilePhone(str, locale) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80711,7 +80788,7 @@ function isCurrency(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80740,7 +80817,7 @@ function isISO8601(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80767,7 +80844,7 @@ function isISO31661Alpha2(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80798,7 +80875,7 @@ function isBase64(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80824,7 +80901,65 @@ function isDataURI(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 263 */
+/* 264 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = isMimeType;
+
+var _assertString = __webpack_require__(3);
+
+var _assertString2 = _interopRequireDefault(_assertString);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*
+  Checks if the provided string matches to a correct Media type format (MIME type)
+
+  This function only checks is the string format follows the
+  etablished rules by the according RFC specifications.
+  This function supports 'charset' in textual media types
+  (https://tools.ietf.org/html/rfc6657).
+
+  This function does not check against all the media types listed
+  by the IANA (https://www.iana.org/assignments/media-types/media-types.xhtml)
+  because of lightness purposes : it would require to include
+  all these MIME types in this librairy, which would weigh it
+  significantly. This kind of effort maybe is not worth for the use that
+  this function has in this entire librairy.
+
+  More informations in the RFC specifications :
+  - https://tools.ietf.org/html/rfc2045
+  - https://tools.ietf.org/html/rfc2046
+  - https://tools.ietf.org/html/rfc7231#section-3.1.1.1
+  - https://tools.ietf.org/html/rfc7231#section-3.1.1.5
+*/
+
+// Match simple MIME types
+// NB :
+//   Subtype length must not exceed 100 characters.
+//   This rule does not comply to the RFC specs (what is the max length ?).
+var mimeTypeSimple = /^(application|audio|font|image|message|model|multipart|text|video)\/[a-zA-Z0-9\.\-\+]{1,100}$/i; // eslint-disable-line max-len
+
+// Handle "charset" in "text/*"
+var mimeTypeText = /^text\/[a-zA-Z0-9\.\-\+]{1,100};\s?charset=("[a-zA-Z0-9\.\-\+\s]{0,70}"|[a-zA-Z0-9\.\-\+]{0,70})(\s?\([a-zA-Z0-9\.\-\+\s]{1,20}\))?$/i; // eslint-disable-line max-len
+
+// Handle "boundary" in "multipart/*"
+var mimeTypeMultipart = /^multipart\/[a-zA-Z0-9\.\-\+]{1,100}(;\s?(boundary|charset)=("[a-zA-Z0-9\.\-\+\s]{0,70}"|[a-zA-Z0-9\.\-\+]{0,70})(\s?\([a-zA-Z0-9\.\-\+\s]{1,20}\))?){0,2}$/i; // eslint-disable-line max-len
+
+function isMimeType(str) {
+  (0, _assertString2.default)(str);
+  return mimeTypeSimple.test(str) || mimeTypeText.test(str) || mimeTypeMultipart.test(str);
+}
+module.exports = exports['default'];
+
+/***/ }),
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80853,7 +80988,7 @@ var long = /^\s?[+-]?(180(\.0+)?|1[0-7]\d(\.\d+)?|\d{1,2}(\.\d+)?)\)?$/;
 module.exports = exports['default'];
 
 /***/ }),
-/* 264 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80920,7 +81055,7 @@ var patterns = {
   NL: /^\d{4}\s?[a-z]{2}$/i,
   NO: fourDigit,
   PL: /^\d{2}\-\d{3}$/,
-  PT: /^\d{4}(\-\d{3})?$/,
+  PT: /^\d{4}\-\d{3}?$/,
   RO: sixDigit,
   RU: sixDigit,
   SA: fiveDigit,
@@ -80934,7 +81069,7 @@ var patterns = {
 var locales = exports.locales = Object.keys(patterns);
 
 /***/ }),
-/* 265 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80945,11 +81080,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = trim;
 
-var _rtrim = __webpack_require__(116);
+var _rtrim = __webpack_require__(117);
 
 var _rtrim2 = _interopRequireDefault(_rtrim);
 
-var _ltrim = __webpack_require__(115);
+var _ltrim = __webpack_require__(116);
 
 var _ltrim2 = _interopRequireDefault(_ltrim);
 
@@ -80961,7 +81096,7 @@ function trim(str, chars) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 266 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80985,7 +81120,7 @@ function escape(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 267 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81009,7 +81144,7 @@ function unescape(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 268 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81024,7 +81159,7 @@ var _assertString = __webpack_require__(3);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _blacklist = __webpack_require__(117);
+var _blacklist = __webpack_require__(118);
 
 var _blacklist2 = _interopRequireDefault(_blacklist);
 
@@ -81038,7 +81173,7 @@ function stripLow(str, keep_new_lines) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 269 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81062,7 +81197,7 @@ function whitelist(str, chars) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 270 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81091,7 +81226,7 @@ function isWhitelisted(str, chars) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 271 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81226,7 +81361,7 @@ function normalizeEmail(email, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 272 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81301,7 +81436,7 @@ var Particle = function () {
       lineWidth: options.lineWidth || 1,
       curvedLines: options.curvedLines || false,
       proximity: options.proximity || 100, // How close two dots need to be before they join
-      parallax: options.parallax || true,
+      parallax: options.parallax !== undefined ? options.parallax : true,
       parallaxMultiplier: options.parallaxMultiplier || 5, // The lower the number, the more extreme the parallax effect
       onInit: options.onInit || undefined,
       onDestroy: options.onDestroy || undefined
@@ -81633,20 +81768,21 @@ var ParticleItem = function () {
 exports.default = Particle;
 
 /***/ }),
-/* 273 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(274);
+module.exports = __webpack_require__(276);
 
 
 /***/ }),
-/* 274 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 function Granim(options) {
+	var doesGradientUseOpacity;
 	this.getElement(options.element);
 	this.x1 = 0;
 	this.y1 = 0;
@@ -81673,6 +81809,23 @@ function Granim(options) {
 	this.activetransitionSpeed = null;
 	this.currentColors = [];
 	this.eventPolyfill();
+	this.scrollDebounceThreshold = options.scrollDebounceThreshold || 300;
+	this.scrollDebounceTimeout = null;
+	this.isImgLoaded = false;
+	this.isCanvasInWindowView = false;
+	this.firstScrollInit = true;
+	this.animating = false;
+	if (options.image && options.image.source) {
+		this.image = {
+			source: options.image.source,
+			position: options.image.position || ['center', 'center'],
+			stretchMode: options.image.stretchMode || false,
+			blendingMode: options.image.blendingMode || false
+		};
+	}
+	doesGradientUseOpacity = this.opacity.map(function(el) {return el !== 1})
+		.indexOf(true) !== -1;
+	this.shouldClearCanvasOnEachFrame = !!this.image || doesGradientUseOpacity;
 	this.events = {
 		start: new CustomEvent('granim:start'),
 		end: new CustomEvent('granim:end'),
@@ -81696,17 +81849,28 @@ function Granim(options) {
 			false,
 		onEnd: typeof options.onEnd === 'function' ? options.onEnd : false
 	};
-
 	this.getDimensions();
 	this.canvas.setAttribute('width', this.x1);
 	this.canvas.setAttribute('height', this.y1);
 	this.setColors();
-	this.refreshColors();
-	window.addEventListener('resize', this.onResize.bind(this));
+
+	if (this.image) {
+		this.validateInput('image');
+		this.prepareImage();
+	}
+
+	this.pauseWhenNotInViewNameSpace = this.pauseWhenNotInView.bind(this);
+	this.setSizeAttributesNameSpace = this.setSizeAttributes.bind(this);
+	this.onResize();
+
 	if (this.isPausedWhenNotInView) {
-		this.pauseWhenNotInView();
+		this.onScroll();
 	} else {
-		this.animation = requestAnimationFrame(this.animateColors.bind(this));
+		if (!this.image) {
+			this.refreshColors();
+			this.animation = requestAnimationFrame(this.animateColors.bind(this));
+			this.animating = true;
+		}
 	}
 
 	// Callback and Event
@@ -81714,47 +81878,357 @@ function Granim(options) {
 	this.canvas.dispatchEvent(this.events.start);
 }
 
-Granim.prototype.setColors = __webpack_require__(275);
+Granim.prototype.onResize = __webpack_require__(277);
 
-Granim.prototype.eventPolyfill = __webpack_require__(276);
+Granim.prototype.onScroll = __webpack_require__(278);
 
-Granim.prototype.colorDiff = __webpack_require__(277);
+Granim.prototype.validateInput = __webpack_require__(279);
 
-Granim.prototype.hexToRgb = __webpack_require__(278);
+Granim.prototype.triggerError = __webpack_require__(280);
 
-Granim.prototype.setDirection = __webpack_require__(279);
+Granim.prototype.prepareImage = __webpack_require__(281);
 
-Granim.prototype.makeGradient = __webpack_require__(280);
+Granim.prototype.eventPolyfill = __webpack_require__(282);
 
-Granim.prototype.getDimensions = __webpack_require__(281);
+Granim.prototype.colorDiff = __webpack_require__(283);
 
-Granim.prototype.getElement = __webpack_require__(282);
+Granim.prototype.hexToRgb = __webpack_require__(284);
 
-Granim.prototype.animateColors = __webpack_require__(283);
+Granim.prototype.setDirection = __webpack_require__(285);
 
-Granim.prototype.getLightness = __webpack_require__(284);
+Granim.prototype.setColors = __webpack_require__(286);
 
-Granim.prototype.refreshColors = __webpack_require__(285);
+Granim.prototype.getElement = __webpack_require__(287);
 
-Granim.prototype.changeState = __webpack_require__(286);
+Granim.prototype.getDimensions = __webpack_require__(288);
 
-Granim.prototype.pause = __webpack_require__(287);
-
-Granim.prototype.play = __webpack_require__(288);
-
-Granim.prototype.clear = __webpack_require__(289);
+Granim.prototype.getLightness = __webpack_require__(289);
 
 Granim.prototype.getCurrentColors = __webpack_require__(290);
 
-Granim.prototype.pauseWhenNotInView = __webpack_require__(291);
+Granim.prototype.animateColors = __webpack_require__(291);
 
-Granim.prototype.onResize = __webpack_require__(292);
+Granim.prototype.refreshColors = __webpack_require__(292);
+
+Granim.prototype.makeGradient = __webpack_require__(293);
+
+Granim.prototype.pause = __webpack_require__(294);
+
+Granim.prototype.play = __webpack_require__(295);
+
+Granim.prototype.clear = __webpack_require__(296);
+
+Granim.prototype.destroy = __webpack_require__(297);
+
+Granim.prototype.pauseWhenNotInView = __webpack_require__(298);
+
+Granim.prototype.setSizeAttributes = __webpack_require__(299);
+
+Granim.prototype.changeDirection = __webpack_require__(300);
+
+Granim.prototype.changeBlendingMode = __webpack_require__(301);
+
+Granim.prototype.changeState = __webpack_require__(302);
 
 module.exports = Granim;
 
 
 /***/ }),
-/* 275 */
+/* 277 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(type) {
+	if (type === 'removeListeners') {
+		window.removeEventListener('resize', this.setSizeAttributesNameSpace);
+		return;
+	}
+
+	window.addEventListener('resize', this.setSizeAttributesNameSpace);
+};
+
+
+/***/ }),
+/* 278 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(type) {
+	if (type === 'removeListeners') {
+		window.removeEventListener('scroll', this.pauseWhenNotInViewNameSpace);
+		return;
+	}
+
+	window.addEventListener('scroll', this.pauseWhenNotInViewNameSpace);
+	this.pauseWhenNotInViewNameSpace();
+};
+
+
+/***/ }),
+/* 279 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(inputType) {
+	var xPositionValues = ['left', 'center', 'right'];
+	var yPositionValues = ['top', 'center', 'bottom'];
+	var stretchModeValues = ['stretch', 'stretch-if-smaller', 'stretch-if-bigger'];
+	var blendingModeValues = ['multiply', 'screen', 'normal', 'overlay', 'darken',
+		'lighten', 'lighter', 'color-dodge', 'color-burn', 'hard-light', 'soft-light',
+		'difference', 'exclusion', 'hue', 'saturation', 'color', 'luminosity'];
+
+	switch(inputType) {
+		case 'image':
+			// Validate image.position
+			if ((!Array.isArray(this.image.position) || this.image.position.length !== 2) ||
+				xPositionValues.indexOf(this.image.position[0]) === -1 ||
+				yPositionValues.indexOf(this.image.position[1]) === -1
+			) {this.triggerError('image.position')}
+			// Validate image.stretchMode
+			if (this.image.stretchMode) {
+				if ((!Array.isArray(this.image.stretchMode) || this.image.stretchMode.length !== 2) ||
+					stretchModeValues.indexOf(this.image.stretchMode[0]) === -1 ||
+					stretchModeValues.indexOf(this.image.stretchMode[1]) === -1
+				) {this.triggerError('image.stretchMode')}
+			}
+			break;
+		case 'blendingMode':
+			if (blendingModeValues.indexOf(this.image.blendingMode) === -1) {
+				this.clear();
+				this.triggerError('blendingMode');
+			}
+	}
+};
+
+
+/***/ }),
+/* 280 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(element) {
+	var siteURL = 'https://sarcadass.github.io/granim.js/api.html';
+	throw new Error('Granim: Input error on "' + element + '" option.\nCheck the API ' + siteURL + '.');
+};
+
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var _this = this;
+
+	if (!this.imagePosition) {
+		this.imagePosition = { x: 0, y: 0, width: 0, height: 0 };
+	}
+
+	if (this.image.blendingMode) {
+		this.context.globalCompositeOperation = this.image.blendingMode;
+	}
+
+	if (this.imageNode) {
+		setImagePosition();
+		return;
+	}
+
+	this.imageNode = new Image();
+	this.imageNode.onerror = function() {
+		throw new Error('Granim: The image source is invalid.');
+	};
+	this.imageNode.onload = function() {
+		_this.imgOriginalWidth = _this.imageNode.width;
+		_this.imgOriginalHeight = _this.imageNode.height;
+		setImagePosition();
+		_this.refreshColors();
+		if (!_this.isPausedWhenNotInView || _this.isCanvasInWindowView) {
+			_this.animation = requestAnimationFrame(_this.animateColors.bind(_this));
+		}
+		_this.isImgLoaded = true;
+	};
+	this.imageNode.src = this.image.source;
+
+	function setImagePosition() {
+		var i, currentAxis;
+
+		for (i = 0; i < 2; i++) {
+			currentAxis = !i ? 'x' : 'y';
+			setImageAxisPosition(currentAxis);
+		}
+
+		function setImageAxisPosition(axis) {
+			var canvasWidthOrHeight = _this[axis + '1'];
+			var imgOriginalWidthOrHeight = _this[axis === 'x' ? 'imgOriginalWidth' : 'imgOriginalHeight'];
+			var imageAlignIndex = axis === 'x' ? _this.image.position[0] : _this.image.position[1];
+			var imageAxisPosition;
+			switch (imageAlignIndex) {
+				case 'center':
+					imageAxisPosition = imgOriginalWidthOrHeight > canvasWidthOrHeight ?
+					-(imgOriginalWidthOrHeight - canvasWidthOrHeight) / 2 :
+					(canvasWidthOrHeight - imgOriginalWidthOrHeight) / 2;
+					_this.imagePosition[axis] = imageAxisPosition;
+					_this.imagePosition[axis === 'x' ? 'width' : 'height'] = imgOriginalWidthOrHeight;
+					break;
+
+				case 'top':
+					_this.imagePosition['y'] = 0;
+					_this.imagePosition['height'] = imgOriginalWidthOrHeight;
+					break;
+
+				case 'bottom':
+					_this.imagePosition['y'] = canvasWidthOrHeight - imgOriginalWidthOrHeight;
+					_this.imagePosition['height'] = imgOriginalWidthOrHeight;
+					break;
+
+				case 'right':
+					_this.imagePosition['x'] = canvasWidthOrHeight - imgOriginalWidthOrHeight;
+					_this.imagePosition['width'] = imgOriginalWidthOrHeight;
+					break;
+
+				case 'left':
+					_this.imagePosition['x'] = 0;
+					_this.imagePosition['width'] = imgOriginalWidthOrHeight;
+					break;
+			}
+
+			if (_this.image.stretchMode) {
+				imageAlignIndex = axis === 'x' ? _this.image.stretchMode[0] : _this.image.stretchMode[1];
+				switch (imageAlignIndex) {
+					case 'stretch':
+						_this.imagePosition[axis] = 0;
+						_this.imagePosition[axis === 'x' ? 'width' : 'height'] = canvasWidthOrHeight;
+						break;
+
+					case 'stretch-if-bigger':
+						if (imgOriginalWidthOrHeight < canvasWidthOrHeight) break;
+						_this.imagePosition[axis] = 0;
+						_this.imagePosition[axis === 'x' ? 'width' : 'height'] = canvasWidthOrHeight;
+						break;
+
+					case 'stretch-if-smaller':
+						if (imgOriginalWidthOrHeight > canvasWidthOrHeight) break;
+						_this.imagePosition[axis] = 0;
+						_this.imagePosition[axis === 'x' ? 'width' : 'height'] = canvasWidthOrHeight;
+						break;
+				}
+			}
+		}
+	}
+};
+
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	if ( typeof window.CustomEvent === "function" ) return;
+
+	function CustomEvent (event, params) {
+		params = params || { bubbles: false, cancelable: false, detail: undefined };
+		var evt = document.createEvent('CustomEvent');
+		evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+		return evt;
+	}
+
+	CustomEvent.prototype = window.Event.prototype;
+
+	window.CustomEvent = CustomEvent;
+};
+
+
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(colorA, colorB) {
+	var i;
+	var colorDiff = [];
+
+	for (i = 0; i < 3; i++) {
+		colorDiff.push(colorB[i] - colorA[i])
+	}
+
+	return colorDiff;
+};
+
+
+/***/ }),
+/* 284 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(hex) {
+	// Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+	var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+	hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+		return r + r + g + g + b + b;
+	});
+
+	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? [
+		parseInt(result[1], 16),
+		parseInt(result[2], 16),
+		parseInt(result[3], 16)
+	] : null;
+};
+
+
+/***/ }),
+/* 285 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var ctx = this.context;
+
+	switch(this.direction) {
+		default:
+			this.triggerError('direction');
+			break;
+		
+		case 'diagonal':
+			return ctx.createLinearGradient(0, 0, this.x1, this.y1);
+			break;
+
+		case 'left-right':
+			return ctx.createLinearGradient(0, 0, this.x1, 0);
+			break;
+
+		case 'top-bottom':
+			return ctx.createLinearGradient(this.x1 / 2, 0, this.x1 / 2, this.y1);
+			break;
+
+		case 'radial':
+			return ctx.createRadialGradient(this.x1 / 2, this.y1 / 2, this.x1 / 2, this.x1 / 2, this.y1 / 2, 0);
+			break;
+	}
+};
+
+
+/***/ }),
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81764,9 +82238,7 @@ module.exports = function() {
 	var _this = this;
 	var colorDiff, nextColors;
 
-	if (!this.channels[this.activeState]) {
-		this.channels[this.activeState] = [];
-	}
+	if (!this.channels[this.activeState]) this.channels[this.activeState] = [];
 
 	// If the actual channel exist, reassign properties and exit
 	// (each channel is saved to prevent recomputing it each time)
@@ -81784,7 +82256,7 @@ module.exports = function() {
 	this.activeColorDiff = [];
 
 	// Go on each gradient of the current state
-	this.states[this.activeState].gradients[this.channelsIndex].forEach(function(color, i, arr) {
+	this.states[this.activeState].gradients[this.channelsIndex].forEach(function(color, i) {
 		// Push the hex color converted to rgb on the channel and the active color properties
 		var rgbColor = _this.hexToRgb(color);
 		var activeChannel = _this.channels[_this.activeState];
@@ -81821,158 +82293,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 276 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function() {
-	if ( typeof window.CustomEvent === "function" ) return;
-
-	function CustomEvent (event, params) {
-		params = params || { bubbles: false, cancelable: false, detail: undefined };
-		var evt = document.createEvent('CustomEvent');
-		evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
-		return evt;
-	}
-
-	CustomEvent.prototype = window.Event.prototype;
-
-	window.CustomEvent = CustomEvent;
-};
-
-
-/***/ }),
-/* 277 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function(colorA, colorB) {
-	var i;
-	var colorDiff = [];
-
-	for (i = 0; i < 3; i++) {
-		colorDiff.push(colorB[i] - colorA[i])
-	}
-
-	return colorDiff;
-};
-
-
-/***/ }),
-/* 278 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function(hex) {
-	// Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
-	var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-	hex = hex.replace(shorthandRegex, function(m, r, g, b) {
-		return r + r + g + g + b + b;
-	});
-
-	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-	return result ? [
-		parseInt(result[1], 16),
-		parseInt(result[2], 16),
-		parseInt(result[3], 16)
-	] : null;
-};
-
-
-/***/ }),
-/* 279 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function() {
-	var ctx = this.context;
-
-	switch(this.direction) {
-		default:
-		case 'diagonal':
-			return ctx.createLinearGradient(0, 0, this.x1, this.y1);
-			break;
-
-		case 'left-right':
-			return ctx.createLinearGradient(0, 0, this.x1, 0);
-			break;
-
-		case 'top-bottom':
-			return ctx.createLinearGradient(this.x1 / 2, 0, this.x1 / 2, this.y1);
-			break;
-
-		case 'radial':
-			return ctx.createRadialGradient(this.x1 / 2, this.y1 / 2, this.x1 / 2, this.x1 / 2, this.y1 / 2, 0);
-			break;
-	}
-};
-
-
-/***/ }),
-/* 280 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function() {
-	var i;
-	var gradient = this.setDirection();
-	var colorPosition;
-	var elToSetClassOnClass = document.querySelector(this.elToSetClassOn).classList;
-	this.context.clearRect(0, 0, this.x1, this.y1);
-
-	for (i = 0; i < this.currentColors.length; i++) {
-		// Ensure first and last position to be 0 and 100
-		!i ? colorPosition = 0 : colorPosition = ((1 / (this.currentColors.length - 1)) * i).toFixed(2);
-
-		gradient.addColorStop(colorPosition, 'rgba(' +
-			this.currentColors[i][0] + ', ' +
-			this.currentColors[i][1] + ', ' +
-			this.currentColors[i][2] + ', ' +
-			this.opacity[i] + ')'
-		);
-	}
-
-	if (this.name) {
-		if (this.getLightness() === 'light') {
-			elToSetClassOnClass.remove(this.name + '-dark');
-			elToSetClassOnClass.add(this.name + '-light');
-
-		} else {
-			elToSetClassOnClass.remove(this.name + '-light');
-			elToSetClassOnClass.add(this.name + '-dark');
-		}
-	}
-
-	this.context.fillStyle = gradient;
-	this.context.fillRect(0, 0, this.x1, this.y1);
-};
-
-
-/***/ }),
-/* 281 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function() {
-	this.x1 = this.canvas.offsetWidth;
-	this.y1 = this.canvas.offsetHeight;
-};
-
-
-/***/ }),
-/* 282 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81996,7 +82317,75 @@ module.exports = function(element) {
 
 
 /***/ }),
-/* 283 */
+/* 288 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	this.x1 = this.canvas.offsetWidth;
+	this.y1 = this.canvas.offsetHeight;
+};
+
+
+/***/ }),
+/* 289 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var currentColors = this.getCurrentColors();
+	var gradientAverage = null;
+	var lightnessAverage, i;
+	var colorsAverage = currentColors.map(function(el) {
+		// Compute the average lightness of each color
+		// in the current gradient
+		return Math.max(el[0], el[1], el[2]);
+	});
+
+	for (i = 0; i < colorsAverage.length; i++) {
+		// Add all the average lightness of each color
+		gradientAverage = gradientAverage === null ?
+			colorsAverage[i] : gradientAverage + colorsAverage[i];
+
+		if (i === colorsAverage.length - 1) {
+			// if it's the last lightness average
+			// divide it by the total length to
+			// have the global average lightness
+			lightnessAverage = Math.round(gradientAverage / (i + 1));
+		}
+	}
+
+	return lightnessAverage >= 128 ? 'light' : 'dark';
+};
+
+
+/***/ }),
+/* 290 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var i, j;
+	var currentColors = [];
+
+	for (i = 0; i < this.currentColors.length; i++) {
+		currentColors.push([]);
+		for (j = 0; j < 3; j++) {currentColors[i].push(this.currentColors[i][j])}
+	}
+
+	// Return a deep copy of the current colors
+	return currentColors;
+};
+
+
+/***/ }),
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82086,73 +82475,242 @@ module.exports = function(timestamp) {
 
 
 /***/ }),
-/* 284 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function() {
-	var currentColors = this.getCurrentColors();
-	var colorsAverage = [];
-	var gradientAverage = null;
-	var lightnessAverage;
-
-	currentColors.forEach(function(el, i, arr) {
-		// Compute the average lightness of each color
-		// in the current gradient
-		colorsAverage.push(
-			Math.max(el[0], el[1], el[2])
-		)
-	});
-
-	colorsAverage.forEach(function(el, i, arr) {
-		// Add all the average lightness of each color
-		gradientAverage = gradientAverage === null ?
-			el :
-			gradientAverage + el;
-
-		if (i === colorsAverage.length - 1) {
-			// if it's the last lightness average
-			// divide it by the total length to
-			// have the global average lightness
-			lightnessAverage = Math.round(gradientAverage / (i + 1));
-		}
-	});
-
-	return lightnessAverage >= 128 ? 'light' : 'dark';
-};
-
-
-/***/ }),
-/* 285 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function(progressPercent) {
-	var activeChannel, j;
 	var _this = this;
+	var activeChannel, i, j;
 
-	this.activeColors.forEach(function(el, i, arr) {
+	// Loop through each colors of the active gradient
+	for (i = 0; i < this.activeColors.length; i++) {
+
+		// Generate RGB colors
 		for (j = 0; j < 3; j++) {
 			activeChannel = _this.activeColors[i][j] +
-				Math.ceil(_this.activeColorDiff[i][j] /
-					100 * progressPercent);
+				Math.ceil(_this.activeColorDiff[i][j] / 100 * progressPercent);
 
+			// Prevent colors values from going < 0 & > 255
 			if (activeChannel <= 255 && activeChannel >= 0) {
 				_this.currentColors[i][j] = activeChannel;
 			}
 		}
-	});
+	}
 
 	this.makeGradient();
 };
 
 
 /***/ }),
-/* 286 */
+/* 293 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var i, colorPosition;
+	var gradient = this.setDirection();
+	var elToSetClassOnClass = document.querySelector(this.elToSetClassOn).classList;
+
+	if (this.shouldClearCanvasOnEachFrame) this.context.clearRect(0, 0, this.x1, this.y1);
+
+	if (this.image) {
+		this.context.drawImage(
+			this.imageNode,
+			this.imagePosition.x,
+			this.imagePosition.y,
+			this.imagePosition.width,
+			this.imagePosition.height
+		);
+	}
+
+	for (i = 0; i < this.currentColors.length; i++) {
+		// Ensure first and last position to be 0 and 100
+		colorPosition = !i ? 0 : ((1 / (this.currentColors.length - 1)) * i).toFixed(2);
+
+		gradient.addColorStop(colorPosition, 'rgba(' +
+			this.currentColors[i][0] + ', ' +
+			this.currentColors[i][1] + ', ' +
+			this.currentColors[i][2] + ', ' +
+			this.opacity[i] + ')'
+		);
+	}
+
+	if (this.name) {
+		if (this.getLightness() === 'light') {
+			elToSetClassOnClass.remove(this.name + '-dark');
+			elToSetClassOnClass.add(this.name + '-light');
+
+		} else {
+			elToSetClassOnClass.remove(this.name + '-light');
+			elToSetClassOnClass.add(this.name + '-dark');
+		}
+	}
+
+	this.context.fillStyle = gradient;
+	this.context.fillRect(0, 0, this.x1, this.y1);
+};
+
+
+/***/ }),
+/* 294 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(state) {
+	var isPausedBecauseNotInView = state === 'isPausedBecauseNotInView';
+	if (this.isCleared) return;
+	if (!isPausedBecauseNotInView) this.isPaused = true;
+	cancelAnimationFrame(this.animation);
+	this.animating = false;
+};
+
+
+/***/ }),
+/* 295 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(state) {
+	var isPlayedBecauseInView = state === 'isPlayedBecauseInView';
+	if (!isPlayedBecauseInView) this.isPaused = false;
+	this.isCleared = false;
+	if (!this.animating) {
+		this.animation = requestAnimationFrame(this.animateColors.bind(this));
+		this.animating = true;
+	}
+};
+
+
+/***/ }),
+/* 296 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	if (!this.isPaused) {
+		cancelAnimationFrame(this.animation);
+
+	} else {
+		this.isPaused = false;
+	}
+	this.isCleared = true;
+	this.context.clearRect(0, 0, this.x1, this.y1);
+};
+
+
+/***/ }),
+/* 297 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	this.onResize('removeListeners');
+	this.onScroll('removeListeners');
+	this.clear();
+};
+
+
+/***/ }),
+/* 298 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	var _this = this;
+	if (this.scrollDebounceTimeout) clearTimeout(this.scrollDebounceTimeout);
+
+	this.scrollDebounceTimeout = setTimeout(function() {
+		var elPos = _this.canvas.getBoundingClientRect();
+		_this.isCanvasInWindowView = !(elPos.bottom < 0 || elPos.right < 0 ||
+			elPos.left > window.innerWidth || elPos.top > window.innerHeight);
+
+		if (_this.isCanvasInWindowView) {
+			if (!_this.isPaused || _this.firstScrollInit) {
+				if (_this.image && !_this.isImgLoaded) {return}
+				_this.isPausedBecauseNotInView = false;
+				_this.play('isPlayedBecauseInView');
+				_this.firstScrollInit = false;
+			}
+
+		} else {
+			if (!_this.image && _this.firstScrollInit) {
+				_this.refreshColors();
+				_this.firstScrollInit = false;
+			}
+
+			if (!_this.isPaused && !_this.isPausedBecauseNotInView) {
+				_this.isPausedBecauseNotInView = true;
+				_this.pause('isPausedBecauseNotInView');
+			}
+		}
+	}, this.scrollDebounceThreshold);
+};
+
+
+/***/ }),
+/* 299 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function() {
+	this.getDimensions();
+	this.canvas.setAttribute('width', this.x1);
+	this.canvas.setAttribute('height', this.y1);
+	if (this.image) this.prepareImage();
+	this.refreshColors();
+};
+
+
+/***/ }),
+/* 300 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(newDirection) {
+	this.context.clearRect(0, 0, this.x1, this.y1);
+	this.direction = newDirection;
+	this.validateInput('direction');
+	if (this.isPaused) this.refreshColors();
+};
+
+
+/***/ }),
+/* 301 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(newBlendingMode) {
+	this.context.clearRect(0, 0, this.x1, this.y1);
+	this.context.globalCompositeOperation =
+		this.image.blendingMode = newBlendingMode;
+	this.validateInput('blendingMode');
+	if (this.isPaused) this.refreshColors();
+};
+
+
+/***/ }),
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82196,138 +82754,7 @@ module.exports = function(state) {
 
 
 /***/ }),
-/* 287 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function(state) {
-	var isPausedBecauseNotInView = state === 'isPausedBecauseNotInView';
-	if (this.isCleared) {return;}
-	if (!isPausedBecauseNotInView) this.isPaused = true;
-	cancelAnimationFrame(this.animation);
-};
-
-
-/***/ }),
-/* 288 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function(state) {
-	var isPausedBecauseNotInView = state === 'isPausedBecauseNotInView';
-	if (!isPausedBecauseNotInView) {
-		this.isPaused = false;
-	}
-	this.isCleared = false;
-	this.animation = requestAnimationFrame(this.animateColors.bind(this));
-};
-
-
-/***/ }),
-/* 289 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function() {
-	if (!this.isPaused) {
-		cancelAnimationFrame(this.animation);
-
-	} else {
-		this.isPaused = false;
-	}
-	this.isCleared = true;
-	this.context.clearRect(0, 0, this.x1, this.y1);
-};
-
-
-/***/ }),
-/* 290 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function() {
-	var j;
-	var currentColors = [];
-
-	this.currentColors.forEach(function(el, i, arr) {
-		currentColors.push([]);
-
-		for (j = 0; j < 3; j++) {
-			currentColors[i].push(el[j])
-		}
-	});
-
-	// Return a deep copy
-	return currentColors;
-};
-
-
-/***/ }),
-/* 291 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function() {
-	var _this = this;
-	var timeout;
-
-	window.addEventListener('scroll', pauseWhenNotInView);
-	pauseWhenNotInView(true);
-
-	function pauseWhenNotInView(init) {
-		if (timeout) clearTimeout(timeout);
-
-		timeout = setTimeout(function() {
-			var elPos = _this.canvas.getBoundingClientRect();
-			var isNotInView =
-				elPos.bottom < 0 ||
-				elPos.right < 0 ||
-				elPos.left > window.innerWidth ||
-				elPos.top > window.innerHeight;
-
-			if (isNotInView) {
-				if (!_this.isPaused && !_this.isPausedBecauseNotInView) {
-					_this.isPausedBecauseNotInView = true;
-					_this.pause('isPausedBecauseNotInView');
-				}
-			} else {
-				if (!_this.isPaused || init === true) {
-					_this.isPausedBecauseNotInView = false;
-					_this.play('isPausedBecauseNotInView');
-				}
-			}
-		}, 300);
-	}
-};
-
-
-/***/ }),
-/* 292 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function() {
-	this.getDimensions();
-	this.canvas.setAttribute('width', this.x1);
-	this.canvas.setAttribute('height', this.y1);
-	this.refreshColors();
-};
-
-
-/***/ }),
-/* 293 */
+/* 303 */
 /***/ (function(module, exports) {
 
 /*
@@ -82485,7 +82912,7 @@ ShareAlike - If you remix, transform, or build upon the material, you must distr
 
 
 /***/ }),
-/* 294 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _echarts = __webpack_require__(1);
@@ -82497,7 +82924,7 @@ var _echarts = __webpack_require__(1);
   }
 })();
 
-var _export = __webpack_require__(135);
+var _export = __webpack_require__(136);
 
 (function () {
   for (var key in _export) {
@@ -82506,99 +82933,99 @@ var _export = __webpack_require__(135);
   }
 })();
 
-__webpack_require__(341);
+__webpack_require__(351);
 
-__webpack_require__(352);
+__webpack_require__(362);
 
-__webpack_require__(356);
+__webpack_require__(366);
 
-__webpack_require__(361);
-
-__webpack_require__(365);
+__webpack_require__(371);
 
 __webpack_require__(375);
 
-__webpack_require__(387);
+__webpack_require__(385);
 
-__webpack_require__(394);
+__webpack_require__(397);
 
-__webpack_require__(402);
+__webpack_require__(404);
 
-__webpack_require__(417);
+__webpack_require__(412);
 
-__webpack_require__(421);
+__webpack_require__(427);
 
-__webpack_require__(425);
+__webpack_require__(431);
 
-__webpack_require__(437);
+__webpack_require__(435);
 
-__webpack_require__(442);
+__webpack_require__(447);
 
-__webpack_require__(448);
-
-__webpack_require__(454);
+__webpack_require__(452);
 
 __webpack_require__(458);
 
-__webpack_require__(465);
+__webpack_require__(464);
 
-__webpack_require__(469);
+__webpack_require__(468);
 
-__webpack_require__(472);
+__webpack_require__(475);
 
-__webpack_require__(486);
+__webpack_require__(479);
 
-__webpack_require__(492);
+__webpack_require__(482);
 
-__webpack_require__(493);
+__webpack_require__(496);
 
-__webpack_require__(494);
+__webpack_require__(502);
 
-__webpack_require__(501);
+__webpack_require__(503);
 
-__webpack_require__(51);
+__webpack_require__(504);
 
-__webpack_require__(505);
+__webpack_require__(511);
 
-__webpack_require__(517);
+__webpack_require__(53);
 
-__webpack_require__(161);
+__webpack_require__(515);
 
-__webpack_require__(167);
+__webpack_require__(527);
 
-__webpack_require__(520);
+__webpack_require__(162);
 
-__webpack_require__(528);
+__webpack_require__(168);
 
-__webpack_require__(532);
+__webpack_require__(530);
 
-__webpack_require__(533);
+__webpack_require__(538);
 
-__webpack_require__(540);
+__webpack_require__(542);
 
-__webpack_require__(547);
+__webpack_require__(543);
 
 __webpack_require__(550);
 
-__webpack_require__(553);
+__webpack_require__(557);
 
-__webpack_require__(556);
+__webpack_require__(560);
 
-__webpack_require__(565);
+__webpack_require__(563);
 
-__webpack_require__(576);
+__webpack_require__(566);
 
-__webpack_require__(579);
+__webpack_require__(575);
+
+__webpack_require__(586);
+
+__webpack_require__(589);
 
 /***/ }),
-/* 295 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
 
 var vec2 = __webpack_require__(8);
 
-var Draggable = __webpack_require__(296);
+var Draggable = __webpack_require__(306);
 
 var Eventful = __webpack_require__(32);
 
@@ -82917,7 +83344,7 @@ var _default = Handler;
 module.exports = _default;
 
 /***/ }),
-/* 296 */
+/* 306 */
 /***/ (function(module, exports) {
 
 // TODO Draggable for group
@@ -83001,16 +83428,16 @@ var _default = Draggable;
 module.exports = _default;
 
 /***/ }),
-/* 297 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
 
 var env = __webpack_require__(12);
 
-var Group = __webpack_require__(58);
+var Group = __webpack_require__(59);
 
-var timsort = __webpack_require__(79);
+var timsort = __webpack_require__(80);
 
 /**
  * Storage内容仓库模块
@@ -83246,12 +83673,12 @@ var _default = Storage;
 module.exports = _default;
 
 /***/ }),
-/* 298 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Animator = __webpack_require__(120);
+var Animator = __webpack_require__(121);
 
-var log = __webpack_require__(44);
+var log = __webpack_require__(46);
 
 var _util = __webpack_require__(0);
 
@@ -83505,10 +83932,10 @@ var _default = Animatable;
 module.exports = _default;
 
 /***/ }),
-/* 299 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var easingFuncs = __webpack_require__(300);
+var easingFuncs = __webpack_require__(310);
 
 /**
  * 动画主控制器
@@ -83611,7 +84038,7 @@ var _default = Clip;
 module.exports = _default;
 
 /***/ }),
-/* 300 */
+/* 310 */
 /***/ (function(module, exports) {
 
 /**
@@ -83994,26 +84421,26 @@ var _default = easing;
 module.exports = _default;
 
 /***/ }),
-/* 301 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _config = __webpack_require__(59);
+var _config = __webpack_require__(60);
 
 var devicePixelRatio = _config.devicePixelRatio;
 
 var util = __webpack_require__(0);
 
-var log = __webpack_require__(44);
+var log = __webpack_require__(46);
 
 var BoundingRect = __webpack_require__(10);
 
-var timsort = __webpack_require__(79);
+var timsort = __webpack_require__(80);
 
-var Layer = __webpack_require__(302);
+var Layer = __webpack_require__(312);
 
-var requestAnimationFrame = __webpack_require__(124);
+var requestAnimationFrame = __webpack_require__(125);
 
-var Image = __webpack_require__(45);
+var Image = __webpack_require__(47);
 
 /**
  * Default canvas painter
@@ -85058,18 +85485,18 @@ var _default = Painter;
 module.exports = _default;
 
 /***/ }),
-/* 302 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
 
-var _config = __webpack_require__(59);
+var _config = __webpack_require__(60);
 
 var devicePixelRatio = _config.devicePixelRatio;
 
-var Style = __webpack_require__(122);
+var Style = __webpack_require__(123);
 
-var Pattern = __webpack_require__(123);
+var Pattern = __webpack_require__(124);
 
 /**
  * @module zrender/Layer
@@ -85283,7 +85710,7 @@ var _default = Layer;
 module.exports = _default;
 
 /***/ }),
-/* 303 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
@@ -85292,9 +85719,9 @@ var _event = __webpack_require__(25);
 
 var Dispatcher = _event.Dispatcher;
 
-var requestAnimationFrame = __webpack_require__(124);
+var requestAnimationFrame = __webpack_require__(125);
 
-var Animator = __webpack_require__(120);
+var Animator = __webpack_require__(121);
 
 /**
  * 动画主类, 调度和管理所有动画控制器
@@ -85526,7 +85953,7 @@ var _default = Animation;
 module.exports = _default;
 
 /***/ }),
-/* 304 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _event = __webpack_require__(25);
@@ -85541,7 +85968,7 @@ var Eventful = __webpack_require__(32);
 
 var env = __webpack_require__(12);
 
-var GestureMgr = __webpack_require__(305);
+var GestureMgr = __webpack_require__(315);
 
 var TOUCH_CLICK_DELAY = 300;
 var mouseHandlerNames = ['click', 'dblclick', 'mousewheel', 'mouseout', 'mouseup', 'mousedown', 'mousemove', 'contextmenu'];
@@ -85864,7 +86291,7 @@ var _default = HandlerDomProxy;
 module.exports = _default;
 
 /***/ }),
-/* 305 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var eventUtil = __webpack_require__(25);
@@ -85968,7 +86395,7 @@ var _default = GestureMgr;
 module.exports = _default;
 
 /***/ }),
-/* 306 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -85983,9 +86410,9 @@ var Model = __webpack_require__(11);
 
 var ComponentModel = __webpack_require__(14);
 
-var globalDefault = __webpack_require__(330);
+var globalDefault = __webpack_require__(340);
 
-var colorPaletteMinin = __webpack_require__(134);
+var colorPaletteMinin = __webpack_require__(135);
 
 /**
  * ECharts global model
@@ -86616,7 +87043,7 @@ var _default = GlobalModel;
 module.exports = _default;
 
 /***/ }),
-/* 307 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(39);
@@ -86643,7 +87070,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 308 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(39);
@@ -86657,7 +87084,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 309 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var textContain = __webpack_require__(22);
@@ -86695,14 +87122,14 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 310 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
 
 var PathProxy = __webpack_require__(40);
 
-var transformPath = __webpack_require__(314);
+var transformPath = __webpack_require__(324);
 
 // command chars
 var cc = ['m', 'M', 'l', 'L', 'v', 'V', 'h', 'H', 'z', 'Z', 'c', 'C', 'q', 'Q', 't', 'T', 's', 'S', 'a', 'A'];
@@ -87109,26 +87536,26 @@ exports.extendFromString = extendFromString;
 exports.mergePath = mergePath;
 
 /***/ }),
-/* 311 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var PathProxy = __webpack_require__(40);
 
-var line = __webpack_require__(127);
+var line = __webpack_require__(128);
 
-var cubic = __webpack_require__(312);
+var cubic = __webpack_require__(322);
 
-var quadratic = __webpack_require__(128);
+var quadratic = __webpack_require__(129);
 
-var arc = __webpack_require__(313);
+var arc = __webpack_require__(323);
 
-var _util = __webpack_require__(129);
+var _util = __webpack_require__(130);
 
 var normalizeRadian = _util.normalizeRadian;
 
 var curve = __webpack_require__(27);
 
-var windingLine = __webpack_require__(130);
+var windingLine = __webpack_require__(131);
 
 var CMD = PathProxy.CMD;
 var PI2 = Math.PI * 2;
@@ -87509,7 +87936,7 @@ exports.contain = contain;
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 312 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var curve = __webpack_require__(27);
@@ -87547,10 +87974,10 @@ function containStroke(x0, y0, x1, y1, x2, y2, x3, y3, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 313 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _util = __webpack_require__(129);
+var _util = __webpack_require__(130);
 
 var normalizeRadian = _util.normalizeRadian;
 var PI2 = Math.PI * 2;
@@ -87612,7 +88039,7 @@ function containStroke(cx, cy, r, startAngle, endAngle, anticlockwise, lineWidth
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 314 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var PathProxy = __webpack_require__(40);
@@ -87717,7 +88144,7 @@ function _default(path, m) {
 module.exports = _default;
 
 /***/ }),
-/* 315 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
@@ -87754,12 +88181,12 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 316 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
 
-var fixClipWithShadow = __webpack_require__(131);
+var fixClipWithShadow = __webpack_require__(132);
 
 /**
  * 扇形
@@ -87803,7 +88230,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 317 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
@@ -87834,12 +88261,12 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 318 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
 
-var polyHelper = __webpack_require__(132);
+var polyHelper = __webpack_require__(133);
 
 /**
  * 多边形
@@ -87860,7 +88287,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 319 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _vector = __webpack_require__(8);
@@ -87933,7 +88360,7 @@ function _default(points, isLoop) {
 module.exports = _default;
 
 /***/ }),
-/* 320 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _vector = __webpack_require__(8);
@@ -88042,12 +88469,12 @@ function _default(points, smooth, isLoop, constraint) {
 module.exports = _default;
 
 /***/ }),
-/* 321 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
 
-var polyHelper = __webpack_require__(132);
+var polyHelper = __webpack_require__(133);
 
 /**
  * @module zrender/graphic/shape/Polyline
@@ -88071,12 +88498,12 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 322 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
 
-var roundRectHelper = __webpack_require__(126);
+var roundRectHelper = __webpack_require__(127);
 
 /**
  * 矩形
@@ -88116,7 +88543,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 323 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
@@ -88175,7 +88602,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 324 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
@@ -88293,7 +88720,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 325 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
@@ -88333,7 +88760,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 326 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
@@ -88394,12 +88821,12 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 327 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Gradient = __webpack_require__(62);
+var Gradient = __webpack_require__(63);
 
 /**
  * x, y, r are all percent from 0 to 1
@@ -88431,7 +88858,7 @@ var _default = RadialGradient;
 module.exports = _default;
 
 /***/ }),
-/* 328 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(39);
@@ -88452,7 +88879,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 329 */
+/* 339 */
 /***/ (function(module, exports) {
 
 var _default = {
@@ -88470,7 +88897,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 330 */
+/* 340 */
 /***/ (function(module, exports) {
 
 var platform = ''; // Navigator not exists in node
@@ -88527,7 +88954,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 331 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -88544,7 +88971,7 @@ var _default = ExtensionAPI;
 module.exports = _default;
 
 /***/ }),
-/* 332 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -88953,7 +89380,7 @@ var _default = OptionManager;
 module.exports = _default;
 
 /***/ }),
-/* 333 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -88962,7 +89389,7 @@ var each = _util.each;
 var isArray = _util.isArray;
 var isObject = _util.isObject;
 
-var compatStyle = __webpack_require__(334);
+var compatStyle = __webpack_require__(344);
 
 var _model = __webpack_require__(6);
 
@@ -89068,7 +89495,7 @@ function _default(option, isTheme) {
 module.exports = _default;
 
 /***/ }),
-/* 334 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -89255,10 +89682,10 @@ function _default(option, isTheme) {
 module.exports = _default;
 
 /***/ }),
-/* 335 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Gradient = __webpack_require__(62);
+var Gradient = __webpack_require__(63);
 
 function _default(ecModel) {
   function encodeColor(seriesModel) {
@@ -89295,7 +89722,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 336 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -89393,7 +89820,7 @@ function _default(api, opts) {
 module.exports = _default;
 
 /***/ }),
-/* 337 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -89469,12 +89896,12 @@ exports.createScale = createScale;
 exports.mixinAxisModelCommonMethods = mixinAxisModelCommonMethods;
 
 /***/ }),
-/* 338 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Scale = __webpack_require__(63);
+var Scale = __webpack_require__(64);
 
 /**
  * Linear continuous scale
@@ -89564,7 +89991,7 @@ var _default = OrdinalScale;
 module.exports = _default;
 
 /***/ }),
-/* 339 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -89573,9 +90000,9 @@ var numberUtil = __webpack_require__(4);
 
 var formatUtil = __webpack_require__(9);
 
-var scaleHelper = __webpack_require__(136);
+var scaleHelper = __webpack_require__(137);
 
-var IntervalScale = __webpack_require__(64);
+var IntervalScale = __webpack_require__(65);
 
 // [About UTC and local time zone]:
 // In most cases, `number.parseDate` will treat input data string as local time
@@ -89758,16 +90185,16 @@ var _default = TimeScale;
 module.exports = _default;
 
 /***/ }),
-/* 340 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Scale = __webpack_require__(63);
+var Scale = __webpack_require__(64);
 
 var numberUtil = __webpack_require__(4);
 
-var IntervalScale = __webpack_require__(64);
+var IntervalScale = __webpack_require__(65);
 
 /**
  * Log scale
@@ -89929,24 +90356,24 @@ var _default = LogScale;
 module.exports = _default;
 
 /***/ }),
-/* 341 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-__webpack_require__(342);
+__webpack_require__(352);
 
-__webpack_require__(343);
+__webpack_require__(353);
 
 var visualSymbol = __webpack_require__(34);
 
-var layoutPoints = __webpack_require__(84);
+var layoutPoints = __webpack_require__(85);
 
-var dataSample = __webpack_require__(345);
+var dataSample = __webpack_require__(355);
 
-__webpack_require__(48);
+__webpack_require__(50);
 
 // In case developer forget to include grid component
 echarts.registerVisual(zrUtil.curry(visualSymbol, 'line', 'circle', 'line'));
@@ -89955,7 +90382,7 @@ echarts.registerLayout(zrUtil.curry(layoutPoints, 'line')); // Down sample after
 echarts.registerProcessor(echarts.PRIORITY.PROCESSOR.STATISTIC, zrUtil.curry(dataSample, 'line'));
 
 /***/ }),
-/* 342 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -90032,7 +90459,7 @@ var _default = SeriesModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 343 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -90041,17 +90468,17 @@ var __DEV__ = _config.__DEV__;
 
 var zrUtil = __webpack_require__(0);
 
-var SymbolDraw = __webpack_require__(47);
+var SymbolDraw = __webpack_require__(49);
 
-var SymbolClz = __webpack_require__(65);
+var SymbolClz = __webpack_require__(66);
 
-var lineAnimationDiff = __webpack_require__(344);
+var lineAnimationDiff = __webpack_require__(354);
 
 var graphic = __webpack_require__(2);
 
 var modelUtil = __webpack_require__(6);
 
-var _poly = __webpack_require__(141);
+var _poly = __webpack_require__(142);
 
 var Polyline = _poly.Polyline;
 var Polygon = _poly.Polygon;
@@ -90705,7 +91132,7 @@ var _default = ChartView.extend({
 module.exports = _default;
 
 /***/ }),
-/* 344 */
+/* 354 */
 /***/ (function(module, exports) {
 
 // var arrayDiff = require('zrender/src/core/arrayDiff');
@@ -90882,7 +91309,7 @@ function _default(oldData, newData, oldStackedOnPoints, newStackedOnPoints, oldC
 module.exports = _default;
 
 /***/ }),
-/* 345 */
+/* 355 */
 /***/ (function(module, exports) {
 
 var samplers = {
@@ -90974,12 +91401,12 @@ function _default(seriesType, ecModel, api) {
 module.exports = _default;
 
 /***/ }),
-/* 346 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Cartesian = __webpack_require__(347);
+var Cartesian = __webpack_require__(357);
 
 function Cartesian2D(name) {
   Cartesian.call(this, name);
@@ -91059,7 +91486,7 @@ var _default = Cartesian2D;
 module.exports = _default;
 
 /***/ }),
-/* 347 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -91164,7 +91591,7 @@ var _default = Cartesian;
 module.exports = _default;
 
 /***/ }),
-/* 348 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -91288,10 +91715,10 @@ var _default = Axis2D;
 module.exports = _default;
 
 /***/ }),
-/* 349 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(142);
+__webpack_require__(143);
 
 var ComponentModel = __webpack_require__(14);
 
@@ -91327,15 +91754,15 @@ var _default = ComponentModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 350 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(142);
+__webpack_require__(143);
 
-__webpack_require__(351);
+__webpack_require__(361);
 
 /***/ }),
-/* 351 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -91346,7 +91773,7 @@ var AxisBuilder = __webpack_require__(35);
 
 var AxisView = __webpack_require__(36);
 
-var cartesianAxisHelper = __webpack_require__(144);
+var cartesianAxisHelper = __webpack_require__(145);
 
 var ifIgnoreOnTick = AxisBuilder.ifIgnoreOnTick;
 var getInterval = AxisBuilder.getInterval;
@@ -91540,22 +91967,22 @@ CartesianAxisView.extend({
 });
 
 /***/ }),
-/* 352 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var barLayoutGrid = __webpack_require__(86);
+var barLayoutGrid = __webpack_require__(87);
 
-__webpack_require__(85);
+__webpack_require__(86);
 
-__webpack_require__(353);
+__webpack_require__(363);
 
-__webpack_require__(354);
+__webpack_require__(364);
 
-__webpack_require__(48);
+__webpack_require__(50);
 
 // In case developer forget to include grid component
 echarts.registerLayout(zrUtil.curry(barLayoutGrid, 'bar')); // Visual coding for legend
@@ -91568,10 +91995,10 @@ echarts.registerVisual(function (ecModel) {
 });
 
 /***/ }),
-/* 353 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var BaseBarSeries = __webpack_require__(145);
+var BaseBarSeries = __webpack_require__(146);
 
 var _default = BaseBarSeries.extend({
   type: 'series.bar',
@@ -91582,7 +92009,7 @@ var _default = BaseBarSeries.extend({
 module.exports = _default;
 
 /***/ }),
-/* 354 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -91595,13 +92022,13 @@ var zrUtil = __webpack_require__(0);
 
 var graphic = __webpack_require__(2);
 
-var _helper = __webpack_require__(146);
+var _helper = __webpack_require__(147);
 
 var setLabel = _helper.setLabel;
 
 var Model = __webpack_require__(11);
 
-var barItemStyle = __webpack_require__(355);
+var barItemStyle = __webpack_require__(365);
 
 var BAR_BORDER_WIDTH_QUERY = ['itemStyle', 'normal', 'barBorderWidth']; // FIXME
 // Just for compatible with ec2.
@@ -91824,7 +92251,7 @@ function getLineWidth(itemModel, rawLayout) {
 module.exports = _default;
 
 /***/ }),
-/* 355 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(39);
@@ -91846,24 +92273,24 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 356 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-__webpack_require__(357);
+__webpack_require__(367);
 
-__webpack_require__(358);
+__webpack_require__(368);
 
-var createDataSelectAction = __webpack_require__(147);
+var createDataSelectAction = __webpack_require__(148);
 
-var dataColor = __webpack_require__(88);
+var dataColor = __webpack_require__(89);
 
-var pieLayout = __webpack_require__(359);
+var pieLayout = __webpack_require__(369);
 
-var dataFilter = __webpack_require__(68);
+var dataFilter = __webpack_require__(69);
 
 createDataSelectAction('pie', [{
   type: 'pieToggleSelect',
@@ -91883,7 +92310,7 @@ echarts.registerLayout(zrUtil.curry(pieLayout, 'pie'));
 echarts.registerProcessor(zrUtil.curry(dataFilter, 'pie'));
 
 /***/ }),
-/* 357 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -91900,7 +92327,7 @@ var getPercentWithPrecision = _number.getPercentWithPrecision;
 
 var completeDimensions = __webpack_require__(21);
 
-var dataSelectableMixin = __webpack_require__(87);
+var dataSelectableMixin = __webpack_require__(88);
 
 var PieSeries = echarts.extendSeriesModel({
   type: 'series.pie',
@@ -92023,7 +92450,7 @@ var _default = PieSeries;
 module.exports = _default;
 
 /***/ }),
-/* 358 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -92342,7 +92769,7 @@ var _default = PieView;
 module.exports = _default;
 
 /***/ }),
-/* 359 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _number = __webpack_require__(4);
@@ -92350,7 +92777,7 @@ var _number = __webpack_require__(4);
 var parsePercent = _number.parsePercent;
 var linearMap = _number.linearMap;
 
-var labelLayout = __webpack_require__(360);
+var labelLayout = __webpack_require__(370);
 
 var zrUtil = __webpack_require__(0);
 
@@ -92479,7 +92906,7 @@ function _default(seriesType, ecModel, api, payload) {
 module.exports = _default;
 
 /***/ }),
-/* 360 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var textContain = __webpack_require__(22);
@@ -92695,29 +93122,29 @@ function _default(seriesModel, r, viewWidth, viewHeight) {
 module.exports = _default;
 
 /***/ }),
-/* 361 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-__webpack_require__(362);
+__webpack_require__(372);
 
-__webpack_require__(363);
+__webpack_require__(373);
 
 var visualSymbol = __webpack_require__(34);
 
-var layoutPoints = __webpack_require__(84);
+var layoutPoints = __webpack_require__(85);
 
-__webpack_require__(48);
+__webpack_require__(50);
 
 // In case developer forget to include grid component
 echarts.registerVisual(zrUtil.curry(visualSymbol, 'scatter', 'circle', null));
 echarts.registerLayout(zrUtil.curry(layoutPoints, 'scatter'));
 
 /***/ }),
-/* 362 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var createListFromArray = __webpack_require__(29);
@@ -92774,14 +93201,14 @@ var _default = SeriesModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 363 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-var SymbolDraw = __webpack_require__(47);
+var SymbolDraw = __webpack_require__(49);
 
-var LargeSymbolDraw = __webpack_require__(364);
+var LargeSymbolDraw = __webpack_require__(374);
 
 echarts.extendChartView({
   type: 'scatter',
@@ -92810,7 +93237,7 @@ echarts.extendChartView({
 });
 
 /***/ }),
-/* 364 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
@@ -92947,28 +93374,28 @@ var _default = LargeSymbolDraw;
 module.exports = _default;
 
 /***/ }),
-/* 365 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-__webpack_require__(366);
+__webpack_require__(376);
 
-__webpack_require__(371);
+__webpack_require__(381);
 
-__webpack_require__(372);
+__webpack_require__(382);
 
-var dataColor = __webpack_require__(88);
+var dataColor = __webpack_require__(89);
 
 var visualSymbol = __webpack_require__(34);
 
-var radarLayout = __webpack_require__(373);
+var radarLayout = __webpack_require__(383);
 
-var dataFilter = __webpack_require__(68);
+var dataFilter = __webpack_require__(69);
 
-var backwardCompat = __webpack_require__(374);
+var backwardCompat = __webpack_require__(384);
 
 // Must use radar component
 echarts.registerVisual(zrUtil.curry(dataColor, 'radar'));
@@ -92978,24 +93405,24 @@ echarts.registerProcessor(zrUtil.curry(dataFilter, 'radar'));
 echarts.registerPreprocessor(backwardCompat);
 
 /***/ }),
-/* 366 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(367);
+__webpack_require__(377);
 
-__webpack_require__(369);
+__webpack_require__(379);
 
-__webpack_require__(370);
+__webpack_require__(380);
 
 /***/ }),
-/* 367 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var IndicatorAxis = __webpack_require__(368);
+var IndicatorAxis = __webpack_require__(378);
 
-var IntervalScale = __webpack_require__(64);
+var IntervalScale = __webpack_require__(65);
 
 var numberUtil = __webpack_require__(4);
 
@@ -93225,7 +93652,7 @@ var _default = Radar;
 module.exports = _default;
 
 /***/ }),
-/* 368 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -93263,14 +93690,14 @@ var _default = IndicatorAxis;
 module.exports = _default;
 
 /***/ }),
-/* 369 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var axisDefault = __webpack_require__(143);
+var axisDefault = __webpack_require__(144);
 
 var Model = __webpack_require__(11);
 
@@ -93387,7 +93814,7 @@ var _default = RadarModel;
 module.exports = _default;
 
 /***/ }),
-/* 370 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -93562,7 +93989,7 @@ var _default = echarts.extendComponentView({
 module.exports = _default;
 
 /***/ }),
-/* 371 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var SeriesModel = __webpack_require__(16);
@@ -93636,7 +94063,7 @@ var _default = RadarSeries;
 module.exports = _default;
 
 /***/ }),
-/* 372 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -93824,7 +94251,7 @@ var _default = echarts.extendChartView({
 module.exports = _default;
 
 /***/ }),
-/* 373 */
+/* 383 */
 /***/ (function(module, exports) {
 
 function _default(ecModel) {
@@ -93858,7 +94285,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 374 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -93903,28 +94330,28 @@ function _default(option) {
 module.exports = _default;
 
 /***/ }),
-/* 375 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(376);
+__webpack_require__(386);
 
-__webpack_require__(382);
+__webpack_require__(392);
 
-__webpack_require__(152);
+__webpack_require__(153);
 
-__webpack_require__(69);
+__webpack_require__(70);
 
-var mapSymbolLayout = __webpack_require__(383);
+var mapSymbolLayout = __webpack_require__(393);
 
-var mapVisual = __webpack_require__(384);
+var mapVisual = __webpack_require__(394);
 
-var mapDataStatistic = __webpack_require__(385);
+var mapDataStatistic = __webpack_require__(395);
 
-var backwardCompat = __webpack_require__(386);
+var backwardCompat = __webpack_require__(396);
 
-var createDataSelectAction = __webpack_require__(147);
+var createDataSelectAction = __webpack_require__(148);
 
 echarts.registerLayout(mapSymbolLayout);
 echarts.registerVisual(mapVisual);
@@ -93945,7 +94372,7 @@ createDataSelectAction('map', [{
 }]);
 
 /***/ }),
-/* 376 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -93961,9 +94388,9 @@ var _format = __webpack_require__(9);
 var encodeHTML = _format.encodeHTML;
 var addCommas = _format.addCommas;
 
-var dataSelectableMixin = __webpack_require__(87);
+var dataSelectableMixin = __webpack_require__(88);
 
-var geoCreator = __webpack_require__(69);
+var geoCreator = __webpack_require__(70);
 
 var MapSeries = SeriesModel.extend({
   type: 'series.map',
@@ -94152,24 +94579,24 @@ var _default = MapSeries;
 module.exports = _default;
 
 /***/ }),
-/* 377 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var BoundingRect = __webpack_require__(10);
 
-var parseGeoJson = __webpack_require__(137);
+var parseGeoJson = __webpack_require__(138);
 
-var View = __webpack_require__(148);
+var View = __webpack_require__(149);
 
-var fixNanhai = __webpack_require__(378);
+var fixNanhai = __webpack_require__(388);
 
-var fixTextCoord = __webpack_require__(379);
+var fixTextCoord = __webpack_require__(389);
 
-var fixGeoCoord = __webpack_require__(380);
+var fixGeoCoord = __webpack_require__(390);
 
-var fixDiaoyuIsland = __webpack_require__(381);
+var fixDiaoyuIsland = __webpack_require__(391);
 
 // Geo fix functions
 var geoFixFuncs = [fixNanhai, fixTextCoord, fixGeoCoord, fixDiaoyuIsland];
@@ -94374,12 +94801,12 @@ var _default = Geo;
 module.exports = _default;
 
 /***/ }),
-/* 378 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Region = __webpack_require__(138);
+var Region = __webpack_require__(139);
 
 // Fix for 南海诸岛
 var geoCoord = [126, 25];
@@ -94408,7 +94835,7 @@ function _default(geo) {
 module.exports = _default;
 
 /***/ }),
-/* 379 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -94438,7 +94865,7 @@ function _default(geo) {
 module.exports = _default;
 
 /***/ }),
-/* 380 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -94464,7 +94891,7 @@ function _default(geo) {
 module.exports = _default;
 
 /***/ }),
-/* 381 */
+/* 391 */
 /***/ (function(module, exports) {
 
 // Fix for 钓鱼岛
@@ -94489,7 +94916,7 @@ function _default(geo) {
 module.exports = _default;
 
 /***/ }),
-/* 382 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -94498,7 +94925,7 @@ var zrUtil = __webpack_require__(0);
 
 var graphic = __webpack_require__(2);
 
-var MapDraw = __webpack_require__(149);
+var MapDraw = __webpack_require__(150);
 
 var _default = echarts.extendChartView({
   type: 'map',
@@ -94630,7 +95057,7 @@ var _default = echarts.extendChartView({
 module.exports = _default;
 
 /***/ }),
-/* 383 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -94685,7 +95112,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 384 */
+/* 394 */
 /***/ (function(module, exports) {
 
 function _default(ecModel) {
@@ -94704,7 +95131,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 385 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -94788,7 +95215,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 386 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -94809,36 +95236,36 @@ function _default(option) {
 module.exports = _default;
 
 /***/ }),
-/* 387 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-__webpack_require__(388);
+__webpack_require__(398);
 
-__webpack_require__(389);
+__webpack_require__(399);
 
-__webpack_require__(390);
+__webpack_require__(400);
 
 var visualSymbol = __webpack_require__(34);
 
-var orthogonalLayout = __webpack_require__(391);
+var orthogonalLayout = __webpack_require__(401);
 
-var radialLayout = __webpack_require__(393);
+var radialLayout = __webpack_require__(403);
 
 echarts.registerVisual(zrUtil.curry(visualSymbol, 'tree', 'circle', null));
 echarts.registerLayout(orthogonalLayout);
 echarts.registerLayout(radialLayout);
 
 /***/ }),
-/* 388 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var SeriesModel = __webpack_require__(16);
 
-var Tree = __webpack_require__(154);
+var Tree = __webpack_require__(155);
 
 var _format = __webpack_require__(9);
 
@@ -94954,16 +95381,16 @@ var _default = SeriesModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 389 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var graphic = __webpack_require__(2);
 
-var SymbolClz = __webpack_require__(65);
+var SymbolClz = __webpack_require__(66);
 
-var _layoutHelper = __webpack_require__(156);
+var _layoutHelper = __webpack_require__(157);
 
 var radialCoordinate = _layoutHelper.radialCoordinate;
 
@@ -95290,7 +95717,7 @@ function getEdgeShape(seriesScope, sourceLayout, targetLayout) {
 module.exports = _default;
 
 /***/ }),
-/* 390 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -95313,10 +95740,10 @@ echarts.registerAction({
 });
 
 /***/ }),
-/* 391 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var commonLayout = __webpack_require__(157);
+var commonLayout = __webpack_require__(158);
 
 function _default(ecModel, api) {
   ecModel.eachSeriesByType('tree', function (seriesModel) {
@@ -95327,7 +95754,7 @@ function _default(ecModel, api) {
 module.exports = _default;
 
 /***/ }),
-/* 392 */
+/* 402 */
 /***/ (function(module, exports) {
 
 /**
@@ -95391,10 +95818,10 @@ exports.eachAfter = eachAfter;
 exports.eachBefore = eachBefore;
 
 /***/ }),
-/* 393 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var commonLayout = __webpack_require__(157);
+var commonLayout = __webpack_require__(158);
 
 function _default(ecModel, api) {
   ecModel.eachSeriesByType('tree', function (seriesModel) {
@@ -95405,33 +95832,33 @@ function _default(ecModel, api) {
 module.exports = _default;
 
 /***/ }),
-/* 394 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(395);
+__webpack_require__(405);
 
-__webpack_require__(396);
+__webpack_require__(406);
 
-__webpack_require__(399);
+__webpack_require__(409);
 
-var treemapVisual = __webpack_require__(400);
+var treemapVisual = __webpack_require__(410);
 
-var treemapLayout = __webpack_require__(401);
+var treemapLayout = __webpack_require__(411);
 
 echarts.registerVisual(treemapVisual);
 echarts.registerLayout(treemapLayout);
 
 /***/ }),
-/* 395 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var SeriesModel = __webpack_require__(16);
 
-var Tree = __webpack_require__(154);
+var Tree = __webpack_require__(155);
 
 var Model = __webpack_require__(11);
 
@@ -95440,7 +95867,7 @@ var _format = __webpack_require__(9);
 var encodeHTML = _format.encodeHTML;
 var addCommas = _format.addCommas;
 
-var _helper = __webpack_require__(49);
+var _helper = __webpack_require__(51);
 
 var wrapTreePathInfo = _helper.wrapTreePathInfo;
 
@@ -95802,7 +96229,7 @@ function setDefault(levels, ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 396 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -95813,17 +96240,17 @@ var graphic = __webpack_require__(2);
 
 var DataDiffer = __webpack_require__(41);
 
-var helper = __webpack_require__(49);
+var helper = __webpack_require__(51);
 
-var Breadcrumb = __webpack_require__(397);
+var Breadcrumb = __webpack_require__(407);
 
-var RoamController = __webpack_require__(70);
+var RoamController = __webpack_require__(71);
 
 var BoundingRect = __webpack_require__(10);
 
 var matrix = __webpack_require__(18);
 
-var animationUtil = __webpack_require__(398);
+var animationUtil = __webpack_require__(408);
 
 var makeStyleMapper = __webpack_require__(39);
 
@@ -96664,7 +97091,7 @@ function calculateZ(depth, zInLevel) {
 module.exports = _default;
 
 /***/ }),
-/* 397 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
@@ -96673,7 +97100,7 @@ var layout = __webpack_require__(7);
 
 var zrUtil = __webpack_require__(0);
 
-var _helper = __webpack_require__(49);
+var _helper = __webpack_require__(51);
 
 var wrapTreePathInfo = _helper.wrapTreePathInfo;
 var TEXT_PADDING = 8;
@@ -96824,7 +97251,7 @@ var _default = Breadcrumb;
 module.exports = _default;
 
 /***/ }),
-/* 398 */
+/* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -96928,12 +97355,12 @@ function createWrap() {
 exports.createWrap = createWrap;
 
 /***/ }),
-/* 399 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-var helper = __webpack_require__(49);
+var helper = __webpack_require__(51);
 
 /**
  * @file Treemap action
@@ -96975,7 +97402,7 @@ echarts.registerAction({
 });
 
 /***/ }),
-/* 400 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var VisualMapping = __webpack_require__(37);
@@ -97165,7 +97592,7 @@ function mapVisual(nodeModel, visuals, child, index, mapping, seriesModel) {
 module.exports = _default;
 
 /***/ }),
-/* 401 */
+/* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -97179,7 +97606,7 @@ var MAX_SAFE_INTEGER = _number.MAX_SAFE_INTEGER;
 
 var layout = __webpack_require__(7);
 
-var helper = __webpack_require__(49);
+var helper = __webpack_require__(51);
 
 var mathMax = Math.max;
 var mathMin = Math.min;
@@ -97691,34 +98118,34 @@ function getUpperLabelHeight(model) {
 module.exports = _default;
 
 /***/ }),
-/* 402 */
+/* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-__webpack_require__(403);
+__webpack_require__(413);
 
-__webpack_require__(405);
+__webpack_require__(415);
 
-__webpack_require__(408);
+__webpack_require__(418);
 
-var categoryFilter = __webpack_require__(409);
+var categoryFilter = __webpack_require__(419);
 
 var visualSymbol = __webpack_require__(34);
 
-var categoryVisual = __webpack_require__(410);
+var categoryVisual = __webpack_require__(420);
 
-var edgeVisual = __webpack_require__(411);
+var edgeVisual = __webpack_require__(421);
 
-var simpleLayout = __webpack_require__(412);
+var simpleLayout = __webpack_require__(422);
 
-var circularLayout = __webpack_require__(413);
+var circularLayout = __webpack_require__(423);
 
-var forceLayout = __webpack_require__(414);
+var forceLayout = __webpack_require__(424);
 
-var createView = __webpack_require__(416);
+var createView = __webpack_require__(426);
 
 echarts.registerProcessor(categoryFilter);
 echarts.registerVisual(zrUtil.curry(visualSymbol, 'graph', 'circle', null));
@@ -97733,7 +98160,7 @@ echarts.registerCoordinateSystem('graphView', {
 });
 
 /***/ }),
-/* 403 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -97752,7 +98179,7 @@ var _format = __webpack_require__(9);
 
 var encodeHTML = _format.encodeHTML;
 
-var createGraphFromNodeEdge = __webpack_require__(158);
+var createGraphFromNodeEdge = __webpack_require__(159);
 
 var GraphSeries = echarts.extendSeriesModel({
   type: 'series.graph',
@@ -97974,7 +98401,7 @@ var _default = GraphSeries;
 module.exports = _default;
 
 /***/ }),
-/* 404 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -98512,28 +98939,28 @@ var _default = Graph;
 module.exports = _default;
 
 /***/ }),
-/* 405 */
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var SymbolDraw = __webpack_require__(47);
+var SymbolDraw = __webpack_require__(49);
 
-var LineDraw = __webpack_require__(90);
+var LineDraw = __webpack_require__(91);
 
-var RoamController = __webpack_require__(70);
+var RoamController = __webpack_require__(71);
 
-var roamHelper = __webpack_require__(151);
+var roamHelper = __webpack_require__(152);
 
-var _cursorHelper = __webpack_require__(89);
+var _cursorHelper = __webpack_require__(90);
 
 var onIrrelevantElement = _cursorHelper.onIrrelevantElement;
 
 var graphic = __webpack_require__(2);
 
-var adjustEdge = __webpack_require__(407);
+var adjustEdge = __webpack_require__(417);
 
 var nodeOpacityPath = ['itemStyle', 'normal', 'opacity'];
 var lineOpacityPath = ['lineStyle', 'normal', 'opacity'];
@@ -98872,7 +99299,7 @@ var _default = echarts.extendChartView({
 module.exports = _default;
 
 /***/ }),
-/* 406 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
@@ -98920,7 +99347,7 @@ var _default = graphic.extendShape({
 module.exports = _default;
 
 /***/ }),
-/* 407 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var curveTool = __webpack_require__(27);
@@ -99086,12 +99513,12 @@ function _default(graph, scale) {
 module.exports = _default;
 
 /***/ }),
-/* 408 */
+/* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-var _roamHelper = __webpack_require__(153);
+var _roamHelper = __webpack_require__(154);
 
 var updateCenterAndZoom = _roamHelper.updateCenterAndZoom;
 var actionInfo = {
@@ -99147,7 +99574,7 @@ echarts.registerAction({
 }, function () {});
 
 /***/ }),
-/* 409 */
+/* 419 */
 /***/ (function(module, exports) {
 
 function _default(ecModel) {
@@ -99189,7 +99616,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 410 */
+/* 420 */
 /***/ (function(module, exports) {
 
 function _default(ecModel) {
@@ -99229,7 +99656,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 411 */
+/* 421 */
 /***/ (function(module, exports) {
 
 function normalize(a) {
@@ -99286,10 +99713,10 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 412 */
+/* 422 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _simpleLayoutHelper = __webpack_require__(159);
+var _simpleLayoutHelper = __webpack_require__(160);
 
 var simpleLayout = _simpleLayoutHelper.simpleLayout;
 var simpleLayoutEdge = _simpleLayoutHelper.simpleLayoutEdge;
@@ -99334,10 +99761,10 @@ function _default(ecModel, api) {
 module.exports = _default;
 
 /***/ }),
-/* 413 */
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _circularLayoutHelper = __webpack_require__(160);
+var _circularLayoutHelper = __webpack_require__(161);
 
 var circularLayout = _circularLayoutHelper.circularLayout;
 
@@ -99352,18 +99779,18 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 414 */
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _forceHelper = __webpack_require__(415);
+var _forceHelper = __webpack_require__(425);
 
 var forceLayout = _forceHelper.forceLayout;
 
-var _simpleLayoutHelper = __webpack_require__(159);
+var _simpleLayoutHelper = __webpack_require__(160);
 
 var simpleLayout = _simpleLayoutHelper.simpleLayout;
 
-var _circularLayoutHelper = __webpack_require__(160);
+var _circularLayoutHelper = __webpack_require__(161);
 
 var circularLayout = _circularLayoutHelper.circularLayout;
 
@@ -99511,7 +99938,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 415 */
+/* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var vec2 = __webpack_require__(8);
@@ -99654,16 +100081,16 @@ function forceLayout(nodes, edges, opts) {
 exports.forceLayout = forceLayout;
 
 /***/ }),
-/* 416 */
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var View = __webpack_require__(148);
+var View = __webpack_require__(149);
 
 var _layout = __webpack_require__(7);
 
 var getLayoutRect = _layout.getLayoutRect;
 
-var bbox = __webpack_require__(81);
+var bbox = __webpack_require__(82);
 
 // FIXME Where to create the simple view coordinate system
 function getViewRect(seriesModel, api, aspect) {
@@ -99729,15 +100156,15 @@ function _default(ecModel, api) {
 module.exports = _default;
 
 /***/ }),
-/* 417 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(418);
+__webpack_require__(428);
 
-__webpack_require__(419);
+__webpack_require__(429);
 
 /***/ }),
-/* 418 */
+/* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var List = __webpack_require__(15);
@@ -99860,10 +100287,10 @@ var _default = GaugeSeries;
 module.exports = _default;
 
 /***/ }),
-/* 419 */
+/* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var PointerPath = __webpack_require__(420);
+var PointerPath = __webpack_require__(430);
 
 var graphic = __webpack_require__(2);
 
@@ -100199,7 +100626,7 @@ var _default = GaugeView;
 module.exports = _default;
 
 /***/ }),
-/* 420 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(13);
@@ -100234,29 +100661,29 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 421 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-__webpack_require__(422);
+__webpack_require__(432);
 
-__webpack_require__(423);
+__webpack_require__(433);
 
-var dataColor = __webpack_require__(88);
+var dataColor = __webpack_require__(89);
 
-var funnelLayout = __webpack_require__(424);
+var funnelLayout = __webpack_require__(434);
 
-var dataFilter = __webpack_require__(68);
+var dataFilter = __webpack_require__(69);
 
 echarts.registerVisual(zrUtil.curry(dataColor, 'funnel'));
 echarts.registerLayout(funnelLayout);
 echarts.registerProcessor(zrUtil.curry(dataFilter, 'funnel'));
 
 /***/ }),
-/* 422 */
+/* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -100365,7 +100792,7 @@ var _default = FunnelSeries;
 module.exports = _default;
 
 /***/ }),
-/* 423 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
@@ -100535,7 +100962,7 @@ var _default = FunnelView;
 module.exports = _default;
 
 /***/ }),
-/* 424 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var layout = __webpack_require__(7);
@@ -100705,23 +101132,23 @@ function _default(ecModel, api, payload) {
 module.exports = _default;
 
 /***/ }),
-/* 425 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(161);
+__webpack_require__(162);
 
-__webpack_require__(434);
+__webpack_require__(444);
 
-__webpack_require__(435);
+__webpack_require__(445);
 
-var parallelVisual = __webpack_require__(436);
+var parallelVisual = __webpack_require__(446);
 
 echarts.registerVisual(parallelVisual);
 
 /***/ }),
-/* 426 */
+/* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -100779,7 +101206,7 @@ function mergeAxisOptionFromParallel(option) {
 module.exports = _default;
 
 /***/ }),
-/* 427 */
+/* 437 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -100790,13 +101217,13 @@ var layoutUtil = __webpack_require__(7);
 
 var axisHelper = __webpack_require__(19);
 
-var ParallelAxis = __webpack_require__(428);
+var ParallelAxis = __webpack_require__(438);
 
 var graphic = __webpack_require__(2);
 
 var numberUtil = __webpack_require__(4);
 
-var sliderMove = __webpack_require__(50);
+var sliderMove = __webpack_require__(52);
 
 /**
  * Parallel Coordinates
@@ -101253,7 +101680,7 @@ var _default = Parallel;
 module.exports = _default;
 
 /***/ }),
-/* 428 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -101309,14 +101736,14 @@ var _default = ParallelAxis;
 module.exports = _default;
 
 /***/ }),
-/* 429 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var Component = __webpack_require__(14);
 
-__webpack_require__(430);
+__webpack_require__(440);
 
 var _default = Component.extend({
   type: 'parallel',
@@ -101425,7 +101852,7 @@ var _default = Component.extend({
 module.exports = _default;
 
 /***/ }),
-/* 430 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -101434,7 +101861,7 @@ var ComponentModel = __webpack_require__(14);
 
 var makeStyleMapper = __webpack_require__(39);
 
-var axisModelCreator = __webpack_require__(66);
+var axisModelCreator = __webpack_require__(67);
 
 var numberUtil = __webpack_require__(4);
 
@@ -101540,17 +101967,17 @@ var _default = AxisModel;
 module.exports = _default;
 
 /***/ }),
-/* 431 */
+/* 441 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(162);
+__webpack_require__(163);
 
-__webpack_require__(432);
+__webpack_require__(442);
 
-__webpack_require__(433);
+__webpack_require__(443);
 
 /***/ }),
-/* 432 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -101587,7 +102014,7 @@ echarts.registerAction('parallelAxisExpand', function (payload, ecModel) {
 });
 
 /***/ }),
-/* 433 */
+/* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -101596,9 +102023,9 @@ var zrUtil = __webpack_require__(0);
 
 var AxisBuilder = __webpack_require__(35);
 
-var BrushController = __webpack_require__(92);
+var BrushController = __webpack_require__(93);
 
-var brushHelper = __webpack_require__(163);
+var brushHelper = __webpack_require__(164);
 
 var graphic = __webpack_require__(2);
 
@@ -101749,7 +102176,7 @@ var _default = AxisView;
 module.exports = _default;
 
 /***/ }),
-/* 434 */
+/* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var List = __webpack_require__(15);
@@ -101900,7 +102327,7 @@ function generateDataDims(modelDims, rawData) {
 module.exports = _default;
 
 /***/ }),
-/* 435 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
@@ -102127,7 +102554,7 @@ var _default = ParallelView;
 module.exports = _default;
 
 /***/ }),
-/* 436 */
+/* 446 */
 /***/ (function(module, exports) {
 
 var opacityAccessPath = ['lineStyle', 'normal', 'opacity'];
@@ -102166,29 +102593,29 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 437 */
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(438);
+__webpack_require__(448);
 
-__webpack_require__(439);
+__webpack_require__(449);
 
-var sankeyLayout = __webpack_require__(440);
+var sankeyLayout = __webpack_require__(450);
 
-var sankeyVisual = __webpack_require__(441);
+var sankeyVisual = __webpack_require__(451);
 
 echarts.registerLayout(sankeyLayout);
 echarts.registerVisual(sankeyVisual);
 
 /***/ }),
-/* 438 */
+/* 448 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var SeriesModel = __webpack_require__(16);
 
-var createGraphFromNodeEdge = __webpack_require__(158);
+var createGraphFromNodeEdge = __webpack_require__(159);
 
 var _format = __webpack_require__(9);
 
@@ -102306,7 +102733,7 @@ var _default = SankeySeries;
 module.exports = _default;
 
 /***/ }),
-/* 439 */
+/* 449 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
@@ -102464,12 +102891,12 @@ function createGridClipShape(rect, seriesModel, cb) {
 module.exports = _default;
 
 /***/ }),
-/* 440 */
+/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var layout = __webpack_require__(7);
 
-var nest = __webpack_require__(164);
+var nest = __webpack_require__(165);
 
 var zrUtil = __webpack_require__(0);
 
@@ -102869,7 +103296,7 @@ function getEdgeValue(edge) {
 module.exports = _default;
 
 /***/ }),
-/* 441 */
+/* 451 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var VisualMapping = __webpack_require__(37);
@@ -102912,31 +103339,31 @@ function _default(ecModel, payload) {
 module.exports = _default;
 
 /***/ }),
-/* 442 */
+/* 452 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(443);
+__webpack_require__(453);
 
-__webpack_require__(445);
+__webpack_require__(455);
 
-var boxplotVisual = __webpack_require__(446);
+var boxplotVisual = __webpack_require__(456);
 
-var boxplotLayout = __webpack_require__(447);
+var boxplotLayout = __webpack_require__(457);
 
 echarts.registerVisual(boxplotVisual);
 echarts.registerLayout(boxplotLayout);
 
 /***/ }),
-/* 443 */
+/* 453 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var SeriesModel = __webpack_require__(16);
 
-var _whiskerBoxCommon = __webpack_require__(71);
+var _whiskerBoxCommon = __webpack_require__(72);
 
 var seriesModelMixin = _whiskerBoxCommon.seriesModelMixin;
 var BoxplotSeries = SeriesModel.extend({
@@ -102998,7 +103425,7 @@ var _default = BoxplotSeries;
 module.exports = _default;
 
 /***/ }),
-/* 444 */
+/* 454 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -103204,7 +103631,7 @@ var _default = WhiskerBoxDraw;
 module.exports = _default;
 
 /***/ }),
-/* 445 */
+/* 455 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -103213,7 +103640,7 @@ var ChartView = __webpack_require__(28);
 
 var graphic = __webpack_require__(2);
 
-var _whiskerBoxCommon = __webpack_require__(71);
+var _whiskerBoxCommon = __webpack_require__(72);
 
 var viewMixin = _whiskerBoxCommon.viewMixin;
 var BoxplotView = ChartView.extend({
@@ -103250,7 +103677,7 @@ var _default = BoxplotView;
 module.exports = _default;
 
 /***/ }),
-/* 446 */
+/* 456 */
 /***/ (function(module, exports) {
 
 var borderColorQuery = ['itemStyle', 'normal', 'borderColor'];
@@ -103281,7 +103708,7 @@ function _default(ecModel, api) {
 module.exports = _default;
 
 /***/ }),
-/* 447 */
+/* 457 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -103463,34 +103890,34 @@ function layoutSingleSeries(seriesModel, offset, boxWidth) {
 module.exports = _default;
 
 /***/ }),
-/* 448 */
+/* 458 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(449);
+__webpack_require__(459);
 
-__webpack_require__(450);
+__webpack_require__(460);
 
-var preprocessor = __webpack_require__(451);
+var preprocessor = __webpack_require__(461);
 
-var candlestickVisual = __webpack_require__(452);
+var candlestickVisual = __webpack_require__(462);
 
-var candlestickLayout = __webpack_require__(453);
+var candlestickLayout = __webpack_require__(463);
 
 echarts.registerPreprocessor(preprocessor);
 echarts.registerVisual(candlestickVisual);
 echarts.registerLayout(candlestickLayout);
 
 /***/ }),
-/* 449 */
+/* 459 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var SeriesModel = __webpack_require__(16);
 
-var _whiskerBoxCommon = __webpack_require__(71);
+var _whiskerBoxCommon = __webpack_require__(72);
 
 var seriesModelMixin = _whiskerBoxCommon.seriesModelMixin;
 var CandlestickSeries = SeriesModel.extend({
@@ -103564,7 +103991,7 @@ var _default = CandlestickSeries;
 module.exports = _default;
 
 /***/ }),
-/* 450 */
+/* 460 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -103573,7 +104000,7 @@ var ChartView = __webpack_require__(28);
 
 var graphic = __webpack_require__(2);
 
-var _whiskerBoxCommon = __webpack_require__(71);
+var _whiskerBoxCommon = __webpack_require__(72);
 
 var viewMixin = _whiskerBoxCommon.viewMixin;
 var CandlestickView = ChartView.extend({
@@ -103611,7 +104038,7 @@ var _default = CandlestickView;
 module.exports = _default;
 
 /***/ }),
-/* 451 */
+/* 461 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -103632,7 +104059,7 @@ function _default(option) {
 module.exports = _default;
 
 /***/ }),
-/* 452 */
+/* 462 */
 /***/ (function(module, exports) {
 
 var positiveBorderColorQuery = ['itemStyle', 'normal', 'borderColor'];
@@ -103663,7 +104090,7 @@ function _default(ecModel, api) {
 module.exports = _default;
 
 /***/ }),
-/* 453 */
+/* 463 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -103799,26 +104226,26 @@ function calculateCandleWidth(seriesModel, data) {
 module.exports = _default;
 
 /***/ }),
-/* 454 */
+/* 464 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-__webpack_require__(455);
+__webpack_require__(465);
 
-__webpack_require__(456);
+__webpack_require__(466);
 
 var visualSymbol = __webpack_require__(34);
 
-var layoutPoints = __webpack_require__(84);
+var layoutPoints = __webpack_require__(85);
 
 echarts.registerVisual(zrUtil.curry(visualSymbol, 'effectScatter', 'circle', null));
 echarts.registerLayout(zrUtil.curry(layoutPoints, 'effectScatter'));
 
 /***/ }),
-/* 455 */
+/* 465 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var createListFromArray = __webpack_require__(29);
@@ -103875,14 +104302,14 @@ var _default = SeriesModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 456 */
+/* 466 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-var SymbolDraw = __webpack_require__(47);
+var SymbolDraw = __webpack_require__(49);
 
-var EffectSymbol = __webpack_require__(457);
+var EffectSymbol = __webpack_require__(467);
 
 var _default = echarts.extendChartView({
   type: 'effectScatter',
@@ -103907,7 +104334,7 @@ var _default = echarts.extendChartView({
 module.exports = _default;
 
 /***/ }),
-/* 457 */
+/* 467 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -103924,7 +104351,7 @@ var _number = __webpack_require__(4);
 
 var parsePercent = _number.parsePercent;
 
-var SymbolClz = __webpack_require__(65);
+var SymbolClz = __webpack_require__(66);
 
 /**
  * Symbol with ripple effect
@@ -104136,24 +104563,24 @@ var _default = EffectSymbol;
 module.exports = _default;
 
 /***/ }),
-/* 458 */
+/* 468 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(459);
+__webpack_require__(469);
 
-__webpack_require__(460);
+__webpack_require__(470);
 
-var linesLayout = __webpack_require__(463);
+var linesLayout = __webpack_require__(473);
 
-var linesVisual = __webpack_require__(464);
+var linesVisual = __webpack_require__(474);
 
 echarts.registerLayout(linesLayout);
 echarts.registerVisual(linesVisual);
 
 /***/ }),
-/* 459 */
+/* 469 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -104298,7 +104725,7 @@ var _default = LinesSeries;
 module.exports = _default;
 
 /***/ }),
-/* 460 */
+/* 470 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -104307,17 +104734,17 @@ var __DEV__ = _config.__DEV__;
 
 var echarts = __webpack_require__(1);
 
-var LineDraw = __webpack_require__(90);
+var LineDraw = __webpack_require__(91);
 
-var EffectLine = __webpack_require__(165);
+var EffectLine = __webpack_require__(166);
 
-var Line = __webpack_require__(91);
+var Line = __webpack_require__(92);
 
-var Polyline = __webpack_require__(166);
+var Polyline = __webpack_require__(167);
 
-var EffectPolyline = __webpack_require__(461);
+var EffectPolyline = __webpack_require__(471);
 
-var LargeLineDraw = __webpack_require__(462);
+var LargeLineDraw = __webpack_require__(472);
 
 var _default = echarts.extendChartView({
   type: 'lines',
@@ -104399,14 +104826,14 @@ var _default = echarts.extendChartView({
 module.exports = _default;
 
 /***/ }),
-/* 461 */
+/* 471 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Polyline = __webpack_require__(166);
+var Polyline = __webpack_require__(167);
 
 var zrUtil = __webpack_require__(0);
 
-var EffectLine = __webpack_require__(165);
+var EffectLine = __webpack_require__(166);
 
 var vec2 = __webpack_require__(8);
 
@@ -104514,14 +104941,14 @@ var _default = EffectPolyline;
 module.exports = _default;
 
 /***/ }),
-/* 462 */
+/* 472 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
 
-var lineContain = __webpack_require__(127);
+var lineContain = __webpack_require__(128);
 
-var quadraticContain = __webpack_require__(128);
+var quadraticContain = __webpack_require__(129);
 
 // TODO Batch by color
 var LargeLineShape = graphic.extendShape({
@@ -104644,7 +105071,7 @@ var _default = LargeLineDraw;
 module.exports = _default;
 
 /***/ }),
-/* 463 */
+/* 473 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -104683,7 +105110,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 464 */
+/* 474 */
 /***/ (function(module, exports) {
 
 function normalize(a) {
@@ -104722,15 +105149,15 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 465 */
+/* 475 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(466);
+__webpack_require__(476);
 
-__webpack_require__(467);
+__webpack_require__(477);
 
 /***/ }),
-/* 466 */
+/* 476 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var SeriesModel = __webpack_require__(16);
@@ -104762,7 +105189,7 @@ var _default = SeriesModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 467 */
+/* 477 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -104773,7 +105200,7 @@ var echarts = __webpack_require__(1);
 
 var graphic = __webpack_require__(2);
 
-var HeatmapLayer = __webpack_require__(468);
+var HeatmapLayer = __webpack_require__(478);
 
 var zrUtil = __webpack_require__(0);
 
@@ -104986,7 +105413,7 @@ var _default = echarts.extendChartView({
 module.exports = _default;
 
 /***/ }),
-/* 468 */
+/* 478 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -105139,34 +105566,34 @@ var _default = Heatmap;
 module.exports = _default;
 
 /***/ }),
-/* 469 */
+/* 479 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-__webpack_require__(85);
+__webpack_require__(86);
 
-__webpack_require__(470);
+__webpack_require__(480);
 
-__webpack_require__(471);
+__webpack_require__(481);
 
-var barLayoutGrid = __webpack_require__(86);
+var barLayoutGrid = __webpack_require__(87);
 
 var visualSymbol = __webpack_require__(34);
 
-__webpack_require__(48);
+__webpack_require__(50);
 
 // In case developer forget to include grid component
 echarts.registerLayout(zrUtil.curry(barLayoutGrid, 'pictorialBar'));
 echarts.registerVisual(zrUtil.curry(visualSymbol, 'pictorialBar', 'roundRect', null));
 
 /***/ }),
-/* 470 */
+/* 480 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var BaseBarSeries = __webpack_require__(145);
+var BaseBarSeries = __webpack_require__(146);
 
 var PictorialBarSeries = BaseBarSeries.extend({
   type: 'series.pictorialBar',
@@ -105213,7 +105640,7 @@ var _default = PictorialBarSeries;
 module.exports = _default;
 
 /***/ }),
-/* 471 */
+/* 481 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -105231,7 +105658,7 @@ var _number = __webpack_require__(4);
 var parsePercent = _number.parsePercent;
 var isNumeric = _number.isNumeric;
 
-var _helper = __webpack_require__(146);
+var _helper = __webpack_require__(147);
 
 var setLabel = _helper.setLabel;
 var BAR_BORDER_WIDTH_QUERY = ['itemStyle', 'normal', 'borderWidth']; // index: +isHorizontal
@@ -105856,34 +106283,34 @@ var _default = BarView;
 module.exports = _default;
 
 /***/ }),
-/* 472 */
+/* 482 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-__webpack_require__(167);
+__webpack_require__(168);
 
-__webpack_require__(482);
+__webpack_require__(492);
 
-__webpack_require__(483);
+__webpack_require__(493);
 
-var themeRiverLayout = __webpack_require__(484);
+var themeRiverLayout = __webpack_require__(494);
 
-var themeRiverVisual = __webpack_require__(485);
+var themeRiverVisual = __webpack_require__(495);
 
-var dataFilter = __webpack_require__(68);
+var dataFilter = __webpack_require__(69);
 
 echarts.registerLayout(themeRiverLayout);
 echarts.registerVisual(themeRiverVisual);
 echarts.registerProcessor(zrUtil.curry(dataFilter, 'themeRiver'));
 
 /***/ }),
-/* 473 */
+/* 483 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Single = __webpack_require__(474);
+var Single = __webpack_require__(484);
 
 var CoordinateSystem = __webpack_require__(23);
 
@@ -105926,10 +106353,10 @@ CoordinateSystem.register('single', {
 });
 
 /***/ }),
-/* 474 */
+/* 484 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var SingleAxis = __webpack_require__(475);
+var SingleAxis = __webpack_require__(485);
 
 var axisHelper = __webpack_require__(19);
 
@@ -106177,7 +106604,7 @@ var _default = Single;
 module.exports = _default;
 
 /***/ }),
-/* 475 */
+/* 485 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -106275,7 +106702,7 @@ var _default = SingleAxis;
 module.exports = _default;
 
 /***/ }),
-/* 476 */
+/* 486 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -106284,7 +106711,7 @@ var AxisBuilder = __webpack_require__(35);
 
 var graphic = __webpack_require__(2);
 
-var singleAxisHelper = __webpack_require__(168);
+var singleAxisHelper = __webpack_require__(169);
 
 var AxisView = __webpack_require__(36);
 
@@ -106383,14 +106810,14 @@ var _default = SingleAxisView;
 module.exports = _default;
 
 /***/ }),
-/* 477 */
+/* 487 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var ComponentModel = __webpack_require__(14);
 
-var axisModelCreator = __webpack_require__(66);
+var axisModelCreator = __webpack_require__(67);
 
 var axisModelCommonMixin = __webpack_require__(42);
 
@@ -106466,16 +106893,16 @@ var _default = AxisModel;
 module.exports = _default;
 
 /***/ }),
-/* 478 */
+/* 488 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var modelUtil = __webpack_require__(6);
 
-var modelHelper = __webpack_require__(67);
+var modelHelper = __webpack_require__(68);
 
-var findPointFromSeries = __webpack_require__(169);
+var findPointFromSeries = __webpack_require__(170);
 
 var each = zrUtil.each;
 var curry = zrUtil.curry;
@@ -106861,7 +107288,7 @@ function illegalPoint(point) {
 module.exports = _default;
 
 /***/ }),
-/* 479 */
+/* 489 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -106952,12 +107379,12 @@ var _default = AxisPointerModel;
 module.exports = _default;
 
 /***/ }),
-/* 480 */
+/* 490 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-var globalListener = __webpack_require__(170);
+var globalListener = __webpack_require__(171);
 
 var AxisPointerView = echarts.extendComponentView({
   type: 'axisPointer',
@@ -106999,16 +107426,16 @@ var _default = AxisPointerView;
 module.exports = _default;
 
 /***/ }),
-/* 481 */
+/* 491 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(2);
 
-var BaseAxisPointer = __webpack_require__(93);
+var BaseAxisPointer = __webpack_require__(94);
 
-var viewHelper = __webpack_require__(72);
+var viewHelper = __webpack_require__(73);
 
-var singleAxisHelper = __webpack_require__(168);
+var singleAxisHelper = __webpack_require__(169);
 
 var AxisView = __webpack_require__(36);
 
@@ -107113,7 +107540,7 @@ var _default = SingleAxisPointer;
 module.exports = _default;
 
 /***/ }),
-/* 482 */
+/* 492 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var completeDimensions = __webpack_require__(21);
@@ -107128,7 +107555,7 @@ var _format = __webpack_require__(9);
 
 var encodeHTML = _format.encodeHTML;
 
-var nest = __webpack_require__(164);
+var nest = __webpack_require__(165);
 
 /**
  * @file  Define the themeRiver view's series model
@@ -107408,12 +107835,12 @@ var _default = ThemeRiverSeries;
 module.exports = _default;
 
 /***/ }),
-/* 483 */
+/* 493 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-var _poly = __webpack_require__(141);
+var _poly = __webpack_require__(142);
 
 var Polygon = _poly.Polygon;
 
@@ -107566,7 +107993,7 @@ function createGridClipShape(rect, seriesModel, cb) {
 module.exports = _default;
 
 /***/ }),
-/* 484 */
+/* 494 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -107709,7 +108136,7 @@ function computeBaseline(data) {
 module.exports = _default;
 
 /***/ }),
-/* 485 */
+/* 495 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -107745,7 +108172,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 486 */
+/* 496 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -107758,25 +108185,25 @@ var zrUtil = __webpack_require__(0);
 
 var graphicUtil = __webpack_require__(2);
 
-var _labelHelper = __webpack_require__(140);
+var _labelHelper = __webpack_require__(141);
 
 var findLabelValueDim = _labelHelper.findLabelValueDim;
 
 var createListFromArray = __webpack_require__(29);
 
-var barGrid = __webpack_require__(86);
+var barGrid = __webpack_require__(87);
 
 var DataDiffer = __webpack_require__(41);
 
-var prepareCartesian2d = __webpack_require__(487);
+var prepareCartesian2d = __webpack_require__(497);
 
-var prepareGeo = __webpack_require__(488);
+var prepareGeo = __webpack_require__(498);
 
-var prepareSingleAxis = __webpack_require__(489);
+var prepareSingleAxis = __webpack_require__(499);
 
-var preparePolar = __webpack_require__(490);
+var preparePolar = __webpack_require__(500);
 
-var prepareCalendar = __webpack_require__(491);
+var prepareCalendar = __webpack_require__(501);
 
 var ITEM_STYLE_NORMAL_PATH = ['itemStyle', 'normal'];
 var ITEM_STYLE_EMPHASIS_PATH = ['itemStyle', 'emphasis'];
@@ -108230,7 +108657,7 @@ function processRemove(oldIndex) {
 }
 
 /***/ }),
-/* 487 */
+/* 497 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -108267,7 +108694,7 @@ function _default(coordSys) {
 module.exports = _default;
 
 /***/ }),
-/* 488 */
+/* 498 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -108306,7 +108733,7 @@ function _default(coordSys) {
 module.exports = _default;
 
 /***/ }),
-/* 489 */
+/* 499 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -108339,7 +108766,7 @@ function _default(coordSys) {
 module.exports = _default;
 
 /***/ }),
-/* 490 */
+/* 500 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -108390,7 +108817,7 @@ function _default(coordSys) {
 module.exports = _default;
 
 /***/ }),
-/* 491 */
+/* 501 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -108423,7 +108850,7 @@ function _default(coordSys) {
 module.exports = _default;
 
 /***/ }),
-/* 492 */
+/* 502 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -108874,40 +109301,40 @@ function setLayoutInfoToExist(existItem, newElOption) {
 }
 
 /***/ }),
-/* 493 */
+/* 503 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(48);
+__webpack_require__(50);
 
-__webpack_require__(171);
+__webpack_require__(172);
 
-__webpack_require__(51);
+__webpack_require__(53);
 
 /***/ }),
-/* 494 */
+/* 504 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(495);
+__webpack_require__(505);
 
-__webpack_require__(498);
+__webpack_require__(508);
 
-__webpack_require__(499);
+__webpack_require__(509);
 
-__webpack_require__(500);
+__webpack_require__(510);
 
 /***/ }),
-/* 495 */
+/* 505 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(172);
-
-__webpack_require__(496);
-
 __webpack_require__(173);
 
-var legendFilter = __webpack_require__(497);
+__webpack_require__(506);
+
+__webpack_require__(174);
+
+var legendFilter = __webpack_require__(507);
 
 var Component = __webpack_require__(14);
 
@@ -108920,7 +109347,7 @@ Component.registerSubTypeDefaulter('legend', function () {
 });
 
 /***/ }),
-/* 496 */
+/* 506 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -108996,7 +109423,7 @@ echarts.registerAction('legendSelect', 'legendselected', zrUtil.curry(legendSele
 echarts.registerAction('legendUnSelect', 'legendunselected', zrUtil.curry(legendSelectActionHandler, 'unSelect'));
 
 /***/ }),
-/* 497 */
+/* 507 */
 /***/ (function(module, exports) {
 
 function _default(ecModel) {
@@ -109022,10 +109449,10 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 498 */
+/* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var LegendModel = __webpack_require__(172);
+var LegendModel = __webpack_require__(173);
 
 var _layout = __webpack_require__(7);
 
@@ -109103,7 +109530,7 @@ var _default = ScrollableLegendModel;
 module.exports = _default;
 
 /***/ }),
-/* 499 */
+/* 509 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -109112,7 +109539,7 @@ var graphic = __webpack_require__(2);
 
 var layoutUtil = __webpack_require__(7);
 
-var LegendView = __webpack_require__(173);
+var LegendView = __webpack_require__(174);
 
 /**
  * Separate legend and scrollable legend to reduce package size.
@@ -109442,7 +109869,7 @@ var _default = ScrollableLegendView;
 module.exports = _default;
 
 /***/ }),
-/* 500 */
+/* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -109465,16 +109892,16 @@ echarts.registerAction('legendScroll', 'legendscroll', function (payload, ecMode
 });
 
 /***/ }),
-/* 501 */
+/* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(51);
+__webpack_require__(53);
 
-__webpack_require__(502);
+__webpack_require__(512);
 
-__webpack_require__(503);
+__webpack_require__(513);
 
 // FIXME Better way to pack data in graphic element
 
@@ -109500,7 +109927,7 @@ echarts.registerAction({
 function () {});
 
 /***/ }),
-/* 502 */
+/* 512 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -109583,7 +110010,7 @@ var _default = echarts.extendComponentModel({
 module.exports = _default;
 
 /***/ }),
-/* 503 */
+/* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -109592,7 +110019,7 @@ var zrUtil = __webpack_require__(0);
 
 var env = __webpack_require__(12);
 
-var TooltipContent = __webpack_require__(504);
+var TooltipContent = __webpack_require__(514);
 
 var formatUtil = __webpack_require__(9);
 
@@ -109600,17 +110027,17 @@ var numberUtil = __webpack_require__(4);
 
 var graphic = __webpack_require__(2);
 
-var findPointFromSeries = __webpack_require__(169);
+var findPointFromSeries = __webpack_require__(170);
 
 var layoutUtil = __webpack_require__(7);
 
 var Model = __webpack_require__(11);
 
-var globalListener = __webpack_require__(170);
+var globalListener = __webpack_require__(171);
 
 var axisHelper = __webpack_require__(19);
 
-var axisPointerViewHelper = __webpack_require__(72);
+var axisPointerViewHelper = __webpack_require__(73);
 
 var bind = zrUtil.bind;
 var each = zrUtil.each;
@@ -110304,7 +110731,7 @@ function isCenterAlign(align) {
 module.exports = _default;
 
 /***/ }),
-/* 504 */
+/* 514 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -110537,24 +110964,24 @@ var _default = TooltipContent;
 module.exports = _default;
 
 /***/ }),
-/* 505 */
+/* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var barPolar = __webpack_require__(506);
+var barPolar = __webpack_require__(516);
 
-__webpack_require__(94);
+__webpack_require__(95);
 
-__webpack_require__(512);
+__webpack_require__(522);
 
-__webpack_require__(514);
+__webpack_require__(524);
 
-__webpack_require__(51);
+__webpack_require__(53);
 
-__webpack_require__(516);
+__webpack_require__(526);
 
 // For reducing size of echarts.min, barLayoutPolar is required by polar.
 echarts.registerLayout(zrUtil.curry(barPolar, 'bar')); // Polar view
@@ -110564,7 +110991,7 @@ echarts.extendComponentView({
 });
 
 /***/ }),
-/* 506 */
+/* 516 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -110821,12 +111248,12 @@ var _default = barLayoutPolar;
 module.exports = _default;
 
 /***/ }),
-/* 507 */
+/* 517 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var RadiusAxis = __webpack_require__(508);
+var RadiusAxis = __webpack_require__(518);
 
-var AngleAxis = __webpack_require__(509);
+var AngleAxis = __webpack_require__(519);
 
 /**
  * @module echarts/coord/polar/Polar
@@ -111046,7 +111473,7 @@ var _default = Polar;
 module.exports = _default;
 
 /***/ }),
-/* 508 */
+/* 518 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -111084,7 +111511,7 @@ var _default = RadiusAxis;
 module.exports = _default;
 
 /***/ }),
-/* 509 */
+/* 519 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -111123,12 +111550,12 @@ var _default = AngleAxis;
 module.exports = _default;
 
 /***/ }),
-/* 510 */
+/* 520 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(511);
+__webpack_require__(521);
 
 var _default = echarts.extendComponentModel({
   type: 'polar',
@@ -111164,14 +111591,14 @@ var _default = echarts.extendComponentModel({
 module.exports = _default;
 
 /***/ }),
-/* 511 */
+/* 521 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var ComponentModel = __webpack_require__(14);
 
-var axisModelCreator = __webpack_require__(66);
+var axisModelCreator = __webpack_require__(67);
 
 var axisModelCommonMixin = __webpack_require__(42);
 
@@ -111222,15 +111649,15 @@ axisModelCreator('angle', PolarAxisModel, getAxisType, polarAxisDefaultExtendedO
 axisModelCreator('radius', PolarAxisModel, getAxisType, polarAxisDefaultExtendedOption.radius);
 
 /***/ }),
-/* 512 */
+/* 522 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(94);
+__webpack_require__(95);
 
-__webpack_require__(513);
+__webpack_require__(523);
 
 /***/ }),
-/* 513 */
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -111445,15 +111872,15 @@ var _default = AxisView.extend({
 module.exports = _default;
 
 /***/ }),
-/* 514 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(94);
+__webpack_require__(95);
 
-__webpack_require__(515);
+__webpack_require__(525);
 
 /***/ }),
-/* 515 */
+/* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -111593,16 +112020,16 @@ function layoutAxis(polar, radiusAxisModel, axisAngle) {
 module.exports = _default;
 
 /***/ }),
-/* 516 */
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var formatUtil = __webpack_require__(9);
 
-var BaseAxisPointer = __webpack_require__(93);
+var BaseAxisPointer = __webpack_require__(94);
 
 var graphic = __webpack_require__(2);
 
-var viewHelper = __webpack_require__(72);
+var viewHelper = __webpack_require__(73);
 
 var matrix = __webpack_require__(18);
 
@@ -111711,20 +112138,20 @@ var _default = PolarAxisPointer;
 module.exports = _default;
 
 /***/ }),
-/* 517 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-__webpack_require__(518);
+__webpack_require__(528);
 
-__webpack_require__(69);
+__webpack_require__(70);
 
-__webpack_require__(519);
+__webpack_require__(529);
 
-__webpack_require__(152);
+__webpack_require__(153);
 
 function makeAction(method, actionInfo) {
   actionInfo.update = 'updateView';
@@ -111761,7 +112188,7 @@ makeAction('unSelect', {
 });
 
 /***/ }),
-/* 518 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -111772,9 +112199,9 @@ var ComponentModel = __webpack_require__(14);
 
 var Model = __webpack_require__(11);
 
-var selectableMixin = __webpack_require__(87);
+var selectableMixin = __webpack_require__(88);
 
-var geoCreator = __webpack_require__(69);
+var geoCreator = __webpack_require__(70);
 
 var GeoModel = ComponentModel.extend({
   type: 'geo',
@@ -111897,10 +112324,10 @@ var _default = GeoModel;
 module.exports = _default;
 
 /***/ }),
-/* 519 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MapDraw = __webpack_require__(149);
+var MapDraw = __webpack_require__(150);
 
 var echarts = __webpack_require__(1);
 
@@ -111935,22 +112362,22 @@ var _default = echarts.extendComponentView({
 module.exports = _default;
 
 /***/ }),
-/* 520 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-var preprocessor = __webpack_require__(521);
+var preprocessor = __webpack_require__(531);
 
-__webpack_require__(522);
+__webpack_require__(532);
 
-__webpack_require__(524);
+__webpack_require__(534);
 
-__webpack_require__(525);
+__webpack_require__(535);
 
-__webpack_require__(526);
+__webpack_require__(536);
 
-__webpack_require__(527);
+__webpack_require__(537);
 
 /**
  * Brush component entry
@@ -111958,7 +112385,7 @@ __webpack_require__(527);
 echarts.registerPreprocessor(preprocessor);
 
 /***/ }),
-/* 521 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -112022,7 +112449,7 @@ function removeDuplicate(arr) {
 module.exports = _default;
 
 /***/ }),
-/* 522 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -112031,13 +112458,13 @@ var zrUtil = __webpack_require__(0);
 
 var BoundingRect = __webpack_require__(10);
 
-var visualSolution = __webpack_require__(73);
+var visualSolution = __webpack_require__(74);
 
-var selector = __webpack_require__(523);
+var selector = __webpack_require__(533);
 
 var throttleUtil = __webpack_require__(33);
 
-var BrushTargetManager = __webpack_require__(175);
+var BrushTargetManager = __webpack_require__(176);
 
 var STATE_LIST = ['inBrush', 'outOfBrush'];
 var DISPATCH_METHOD = '__ecBrushSelect';
@@ -112306,10 +112733,10 @@ function getBoundingRectFromMinMax(minMax) {
 }
 
 /***/ }),
-/* 523 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var polygonContain = __webpack_require__(139);
+var polygonContain = __webpack_require__(140);
 
 var BoundingRect = __webpack_require__(10);
 
@@ -112432,7 +112859,7 @@ var _default = selector;
 module.exports = _default;
 
 /***/ }),
-/* 524 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -112443,7 +112870,7 @@ var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var visualSolution = __webpack_require__(73);
+var visualSolution = __webpack_require__(74);
 
 var Model = __webpack_require__(11);
 
@@ -112573,14 +113000,14 @@ var _default = BrushModel;
 module.exports = _default;
 
 /***/ }),
-/* 525 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var BrushController = __webpack_require__(92);
+var BrushController = __webpack_require__(93);
 
 var _default = echarts.extendComponentView({
   type: 'brush',
@@ -112667,7 +113094,7 @@ function updateController(brushModel, ecModel, api, payload) {
 module.exports = _default;
 
 /***/ }),
-/* 526 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -112721,7 +113148,7 @@ echarts.registerAction({
 }, function () {});
 
 /***/ }),
-/* 527 */
+/* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -112835,17 +113262,17 @@ var _default = Brush;
 module.exports = _default;
 
 /***/ }),
-/* 528 */
+/* 538 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(529);
+__webpack_require__(539);
 
-__webpack_require__(530);
+__webpack_require__(540);
 
-__webpack_require__(531);
+__webpack_require__(541);
 
 /***/ }),
-/* 529 */
+/* 539 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -113240,7 +113667,7 @@ var _default = Calendar;
 module.exports = _default;
 
 /***/ }),
-/* 530 */
+/* 540 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -113371,7 +113798,7 @@ var _default = CalendarModel;
 module.exports = _default;
 
 /***/ }),
-/* 531 */
+/* 541 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -113789,7 +114216,7 @@ var _default = echarts.extendComponentView({
 module.exports = _default;
 
 /***/ }),
-/* 532 */
+/* 542 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -113985,36 +114412,36 @@ echarts.extendComponentView({
 });
 
 /***/ }),
-/* 533 */
+/* 543 */
 /***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(176);
-
-__webpack_require__(52);
-
-__webpack_require__(53);
-
-__webpack_require__(535);
-
-__webpack_require__(536);
-
-__webpack_require__(537);
-
-__webpack_require__(538);
 
 __webpack_require__(177);
 
+__webpack_require__(54);
+
+__webpack_require__(55);
+
+__webpack_require__(545);
+
+__webpack_require__(546);
+
+__webpack_require__(547);
+
+__webpack_require__(548);
+
 __webpack_require__(178);
 
+__webpack_require__(179);
+
 /***/ }),
-/* 534 */
+/* 544 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var numberUtil = __webpack_require__(4);
 
-var helper = __webpack_require__(95);
+var helper = __webpack_require__(96);
 
 var each = zrUtil.each;
 var asc = numberUtil.asc;
@@ -114442,10 +114869,10 @@ var _default = AxisProxy;
 module.exports = _default;
 
 /***/ }),
-/* 535 */
+/* 545 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DataZoomModel = __webpack_require__(52);
+var DataZoomModel = __webpack_require__(54);
 
 var SliderZoomModel = DataZoomModel.extend({
   type: 'dataZoom.slider',
@@ -114517,7 +114944,7 @@ var _default = SliderZoomModel;
 module.exports = _default;
 
 /***/ }),
-/* 536 */
+/* 546 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -114528,13 +114955,13 @@ var graphic = __webpack_require__(2);
 
 var throttle = __webpack_require__(33);
 
-var DataZoomView = __webpack_require__(53);
+var DataZoomView = __webpack_require__(55);
 
 var numberUtil = __webpack_require__(4);
 
 var layout = __webpack_require__(7);
 
-var sliderMove = __webpack_require__(50);
+var sliderMove = __webpack_require__(52);
 
 var Rect = graphic.Rect;
 var linearMap = numberUtil.linearMap;
@@ -115232,10 +115659,10 @@ var _default = SliderZoomView;
 module.exports = _default;
 
 /***/ }),
-/* 537 */
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DataZoomModel = __webpack_require__(52);
+var DataZoomModel = __webpack_require__(54);
 
 var _default = DataZoomModel.extend({
   type: 'dataZoom.inside',
@@ -115259,16 +115686,16 @@ var _default = DataZoomModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 538 */
+/* 548 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var DataZoomView = __webpack_require__(53);
+var DataZoomView = __webpack_require__(55);
 
-var sliderMove = __webpack_require__(50);
+var sliderMove = __webpack_require__(52);
 
-var roams = __webpack_require__(539);
+var roams = __webpack_require__(549);
 
 var bind = zrUtil.bind;
 var InsideZoomView = DataZoomView.extend({
@@ -115457,12 +115884,12 @@ var _default = InsideZoomView;
 module.exports = _default;
 
 /***/ }),
-/* 539 */
+/* 549 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var RoamController = __webpack_require__(70);
+var RoamController = __webpack_require__(71);
 
 var throttleUtil = __webpack_require__(33);
 
@@ -115665,30 +116092,30 @@ exports.shouldRecordRange = shouldRecordRange;
 exports.generateCoordId = generateCoordId;
 
 /***/ }),
-/* 540 */
+/* 550 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(541);
+__webpack_require__(551);
 
-__webpack_require__(544);
+__webpack_require__(554);
 
 /***/ }),
-/* 541 */
+/* 551 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-var preprocessor = __webpack_require__(179);
-
-__webpack_require__(180);
+var preprocessor = __webpack_require__(180);
 
 __webpack_require__(181);
 
-__webpack_require__(542);
+__webpack_require__(182);
 
-__webpack_require__(543);
+__webpack_require__(552);
 
-__webpack_require__(186);
+__webpack_require__(553);
+
+__webpack_require__(187);
 
 /**
  * DataZoom component entry
@@ -115696,12 +116123,12 @@ __webpack_require__(186);
 echarts.registerPreprocessor(preprocessor);
 
 /***/ }),
-/* 542 */
+/* 552 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var VisualMapModel = __webpack_require__(182);
+var VisualMapModel = __webpack_require__(183);
 
 var numberUtil = __webpack_require__(4);
 
@@ -115937,24 +116364,24 @@ var _default = ContinuousModel;
 module.exports = _default;
 
 /***/ }),
-/* 543 */
+/* 553 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var LinearGradient = __webpack_require__(133);
+var LinearGradient = __webpack_require__(134);
 
 var eventTool = __webpack_require__(25);
 
-var VisualMapView = __webpack_require__(184);
+var VisualMapView = __webpack_require__(185);
 
 var graphic = __webpack_require__(2);
 
 var numberUtil = __webpack_require__(4);
 
-var sliderMove = __webpack_require__(50);
+var sliderMove = __webpack_require__(52);
 
-var helper = __webpack_require__(185);
+var helper = __webpack_require__(186);
 
 var modelUtil = __webpack_require__(6);
 
@@ -116701,22 +117128,22 @@ var _default = ContinuousView;
 module.exports = _default;
 
 /***/ }),
-/* 544 */
+/* 554 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-var preprocessor = __webpack_require__(179);
-
-__webpack_require__(180);
+var preprocessor = __webpack_require__(180);
 
 __webpack_require__(181);
 
-__webpack_require__(545);
+__webpack_require__(182);
 
-__webpack_require__(546);
+__webpack_require__(555);
 
-__webpack_require__(186);
+__webpack_require__(556);
+
+__webpack_require__(187);
 
 /**
  * DataZoom component entry
@@ -116724,7 +117151,7 @@ __webpack_require__(186);
 echarts.registerPreprocessor(preprocessor);
 
 /***/ }),
-/* 545 */
+/* 555 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(5);
@@ -116733,11 +117160,11 @@ var __DEV__ = _config.__DEV__;
 
 var zrUtil = __webpack_require__(0);
 
-var VisualMapModel = __webpack_require__(182);
+var VisualMapModel = __webpack_require__(183);
 
 var VisualMapping = __webpack_require__(37);
 
-var visualDefault = __webpack_require__(183);
+var visualDefault = __webpack_require__(184);
 
 var _number = __webpack_require__(4);
 
@@ -117233,12 +117660,12 @@ var _default = PiecewiseModel;
 module.exports = _default;
 
 /***/ }),
-/* 546 */
+/* 556 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var VisualMapView = __webpack_require__(184);
+var VisualMapView = __webpack_require__(185);
 
 var graphic = __webpack_require__(2);
 
@@ -117248,7 +117675,7 @@ var createSymbol = _symbol.createSymbol;
 
 var layout = __webpack_require__(7);
 
-var helper = __webpack_require__(185);
+var helper = __webpack_require__(186);
 
 var PiecewiseVisualMapView = VisualMapView.extend({
   type: 'visualMap.piecewise',
@@ -117439,14 +117866,14 @@ var _default = PiecewiseVisualMapView;
 module.exports = _default;
 
 /***/ }),
-/* 547 */
+/* 557 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(548);
+__webpack_require__(558);
 
-__webpack_require__(549);
+__webpack_require__(559);
 
 // HINT Markpoint can't be used too much
 echarts.registerPreprocessor(function (opt) {
@@ -117455,10 +117882,10 @@ echarts.registerPreprocessor(function (opt) {
 });
 
 /***/ }),
-/* 548 */
+/* 558 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MarkerModel = __webpack_require__(96);
+var MarkerModel = __webpack_require__(97);
 
 var _default = MarkerModel.extend({
   type: 'markPoint',
@@ -117492,20 +117919,20 @@ var _default = MarkerModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 549 */
+/* 559 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var SymbolDraw = __webpack_require__(47);
+var SymbolDraw = __webpack_require__(49);
 
 var numberUtil = __webpack_require__(4);
 
 var List = __webpack_require__(15);
 
-var markerHelper = __webpack_require__(97);
+var markerHelper = __webpack_require__(98);
 
-var MarkerView = __webpack_require__(98);
+var MarkerView = __webpack_require__(99);
 
 function updateMarkerLayout(mpData, seriesModel, api) {
   var coordSys = seriesModel.coordinateSystem;
@@ -117632,14 +118059,14 @@ function createList(coordSys, seriesModel, mpModel) {
 module.exports = _default;
 
 /***/ }),
-/* 550 */
+/* 560 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(551);
+__webpack_require__(561);
 
-__webpack_require__(552);
+__webpack_require__(562);
 
 echarts.registerPreprocessor(function (opt) {
   // Make sure markLine component is enabled
@@ -117647,10 +118074,10 @@ echarts.registerPreprocessor(function (opt) {
 });
 
 /***/ }),
-/* 551 */
+/* 561 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MarkerModel = __webpack_require__(96);
+var MarkerModel = __webpack_require__(97);
 
 var _default = MarkerModel.extend({
   type: 'markLine',
@@ -117688,7 +118115,7 @@ var _default = MarkerModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 552 */
+/* 562 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -117697,11 +118124,11 @@ var List = __webpack_require__(15);
 
 var numberUtil = __webpack_require__(4);
 
-var markerHelper = __webpack_require__(97);
+var markerHelper = __webpack_require__(98);
 
-var LineDraw = __webpack_require__(90);
+var LineDraw = __webpack_require__(91);
 
-var MarkerView = __webpack_require__(98);
+var MarkerView = __webpack_require__(99);
 
 var markLineTransform = function (seriesModel, coordSys, mlModel, item) {
   var data = seriesModel.getData(); // Special type markLine like 'min', 'max', 'average'
@@ -117995,14 +118422,14 @@ function createList(coordSys, seriesModel, mlModel) {
 module.exports = _default;
 
 /***/ }),
-/* 553 */
+/* 563 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-__webpack_require__(554);
+__webpack_require__(564);
 
-__webpack_require__(555);
+__webpack_require__(565);
 
 echarts.registerPreprocessor(function (opt) {
   // Make sure markArea component is enabled
@@ -118010,10 +118437,10 @@ echarts.registerPreprocessor(function (opt) {
 });
 
 /***/ }),
-/* 554 */
+/* 564 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MarkerModel = __webpack_require__(96);
+var MarkerModel = __webpack_require__(97);
 
 var _default = MarkerModel.extend({
   type: 'markArea',
@@ -118050,7 +118477,7 @@ var _default = MarkerModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 555 */
+/* 565 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -118063,9 +118490,9 @@ var numberUtil = __webpack_require__(4);
 
 var graphic = __webpack_require__(2);
 
-var markerHelper = __webpack_require__(97);
+var markerHelper = __webpack_require__(98);
 
-var MarkerView = __webpack_require__(98);
+var MarkerView = __webpack_require__(99);
 
 // TODO Better on polar
 var markAreaTransform = function (seriesModel, coordSys, maModel, item) {
@@ -118315,20 +118742,20 @@ function createList(coordSys, seriesModel, maModel) {
 }
 
 /***/ }),
-/* 556 */
+/* 566 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-var preprocessor = __webpack_require__(557);
+var preprocessor = __webpack_require__(567);
 
-__webpack_require__(558);
+__webpack_require__(568);
 
-__webpack_require__(559);
+__webpack_require__(569);
 
-__webpack_require__(560);
+__webpack_require__(570);
 
-__webpack_require__(562);
+__webpack_require__(572);
 
 /**
  * DataZoom component entry
@@ -118336,7 +118763,7 @@ __webpack_require__(562);
 echarts.registerPreprocessor(preprocessor);
 
 /***/ }),
-/* 557 */
+/* 567 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -118427,7 +118854,7 @@ function has(obj, attr) {
 module.exports = _default;
 
 /***/ }),
-/* 558 */
+/* 568 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(14);
@@ -118438,7 +118865,7 @@ Component.registerSubTypeDefaulter('timeline', function () {
 });
 
 /***/ }),
-/* 559 */
+/* 569 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -118479,12 +118906,12 @@ echarts.registerAction({
 });
 
 /***/ }),
-/* 560 */
+/* 570 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var TimelineModel = __webpack_require__(561);
+var TimelineModel = __webpack_require__(571);
 
 var modelUtil = __webpack_require__(6);
 
@@ -118592,7 +119019,7 @@ var _default = SliderTimelineModel;
 module.exports = _default;
 
 /***/ }),
-/* 561 */
+/* 571 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -118786,7 +119213,7 @@ var _default = TimelineModel;
 module.exports = _default;
 
 /***/ }),
-/* 562 */
+/* 572 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -118799,9 +119226,9 @@ var graphic = __webpack_require__(2);
 
 var layout = __webpack_require__(7);
 
-var TimelineView = __webpack_require__(563);
+var TimelineView = __webpack_require__(573);
 
-var TimelineAxis = __webpack_require__(564);
+var TimelineAxis = __webpack_require__(574);
 
 var _symbol = __webpack_require__(20);
 
@@ -119415,10 +119842,10 @@ function pointerMoveTo(pointer, dataIndex, axis, timelineModel, noAnimation) {
 module.exports = _default;
 
 /***/ }),
-/* 563 */
+/* 573 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ComponentView = __webpack_require__(83);
+var ComponentView = __webpack_require__(84);
 
 var _default = ComponentView.extend({
   type: 'timeline'
@@ -119427,7 +119854,7 @@ var _default = ComponentView.extend({
 module.exports = _default;
 
 /***/ }),
-/* 564 */
+/* 574 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -119516,25 +119943,25 @@ var _default = TimelineAxis;
 module.exports = _default;
 
 /***/ }),
-/* 565 */
+/* 575 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(566);
+__webpack_require__(576);
 
-__webpack_require__(567);
+__webpack_require__(577);
 
-__webpack_require__(568);
+__webpack_require__(578);
 
-__webpack_require__(569);
+__webpack_require__(579);
 
-__webpack_require__(570);
+__webpack_require__(580);
 
-__webpack_require__(571);
+__webpack_require__(581);
 
-__webpack_require__(575);
+__webpack_require__(585);
 
 /***/ }),
-/* 566 */
+/* 576 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -119590,7 +120017,7 @@ var _default = ToolboxModel;
 module.exports = _default;
 
 /***/ }),
-/* 567 */
+/* 577 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -119607,7 +120034,7 @@ var Model = __webpack_require__(11);
 
 var DataDiffer = __webpack_require__(41);
 
-var listComponentHelper = __webpack_require__(174);
+var listComponentHelper = __webpack_require__(175);
 
 var _default = echarts.extendComponentView({
   type: 'toolbox',
@@ -119818,7 +120245,7 @@ function isUserFeatureName(featureName) {
 module.exports = _default;
 
 /***/ }),
-/* 568 */
+/* 578 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var env = __webpack_require__(12);
@@ -119897,7 +120324,7 @@ var _default = SaveAsImage;
 module.exports = _default;
 
 /***/ }),
-/* 569 */
+/* 579 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -120072,7 +120499,7 @@ var _default = MagicType;
 module.exports = _default;
 
 /***/ }),
-/* 570 */
+/* 580 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
@@ -120550,26 +120977,26 @@ var _default = DataView;
 module.exports = _default;
 
 /***/ }),
-/* 571 */
+/* 581 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
 var zrUtil = __webpack_require__(0);
 
-var BrushController = __webpack_require__(92);
+var BrushController = __webpack_require__(93);
 
-var BrushTargetManager = __webpack_require__(175);
+var BrushTargetManager = __webpack_require__(176);
 
-var history = __webpack_require__(187);
+var history = __webpack_require__(188);
 
-var sliderMove = __webpack_require__(50);
+var sliderMove = __webpack_require__(52);
 
 var lang = __webpack_require__(43);
 
 var featureManager = __webpack_require__(31);
 
-__webpack_require__(572);
+__webpack_require__(582);
 
 // Use dataZoomSelect
 var dataZoomLang = lang.toolbox.dataZoom;
@@ -120840,28 +121267,28 @@ var _default = DataZoom;
 module.exports = _default;
 
 /***/ }),
-/* 572 */
+/* 582 */
 /***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(176);
-
-__webpack_require__(52);
-
-__webpack_require__(53);
-
-__webpack_require__(573);
-
-__webpack_require__(574);
 
 __webpack_require__(177);
 
+__webpack_require__(54);
+
+__webpack_require__(55);
+
+__webpack_require__(583);
+
+__webpack_require__(584);
+
 __webpack_require__(178);
 
+__webpack_require__(179);
+
 /***/ }),
-/* 573 */
+/* 583 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DataZoomModel = __webpack_require__(52);
+var DataZoomModel = __webpack_require__(54);
 
 var _default = DataZoomModel.extend({
   type: 'dataZoom.select'
@@ -120870,10 +121297,10 @@ var _default = DataZoomModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 574 */
+/* 584 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DataZoomView = __webpack_require__(53);
+var DataZoomView = __webpack_require__(55);
 
 var _default = DataZoomView.extend({
   type: 'dataZoom.select'
@@ -120882,12 +121309,12 @@ var _default = DataZoomView.extend({
 module.exports = _default;
 
 /***/ }),
-/* 575 */
+/* 585 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(1);
 
-var history = __webpack_require__(187);
+var history = __webpack_require__(188);
 
 var lang = __webpack_require__(43);
 
@@ -120926,21 +121353,21 @@ var _default = Restore;
 module.exports = _default;
 
 /***/ }),
-/* 576 */
+/* 586 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(577);
+__webpack_require__(587);
 
-var _zrender = __webpack_require__(57);
+var _zrender = __webpack_require__(58);
 
 var registerPainter = _zrender.registerPainter;
 
-var Painter = __webpack_require__(578);
+var Painter = __webpack_require__(588);
 
 registerPainter('vml', Painter);
 
 /***/ }),
-/* 577 */
+/* 587 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var env = __webpack_require__(12);
@@ -120955,23 +121382,23 @@ var colorTool = __webpack_require__(24);
 
 var textContain = __webpack_require__(22);
 
-var textHelper = __webpack_require__(61);
+var textHelper = __webpack_require__(62);
 
-var RectText = __webpack_require__(125);
+var RectText = __webpack_require__(126);
 
-var Displayable = __webpack_require__(60);
+var Displayable = __webpack_require__(61);
 
-var ZImage = __webpack_require__(45);
+var ZImage = __webpack_require__(47);
 
-var Text = __webpack_require__(46);
+var Text = __webpack_require__(48);
 
 var Path = __webpack_require__(13);
 
 var PathProxy = __webpack_require__(40);
 
-var Gradient = __webpack_require__(62);
+var Gradient = __webpack_require__(63);
 
-var vmlCore = __webpack_require__(188);
+var vmlCore = __webpack_require__(189);
 
 // http://www.w3.org/TR/NOTE-VML
 // TODO Use proxy like svg instead of overwrite brush methods
@@ -121958,12 +122385,12 @@ if (!env.canvasSupported) {
 }
 
 /***/ }),
-/* 578 */
+/* 588 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var zrLog = __webpack_require__(44);
+var zrLog = __webpack_require__(46);
 
-var vmlCore = __webpack_require__(188);
+var vmlCore = __webpack_require__(189);
 
 var _util = __webpack_require__(0);
 
@@ -122138,24 +122565,24 @@ var _default = VMLPainter;
 module.exports = _default;
 
 /***/ }),
-/* 579 */
+/* 589 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(99);
+__webpack_require__(100);
 
-var _zrender = __webpack_require__(57);
+var _zrender = __webpack_require__(58);
 
 var registerPainter = _zrender.registerPainter;
 
-var Painter = __webpack_require__(580);
+var Painter = __webpack_require__(590);
 
 registerPainter('svg', Painter);
 
 /***/ }),
-/* 580 */
+/* 590 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _core = __webpack_require__(100);
+var _core = __webpack_require__(101);
 
 var createElement = _core.createElement;
 
@@ -122163,21 +122590,21 @@ var util = __webpack_require__(0);
 
 var each = util.each;
 
-var zrLog = __webpack_require__(44);
+var zrLog = __webpack_require__(46);
 
 var Path = __webpack_require__(13);
 
-var ZImage = __webpack_require__(45);
+var ZImage = __webpack_require__(47);
 
-var ZText = __webpack_require__(46);
+var ZText = __webpack_require__(48);
 
-var arrayDiff = __webpack_require__(581);
+var arrayDiff = __webpack_require__(591);
 
-var GradientManager = __webpack_require__(582);
+var GradientManager = __webpack_require__(592);
 
-var ClippathManager = __webpack_require__(583);
+var ClippathManager = __webpack_require__(593);
 
-var _graphic = __webpack_require__(99);
+var _graphic = __webpack_require__(100);
 
 var svgPath = _graphic.path;
 var svgImage = _graphic.image;
@@ -122505,7 +122932,7 @@ var _default = SVGPainter;
 module.exports = _default;
 
 /***/ }),
-/* 581 */
+/* 591 */
 /***/ (function(module, exports) {
 
 // Myers' Diff Algorithm
@@ -122708,14 +123135,14 @@ function _default(oldArr, newArr, callback) {
 module.exports = _default;
 
 /***/ }),
-/* 582 */
+/* 592 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Definable = __webpack_require__(189);
+var Definable = __webpack_require__(190);
 
 var zrUtil = __webpack_require__(0);
 
-var zrLog = __webpack_require__(44);
+var zrLog = __webpack_require__(46);
 
 /**
  * @file Manages SVG gradient elements.
@@ -122902,10 +123329,10 @@ var _default = GradientManager;
 module.exports = _default;
 
 /***/ }),
-/* 583 */
+/* 593 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Definable = __webpack_require__(189);
+var Definable = __webpack_require__(190);
 
 var zrUtil = __webpack_require__(0);
 
@@ -123061,18 +123488,20 @@ var _default = ClippathManager;
 module.exports = _default;
 
 /***/ }),
-/* 584 */
+/* 594 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global) {/*!
- * Vue.js v2.4.4
+/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
+ * Vue.js v2.5.13
  * (c) 2014-2017 Evan You
  * Released under the MIT License.
  */
 
 
 /*  */
+
+var emptyObject = Object.freeze({});
 
 // these helpers produces better vm code in JS engines due to their
 // explicitness and function inlining
@@ -123099,6 +123528,8 @@ function isPrimitive (value) {
   return (
     typeof value === 'string' ||
     typeof value === 'number' ||
+    // $flow-disable-line
+    typeof value === 'symbol' ||
     typeof value === 'boolean'
   )
 }
@@ -123112,7 +123543,14 @@ function isObject (obj) {
   return obj !== null && typeof obj === 'object'
 }
 
+/**
+ * Get the raw type string of a value e.g. [object Object]
+ */
 var _toString = Object.prototype.toString;
+
+function toRawType (value) {
+  return _toString.call(value).slice(8, -1)
+}
 
 /**
  * Strict object type check. Only returns true
@@ -123130,7 +123568,7 @@ function isRegExp (v) {
  * Check if val is a valid array index.
  */
 function isValidArrayIndex (val) {
-  var n = parseFloat(val);
+  var n = parseFloat(String(val));
   return n >= 0 && Math.floor(n) === n && isFinite(val)
 }
 
@@ -123180,7 +123618,7 @@ var isBuiltInTag = makeMap('slot,component', true);
 /**
  * Check if a attribute is a reserved attribute.
  */
-var isReservedAttribute = makeMap('key,ref,slot,is');
+var isReservedAttribute = makeMap('key,ref,slot,slot-scope,is');
 
 /**
  * Remove an item from an array
@@ -123390,7 +123828,8 @@ var LIFECYCLE_HOOKS = [
   'beforeDestroy',
   'destroyed',
   'activated',
-  'deactivated'
+  'deactivated',
+  'errorCaptured'
 ];
 
 /*  */
@@ -123399,6 +123838,7 @@ var config = ({
   /**
    * Option merge strategies (used in core/util/options)
    */
+  // $flow-disable-line
   optionMergeStrategies: Object.create(null),
 
   /**
@@ -123439,6 +123879,7 @@ var config = ({
   /**
    * Custom user key aliases for v-on
    */
+  // $flow-disable-line
   keyCodes: Object.create(null),
 
   /**
@@ -123483,8 +123924,6 @@ var config = ({
 
 /*  */
 
-var emptyObject = Object.freeze({});
-
 /**
  * Check if a string starts with $ or _
  */
@@ -123525,131 +123964,20 @@ function parsePath (path) {
 
 /*  */
 
-var warn = noop;
-var tip = noop;
-var formatComponentName = (null); // work around flow check
-
-if (true) {
-  var hasConsole = typeof console !== 'undefined';
-  var classifyRE = /(?:^|[-_])(\w)/g;
-  var classify = function (str) { return str
-    .replace(classifyRE, function (c) { return c.toUpperCase(); })
-    .replace(/[-_]/g, ''); };
-
-  warn = function (msg, vm) {
-    var trace = vm ? generateComponentTrace(vm) : '';
-
-    if (config.warnHandler) {
-      config.warnHandler.call(null, msg, vm, trace);
-    } else if (hasConsole && (!config.silent)) {
-      console.error(("[Vue warn]: " + msg + trace));
-    }
-  };
-
-  tip = function (msg, vm) {
-    if (hasConsole && (!config.silent)) {
-      console.warn("[Vue tip]: " + msg + (
-        vm ? generateComponentTrace(vm) : ''
-      ));
-    }
-  };
-
-  formatComponentName = function (vm, includeFile) {
-    if (vm.$root === vm) {
-      return '<Root>'
-    }
-    var name = typeof vm === 'string'
-      ? vm
-      : typeof vm === 'function' && vm.options
-        ? vm.options.name
-        : vm._isVue
-          ? vm.$options.name || vm.$options._componentTag
-          : vm.name;
-
-    var file = vm._isVue && vm.$options.__file;
-    if (!name && file) {
-      var match = file.match(/([^/\\]+)\.vue$/);
-      name = match && match[1];
-    }
-
-    return (
-      (name ? ("<" + (classify(name)) + ">") : "<Anonymous>") +
-      (file && includeFile !== false ? (" at " + file) : '')
-    )
-  };
-
-  var repeat = function (str, n) {
-    var res = '';
-    while (n) {
-      if (n % 2 === 1) { res += str; }
-      if (n > 1) { str += str; }
-      n >>= 1;
-    }
-    return res
-  };
-
-  var generateComponentTrace = function (vm) {
-    if (vm._isVue && vm.$parent) {
-      var tree = [];
-      var currentRecursiveSequence = 0;
-      while (vm) {
-        if (tree.length > 0) {
-          var last = tree[tree.length - 1];
-          if (last.constructor === vm.constructor) {
-            currentRecursiveSequence++;
-            vm = vm.$parent;
-            continue
-          } else if (currentRecursiveSequence > 0) {
-            tree[tree.length - 1] = [last, currentRecursiveSequence];
-            currentRecursiveSequence = 0;
-          }
-        }
-        tree.push(vm);
-        vm = vm.$parent;
-      }
-      return '\n\nfound in\n\n' + tree
-        .map(function (vm, i) { return ("" + (i === 0 ? '---> ' : repeat(' ', 5 + i * 2)) + (Array.isArray(vm)
-            ? ((formatComponentName(vm[0])) + "... (" + (vm[1]) + " recursive calls)")
-            : formatComponentName(vm))); })
-        .join('\n')
-    } else {
-      return ("\n\n(found in " + (formatComponentName(vm)) + ")")
-    }
-  };
-}
-
-/*  */
-
-function handleError (err, vm, info) {
-  if (config.errorHandler) {
-    config.errorHandler.call(null, err, vm, info);
-  } else {
-    if (true) {
-      warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
-    }
-    /* istanbul ignore else */
-    if (inBrowser && typeof console !== 'undefined') {
-      console.error(err);
-    } else {
-      throw err
-    }
-  }
-}
-
-/*  */
-/* globals MutationObserver */
 
 // can we use __proto__?
 var hasProto = '__proto__' in {};
 
 // Browser environment sniffing
 var inBrowser = typeof window !== 'undefined';
+var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
+var weexPlatform = inWeex && WXEnvironment.platform.toLowerCase();
 var UA = inBrowser && window.navigator.userAgent.toLowerCase();
 var isIE = UA && /msie|trident/.test(UA);
 var isIE9 = UA && UA.indexOf('msie 9.0') > 0;
 var isEdge = UA && UA.indexOf('edge/') > 0;
-var isAndroid = UA && UA.indexOf('android') > 0;
-var isIOS = UA && /iphone|ipad|ipod|ios/.test(UA);
+var isAndroid = (UA && UA.indexOf('android') > 0) || (weexPlatform === 'android');
+var isIOS = (UA && /iphone|ipad|ipod|ios/.test(UA)) || (weexPlatform === 'ios');
 var isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
 
 // Firefox has a "watch" function on Object.prototype...
@@ -123698,94 +124026,8 @@ var hasSymbol =
   typeof Symbol !== 'undefined' && isNative(Symbol) &&
   typeof Reflect !== 'undefined' && isNative(Reflect.ownKeys);
 
-/**
- * Defer a task to execute it asynchronously.
- */
-var nextTick = (function () {
-  var callbacks = [];
-  var pending = false;
-  var timerFunc;
-
-  function nextTickHandler () {
-    pending = false;
-    var copies = callbacks.slice(0);
-    callbacks.length = 0;
-    for (var i = 0; i < copies.length; i++) {
-      copies[i]();
-    }
-  }
-
-  // the nextTick behavior leverages the microtask queue, which can be accessed
-  // via either native Promise.then or MutationObserver.
-  // MutationObserver has wider support, however it is seriously bugged in
-  // UIWebView in iOS >= 9.3.3 when triggered in touch event handlers. It
-  // completely stops working after triggering a few times... so, if native
-  // Promise is available, we will use it:
-  /* istanbul ignore if */
-  if (typeof Promise !== 'undefined' && isNative(Promise)) {
-    var p = Promise.resolve();
-    var logError = function (err) { console.error(err); };
-    timerFunc = function () {
-      p.then(nextTickHandler).catch(logError);
-      // in problematic UIWebViews, Promise.then doesn't completely break, but
-      // it can get stuck in a weird state where callbacks are pushed into the
-      // microtask queue but the queue isn't being flushed, until the browser
-      // needs to do some other work, e.g. handle a timer. Therefore we can
-      // "force" the microtask queue to be flushed by adding an empty timer.
-      if (isIOS) { setTimeout(noop); }
-    };
-  } else if (!isIE && typeof MutationObserver !== 'undefined' && (
-    isNative(MutationObserver) ||
-    // PhantomJS and iOS 7.x
-    MutationObserver.toString() === '[object MutationObserverConstructor]'
-  )) {
-    // use MutationObserver where native Promise is not available,
-    // e.g. PhantomJS, iOS7, Android 4.4
-    var counter = 1;
-    var observer = new MutationObserver(nextTickHandler);
-    var textNode = document.createTextNode(String(counter));
-    observer.observe(textNode, {
-      characterData: true
-    });
-    timerFunc = function () {
-      counter = (counter + 1) % 2;
-      textNode.data = String(counter);
-    };
-  } else {
-    // fallback to setTimeout
-    /* istanbul ignore next */
-    timerFunc = function () {
-      setTimeout(nextTickHandler, 0);
-    };
-  }
-
-  return function queueNextTick (cb, ctx) {
-    var _resolve;
-    callbacks.push(function () {
-      if (cb) {
-        try {
-          cb.call(ctx);
-        } catch (e) {
-          handleError(e, ctx, 'nextTick');
-        }
-      } else if (_resolve) {
-        _resolve(ctx);
-      }
-    });
-    if (!pending) {
-      pending = true;
-      timerFunc();
-    }
-    if (!cb && typeof Promise !== 'undefined') {
-      return new Promise(function (resolve, reject) {
-        _resolve = resolve;
-      })
-    }
-  }
-})();
-
 var _Set;
-/* istanbul ignore if */
+/* istanbul ignore if */ // $flow-disable-line
 if (typeof Set !== 'undefined' && isNative(Set)) {
   // use native Set when available.
   _Set = Set;
@@ -123807,6 +124049,100 @@ if (typeof Set !== 'undefined' && isNative(Set)) {
 
     return Set;
   }());
+}
+
+/*  */
+
+var warn = noop;
+var tip = noop;
+var generateComponentTrace = (noop); // work around flow check
+var formatComponentName = (noop);
+
+if (true) {
+  var hasConsole = typeof console !== 'undefined';
+  var classifyRE = /(?:^|[-_])(\w)/g;
+  var classify = function (str) { return str
+    .replace(classifyRE, function (c) { return c.toUpperCase(); })
+    .replace(/[-_]/g, ''); };
+
+  warn = function (msg, vm) {
+    var trace = vm ? generateComponentTrace(vm) : '';
+
+    if (config.warnHandler) {
+      config.warnHandler.call(null, msg, vm, trace);
+    } else if (hasConsole && (!config.silent)) {
+      console.error(("[Vue warn]: " + msg + trace));
+    }
+  };
+
+  tip = function (msg, vm) {
+    if (hasConsole && (!config.silent)) {
+      console.warn("[Vue tip]: " + msg + (
+        vm ? generateComponentTrace(vm) : ''
+      ));
+    }
+  };
+
+  formatComponentName = function (vm, includeFile) {
+    if (vm.$root === vm) {
+      return '<Root>'
+    }
+    var options = typeof vm === 'function' && vm.cid != null
+      ? vm.options
+      : vm._isVue
+        ? vm.$options || vm.constructor.options
+        : vm || {};
+    var name = options.name || options._componentTag;
+    var file = options.__file;
+    if (!name && file) {
+      var match = file.match(/([^/\\]+)\.vue$/);
+      name = match && match[1];
+    }
+
+    return (
+      (name ? ("<" + (classify(name)) + ">") : "<Anonymous>") +
+      (file && includeFile !== false ? (" at " + file) : '')
+    )
+  };
+
+  var repeat = function (str, n) {
+    var res = '';
+    while (n) {
+      if (n % 2 === 1) { res += str; }
+      if (n > 1) { str += str; }
+      n >>= 1;
+    }
+    return res
+  };
+
+  generateComponentTrace = function (vm) {
+    if (vm._isVue && vm.$parent) {
+      var tree = [];
+      var currentRecursiveSequence = 0;
+      while (vm) {
+        if (tree.length > 0) {
+          var last = tree[tree.length - 1];
+          if (last.constructor === vm.constructor) {
+            currentRecursiveSequence++;
+            vm = vm.$parent;
+            continue
+          } else if (currentRecursiveSequence > 0) {
+            tree[tree.length - 1] = [last, currentRecursiveSequence];
+            currentRecursiveSequence = 0;
+          }
+        }
+        tree.push(vm);
+        vm = vm.$parent;
+      }
+      return '\n\nfound in\n\n' + tree
+        .map(function (vm, i) { return ("" + (i === 0 ? '---> ' : repeat(' ', 5 + i * 2)) + (Array.isArray(vm)
+            ? ((formatComponentName(vm[0])) + "... (" + (vm[1]) + " recursive calls)")
+            : formatComponentName(vm))); })
+        .join('\n')
+    } else {
+      return ("\n\n(found in " + (formatComponentName(vm)) + ")")
+    }
+  };
 }
 
 /*  */
@@ -123860,6 +124196,110 @@ function popTarget () {
   Dep.target = targetStack.pop();
 }
 
+/*  */
+
+var VNode = function VNode (
+  tag,
+  data,
+  children,
+  text,
+  elm,
+  context,
+  componentOptions,
+  asyncFactory
+) {
+  this.tag = tag;
+  this.data = data;
+  this.children = children;
+  this.text = text;
+  this.elm = elm;
+  this.ns = undefined;
+  this.context = context;
+  this.fnContext = undefined;
+  this.fnOptions = undefined;
+  this.fnScopeId = undefined;
+  this.key = data && data.key;
+  this.componentOptions = componentOptions;
+  this.componentInstance = undefined;
+  this.parent = undefined;
+  this.raw = false;
+  this.isStatic = false;
+  this.isRootInsert = true;
+  this.isComment = false;
+  this.isCloned = false;
+  this.isOnce = false;
+  this.asyncFactory = asyncFactory;
+  this.asyncMeta = undefined;
+  this.isAsyncPlaceholder = false;
+};
+
+var prototypeAccessors = { child: { configurable: true } };
+
+// DEPRECATED: alias for componentInstance for backwards compat.
+/* istanbul ignore next */
+prototypeAccessors.child.get = function () {
+  return this.componentInstance
+};
+
+Object.defineProperties( VNode.prototype, prototypeAccessors );
+
+var createEmptyVNode = function (text) {
+  if ( text === void 0 ) text = '';
+
+  var node = new VNode();
+  node.text = text;
+  node.isComment = true;
+  return node
+};
+
+function createTextVNode (val) {
+  return new VNode(undefined, undefined, undefined, String(val))
+}
+
+// optimized shallow clone
+// used for static nodes and slot nodes because they may be reused across
+// multiple renders, cloning them avoids errors when DOM manipulations rely
+// on their elm reference.
+function cloneVNode (vnode, deep) {
+  var componentOptions = vnode.componentOptions;
+  var cloned = new VNode(
+    vnode.tag,
+    vnode.data,
+    vnode.children,
+    vnode.text,
+    vnode.elm,
+    vnode.context,
+    componentOptions,
+    vnode.asyncFactory
+  );
+  cloned.ns = vnode.ns;
+  cloned.isStatic = vnode.isStatic;
+  cloned.key = vnode.key;
+  cloned.isComment = vnode.isComment;
+  cloned.fnContext = vnode.fnContext;
+  cloned.fnOptions = vnode.fnOptions;
+  cloned.fnScopeId = vnode.fnScopeId;
+  cloned.isCloned = true;
+  if (deep) {
+    if (vnode.children) {
+      cloned.children = cloneVNodes(vnode.children, true);
+    }
+    if (componentOptions && componentOptions.children) {
+      componentOptions.children = cloneVNodes(componentOptions.children, true);
+    }
+  }
+  return cloned
+}
+
+function cloneVNodes (vnodes, deep) {
+  var len = vnodes.length;
+  var res = new Array(len);
+  for (var i = 0; i < len; i++) {
+    res[i] = cloneVNode(vnodes[i], deep);
+  }
+  return res
+}
+
 /*
  * not type checking this file because flow doesn't play well with
  * dynamically accessing methods on Array prototype
@@ -123874,8 +124314,7 @@ var arrayMethods = Object.create(arrayProto);[
   'splice',
   'sort',
   'reverse'
-]
-.forEach(function (method) {
+].forEach(function (method) {
   // cache original method
   var original = arrayProto[method];
   def(arrayMethods, method, function mutator () {
@@ -123945,7 +124384,7 @@ var Observer = function Observer (value) {
 Observer.prototype.walk = function walk (obj) {
   var keys = Object.keys(obj);
   for (var i = 0; i < keys.length; i++) {
-    defineReactive$$1(obj, keys[i], obj[keys[i]]);
+    defineReactive(obj, keys[i], obj[keys[i]]);
   }
 };
 
@@ -123988,7 +124427,7 @@ function copyAugment (target, src, keys) {
  * or the existing observer if the value already has one.
  */
 function observe (value, asRootData) {
-  if (!isObject(value)) {
+  if (!isObject(value) || value instanceof VNode) {
     return
   }
   var ob;
@@ -124012,7 +124451,7 @@ function observe (value, asRootData) {
 /**
  * Define a reactive property on an Object.
  */
-function defineReactive$$1 (
+function defineReactive (
   obj,
   key,
   val,
@@ -124079,7 +124518,7 @@ function set (target, key, val) {
     target.splice(key, 1, val);
     return val
   }
-  if (hasOwn(target, key)) {
+  if (key in target && !(key in Object.prototype)) {
     target[key] = val;
     return val
   }
@@ -124095,7 +124534,7 @@ function set (target, key, val) {
     target[key] = val;
     return val
   }
-  defineReactive$$1(ob.value, key, val);
+  defineReactive(ob.value, key, val);
   ob.dep.notify();
   return val
 }
@@ -124207,18 +124646,18 @@ function mergeDataOrFn (
     // it has to be a function to pass previous merges.
     return function mergedDataFn () {
       return mergeData(
-        typeof childVal === 'function' ? childVal.call(this) : childVal,
-        typeof parentVal === 'function' ? parentVal.call(this) : parentVal
+        typeof childVal === 'function' ? childVal.call(this, this) : childVal,
+        typeof parentVal === 'function' ? parentVal.call(this, this) : parentVal
       )
     }
-  } else if (parentVal || childVal) {
+  } else {
     return function mergedInstanceDataFn () {
       // instance merge
       var instanceData = typeof childVal === 'function'
-        ? childVal.call(vm)
+        ? childVal.call(vm, vm)
         : childVal;
       var defaultData = typeof parentVal === 'function'
-        ? parentVal.call(vm)
+        ? parentVal.call(vm, vm)
         : parentVal;
       if (instanceData) {
         return mergeData(instanceData, defaultData)
@@ -124245,7 +124684,7 @@ strats.data = function (
 
       return parentVal
     }
-    return mergeDataOrFn.call(this, parentVal, childVal)
+    return mergeDataOrFn(parentVal, childVal)
   }
 
   return mergeDataOrFn(parentVal, childVal, vm)
@@ -124278,11 +124717,19 @@ LIFECYCLE_HOOKS.forEach(function (hook) {
  * a three-way merge between constructor options, instance
  * options and parent options.
  */
-function mergeAssets (parentVal, childVal) {
+function mergeAssets (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
   var res = Object.create(parentVal || null);
-  return childVal
-    ? extend(res, childVal)
-    : res
+  if (childVal) {
+    "development" !== 'production' && assertObjectType(key, childVal, vm);
+    return extend(res, childVal)
+  } else {
+    return res
+  }
 }
 
 ASSET_TYPES.forEach(function (type) {
@@ -124295,22 +124742,30 @@ ASSET_TYPES.forEach(function (type) {
  * Watchers hashes should not overwrite one
  * another, so we merge them as arrays.
  */
-strats.watch = function (parentVal, childVal) {
+strats.watch = function (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
   // work around Firefox's Object.prototype.watch...
   if (parentVal === nativeWatch) { parentVal = undefined; }
   if (childVal === nativeWatch) { childVal = undefined; }
   /* istanbul ignore if */
   if (!childVal) { return Object.create(parentVal || null) }
+  if (true) {
+    assertObjectType(key, childVal, vm);
+  }
   if (!parentVal) { return childVal }
   var ret = {};
   extend(ret, parentVal);
-  for (var key in childVal) {
-    var parent = ret[key];
-    var child = childVal[key];
+  for (var key$1 in childVal) {
+    var parent = ret[key$1];
+    var child = childVal[key$1];
     if (parent && !Array.isArray(parent)) {
       parent = [parent];
     }
-    ret[key] = parent
+    ret[key$1] = parent
       ? parent.concat(child)
       : Array.isArray(child) ? child : [child];
   }
@@ -124323,7 +124778,15 @@ strats.watch = function (parentVal, childVal) {
 strats.props =
 strats.methods =
 strats.inject =
-strats.computed = function (parentVal, childVal) {
+strats.computed = function (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
+  if (childVal && "development" !== 'production') {
+    assertObjectType(key, childVal, vm);
+  }
   if (!parentVal) { return childVal }
   var ret = Object.create(null);
   extend(ret, parentVal);
@@ -124346,13 +124809,23 @@ var defaultStrat = function (parentVal, childVal) {
  */
 function checkComponents (options) {
   for (var key in options.components) {
-    var lower = key.toLowerCase();
-    if (isBuiltInTag(lower) || config.isReservedTag(lower)) {
-      warn(
-        'Do not use built-in or reserved HTML elements as component ' +
-        'id: ' + key
-      );
-    }
+    validateComponentName(key);
+  }
+}
+
+function validateComponentName (name) {
+  if (!/^[a-zA-Z][\w-]*$/.test(name)) {
+    warn(
+      'Invalid component name: "' + name + '". Component names ' +
+      'can only contain alphanumeric characters and the hyphen, ' +
+      'and must start with a letter.'
+    );
+  }
+  if (isBuiltInTag(name) || config.isReservedTag(name)) {
+    warn(
+      'Do not use built-in or reserved HTML elements as component ' +
+      'id: ' + name
+    );
   }
 }
 
@@ -124360,7 +124833,7 @@ function checkComponents (options) {
  * Ensure all props option syntax are normalized into the
  * Object-based format.
  */
-function normalizeProps (options) {
+function normalizeProps (options, vm) {
   var props = options.props;
   if (!props) { return }
   var res = {};
@@ -124384,6 +124857,12 @@ function normalizeProps (options) {
         ? val
         : { type: val };
     }
+  } else if (true) {
+    warn(
+      "Invalid value for option \"props\": expected an Array or an Object, " +
+      "but got " + (toRawType(props)) + ".",
+      vm
+    );
   }
   options.props = res;
 }
@@ -124391,13 +124870,27 @@ function normalizeProps (options) {
 /**
  * Normalize all injections into Object-based format
  */
-function normalizeInject (options) {
+function normalizeInject (options, vm) {
   var inject = options.inject;
+  if (!inject) { return }
+  var normalized = options.inject = {};
   if (Array.isArray(inject)) {
-    var normalized = options.inject = {};
     for (var i = 0; i < inject.length; i++) {
-      normalized[inject[i]] = inject[i];
+      normalized[inject[i]] = { from: inject[i] };
     }
+  } else if (isPlainObject(inject)) {
+    for (var key in inject) {
+      var val = inject[key];
+      normalized[key] = isPlainObject(val)
+        ? extend({ from: key }, val)
+        : { from: val };
+    }
+  } else if (true) {
+    warn(
+      "Invalid value for option \"inject\": expected an Array or an Object, " +
+      "but got " + (toRawType(inject)) + ".",
+      vm
+    );
   }
 }
 
@@ -124413,6 +124906,16 @@ function normalizeDirectives (options) {
         dirs[key] = { bind: def, update: def };
       }
     }
+  }
+}
+
+function assertObjectType (name, value, vm) {
+  if (!isPlainObject(value)) {
+    warn(
+      "Invalid value for option \"" + name + "\": expected an Object, " +
+      "but got " + (toRawType(value)) + ".",
+      vm
+    );
   }
 }
 
@@ -124433,8 +124936,8 @@ function mergeOptions (
     child = child.options;
   }
 
-  normalizeProps(child);
-  normalizeInject(child);
+  normalizeProps(child, vm);
+  normalizeInject(child, vm);
   normalizeDirectives(child);
   var extendsFrom = child.extends;
   if (extendsFrom) {
@@ -124524,7 +125027,9 @@ function validateProp (
     observe(value);
     observerState.shouldConvert = prevShouldConvert;
   }
-  if (true) {
+  if (
+    true
+  ) {
     assertProp(prop, key, value, vm, absent);
   }
   return value
@@ -124598,9 +125103,9 @@ function assertProp (
   }
   if (!valid) {
     warn(
-      'Invalid prop: type check failed for prop "' + name + '".' +
-      ' Expected ' + expectedTypes.map(capitalize).join(', ') +
-      ', got ' + Object.prototype.toString.call(value).slice(8, -1) + '.',
+      "Invalid prop: type check failed for prop \"" + name + "\"." +
+      " Expected " + (expectedTypes.map(capitalize).join(', ')) +
+      ", got " + (toRawType(value)) + ".",
       vm
     );
     return
@@ -124666,6 +125171,165 @@ function isType (type, fn) {
 
 /*  */
 
+function handleError (err, vm, info) {
+  if (vm) {
+    var cur = vm;
+    while ((cur = cur.$parent)) {
+      var hooks = cur.$options.errorCaptured;
+      if (hooks) {
+        for (var i = 0; i < hooks.length; i++) {
+          try {
+            var capture = hooks[i].call(cur, err, vm, info) === false;
+            if (capture) { return }
+          } catch (e) {
+            globalHandleError(e, cur, 'errorCaptured hook');
+          }
+        }
+      }
+    }
+  }
+  globalHandleError(err, vm, info);
+}
+
+function globalHandleError (err, vm, info) {
+  if (config.errorHandler) {
+    try {
+      return config.errorHandler.call(null, err, vm, info)
+    } catch (e) {
+      logError(e, null, 'config.errorHandler');
+    }
+  }
+  logError(err, vm, info);
+}
+
+function logError (err, vm, info) {
+  if (true) {
+    warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
+  }
+  /* istanbul ignore else */
+  if ((inBrowser || inWeex) && typeof console !== 'undefined') {
+    console.error(err);
+  } else {
+    throw err
+  }
+}
+
+/*  */
+/* globals MessageChannel */
+
+var callbacks = [];
+var pending = false;
+
+function flushCallbacks () {
+  pending = false;
+  var copies = callbacks.slice(0);
+  callbacks.length = 0;
+  for (var i = 0; i < copies.length; i++) {
+    copies[i]();
+  }
+}
+
+// Here we have async deferring wrappers using both micro and macro tasks.
+// In < 2.4 we used micro tasks everywhere, but there are some scenarios where
+// micro tasks have too high a priority and fires in between supposedly
+// sequential events (e.g. #4521, #6690) or even between bubbling of the same
+// event (#6566). However, using macro tasks everywhere also has subtle problems
+// when state is changed right before repaint (e.g. #6813, out-in transitions).
+// Here we use micro task by default, but expose a way to force macro task when
+// needed (e.g. in event handlers attached by v-on).
+var microTimerFunc;
+var macroTimerFunc;
+var useMacroTask = false;
+
+// Determine (macro) Task defer implementation.
+// Technically setImmediate should be the ideal choice, but it's only available
+// in IE. The only polyfill that consistently queues the callback after all DOM
+// events triggered in the same loop is by using MessageChannel.
+/* istanbul ignore if */
+if (typeof setImmediate !== 'undefined' && isNative(setImmediate)) {
+  macroTimerFunc = function () {
+    setImmediate(flushCallbacks);
+  };
+} else if (typeof MessageChannel !== 'undefined' && (
+  isNative(MessageChannel) ||
+  // PhantomJS
+  MessageChannel.toString() === '[object MessageChannelConstructor]'
+)) {
+  var channel = new MessageChannel();
+  var port = channel.port2;
+  channel.port1.onmessage = flushCallbacks;
+  macroTimerFunc = function () {
+    port.postMessage(1);
+  };
+} else {
+  /* istanbul ignore next */
+  macroTimerFunc = function () {
+    setTimeout(flushCallbacks, 0);
+  };
+}
+
+// Determine MicroTask defer implementation.
+/* istanbul ignore next, $flow-disable-line */
+if (typeof Promise !== 'undefined' && isNative(Promise)) {
+  var p = Promise.resolve();
+  microTimerFunc = function () {
+    p.then(flushCallbacks);
+    // in problematic UIWebViews, Promise.then doesn't completely break, but
+    // it can get stuck in a weird state where callbacks are pushed into the
+    // microtask queue but the queue isn't being flushed, until the browser
+    // needs to do some other work, e.g. handle a timer. Therefore we can
+    // "force" the microtask queue to be flushed by adding an empty timer.
+    if (isIOS) { setTimeout(noop); }
+  };
+} else {
+  // fallback to macro
+  microTimerFunc = macroTimerFunc;
+}
+
+/**
+ * Wrap a function so that if any code inside triggers state change,
+ * the changes are queued using a Task instead of a MicroTask.
+ */
+function withMacroTask (fn) {
+  return fn._withTask || (fn._withTask = function () {
+    useMacroTask = true;
+    var res = fn.apply(null, arguments);
+    useMacroTask = false;
+    return res
+  })
+}
+
+function nextTick (cb, ctx) {
+  var _resolve;
+  callbacks.push(function () {
+    if (cb) {
+      try {
+        cb.call(ctx);
+      } catch (e) {
+        handleError(e, ctx, 'nextTick');
+      }
+    } else if (_resolve) {
+      _resolve(ctx);
+    }
+  });
+  if (!pending) {
+    pending = true;
+    if (useMacroTask) {
+      macroTimerFunc();
+    } else {
+      microTimerFunc();
+    }
+  }
+  // $flow-disable-line
+  if (!cb && typeof Promise !== 'undefined') {
+    return new Promise(function (resolve) {
+      _resolve = resolve;
+    })
+  }
+}
+
+/*  */
+
 var mark;
 var measure;
 
@@ -124704,8 +125368,10 @@ if (true) {
   var warnNonPresent = function (target, key) {
     warn(
       "Property or method \"" + key + "\" is not defined on the instance but " +
-      "referenced during render. Make sure to declare reactive data " +
-      "properties in the data option.",
+      'referenced during render. Make sure that this property is reactive, ' +
+      'either in the data option, or for class-based components, by ' +
+      'initializing the property. ' +
+      'See: https://vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.',
       target
     );
   };
@@ -124715,7 +125381,7 @@ if (true) {
     Proxy.toString().match(/native code/);
 
   if (hasProxy) {
-    var isBuiltInModifier = makeMap('stop,prevent,self,ctrl,shift,alt,meta');
+    var isBuiltInModifier = makeMap('stop,prevent,self,ctrl,shift,alt,meta,exact');
     config.keyCodes = new Proxy(config.keyCodes, {
       set: function set (target, key, value) {
         if (isBuiltInModifier(key)) {
@@ -124765,95 +125431,39 @@ if (true) {
 
 /*  */
 
-var VNode = function VNode (
-  tag,
-  data,
-  children,
-  text,
-  elm,
-  context,
-  componentOptions,
-  asyncFactory
-) {
-  this.tag = tag;
-  this.data = data;
-  this.children = children;
-  this.text = text;
-  this.elm = elm;
-  this.ns = undefined;
-  this.context = context;
-  this.functionalContext = undefined;
-  this.key = data && data.key;
-  this.componentOptions = componentOptions;
-  this.componentInstance = undefined;
-  this.parent = undefined;
-  this.raw = false;
-  this.isStatic = false;
-  this.isRootInsert = true;
-  this.isComment = false;
-  this.isCloned = false;
-  this.isOnce = false;
-  this.asyncFactory = asyncFactory;
-  this.asyncMeta = undefined;
-  this.isAsyncPlaceholder = false;
-};
+var seenObjects = new _Set();
 
-var prototypeAccessors = { child: {} };
-
-// DEPRECATED: alias for componentInstance for backwards compat.
-/* istanbul ignore next */
-prototypeAccessors.child.get = function () {
-  return this.componentInstance
-};
-
-Object.defineProperties( VNode.prototype, prototypeAccessors );
-
-var createEmptyVNode = function (text) {
-  if ( text === void 0 ) text = '';
-
-  var node = new VNode();
-  node.text = text;
-  node.isComment = true;
-  return node
-};
-
-function createTextVNode (val) {
-  return new VNode(undefined, undefined, undefined, String(val))
+/**
+ * Recursively traverse an object to evoke all converted
+ * getters, so that every nested property inside the object
+ * is collected as a "deep" dependency.
+ */
+function traverse (val) {
+  _traverse(val, seenObjects);
+  seenObjects.clear();
 }
 
-// optimized shallow clone
-// used for static nodes and slot nodes because they may be reused across
-// multiple renders, cloning them avoids errors when DOM manipulations rely
-// on their elm reference.
-function cloneVNode (vnode, deep) {
-  var cloned = new VNode(
-    vnode.tag,
-    vnode.data,
-    vnode.children,
-    vnode.text,
-    vnode.elm,
-    vnode.context,
-    vnode.componentOptions,
-    vnode.asyncFactory
-  );
-  cloned.ns = vnode.ns;
-  cloned.isStatic = vnode.isStatic;
-  cloned.key = vnode.key;
-  cloned.isComment = vnode.isComment;
-  cloned.isCloned = true;
-  if (deep && vnode.children) {
-    cloned.children = cloneVNodes(vnode.children);
+function _traverse (val, seen) {
+  var i, keys;
+  var isA = Array.isArray(val);
+  if ((!isA && !isObject(val)) || Object.isFrozen(val)) {
+    return
   }
-  return cloned
-}
-
-function cloneVNodes (vnodes, deep) {
-  var len = vnodes.length;
-  var res = new Array(len);
-  for (var i = 0; i < len; i++) {
-    res[i] = cloneVNode(vnodes[i], deep);
+  if (val.__ob__) {
+    var depId = val.__ob__.dep.id;
+    if (seen.has(depId)) {
+      return
+    }
+    seen.add(depId);
   }
-  return res
+  if (isA) {
+    i = val.length;
+    while (i--) { _traverse(val[i], seen); }
+  } else {
+    keys = Object.keys(val);
+    i = keys.length;
+    while (i--) { _traverse(val[keys[i]], seen); }
+  }
 }
 
 /*  */
@@ -124865,10 +125475,8 @@ var normalizeEvent = cached(function (name) {
   name = once$$1 ? name.slice(1) : name;
   var capture = name.charAt(0) === '!';
   name = capture ? name.slice(1) : name;
-  var plain = !(passive || once$$1 || capture);
   return {
     name: name,
-    plain: plain,
     once: once$$1,
     capture: capture,
     passive: passive
@@ -124894,11 +125502,6 @@ function createFnInvoker (fns) {
   return invoker
 }
 
-// #6552
-function prioritizePlainEvents (a, b) {
-  return a.plain ? -1 : b.plain ? 1 : 0
-}
-
 function updateListeners (
   on,
   oldOn,
@@ -124906,14 +125509,12 @@ function updateListeners (
   remove$$1,
   vm
 ) {
-  var name, cur, old, event;
-  var toAdd = [];
-  var hasModifier = false;
+  var name, def, cur, old, event;
   for (name in on) {
-    cur = on[name];
+    def = cur = on[name];
     old = oldOn[name];
     event = normalizeEvent(name);
-    if (!event.plain) { hasModifier = true; }
+    /* istanbul ignore if */
     if (isUndef(cur)) {
       "development" !== 'production' && warn(
         "Invalid handler for event \"" + (event.name) + "\": got " + String(cur),
@@ -124923,18 +125524,10 @@ function updateListeners (
       if (isUndef(cur.fns)) {
         cur = on[name] = createFnInvoker(cur);
       }
-      event.handler = cur;
-      toAdd.push(event);
+      add(event.name, cur, event.once, event.capture, event.passive, event.params);
     } else if (cur !== old) {
       old.fns = cur;
       on[name] = old;
-    }
-  }
-  if (toAdd.length) {
-    if (hasModifier) { toAdd.sort(prioritizePlainEvents); }
-    for (var i = 0; i < toAdd.length; i++) {
-      var event$1 = toAdd[i];
-      add(event$1.name, event$1.handler, event$1.once, event$1.capture, event$1.passive);
     }
   }
   for (name in oldOn) {
@@ -124948,6 +125541,9 @@ function updateListeners (
 /*  */
 
 function mergeVNodeHook (def, hookKey, hook) {
+  if (def instanceof VNode) {
+    def = def.data.hook || (def.data.hook = {});
+  }
   var invoker;
   var oldHook = def[hookKey];
 
@@ -125086,20 +125682,29 @@ function isTextNode (node) {
 
 function normalizeArrayChildren (children, nestedIndex) {
   var res = [];
-  var i, c, last;
+  var i, c, lastIndex, last;
   for (i = 0; i < children.length; i++) {
     c = children[i];
     if (isUndef(c) || typeof c === 'boolean') { continue }
-    last = res[res.length - 1];
+    lastIndex = res.length - 1;
+    last = res[lastIndex];
     //  nested
     if (Array.isArray(c)) {
-      res.push.apply(res, normalizeArrayChildren(c, ((nestedIndex || '') + "_" + i)));
+      if (c.length > 0) {
+        c = normalizeArrayChildren(c, ((nestedIndex || '') + "_" + i));
+        // merge adjacent text nodes
+        if (isTextNode(c[0]) && isTextNode(last)) {
+          res[lastIndex] = createTextVNode(last.text + (c[0]).text);
+          c.shift();
+        }
+        res.push.apply(res, c);
+      }
     } else if (isPrimitive(c)) {
       if (isTextNode(last)) {
         // merge adjacent text nodes
         // this is necessary for SSR hydration because text nodes are
         // essentially merged when rendered to HTML strings
-        (last).text += String(c);
+        res[lastIndex] = createTextVNode(last.text + c);
       } else if (c !== '') {
         // convert primitive to vnode
         res.push(createTextVNode(c));
@@ -125107,7 +125712,7 @@ function normalizeArrayChildren (children, nestedIndex) {
     } else {
       if (isTextNode(c) && isTextNode(last)) {
         // merge adjacent text nodes
-        res[res.length - 1] = createTextVNode(last.text + c.text);
+        res[lastIndex] = createTextVNode(last.text + c.text);
       } else {
         // default key for nested array children (likely generated by v-for)
         if (isTrue(children._isVList) &&
@@ -125126,7 +125731,10 @@ function normalizeArrayChildren (children, nestedIndex) {
 /*  */
 
 function ensureCtor (comp, base) {
-  if (comp.__esModule && comp.default) {
+  if (
+    comp.__esModule ||
+    (hasSymbol && comp[Symbol.toStringTag] === 'Module')
+  ) {
     comp = comp.default;
   }
   return isObject(comp)
@@ -125284,8 +125892,8 @@ function initEvents (vm) {
 
 var target;
 
-function add (event, fn, once$$1) {
-  if (once$$1) {
+function add (event, fn, once) {
+  if (once) {
     target.$once(event, fn);
   } else {
     target.$on(event, fn);
@@ -125303,6 +125911,7 @@ function updateComponentListeners (
 ) {
   target = vm;
   updateListeners(listeners, oldListeners || {}, add, remove$1, vm);
+  target = undefined;
 }
 
 function eventsMixin (Vue) {
@@ -125358,7 +125967,7 @@ function eventsMixin (Vue) {
     if (!cbs) {
       return vm
     }
-    if (arguments.length === 1) {
+    if (!fn) {
       vm._events[event] = null;
       return vm
     }
@@ -125409,6 +126018,8 @@ function eventsMixin (Vue) {
 
 /*  */
 
+
+
 /**
  * Runtime helper for resolving raw children VNodes into a slot object.
  */
@@ -125420,7 +126031,6 @@ function resolveSlots (
   if (!children) {
     return slots
   }
-  var defaultSlot = [];
   for (var i = 0, l = children.length; i < l; i++) {
     var child = children[i];
     var data = child.data;
@@ -125430,29 +126040,31 @@ function resolveSlots (
     }
     // named slots should only be respected if the vnode was rendered in the
     // same context.
-    if ((child.context === context || child.functionalContext === context) &&
+    if ((child.context === context || child.fnContext === context) &&
       data && data.slot != null
     ) {
-      var name = child.data.slot;
+      var name = data.slot;
       var slot = (slots[name] || (slots[name] = []));
       if (child.tag === 'template') {
-        slot.push.apply(slot, child.children);
+        slot.push.apply(slot, child.children || []);
       } else {
         slot.push(child);
       }
     } else {
-      defaultSlot.push(child);
+      (slots.default || (slots.default = [])).push(child);
     }
   }
-  // ignore whitespace
-  if (!defaultSlot.every(isWhitespace)) {
-    slots.default = defaultSlot;
+  // ignore slots that contains only whitespace
+  for (var name$1 in slots) {
+    if (slots[name$1].every(isWhitespace)) {
+      delete slots[name$1];
+    }
   }
   return slots
 }
 
 function isWhitespace (node) {
-  return node.isComment || node.text === ' '
+  return (node.isComment && !node.asyncFactory) || node.text === ' '
 }
 
 function resolveScopedSlots (
@@ -125588,6 +126200,10 @@ function lifecycleMixin (Vue) {
     if (vm.$el) {
       vm.$el.__vue__ = null;
     }
+    // release circular reference (#6759)
+    if (vm.$vnode) {
+      vm.$vnode.parent = null;
+    }
   };
 }
 
@@ -125631,12 +126247,12 @@ function mountComponent (
       mark(startTag);
       var vnode = vm._render();
       mark(endTag);
-      measure((name + " render"), startTag, endTag);
+      measure(("vue " + name + " render"), startTag, endTag);
 
       mark(startTag);
       vm._update(vnode, hydrating);
       mark(endTag);
-      measure((name + " patch"), startTag, endTag);
+      measure(("vue " + name + " patch"), startTag, endTag);
     };
   } else {
     updateComponent = function () {
@@ -125644,7 +126260,10 @@ function mountComponent (
     };
   }
 
-  vm._watcher = new Watcher(vm, updateComponent, noop);
+  // we set this to vm._watcher inside the watcher's constructor
+  // since the watcher's initial patch may call $forceUpdate (e.g. inside child
+  // component's mounted hook), which relies on vm._watcher being already defined
+  new Watcher(vm, updateComponent, noop, null, true /* isRenderWatcher */);
   hydrating = false;
 
   // manually mounted instance, call mounted on self
@@ -125931,9 +126550,13 @@ var Watcher = function Watcher (
   vm,
   expOrFn,
   cb,
-  options
+  options,
+  isRenderWatcher
 ) {
   this.vm = vm;
+  if (isRenderWatcher) {
+    vm._watcher = this;
+  }
   vm._watchers.push(this);
   // options
   if (options) {
@@ -126127,40 +126750,6 @@ Watcher.prototype.teardown = function teardown () {
   }
 };
 
-/**
- * Recursively traverse an object to evoke all converted
- * getters, so that every nested property inside the object
- * is collected as a "deep" dependency.
- */
-var seenObjects = new _Set();
-function traverse (val) {
-  seenObjects.clear();
-  _traverse(val, seenObjects);
-}
-
-function _traverse (val, seen) {
-  var i, keys;
-  var isA = Array.isArray(val);
-  if ((!isA && !isObject(val)) || !Object.isExtensible(val)) {
-    return
-  }
-  if (val.__ob__) {
-    var depId = val.__ob__.dep.id;
-    if (seen.has(depId)) {
-      return
-    }
-    seen.add(depId);
-  }
-  if (isA) {
-    i = val.length;
-    while (i--) { _traverse(val[i], seen); }
-  } else {
-    keys = Object.keys(val);
-    i = keys.length;
-    while (i--) { _traverse(val[keys[i]], seen); }
-  }
-}
-
 /*  */
 
 var sharedPropertyDefinition = {
@@ -126196,16 +126785,6 @@ function initState (vm) {
   }
 }
 
-function checkOptionType (vm, name) {
-  var option = vm.$options[name];
-  if (!isPlainObject(option)) {
-    warn(
-      ("component option \"" + name + "\" should be an object."),
-      vm
-    );
-  }
-}
-
 function initProps (vm, propsOptions) {
   var propsData = vm.$options.propsData || {};
   var props = vm._props = {};
@@ -126220,13 +126799,15 @@ function initProps (vm, propsOptions) {
     var value = validateProp(key, propsOptions, propsData, vm);
     /* istanbul ignore else */
     if (true) {
-      if (isReservedAttribute(key) || config.isReservedAttr(key)) {
+      var hyphenatedKey = hyphenate(key);
+      if (isReservedAttribute(hyphenatedKey) ||
+          config.isReservedAttr(hyphenatedKey)) {
         warn(
-          ("\"" + key + "\" is a reserved attribute and cannot be used as component prop."),
+          ("\"" + hyphenatedKey + "\" is a reserved attribute and cannot be used as component prop."),
           vm
         );
       }
-      defineReactive$$1(props, key, value, function () {
+      defineReactive(props, key, value, function () {
         if (vm.$parent && !isUpdatingChildComponent) {
           warn(
             "Avoid mutating a prop directly since the value will be " +
@@ -126238,7 +126819,7 @@ function initProps (vm, propsOptions) {
         }
       });
     } else {
-      defineReactive$$1(props, key, value);
+      defineReactive(props, key, value);
     }
     // static props are already proxied on the component's prototype
     // during Vue.extend(). We only need to proxy props defined at
@@ -126296,7 +126877,7 @@ function initData (vm) {
 
 function getData (data, vm) {
   try {
-    return data.call(vm)
+    return data.call(vm, vm)
   } catch (e) {
     handleError(e, vm, "data()");
     return {}
@@ -126306,7 +126887,7 @@ function getData (data, vm) {
 var computedWatcherOptions = { lazy: true };
 
 function initComputed (vm, computed) {
-  "development" !== 'production' && checkOptionType(vm, 'computed');
+  // $flow-disable-line
   var watchers = vm._computedWatchers = Object.create(null);
   // computed properties are just getters during SSR
   var isSSR = isServerRendering();
@@ -126395,7 +126976,6 @@ function createComputedGetter (key) {
 }
 
 function initMethods (vm, methods) {
-  "development" !== 'production' && checkOptionType(vm, 'methods');
   var props = vm.$options.props;
   for (var key in methods) {
     if (true) {
@@ -126424,7 +127004,6 @@ function initMethods (vm, methods) {
 }
 
 function initWatch (vm, watch) {
-  "development" !== 'production' && checkOptionType(vm, 'watch');
   for (var key in watch) {
     var handler = watch[key];
     if (Array.isArray(handler)) {
@@ -126518,7 +127097,7 @@ function initInjections (vm) {
     Object.keys(result).forEach(function (key) {
       /* istanbul ignore else */
       if (true) {
-        defineReactive$$1(vm, key, result[key], function () {
+        defineReactive(vm, key, result[key], function () {
           warn(
             "Avoid mutating an injected value directly since the changes will be " +
             "overwritten whenever the provided component re-renders. " +
@@ -126527,7 +127106,7 @@ function initInjections (vm) {
           );
         });
       } else {
-        defineReactive$$1(vm, key, result[key]);
+        defineReactive(vm, key, result[key]);
       }
     });
     observerState.shouldConvert = true;
@@ -126539,15 +127118,15 @@ function resolveInject (inject, vm) {
     // inject is :any because flow is not smart enough to figure out cached
     var result = Object.create(null);
     var keys = hasSymbol
-        ? Reflect.ownKeys(inject).filter(function (key) {
-          /* istanbul ignore next */
-          return Object.getOwnPropertyDescriptor(inject, key).enumerable
-        })
-        : Object.keys(inject);
+      ? Reflect.ownKeys(inject).filter(function (key) {
+        /* istanbul ignore next */
+        return Object.getOwnPropertyDescriptor(inject, key).enumerable
+      })
+      : Object.keys(inject);
 
     for (var i = 0; i < keys.length; i++) {
       var key = keys[i];
-      var provideKey = inject[key];
+      var provideKey = inject[key].from;
       var source = vm;
       while (source) {
         if (source._provided && provideKey in source._provided) {
@@ -126556,8 +127135,15 @@ function resolveInject (inject, vm) {
         }
         source = source.$parent;
       }
-      if ("development" !== 'production' && !source) {
-        warn(("Injection \"" + key + "\" not found"), vm);
+      if (!source) {
+        if ('default' in inject[key]) {
+          var provideDefault = inject[key].default;
+          result[key] = typeof provideDefault === 'function'
+            ? provideDefault.call(vm)
+            : provideDefault;
+        } else if (true) {
+          warn(("Injection \"" + key + "\" not found"), vm);
+        }
       }
     }
     return result
@@ -126566,15 +127152,338 @@ function resolveInject (inject, vm) {
 
 /*  */
 
+/**
+ * Runtime helper for rendering v-for lists.
+ */
+function renderList (
+  val,
+  render
+) {
+  var ret, i, l, keys, key;
+  if (Array.isArray(val) || typeof val === 'string') {
+    ret = new Array(val.length);
+    for (i = 0, l = val.length; i < l; i++) {
+      ret[i] = render(val[i], i);
+    }
+  } else if (typeof val === 'number') {
+    ret = new Array(val);
+    for (i = 0; i < val; i++) {
+      ret[i] = render(i + 1, i);
+    }
+  } else if (isObject(val)) {
+    keys = Object.keys(val);
+    ret = new Array(keys.length);
+    for (i = 0, l = keys.length; i < l; i++) {
+      key = keys[i];
+      ret[i] = render(val[key], key, i);
+    }
+  }
+  if (isDef(ret)) {
+    (ret)._isVList = true;
+  }
+  return ret
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering <slot>
+ */
+function renderSlot (
+  name,
+  fallback,
+  props,
+  bindObject
+) {
+  var scopedSlotFn = this.$scopedSlots[name];
+  var nodes;
+  if (scopedSlotFn) { // scoped slot
+    props = props || {};
+    if (bindObject) {
+      if ("development" !== 'production' && !isObject(bindObject)) {
+        warn(
+          'slot v-bind without argument expects an Object',
+          this
+        );
+      }
+      props = extend(extend({}, bindObject), props);
+    }
+    nodes = scopedSlotFn(props) || fallback;
+  } else {
+    var slotNodes = this.$slots[name];
+    // warn duplicate slot usage
+    if (slotNodes) {
+      if ("development" !== 'production' && slotNodes._rendered) {
+        warn(
+          "Duplicate presence of slot \"" + name + "\" found in the same render tree " +
+          "- this will likely cause render errors.",
+          this
+        );
+      }
+      slotNodes._rendered = true;
+    }
+    nodes = slotNodes || fallback;
+  }
+
+  var target = props && props.slot;
+  if (target) {
+    return this.$createElement('template', { slot: target }, nodes)
+  } else {
+    return nodes
+  }
+}
+
+/*  */
+
+/**
+ * Runtime helper for resolving filters
+ */
+function resolveFilter (id) {
+  return resolveAsset(this.$options, 'filters', id, true) || identity
+}
+
+/*  */
+
+/**
+ * Runtime helper for checking keyCodes from config.
+ * exposed as Vue.prototype._k
+ * passing in eventKeyName as last argument separately for backwards compat
+ */
+function checkKeyCodes (
+  eventKeyCode,
+  key,
+  builtInAlias,
+  eventKeyName
+) {
+  var keyCodes = config.keyCodes[key] || builtInAlias;
+  if (keyCodes) {
+    if (Array.isArray(keyCodes)) {
+      return keyCodes.indexOf(eventKeyCode) === -1
+    } else {
+      return keyCodes !== eventKeyCode
+    }
+  } else if (eventKeyName) {
+    return hyphenate(eventKeyName) !== key
+  }
+}
+
+/*  */
+
+/**
+ * Runtime helper for merging v-bind="object" into a VNode's data.
+ */
+function bindObjectProps (
+  data,
+  tag,
+  value,
+  asProp,
+  isSync
+) {
+  if (value) {
+    if (!isObject(value)) {
+      "development" !== 'production' && warn(
+        'v-bind without argument expects an Object or Array value',
+        this
+      );
+    } else {
+      if (Array.isArray(value)) {
+        value = toObject(value);
+      }
+      var hash;
+      var loop = function ( key ) {
+        if (
+          key === 'class' ||
+          key === 'style' ||
+          isReservedAttribute(key)
+        ) {
+          hash = data;
+        } else {
+          var type = data.attrs && data.attrs.type;
+          hash = asProp || config.mustUseProp(tag, type, key)
+            ? data.domProps || (data.domProps = {})
+            : data.attrs || (data.attrs = {});
+        }
+        if (!(key in hash)) {
+          hash[key] = value[key];
+
+          if (isSync) {
+            var on = data.on || (data.on = {});
+            on[("update:" + key)] = function ($event) {
+              value[key] = $event;
+            };
+          }
+        }
+      };
+
+      for (var key in value) loop( key );
+    }
+  }
+  return data
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering static trees.
+ */
+function renderStatic (
+  index,
+  isInFor
+) {
+  var cached = this._staticTrees || (this._staticTrees = []);
+  var tree = cached[index];
+  // if has already-rendered static tree and not inside v-for,
+  // we can reuse the same tree by doing a shallow clone.
+  if (tree && !isInFor) {
+    return Array.isArray(tree)
+      ? cloneVNodes(tree)
+      : cloneVNode(tree)
+  }
+  // otherwise, render a fresh tree.
+  tree = cached[index] = this.$options.staticRenderFns[index].call(
+    this._renderProxy,
+    null,
+    this // for render fns generated for functional component templates
+  );
+  markStatic(tree, ("__static__" + index), false);
+  return tree
+}
+
+/**
+ * Runtime helper for v-once.
+ * Effectively it means marking the node as static with a unique key.
+ */
+function markOnce (
+  tree,
+  index,
+  key
+) {
+  markStatic(tree, ("__once__" + index + (key ? ("_" + key) : "")), true);
+  return tree
+}
+
+function markStatic (
+  tree,
+  key,
+  isOnce
+) {
+  if (Array.isArray(tree)) {
+    for (var i = 0; i < tree.length; i++) {
+      if (tree[i] && typeof tree[i] !== 'string') {
+        markStaticNode(tree[i], (key + "_" + i), isOnce);
+      }
+    }
+  } else {
+    markStaticNode(tree, key, isOnce);
+  }
+}
+
+function markStaticNode (node, key, isOnce) {
+  node.isStatic = true;
+  node.key = key;
+  node.isOnce = isOnce;
+}
+
+/*  */
+
+function bindObjectListeners (data, value) {
+  if (value) {
+    if (!isPlainObject(value)) {
+      "development" !== 'production' && warn(
+        'v-on without argument expects an Object value',
+        this
+      );
+    } else {
+      var on = data.on = data.on ? extend({}, data.on) : {};
+      for (var key in value) {
+        var existing = on[key];
+        var ours = value[key];
+        on[key] = existing ? [].concat(existing, ours) : ours;
+      }
+    }
+  }
+  return data
+}
+
+/*  */
+
+function installRenderHelpers (target) {
+  target._o = markOnce;
+  target._n = toNumber;
+  target._s = toString;
+  target._l = renderList;
+  target._t = renderSlot;
+  target._q = looseEqual;
+  target._i = looseIndexOf;
+  target._m = renderStatic;
+  target._f = resolveFilter;
+  target._k = checkKeyCodes;
+  target._b = bindObjectProps;
+  target._v = createTextVNode;
+  target._e = createEmptyVNode;
+  target._u = resolveScopedSlots;
+  target._g = bindObjectListeners;
+}
+
+/*  */
+
+function FunctionalRenderContext (
+  data,
+  props,
+  children,
+  parent,
+  Ctor
+) {
+  var options = Ctor.options;
+  this.data = data;
+  this.props = props;
+  this.children = children;
+  this.parent = parent;
+  this.listeners = data.on || emptyObject;
+  this.injections = resolveInject(options.inject, parent);
+  this.slots = function () { return resolveSlots(children, parent); };
+
+  // ensure the createElement function in functional components
+  // gets a unique context - this is necessary for correct named slot check
+  var contextVm = Object.create(parent);
+  var isCompiled = isTrue(options._compiled);
+  var needNormalization = !isCompiled;
+
+  // support for compiled functional template
+  if (isCompiled) {
+    // exposing $options for renderStatic()
+    this.$options = options;
+    // pre-resolve slots for renderSlot()
+    this.$slots = this.slots();
+    this.$scopedSlots = data.scopedSlots || emptyObject;
+  }
+
+  if (options._scopeId) {
+    this._c = function (a, b, c, d) {
+      var vnode = createElement(contextVm, a, b, c, d, needNormalization);
+      if (vnode) {
+        vnode.fnScopeId = options._scopeId;
+        vnode.fnContext = parent;
+      }
+      return vnode
+    };
+  } else {
+    this._c = function (a, b, c, d) { return createElement(contextVm, a, b, c, d, needNormalization); };
+  }
+}
+
+installRenderHelpers(FunctionalRenderContext.prototype);
+
 function createFunctionalComponent (
   Ctor,
   propsData,
   data,
-  context,
+  contextVm,
   children
 ) {
+  var options = Ctor.options;
   var props = {};
-  var propOptions = Ctor.options.props;
+  var propOptions = options.props;
   if (isDef(propOptions)) {
     for (var key in propOptions) {
       props[key] = validateProp(key, propOptions, propsData || emptyObject);
@@ -126583,26 +127492,25 @@ function createFunctionalComponent (
     if (isDef(data.attrs)) { mergeProps(props, data.attrs); }
     if (isDef(data.props)) { mergeProps(props, data.props); }
   }
-  // ensure the createElement function in functional components
-  // gets a unique context - this is necessary for correct named slot check
-  var _context = Object.create(context);
-  var h = function (a, b, c, d) { return createElement(_context, a, b, c, d, true); };
-  var vnode = Ctor.options.render.call(null, h, {
-    data: data,
-    props: props,
-    children: children,
-    parent: context,
-    listeners: data.on || emptyObject,
-    injections: resolveInject(Ctor.options.inject, context),
-    slots: function () { return resolveSlots(children, context); }
-  });
+
+  var renderContext = new FunctionalRenderContext(
+    data,
+    props,
+    children,
+    contextVm,
+    Ctor
+  );
+
+  var vnode = options.render.call(null, renderContext._c, renderContext);
+
   if (vnode instanceof VNode) {
-    vnode.functionalContext = context;
-    vnode.functionalOptions = Ctor.options;
+    vnode.fnContext = contextVm;
+    vnode.fnOptions = options;
     if (data.slot) {
       (vnode.data || (vnode.data = {})).slot = data.slot;
     }
   }
+
   return vnode
 }
 
@@ -126611,6 +127519,25 @@ function mergeProps (to, from) {
     to[camelize(key)] = from[key];
   }
 }
+
+/*  */
+
+
+
+
+// Register the component hook to weex native render engine.
+// The hook will be triggered by native, not javascript.
+
+
+// Updates the state of the component to weex native render engine.
+
+/*  */
+
+// https://github.com/Hanks10100/weex-native-directive/tree/master/component
+
+// listening on native callback
+
+/*  */
 
 /*  */
 
@@ -126779,6 +127706,11 @@ function createComponent (
     { Ctor: Ctor, propsData: propsData, listeners: listeners, tag: tag, children: children },
     asyncFactory
   );
+
+  // Weex specific: invoke recycle-list optimized @render function for
+  // extracting cell-slot template.
+  // https://github.com/Hanks10100/weex-native-directive/tree/master/component
+  /* istanbul ignore if */
   return vnode
 }
 
@@ -126788,15 +127720,10 @@ function createComponentInstanceForVnode (
   parentElm,
   refElm
 ) {
-  var vnodeComponentOptions = vnode.componentOptions;
   var options = {
     _isComponent: true,
     parent: parent,
-    propsData: vnodeComponentOptions.propsData,
-    _componentTag: vnodeComponentOptions.tag,
     _parentVnode: vnode,
-    _parentListeners: vnodeComponentOptions.listeners,
-    _renderChildren: vnodeComponentOptions.children,
     _parentElm: parentElm || null,
     _refElm: refElm || null
   };
@@ -126806,7 +127733,7 @@ function createComponentInstanceForVnode (
     options.render = inlineTemplate.render;
     options.staticRenderFns = inlineTemplate.staticRenderFns;
   }
-  return new vnodeComponentOptions.Ctor(options)
+  return new vnode.componentOptions.Ctor(options)
 }
 
 function mergeHooks (data) {
@@ -126894,11 +127821,13 @@ function _createElement (
   if ("development" !== 'production' &&
     isDef(data) && isDef(data.key) && !isPrimitive(data.key)
   ) {
-    warn(
-      'Avoid using non-primitive value as key, ' +
-      'use string/number value instead.',
-      context
-    );
+    {
+      warn(
+        'Avoid using non-primitive value as key, ' +
+        'use string/number value instead.',
+        context
+      );
+    }
   }
   // support single function children as default scoped slot
   if (Array.isArray(children) &&
@@ -126947,258 +127876,32 @@ function _createElement (
   }
 }
 
-function applyNS (vnode, ns) {
+function applyNS (vnode, ns, force) {
   vnode.ns = ns;
   if (vnode.tag === 'foreignObject') {
     // use default namespace inside foreignObject
-    return
+    ns = undefined;
+    force = true;
   }
   if (isDef(vnode.children)) {
     for (var i = 0, l = vnode.children.length; i < l; i++) {
       var child = vnode.children[i];
-      if (isDef(child.tag) && isUndef(child.ns)) {
-        applyNS(child, ns);
+      if (isDef(child.tag) && (isUndef(child.ns) || isTrue(force))) {
+        applyNS(child, ns, force);
       }
     }
   }
-}
-
-/*  */
-
-/**
- * Runtime helper for rendering v-for lists.
- */
-function renderList (
-  val,
-  render
-) {
-  var ret, i, l, keys, key;
-  if (Array.isArray(val) || typeof val === 'string') {
-    ret = new Array(val.length);
-    for (i = 0, l = val.length; i < l; i++) {
-      ret[i] = render(val[i], i);
-    }
-  } else if (typeof val === 'number') {
-    ret = new Array(val);
-    for (i = 0; i < val; i++) {
-      ret[i] = render(i + 1, i);
-    }
-  } else if (isObject(val)) {
-    keys = Object.keys(val);
-    ret = new Array(keys.length);
-    for (i = 0, l = keys.length; i < l; i++) {
-      key = keys[i];
-      ret[i] = render(val[key], key, i);
-    }
-  }
-  if (isDef(ret)) {
-    (ret)._isVList = true;
-  }
-  return ret
-}
-
-/*  */
-
-/**
- * Runtime helper for rendering <slot>
- */
-function renderSlot (
-  name,
-  fallback,
-  props,
-  bindObject
-) {
-  var scopedSlotFn = this.$scopedSlots[name];
-  if (scopedSlotFn) { // scoped slot
-    props = props || {};
-    if (bindObject) {
-      props = extend(extend({}, bindObject), props);
-    }
-    return scopedSlotFn(props) || fallback
-  } else {
-    var slotNodes = this.$slots[name];
-    // warn duplicate slot usage
-    if (slotNodes && "development" !== 'production') {
-      slotNodes._rendered && warn(
-        "Duplicate presence of slot \"" + name + "\" found in the same render tree " +
-        "- this will likely cause render errors.",
-        this
-      );
-      slotNodes._rendered = true;
-    }
-    return slotNodes || fallback
-  }
-}
-
-/*  */
-
-/**
- * Runtime helper for resolving filters
- */
-function resolveFilter (id) {
-  return resolveAsset(this.$options, 'filters', id, true) || identity
-}
-
-/*  */
-
-/**
- * Runtime helper for checking keyCodes from config.
- */
-function checkKeyCodes (
-  eventKeyCode,
-  key,
-  builtInAlias
-) {
-  var keyCodes = config.keyCodes[key] || builtInAlias;
-  if (Array.isArray(keyCodes)) {
-    return keyCodes.indexOf(eventKeyCode) === -1
-  } else {
-    return keyCodes !== eventKeyCode
-  }
-}
-
-/*  */
-
-/**
- * Runtime helper for merging v-bind="object" into a VNode's data.
- */
-function bindObjectProps (
-  data,
-  tag,
-  value,
-  asProp,
-  isSync
-) {
-  if (value) {
-    if (!isObject(value)) {
-      "development" !== 'production' && warn(
-        'v-bind without argument expects an Object or Array value',
-        this
-      );
-    } else {
-      if (Array.isArray(value)) {
-        value = toObject(value);
-      }
-      var hash;
-      var loop = function ( key ) {
-        if (
-          key === 'class' ||
-          key === 'style' ||
-          isReservedAttribute(key)
-        ) {
-          hash = data;
-        } else {
-          var type = data.attrs && data.attrs.type;
-          hash = asProp || config.mustUseProp(tag, type, key)
-            ? data.domProps || (data.domProps = {})
-            : data.attrs || (data.attrs = {});
-        }
-        if (!(key in hash)) {
-          hash[key] = value[key];
-
-          if (isSync) {
-            var on = data.on || (data.on = {});
-            on[("update:" + key)] = function ($event) {
-              value[key] = $event;
-            };
-          }
-        }
-      };
-
-      for (var key in value) loop( key );
-    }
-  }
-  return data
-}
-
-/*  */
-
-/**
- * Runtime helper for rendering static trees.
- */
-function renderStatic (
-  index,
-  isInFor
-) {
-  var tree = this._staticTrees[index];
-  // if has already-rendered static tree and not inside v-for,
-  // we can reuse the same tree by doing a shallow clone.
-  if (tree && !isInFor) {
-    return Array.isArray(tree)
-      ? cloneVNodes(tree)
-      : cloneVNode(tree)
-  }
-  // otherwise, render a fresh tree.
-  tree = this._staticTrees[index] =
-    this.$options.staticRenderFns[index].call(this._renderProxy);
-  markStatic(tree, ("__static__" + index), false);
-  return tree
-}
-
-/**
- * Runtime helper for v-once.
- * Effectively it means marking the node as static with a unique key.
- */
-function markOnce (
-  tree,
-  index,
-  key
-) {
-  markStatic(tree, ("__once__" + index + (key ? ("_" + key) : "")), true);
-  return tree
-}
-
-function markStatic (
-  tree,
-  key,
-  isOnce
-) {
-  if (Array.isArray(tree)) {
-    for (var i = 0; i < tree.length; i++) {
-      if (tree[i] && typeof tree[i] !== 'string') {
-        markStaticNode(tree[i], (key + "_" + i), isOnce);
-      }
-    }
-  } else {
-    markStaticNode(tree, key, isOnce);
-  }
-}
-
-function markStaticNode (node, key, isOnce) {
-  node.isStatic = true;
-  node.key = key;
-  node.isOnce = isOnce;
-}
-
-/*  */
-
-function bindObjectListeners (data, value) {
-  if (value) {
-    if (!isPlainObject(value)) {
-      "development" !== 'production' && warn(
-        'v-on without argument expects an Object value',
-        this
-      );
-    } else {
-      var on = data.on = data.on ? extend({}, data.on) : {};
-      for (var key in value) {
-        var existing = on[key];
-        var ours = value[key];
-        on[key] = existing ? [].concat(ours, existing) : ours;
-      }
-    }
-  }
-  return data
 }
 
 /*  */
 
 function initRender (vm) {
   vm._vnode = null; // the root of the child tree
-  vm._staticTrees = null;
-  var parentVnode = vm.$vnode = vm.$options._parentVnode; // the placeholder node in parent tree
+  vm._staticTrees = null; // v-once cached trees
+  var options = vm.$options;
+  var parentVnode = vm.$vnode = options._parentVnode; // the placeholder node in parent tree
   var renderContext = parentVnode && parentVnode.context;
-  vm.$slots = resolveSlots(vm.$options._renderChildren, renderContext);
+  vm.$slots = resolveSlots(options._renderChildren, renderContext);
   vm.$scopedSlots = emptyObject;
   // bind the createElement fn to this instance
   // so that we get proper render context inside it.
@@ -127215,19 +127918,22 @@ function initRender (vm) {
 
   /* istanbul ignore else */
   if (true) {
-    defineReactive$$1(vm, '$attrs', parentData && parentData.attrs || emptyObject, function () {
+    defineReactive(vm, '$attrs', parentData && parentData.attrs || emptyObject, function () {
       !isUpdatingChildComponent && warn("$attrs is readonly.", vm);
     }, true);
-    defineReactive$$1(vm, '$listeners', vm.$options._parentListeners || emptyObject, function () {
+    defineReactive(vm, '$listeners', options._parentListeners || emptyObject, function () {
       !isUpdatingChildComponent && warn("$listeners is readonly.", vm);
     }, true);
   } else {
-    defineReactive$$1(vm, '$attrs', parentData && parentData.attrs || emptyObject, null, true);
-    defineReactive$$1(vm, '$listeners', vm.$options._parentListeners || emptyObject, null, true);
+    defineReactive(vm, '$attrs', parentData && parentData.attrs || emptyObject, null, true);
+    defineReactive(vm, '$listeners', options._parentListeners || emptyObject, null, true);
   }
 }
 
 function renderMixin (Vue) {
+  // install runtime convenience helpers
+  installRenderHelpers(Vue.prototype);
+
   Vue.prototype.$nextTick = function (fn) {
     return nextTick(fn, this)
   };
@@ -127236,7 +127942,6 @@ function renderMixin (Vue) {
     var vm = this;
     var ref = vm.$options;
     var render = ref.render;
-    var staticRenderFns = ref.staticRenderFns;
     var _parentVnode = ref._parentVnode;
 
     if (vm._isMounted) {
@@ -127244,7 +127949,9 @@ function renderMixin (Vue) {
       // last render. They need to be cloned to ensure "freshness" for this render.
       for (var key in vm.$slots) {
         var slot = vm.$slots[key];
-        if (slot._rendered) {
+        // _rendered is a flag added by renderSlot, but may not be present
+        // if the slot is passed from manually written render functions
+        if (slot._rendered || (slot[0] && slot[0].elm)) {
           vm.$slots[key] = cloneVNodes(slot, true /* deep */);
         }
       }
@@ -127252,9 +127959,6 @@ function renderMixin (Vue) {
 
     vm.$scopedSlots = (_parentVnode && _parentVnode.data.scopedSlots) || emptyObject;
 
-    if (staticRenderFns && !vm._staticTrees) {
-      vm._staticTrees = [];
-    }
     // set parent vnode. this allows render functions to have access
     // to the data on the placeholder node.
     vm.$vnode = _parentVnode;
@@ -127263,14 +127967,21 @@ function renderMixin (Vue) {
     try {
       vnode = render.call(vm._renderProxy, vm.$createElement);
     } catch (e) {
-      handleError(e, vm, "render function");
+      handleError(e, vm, "render");
       // return error render result,
       // or previous vnode to prevent render error causing blank component
       /* istanbul ignore else */
       if (true) {
-        vnode = vm.$options.renderError
-          ? vm.$options.renderError.call(vm._renderProxy, vm.$createElement, e)
-          : vm._vnode;
+        if (vm.$options.renderError) {
+          try {
+            vnode = vm.$options.renderError.call(vm._renderProxy, vm.$createElement, e);
+          } catch (e) {
+            handleError(e, vm, "renderError");
+            vnode = vm._vnode;
+          }
+        } else {
+          vnode = vm._vnode;
+        }
       } else {
         vnode = vm._vnode;
       }
@@ -127290,25 +128001,6 @@ function renderMixin (Vue) {
     vnode.parent = _parentVnode;
     return vnode
   };
-
-  // internal render helpers.
-  // these are exposed on the instance prototype to reduce generated render
-  // code size.
-  Vue.prototype._o = markOnce;
-  Vue.prototype._n = toNumber;
-  Vue.prototype._s = toString;
-  Vue.prototype._l = renderList;
-  Vue.prototype._t = renderSlot;
-  Vue.prototype._q = looseEqual;
-  Vue.prototype._i = looseIndexOf;
-  Vue.prototype._m = renderStatic;
-  Vue.prototype._f = resolveFilter;
-  Vue.prototype._k = checkKeyCodes;
-  Vue.prototype._b = bindObjectProps;
-  Vue.prototype._v = createTextVNode;
-  Vue.prototype._e = createEmptyVNode;
-  Vue.prototype._u = resolveScopedSlots;
-  Vue.prototype._g = bindObjectListeners;
 }
 
 /*  */
@@ -127324,7 +128016,7 @@ function initMixin (Vue) {
     var startTag, endTag;
     /* istanbul ignore if */
     if ("development" !== 'production' && config.performance && mark) {
-      startTag = "vue-perf-init:" + (vm._uid);
+      startTag = "vue-perf-start:" + (vm._uid);
       endTag = "vue-perf-end:" + (vm._uid);
       mark(startTag);
     }
@@ -127365,7 +128057,7 @@ function initMixin (Vue) {
     if ("development" !== 'production' && config.performance && mark) {
       vm._name = formatComponentName(vm, false);
       mark(endTag);
-      measure(((vm._name) + " init"), startTag, endTag);
+      measure(("vue " + (vm._name) + " init"), startTag, endTag);
     }
 
     if (vm.$options.el) {
@@ -127377,14 +128069,18 @@ function initMixin (Vue) {
 function initInternalComponent (vm, options) {
   var opts = vm.$options = Object.create(vm.constructor.options);
   // doing this because it's faster than dynamic enumeration.
+  var parentVnode = options._parentVnode;
   opts.parent = options.parent;
-  opts.propsData = options.propsData;
-  opts._parentVnode = options._parentVnode;
-  opts._parentListeners = options._parentListeners;
-  opts._renderChildren = options._renderChildren;
-  opts._componentTag = options._componentTag;
+  opts._parentVnode = parentVnode;
   opts._parentElm = options._parentElm;
   opts._refElm = options._refElm;
+
+  var vnodeComponentOptions = parentVnode.componentOptions;
+  opts.propsData = vnodeComponentOptions.propsData;
+  opts._parentListeners = vnodeComponentOptions.listeners;
+  opts._renderChildren = vnodeComponentOptions.children;
+  opts._componentTag = vnodeComponentOptions.tag;
+
   if (options.render) {
     opts.render = options.render;
     opts.staticRenderFns = options.staticRenderFns;
@@ -127518,14 +128214,8 @@ function initExtend (Vue) {
     }
 
     var name = extendOptions.name || Super.options.name;
-    if (true) {
-      if (!/^[a-zA-Z][\w-]*$/.test(name)) {
-        warn(
-          'Invalid component name: "' + name + '". Component names ' +
-          'can only contain alphanumeric characters and the hyphen, ' +
-          'and must start with a letter.'
-        );
-      }
+    if ("development" !== 'production' && name) {
+      validateComponentName(name);
     }
 
     var Sub = function VueComponent (options) {
@@ -127607,13 +128297,8 @@ function initAssetRegisters (Vue) {
         return this.options[type + 's'][id]
       } else {
         /* istanbul ignore if */
-        if (true) {
-          if (type === 'component' && config.isReservedTag(id)) {
-            warn(
-              'Do not use built-in or reserved HTML elements as component ' +
-              'id: ' + id
-            );
-          }
+        if ("development" !== 'production' && type === 'component') {
+          validateComponentName(id);
         }
         if (type === 'component' && isPlainObject(definition)) {
           definition.name = definition.name || id;
@@ -127631,8 +128316,6 @@ function initAssetRegisters (Vue) {
 
 /*  */
 
-var patternTypes = [String, RegExp, Array];
-
 function getComponentName (opts) {
   return opts && (opts.Ctor.options.name || opts.tag)
 }
@@ -127649,26 +128332,36 @@ function matches (pattern, name) {
   return false
 }
 
-function pruneCache (cache, current, filter) {
+function pruneCache (keepAliveInstance, filter) {
+  var cache = keepAliveInstance.cache;
+  var keys = keepAliveInstance.keys;
+  var _vnode = keepAliveInstance._vnode;
   for (var key in cache) {
     var cachedNode = cache[key];
     if (cachedNode) {
       var name = getComponentName(cachedNode.componentOptions);
       if (name && !filter(name)) {
-        if (cachedNode !== current) {
-          pruneCacheEntry(cachedNode);
-        }
-        cache[key] = null;
+        pruneCacheEntry(cache, key, keys, _vnode);
       }
     }
   }
 }
 
-function pruneCacheEntry (vnode) {
-  if (vnode) {
-    vnode.componentInstance.$destroy();
+function pruneCacheEntry (
+  cache,
+  key,
+  keys,
+  current
+) {
+  var cached$$1 = cache[key];
+  if (cached$$1 && (!current || cached$$1.tag !== current.tag)) {
+    cached$$1.componentInstance.$destroy();
   }
+  cache[key] = null;
+  remove(keys, key);
 }
+
+var patternTypes = [String, RegExp, Array];
 
 var KeepAlive = {
   name: 'keep-alive',
@@ -127676,55 +128369,76 @@ var KeepAlive = {
 
   props: {
     include: patternTypes,
-    exclude: patternTypes
+    exclude: patternTypes,
+    max: [String, Number]
   },
 
   created: function created () {
     this.cache = Object.create(null);
+    this.keys = [];
   },
 
   destroyed: function destroyed () {
     var this$1 = this;
 
     for (var key in this$1.cache) {
-      pruneCacheEntry(this$1.cache[key]);
+      pruneCacheEntry(this$1.cache, key, this$1.keys);
     }
   },
 
   watch: {
     include: function include (val) {
-      pruneCache(this.cache, this._vnode, function (name) { return matches(val, name); });
+      pruneCache(this, function (name) { return matches(val, name); });
     },
     exclude: function exclude (val) {
-      pruneCache(this.cache, this._vnode, function (name) { return !matches(val, name); });
+      pruneCache(this, function (name) { return !matches(val, name); });
     }
   },
 
   render: function render () {
-    var vnode = getFirstComponentChild(this.$slots.default);
+    var slot = this.$slots.default;
+    var vnode = getFirstComponentChild(slot);
     var componentOptions = vnode && vnode.componentOptions;
     if (componentOptions) {
       // check pattern
       var name = getComponentName(componentOptions);
-      if (name && (
-        (this.include && !matches(this.include, name)) ||
-        (this.exclude && matches(this.exclude, name))
-      )) {
+      var ref = this;
+      var include = ref.include;
+      var exclude = ref.exclude;
+      if (
+        // not included
+        (include && (!name || !matches(include, name))) ||
+        // excluded
+        (exclude && name && matches(exclude, name))
+      ) {
         return vnode
       }
+
+      var ref$1 = this;
+      var cache = ref$1.cache;
+      var keys = ref$1.keys;
       var key = vnode.key == null
         // same constructor may get registered as different local components
         // so cid alone is not enough (#3269)
         ? componentOptions.Ctor.cid + (componentOptions.tag ? ("::" + (componentOptions.tag)) : '')
         : vnode.key;
-      if (this.cache[key]) {
-        vnode.componentInstance = this.cache[key].componentInstance;
+      if (cache[key]) {
+        vnode.componentInstance = cache[key].componentInstance;
+        // make current key freshest
+        remove(keys, key);
+        keys.push(key);
       } else {
-        this.cache[key] = vnode;
+        cache[key] = vnode;
+        keys.push(key);
+        // prune oldest entry
+        if (this.max && keys.length > parseInt(this.max)) {
+          pruneCacheEntry(cache, keys[0], keys, this._vnode);
+        }
       }
+
       vnode.data.keepAlive = true;
     }
-    return vnode
+    return vnode || (slot && slot[0])
   }
 };
 
@@ -127754,7 +128468,7 @@ function initGlobalAPI (Vue) {
     warn: warn,
     extend: extend,
     mergeOptions: mergeOptions,
-    defineReactive: defineReactive$$1
+    defineReactive: defineReactive
   };
 
   Vue.set = set;
@@ -127791,7 +128505,7 @@ Object.defineProperty(Vue$3.prototype, '$ssrContext', {
   }
 });
 
-Vue$3.version = '2.4.4';
+Vue$3.version = '2.5.13';
 
 /*  */
 
@@ -127843,12 +128557,12 @@ function genClassForVnode (vnode) {
   var childNode = vnode;
   while (isDef(childNode.componentInstance)) {
     childNode = childNode.componentInstance._vnode;
-    if (childNode.data) {
+    if (childNode && childNode.data) {
       data = mergeClassData(childNode.data, data);
     }
   }
   while (isDef(parentNode = parentNode.parent)) {
-    if (parentNode.data) {
+    if (parentNode && parentNode.data) {
       data = mergeClassData(data, parentNode.data);
     }
   }
@@ -128201,13 +128915,13 @@ function createPatchFunction (backend) {
   }
 
   function createRmCb (childElm, listeners) {
-    function remove$$1 () {
-      if (--remove$$1.listeners === 0) {
+    function remove () {
+      if (--remove.listeners === 0) {
         removeNode(childElm);
       }
     }
-    remove$$1.listeners = listeners;
-    return remove$$1
+    remove.listeners = listeners;
+    return remove
   }
 
   function removeNode (el) {
@@ -128218,7 +128932,23 @@ function createPatchFunction (backend) {
     }
   }
 
-  var inPre = 0;
+  function isUnknownElement$$1 (vnode, inVPre) {
+    return (
+      !inVPre &&
+      !vnode.ns &&
+      !(
+        config.ignoredElements.length &&
+        config.ignoredElements.some(function (ignore) {
+          return isRegExp(ignore)
+            ? ignore.test(vnode.tag)
+            : ignore === vnode.tag
+        })
+      ) &&
+      config.isUnknownElement(vnode.tag)
+    )
+  }
+
+  var creatingElmInVPre = 0;
   function createElm (vnode, insertedVnodeQueue, parentElm, refElm, nested) {
     vnode.isRootInsert = !nested; // for transition enter check
     if (createComponent(vnode, insertedVnodeQueue, parentElm, refElm)) {
@@ -128231,14 +128961,9 @@ function createPatchFunction (backend) {
     if (isDef(tag)) {
       if (true) {
         if (data && data.pre) {
-          inPre++;
+          creatingElmInVPre++;
         }
-        if (
-          !inPre &&
-          !vnode.ns &&
-          !(config.ignoredElements.length && config.ignoredElements.indexOf(tag) > -1) &&
-          config.isUnknownElement(tag)
-        ) {
+        if (isUnknownElement$$1(vnode, creatingElmInVPre)) {
           warn(
             'Unknown custom element: <' + tag + '> - did you ' +
             'register the component correctly? For recursive components, ' +
@@ -128262,7 +128987,7 @@ function createPatchFunction (backend) {
       }
 
       if ("development" !== 'production' && data && data.pre) {
-        inPre--;
+        creatingElmInVPre--;
       }
     } else if (isTrue(vnode.isComment)) {
       vnode.elm = nodeOps.createComment(vnode.text);
@@ -128348,11 +129073,14 @@ function createPatchFunction (backend) {
 
   function createChildren (vnode, children, insertedVnodeQueue) {
     if (Array.isArray(children)) {
+      if (true) {
+        checkDuplicateKeys(children);
+      }
       for (var i = 0; i < children.length; ++i) {
         createElm(children[i], insertedVnodeQueue, vnode.elm, null, true);
       }
     } else if (isPrimitive(vnode.text)) {
-      nodeOps.appendChild(vnode.elm, nodeOps.createTextNode(vnode.text));
+      nodeOps.appendChild(vnode.elm, nodeOps.createTextNode(String(vnode.text)));
     }
   }
 
@@ -128379,16 +129107,21 @@ function createPatchFunction (backend) {
   // of going through the normal attribute patching process.
   function setScope (vnode) {
     var i;
-    var ancestor = vnode;
-    while (ancestor) {
-      if (isDef(i = ancestor.context) && isDef(i = i.$options._scopeId)) {
-        nodeOps.setAttribute(vnode.elm, i, '');
+    if (isDef(i = vnode.fnScopeId)) {
+      nodeOps.setAttribute(vnode.elm, i, '');
+    } else {
+      var ancestor = vnode;
+      while (ancestor) {
+        if (isDef(i = ancestor.context) && isDef(i = i.$options._scopeId)) {
+          nodeOps.setAttribute(vnode.elm, i, '');
+        }
+        ancestor = ancestor.parent;
       }
-      ancestor = ancestor.parent;
     }
     // for slot content they should also get the scopeId from the host instance.
     if (isDef(i = activeInstance) &&
       i !== vnode.context &&
+      i !== vnode.fnContext &&
       isDef(i = i.$options._scopeId)
     ) {
       nodeOps.setAttribute(vnode.elm, i, '');
@@ -128467,12 +129200,16 @@ function createPatchFunction (backend) {
     var newEndIdx = newCh.length - 1;
     var newStartVnode = newCh[0];
     var newEndVnode = newCh[newEndIdx];
-    var oldKeyToIdx, idxInOld, elmToMove, refElm;
+    var oldKeyToIdx, idxInOld, vnodeToMove, refElm;
 
     // removeOnly is a special flag used only by <transition-group>
     // to ensure removed elements stay in correct relative positions
     // during leaving transitions
     var canMove = !removeOnly;
+
+    if (true) {
+      checkDuplicateKeys(newCh);
+    }
 
     while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
       if (isUndef(oldStartVnode)) {
@@ -128505,18 +129242,11 @@ function createPatchFunction (backend) {
         if (isUndef(idxInOld)) { // New element
           createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm);
         } else {
-          elmToMove = oldCh[idxInOld];
-          /* istanbul ignore if */
-          if ("development" !== 'production' && !elmToMove) {
-            warn(
-              'It seems there are duplicate keys that is causing an update error. ' +
-              'Make sure each v-for item has a unique key.'
-            );
-          }
-          if (sameVnode(elmToMove, newStartVnode)) {
-            patchVnode(elmToMove, newStartVnode, insertedVnodeQueue);
+          vnodeToMove = oldCh[idxInOld];
+          if (sameVnode(vnodeToMove, newStartVnode)) {
+            patchVnode(vnodeToMove, newStartVnode, insertedVnodeQueue);
             oldCh[idxInOld] = undefined;
-            canMove && nodeOps.insertBefore(parentElm, elmToMove.elm, oldStartVnode.elm);
+            canMove && nodeOps.insertBefore(parentElm, vnodeToMove.elm, oldStartVnode.elm);
           } else {
             // same key but different element. treat as new element
             createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm);
@@ -128530,6 +129260,24 @@ function createPatchFunction (backend) {
       addVnodes(parentElm, refElm, newCh, newStartIdx, newEndIdx, insertedVnodeQueue);
     } else if (newStartIdx > newEndIdx) {
       removeVnodes(parentElm, oldCh, oldStartIdx, oldEndIdx);
+    }
+  }
+
+  function checkDuplicateKeys (children) {
+    var seenKeys = {};
+    for (var i = 0; i < children.length; i++) {
+      var vnode = children[i];
+      var key = vnode.key;
+      if (isDef(key)) {
+        if (seenKeys[key]) {
+          warn(
+            ("Duplicate keys detected: '" + key + "'. This may cause an update error."),
+            vnode.context
+          );
+        } else {
+          seenKeys[key] = true;
+        }
+      }
     }
   }
 
@@ -128612,27 +129360,32 @@ function createPatchFunction (backend) {
     }
   }
 
-  var bailed = false;
+  var hydrationBailed = false;
   // list of modules that can skip create hook during hydration because they
   // are already rendered on the client or has no need for initialization
-  var isRenderedModule = makeMap('attrs,style,class,staticClass,staticStyle,key');
+  // Note: style is excluded because it relies on initial clone for future
+  // deep updates (#7063).
+  var isRenderedModule = makeMap('attrs,class,staticClass,staticStyle,key');
 
   // Note: this is a browser-only function so we can assume elms are DOM nodes.
-  function hydrate (elm, vnode, insertedVnodeQueue) {
-    if (isTrue(vnode.isComment) && isDef(vnode.asyncFactory)) {
-      vnode.elm = elm;
-      vnode.isAsyncPlaceholder = true;
-      return true
-    }
-    if (true) {
-      if (!assertNodeMatch(elm, vnode)) {
-        return false
-      }
-    }
-    vnode.elm = elm;
+  function hydrate (elm, vnode, insertedVnodeQueue, inVPre) {
+    var i;
     var tag = vnode.tag;
     var data = vnode.data;
     var children = vnode.children;
+    inVPre = inVPre || (data && data.pre);
+    vnode.elm = elm;
+
+    if (isTrue(vnode.isComment) && isDef(vnode.asyncFactory)) {
+      vnode.isAsyncPlaceholder = true;
+      return true
+    }
+    // assert node match
+    if (true) {
+      if (!assertNodeMatch(elm, vnode, inVPre)) {
+        return false
+      }
+    }
     if (isDef(data)) {
       if (isDef(i = data.hook) && isDef(i = i.init)) { i(vnode, true /* hydrating */); }
       if (isDef(i = vnode.componentInstance)) {
@@ -128653,9 +129406,9 @@ function createPatchFunction (backend) {
               /* istanbul ignore if */
               if ("development" !== 'production' &&
                 typeof console !== 'undefined' &&
-                !bailed
+                !hydrationBailed
               ) {
-                bailed = true;
+                hydrationBailed = true;
                 console.warn('Parent: ', elm);
                 console.warn('server innerHTML: ', i);
                 console.warn('client innerHTML: ', elm.innerHTML);
@@ -128667,7 +129420,7 @@ function createPatchFunction (backend) {
             var childrenMatch = true;
             var childNode = elm.firstChild;
             for (var i$1 = 0; i$1 < children.length; i$1++) {
-              if (!childNode || !hydrate(childNode, children[i$1], insertedVnodeQueue)) {
+              if (!childNode || !hydrate(childNode, children[i$1], insertedVnodeQueue, inVPre)) {
                 childrenMatch = false;
                 break
               }
@@ -128679,9 +129432,9 @@ function createPatchFunction (backend) {
               /* istanbul ignore if */
               if ("development" !== 'production' &&
                 typeof console !== 'undefined' &&
-                !bailed
+                !hydrationBailed
               ) {
-                bailed = true;
+                hydrationBailed = true;
                 console.warn('Parent: ', elm);
                 console.warn('Mismatching childNodes vs. VNodes: ', elm.childNodes, children);
               }
@@ -128691,11 +129444,17 @@ function createPatchFunction (backend) {
         }
       }
       if (isDef(data)) {
+        var fullInvoke = false;
         for (var key in data) {
           if (!isRenderedModule(key)) {
+            fullInvoke = true;
             invokeCreateHooks(vnode, insertedVnodeQueue);
             break
           }
+        }
+        if (!fullInvoke && data['class']) {
+          // ensure collecting deps for deep class bindings for future updates
+          traverse(data['class']);
         }
       }
     } else if (elm.data !== vnode.text) {
@@ -128704,10 +129463,10 @@ function createPatchFunction (backend) {
     return true
   }
 
-  function assertNodeMatch (node, vnode) {
+  function assertNodeMatch (node, vnode, inVPre) {
     if (isDef(vnode.tag)) {
-      return (
-        vnode.tag.indexOf('vue-component') === 0 ||
+      return vnode.tag.indexOf('vue-component') === 0 || (
+        !isUnknownElement$$1(vnode, inVPre) &&
         vnode.tag.toLowerCase() === (node.tagName && node.tagName.toLowerCase())
       )
     } else {
@@ -128760,9 +129519,12 @@ function createPatchFunction (backend) {
           // create an empty node and replace it
           oldVnode = emptyNodeAt(oldVnode);
         }
+
         // replacing existing element
         var oldElm = oldVnode.elm;
         var parentElm$1 = nodeOps.parentNode(oldElm);
+
+        // create new node
         createElm(
           vnode,
           insertedVnodeQueue,
@@ -128773,9 +129535,8 @@ function createPatchFunction (backend) {
           nodeOps.nextSibling(oldElm)
         );
 
+        // update parent placeholder node element, recursively
         if (isDef(vnode.parent)) {
-          // component root element replaced.
-          // update parent placeholder node element, recursively
           var ancestor = vnode.parent;
           var patchable = isPatchable(vnode);
           while (ancestor) {
@@ -128797,11 +129558,14 @@ function createPatchFunction (backend) {
                   insert.fns[i$2]();
                 }
               }
+            } else {
+              registerRef(ancestor);
             }
             ancestor = ancestor.parent;
           }
         }
 
+        // destroy old node
         if (isDef(parentElm$1)) {
           removeVnodes(parentElm$1, [oldVnode], 0, 0);
         } else if (isDef(oldVnode.tag)) {
@@ -128867,14 +129631,14 @@ function _update (oldVnode, vnode) {
       }
     };
     if (isCreate) {
-      mergeVNodeHook(vnode.data.hook || (vnode.data.hook = {}), 'insert', callInsert);
+      mergeVNodeHook(vnode, 'insert', callInsert);
     } else {
       callInsert();
     }
   }
 
   if (dirsWithPostpatch.length) {
-    mergeVNodeHook(vnode.data.hook || (vnode.data.hook = {}), 'postpatch', function () {
+    mergeVNodeHook(vnode, 'postpatch', function () {
       for (var i = 0; i < dirsWithPostpatch.length; i++) {
         callHook$1(dirsWithPostpatch[i], 'componentUpdated', vnode, oldVnode);
       }
@@ -128899,17 +129663,20 @@ function normalizeDirectives$1 (
 ) {
   var res = Object.create(null);
   if (!dirs) {
+    // $flow-disable-line
     return res
   }
   var i, dir;
   for (i = 0; i < dirs.length; i++) {
     dir = dirs[i];
     if (!dir.modifiers) {
+      // $flow-disable-line
       dir.modifiers = emptyModifiers;
     }
     res[getRawDirName(dir)] = dir;
     dir.def = resolveAsset(vm.$options, 'directives', dir.name, true);
   }
+  // $flow-disable-line
   return res
 }
 
@@ -128960,8 +129727,9 @@ function updateAttrs (oldVnode, vnode) {
     }
   }
   // #4391: in IE9, setting type can reset value for input[type=radio]
+  // #6666: IE/Edge forces progress value down to 1 before setting a max
   /* istanbul ignore if */
-  if (isIE9 && attrs.value !== oldAttrs.value) {
+  if ((isIE || isEdge) && attrs.value !== oldAttrs.value) {
     setAttr(elm, 'value', attrs.value);
   }
   for (key in oldAttrs) {
@@ -129001,6 +129769,23 @@ function setAttr (el, key, value) {
     if (isFalsyAttrValue(value)) {
       el.removeAttribute(key);
     } else {
+      // #7138: IE10 & 11 fires input event when setting placeholder on
+      // <textarea>... block the first input event and remove the blocker
+      // immediately.
+      /* istanbul ignore if */
+      if (
+        isIE && !isIE9 &&
+        el.tagName === 'TEXTAREA' &&
+        key === 'placeholder' && !el.__ieph
+      ) {
+        var blocker = function (e) {
+          e.stopImmediatePropagation();
+          el.removeEventListener('input', blocker);
+        };
+        el.addEventListener('input', blocker);
+        // $flow-disable-line
+        el.__ieph = true; /* IE placeholder patched */
+      }
       el.setAttribute(key, value);
     }
   }
@@ -129164,10 +129949,18 @@ function pluckModuleFunction (
 
 function addProp (el, name, value) {
   (el.props || (el.props = [])).push({ name: name, value: value });
+  el.plain = false;
 }
 
 function addAttr (el, name, value) {
   (el.attrs || (el.attrs = [])).push({ name: name, value: value });
+  el.plain = false;
+}
+
+// add a raw attr (use this in preTransforms)
+function addRawAttr (el, name, value) {
+  el.attrsMap[name] = value;
+  el.attrsList.push({ name: name, value: value });
 }
 
 function addDirective (
@@ -129179,6 +129972,7 @@ function addDirective (
   modifiers
 ) {
   (el.directives || (el.directives = [])).push({ name: name, rawName: rawName, value: value, arg: arg, modifiers: modifiers });
+  el.plain = false;
 }
 
 function addHandler (
@@ -129189,39 +129983,59 @@ function addHandler (
   important,
   warn
 ) {
+  modifiers = modifiers || emptyObject;
   // warn prevent and passive modifier
   /* istanbul ignore if */
   if (
     "development" !== 'production' && warn &&
-    modifiers && modifiers.prevent && modifiers.passive
+    modifiers.prevent && modifiers.passive
   ) {
     warn(
       'passive and prevent can\'t be used together. ' +
       'Passive handler can\'t prevent default event.'
     );
   }
+
   // check capture modifier
-  if (modifiers && modifiers.capture) {
+  if (modifiers.capture) {
     delete modifiers.capture;
     name = '!' + name; // mark the event as captured
   }
-  if (modifiers && modifiers.once) {
+  if (modifiers.once) {
     delete modifiers.once;
     name = '~' + name; // mark the event as once
   }
   /* istanbul ignore if */
-  if (modifiers && modifiers.passive) {
+  if (modifiers.passive) {
     delete modifiers.passive;
     name = '&' + name; // mark the event as passive
   }
+
+  // normalize click.right and click.middle since they don't actually fire
+  // this is technically browser-specific, but at least for now browsers are
+  // the only target envs that have right/middle clicks.
+  if (name === 'click') {
+    if (modifiers.right) {
+      name = 'contextmenu';
+      delete modifiers.right;
+    } else if (modifiers.middle) {
+      name = 'mouseup';
+    }
+  }
+
   var events;
-  if (modifiers && modifiers.native) {
+  if (modifiers.native) {
     delete modifiers.native;
     events = el.nativeEvents || (el.nativeEvents = {});
   } else {
     events = el.events || (el.events = {});
   }
-  var newHandler = { value: value, modifiers: modifiers };
+
+  var newHandler = { value: value };
+  if (modifiers !== emptyObject) {
+    newHandler.modifiers = modifiers;
+  }
+
   var handlers = events[name];
   /* istanbul ignore if */
   if (Array.isArray(handlers)) {
@@ -129231,6 +130045,8 @@ function addHandler (
   } else {
     events[name] = newHandler;
   }
+
+  el.plain = false;
 }
 
 function getBindingAttr (
@@ -129251,7 +130067,15 @@ function getBindingAttr (
   }
 }
 
-function getAndRemoveAttr (el, name) {
+// note: this only removes the attr from the Array (attrsList) so that it
+// doesn't get processed by processAttrs.
+// By default it does NOT remove it from the map (attrsMap) because the map is
+// needed during codegen.
+function getAndRemoveAttr (
+  el,
+  name,
+  removeFromMap
+) {
   var val;
   if ((val = el.attrsMap[name]) != null) {
     var list = el.attrsList;
@@ -129261,6 +130085,9 @@ function getAndRemoveAttr (el, name) {
         break
       }
     }
+  }
+  if (removeFromMap) {
+    delete el.attrsMap[name];
   }
   return val
 }
@@ -129306,25 +130133,26 @@ function genAssignmentCode (
   value,
   assignment
 ) {
-  var modelRs = parseModel(value);
-  if (modelRs.idx === null) {
+  var res = parseModel(value);
+  if (res.key === null) {
     return (value + "=" + assignment)
   } else {
-    return ("$set(" + (modelRs.exp) + ", " + (modelRs.idx) + ", " + assignment + ")")
+    return ("$set(" + (res.exp) + ", " + (res.key) + ", " + assignment + ")")
   }
 }
 
 /**
- * parse directive model to do the array update transform. a[idx] = val => $$a.splice($$idx, 1, val)
+ * Parse a v-model expression into a base path and a final key segment.
+ * Handles both dot-path and possible square brackets.
  *
- * for loop possible cases:
+ * Possible cases:
  *
  * - test
- * - test[idx]
- * - test[test1[idx]]
- * - test["a"][idx]
- * - xxx.test[a[a].test1[idx]]
- * - test.xxx.a["asa"][test1[idx]]
+ * - test[key]
+ * - test[test1[key]]
+ * - test["a"][key]
+ * - xxx.test[a[a].test1[key]]
+ * - test.xxx.a["asa"][test1[key]]
  *
  */
 
@@ -129335,17 +130163,28 @@ var index$1;
 var expressionPos;
 var expressionEndPos;
 
+
+
 function parseModel (val) {
-  str = val;
-  len = str.length;
-  index$1 = expressionPos = expressionEndPos = 0;
+  len = val.length;
 
   if (val.indexOf('[') < 0 || val.lastIndexOf(']') < len - 1) {
-    return {
-      exp: val,
-      idx: null
+    index$1 = val.lastIndexOf('.');
+    if (index$1 > -1) {
+      return {
+        exp: val.slice(0, index$1),
+        key: '"' + val.slice(index$1 + 1) + '"'
+      }
+    } else {
+      return {
+        exp: val,
+        key: null
+      }
     }
   }
+
+  str = val;
+  index$1 = expressionPos = expressionEndPos = 0;
 
   while (!eof()) {
     chr = next();
@@ -129358,8 +130197,8 @@ function parseModel (val) {
   }
 
   return {
-    exp: val.substring(0, expressionPos),
-    idx: val.substring(expressionPos + 1, expressionEndPos)
+    exp: val.slice(0, expressionPos),
+    key: val.slice(expressionPos + 1, expressionEndPos)
   }
 }
 
@@ -129424,13 +130263,6 @@ function model (
   var type = el.attrsMap.type;
 
   if (true) {
-    var dynamicType = el.attrsMap['v-bind:type'] || el.attrsMap[':type'];
-    if (tag === 'input' && dynamicType) {
-      warn$1(
-        "<input :type=\"" + dynamicType + "\" v-model=\"" + value + "\">:\n" +
-        "v-model does not support dynamic input types. Use v-if branches instead."
-      );
-    }
     // inputs with type="file" are read only and setting the input's
     // value will throw an error.
     if (tag === 'input' && type === 'file') {
@@ -129481,13 +130313,13 @@ function genCheckboxModel (
   var falseValueBinding = getBindingAttr(el, 'false-value') || 'false';
   addProp(el, 'checked',
     "Array.isArray(" + value + ")" +
-      "?_i(" + value + "," + valueBinding + ")>-1" + (
-        trueValueBinding === 'true'
-          ? (":(" + value + ")")
-          : (":_q(" + value + "," + trueValueBinding + ")")
-      )
+    "?_i(" + value + "," + valueBinding + ")>-1" + (
+      trueValueBinding === 'true'
+        ? (":(" + value + ")")
+        : (":_q(" + value + "," + trueValueBinding + ")")
+    )
   );
-  addHandler(el, CHECKBOX_RADIO_TOKEN,
+  addHandler(el, 'change',
     "var $$a=" + value + "," +
         '$$el=$event.target,' +
         "$$c=$$el.checked?(" + trueValueBinding + "):(" + falseValueBinding + ");" +
@@ -129502,21 +130334,21 @@ function genCheckboxModel (
 }
 
 function genRadioModel (
-    el,
-    value,
-    modifiers
+  el,
+  value,
+  modifiers
 ) {
   var number = modifiers && modifiers.number;
   var valueBinding = getBindingAttr(el, 'value') || 'null';
   valueBinding = number ? ("_n(" + valueBinding + ")") : valueBinding;
   addProp(el, 'checked', ("_q(" + value + "," + valueBinding + ")"));
-  addHandler(el, CHECKBOX_RADIO_TOKEN, genAssignmentCode(value, valueBinding), null, true);
+  addHandler(el, 'change', genAssignmentCode(value, valueBinding), null, true);
 }
 
 function genSelect (
-    el,
-    value,
-    modifiers
+  el,
+  value,
+  modifiers
 ) {
   var number = modifiers && modifiers.number;
   var selectedVal = "Array.prototype.filter" +
@@ -129536,6 +130368,19 @@ function genDefaultModel (
   modifiers
 ) {
   var type = el.attrsMap.type;
+
+  // warn if v-bind:value conflicts with v-model
+  if (true) {
+    var value$1 = el.attrsMap['v-bind:value'] || el.attrsMap[':value'];
+    if (value$1) {
+      var binding = el.attrsMap['v-bind:value'] ? 'v-bind:value' : ':value';
+      warn$1(
+        binding + "=\"" + value$1 + "\" conflicts with v-model on the same element " +
+        'because the latter already expands to a value binding internally'
+      );
+    }
+  }
+
   var ref = modifiers || {};
   var lazy = ref.lazy;
   var number = ref.number;
@@ -129574,23 +130419,33 @@ function genDefaultModel (
 // the whole point is ensuring the v-model callback gets called before
 // user-attached handlers.
 function normalizeEvents (on) {
-  var event;
   /* istanbul ignore if */
   if (isDef(on[RANGE_TOKEN])) {
     // IE input[type=range] only supports `change` event
-    event = isIE ? 'change' : 'input';
+    var event = isIE ? 'change' : 'input';
     on[event] = [].concat(on[RANGE_TOKEN], on[event] || []);
     delete on[RANGE_TOKEN];
   }
+  // This was originally intended to fix #4521 but no longer necessary
+  // after 2.5. Keeping it for backwards compat with generated code from < 2.4
+  /* istanbul ignore if */
   if (isDef(on[CHECKBOX_RADIO_TOKEN])) {
-    // Chrome fires microtasks in between click/change, leads to #4521
-    event = isChrome ? 'click' : 'change';
-    on[event] = [].concat(on[CHECKBOX_RADIO_TOKEN], on[event] || []);
+    on.change = [].concat(on[CHECKBOX_RADIO_TOKEN], on.change || []);
     delete on[CHECKBOX_RADIO_TOKEN];
   }
 }
 
 var target$1;
+
+function createOnceHandler (handler, event, capture) {
+  var _target = target$1; // save current target element in closure
+  return function onceHandler () {
+    var res = handler.apply(null, arguments);
+    if (res !== null) {
+      remove$2(event, onceHandler, capture, _target);
+    }
+  }
+}
 
 function add$1 (
   event,
@@ -129599,18 +130454,8 @@ function add$1 (
   capture,
   passive
 ) {
-  if (once$$1) {
-    var oldHandler = handler;
-    var _target = target$1; // save current target element in closure
-    handler = function (ev) {
-      var res = arguments.length === 1
-        ? oldHandler(ev)
-        : oldHandler.apply(null, arguments);
-      if (res !== null) {
-        remove$2(event, handler, capture, _target);
-      }
-    };
-  }
+  handler = withMacroTask(handler);
+  if (once$$1) { handler = createOnceHandler(handler, event, capture); }
   target$1.addEventListener(
     event,
     handler,
@@ -129626,7 +130471,11 @@ function remove$2 (
   capture,
   _target
 ) {
-  (_target || target$1).removeEventListener(event, handler, capture);
+  (_target || target$1).removeEventListener(
+    event,
+    handler._withTask || handler,
+    capture
+  );
 }
 
 function updateDOMListeners (oldVnode, vnode) {
@@ -129638,6 +130487,7 @@ function updateDOMListeners (oldVnode, vnode) {
   target$1 = vnode.elm;
   normalizeEvents(on);
   updateListeners(on, oldOn, add$1, remove$2, vnode.context);
+  target$1 = undefined;
 }
 
 var events = {
@@ -129673,6 +130523,11 @@ function updateDOMProps (oldVnode, vnode) {
     if (key === 'textContent' || key === 'innerHTML') {
       if (vnode.children) { vnode.children.length = 0; }
       if (cur === oldProps[key]) { continue }
+      // #6601 work around Chrome version <= 55 bug where single textNode
+      // replaced by innerHTML/textContent retains its parentNode property
+      if (elm.childNodes.length === 1) {
+        elm.removeChild(elm.childNodes[0]);
+      }
     }
 
     if (key === 'value') {
@@ -129681,7 +130536,7 @@ function updateDOMProps (oldVnode, vnode) {
       elm._value = cur;
       // avoid resetting cursor position when value is the same
       var strCur = isUndef(cur) ? '' : String(cur);
-      if (shouldUpdateValue(elm, vnode, strCur)) {
+      if (shouldUpdateValue(elm, strCur)) {
         elm.value = strCur;
       }
     } else {
@@ -129693,19 +130548,15 @@ function updateDOMProps (oldVnode, vnode) {
 // check platforms/web/util/attrs.js acceptValue
 
 
-function shouldUpdateValue (
-  elm,
-  vnode,
-  checkVal
-) {
+function shouldUpdateValue (elm, checkVal) {
   return (!elm.composing && (
-    vnode.tag === 'option' ||
-    isDirty(elm, checkVal) ||
-    isInputChanged(elm, checkVal)
+    elm.tagName === 'OPTION' ||
+    isNotInFocusAndDirty(elm, checkVal) ||
+    isDirtyWithModifiers(elm, checkVal)
   ))
 }
 
-function isDirty (elm, checkVal) {
+function isNotInFocusAndDirty (elm, checkVal) {
   // return true when textbox (.number and .trim) loses focus and its value is
   // not equal to the updated value
   var notInFocus = true;
@@ -129715,14 +130566,20 @@ function isDirty (elm, checkVal) {
   return notInFocus && elm.value !== checkVal
 }
 
-function isInputChanged (elm, newVal) {
+function isDirtyWithModifiers (elm, newVal) {
   var value = elm.value;
   var modifiers = elm._vModifiers; // injected by v-model runtime
-  if (isDef(modifiers) && modifiers.number) {
-    return toNumber(value) !== toNumber(newVal)
-  }
-  if (isDef(modifiers) && modifiers.trim) {
-    return value.trim() !== newVal.trim()
+  if (isDef(modifiers)) {
+    if (modifiers.lazy) {
+      // inputs with lazy should only be updated when not in focus
+      return false
+    }
+    if (modifiers.number) {
+      return toNumber(value) !== toNumber(newVal)
+    }
+    if (modifiers.trim) {
+      return value.trim() !== newVal.trim()
+    }
   }
   return value !== newVal
 }
@@ -129780,7 +130637,10 @@ function getStyle (vnode, checkChild) {
     var childNode = vnode;
     while (childNode.componentInstance) {
       childNode = childNode.componentInstance._vnode;
-      if (childNode.data && (styleData = normalizeStyleData(childNode.data))) {
+      if (
+        childNode && childNode.data &&
+        (styleData = normalizeStyleData(childNode.data))
+      ) {
         extend(res, styleData);
       }
     }
@@ -129954,20 +130814,20 @@ function removeClass (el, cls) {
 
 /*  */
 
-function resolveTransition (def$$1) {
-  if (!def$$1) {
+function resolveTransition (def) {
+  if (!def) {
     return
   }
   /* istanbul ignore else */
-  if (typeof def$$1 === 'object') {
+  if (typeof def === 'object') {
     var res = {};
-    if (def$$1.css !== false) {
-      extend(res, autoCssTransition(def$$1.name || 'v'));
+    if (def.css !== false) {
+      extend(res, autoCssTransition(def.name || 'v'));
     }
-    extend(res, def$$1);
+    extend(res, def);
     return res
-  } else if (typeof def$$1 === 'string') {
-    return autoCssTransition(def$$1)
+  } else if (typeof def === 'string') {
+    return autoCssTransition(def)
   }
 }
 
@@ -130008,9 +130868,11 @@ if (hasTransition) {
 }
 
 // binding to window is necessary to make hot reload work in IE in strict mode
-var raf = inBrowser && window.requestAnimationFrame
-  ? window.requestAnimationFrame.bind(window)
-  : setTimeout;
+var raf = inBrowser
+  ? window.requestAnimationFrame
+    ? window.requestAnimationFrame.bind(window)
+    : setTimeout
+  : /* istanbul ignore next */ function (fn) { return fn(); };
 
 function nextFrame (fn) {
   raf(function () {
@@ -130240,7 +131102,7 @@ function enter (vnode, toggleDisplay) {
 
   if (!vnode.data.show) {
     // remove pending leave element on enter by injecting an insert hook
-    mergeVNodeHook(vnode.data.hook || (vnode.data.hook = {}), 'insert', function () {
+    mergeVNodeHook(vnode, 'insert', function () {
       var parent = el.parentNode;
       var pendingNode = parent && parent._pending && parent._pending[vnode.key];
       if (pendingNode &&
@@ -130291,12 +131153,12 @@ function leave (vnode, rm) {
   }
 
   var data = resolveTransition(vnode.data.transition);
-  if (isUndef(data)) {
+  if (isUndef(data) || el.nodeType !== 1) {
     return rm()
   }
 
   /* istanbul ignore if */
-  if (isDef(el._leaveCb) || el.nodeType !== 1) {
+  if (isDef(el._leaveCb)) {
     return
   }
 
@@ -130479,10 +131341,17 @@ if (isIE9) {
   });
 }
 
-var model$1 = {
-  inserted: function inserted (el, binding, vnode) {
+var directive = {
+  inserted: function inserted (el, binding, vnode, oldVnode) {
     if (vnode.tag === 'select') {
-      setSelected(el, binding, vnode.context);
+      // #6903
+      if (oldVnode.elm && !oldVnode.elm._vOptions) {
+        mergeVNodeHook(vnode, 'postpatch', function () {
+          directive.componentUpdated(el, binding, vnode);
+        });
+      } else {
+        setSelected(el, binding, vnode.context);
+      }
       el._vOptions = [].map.call(el.options, getValue);
     } else if (vnode.tag === 'textarea' || isTextInputType(el.type)) {
       el._vModifiers = binding.modifiers;
@@ -130503,6 +131372,7 @@ var model$1 = {
       }
     }
   },
+
   componentUpdated: function componentUpdated (el, binding, vnode) {
     if (vnode.tag === 'select') {
       setSelected(el, binding, vnode.context);
@@ -130661,7 +131531,7 @@ var show = {
 };
 
 var platformDirectives = {
-  model: model$1,
+  model: directive,
   show: show
 };
 
@@ -130743,7 +131613,7 @@ var Transition = {
   render: function render (h) {
     var this$1 = this;
 
-    var children = this.$options._renderChildren;
+    var children = this.$slots.default;
     if (!children) {
       return
     }
@@ -130822,11 +131692,13 @@ var Transition = {
       oldChild &&
       oldChild.data &&
       !isSameChild(child, oldChild) &&
-      !isAsyncPlaceholder(oldChild)
+      !isAsyncPlaceholder(oldChild) &&
+      // #6687 component root is a comment node
+      !(oldChild.componentInstance && oldChild.componentInstance._vnode.isComment)
     ) {
       // replace old child transition data with fresh one
       // important for dynamic transitions!
-      var oldData = oldChild && (oldChild.data.transition = extend({}, data));
+      var oldData = oldChild.data.transition = extend({}, data);
       // handle transition mode
       if (mode === 'out-in') {
         // return placeholder node and queue update when leave finishes
@@ -130924,7 +131796,7 @@ var TransitionGroup = {
       this._vnode,
       this.kept,
       false, // hydrating
-      true // removeOnly (!important, avoids unnecessary moves)
+      true // removeOnly (!important avoids unnecessary moves)
     );
     this._vnode = this.kept;
   },
@@ -130943,8 +131815,9 @@ var TransitionGroup = {
     children.forEach(applyTranslation);
 
     // force reflow to put everything in position
-    var body = document.body;
-    var f = body.offsetHeight; // eslint-disable-line
+    // assign to this to avoid being removed in tree-shaking
+    // $flow-disable-line
+    this._reflow = document.body.offsetHeight;
 
     children.forEach(function (c) {
       if (c.data.moved) {
@@ -131052,7 +131925,7 @@ Vue$3.prototype.$mount = function (
 
 // devtools global hook
 /* istanbul ignore next */
-setTimeout(function () {
+Vue$3.nextTick(function () {
   if (config.devtools) {
     if (devtools) {
       devtools.emit('init', Vue$3);
@@ -131077,19 +131950,6 @@ setTimeout(function () {
 
 /*  */
 
-// check whether current browser encodes a char inside attribute values
-function shouldDecode (content, encoded) {
-  var div = document.createElement('div');
-  div.innerHTML = "<div a=\"" + content + "\"/>";
-  return div.innerHTML.indexOf(encoded) > 0
-}
-
-// #3663
-// IE encodes newlines inside attribute values while other browsers don't
-var shouldDecodeNewlines = inBrowser ? shouldDecode('\n', '&#10;') : false;
-
-/*  */
-
 var defaultTagRE = /\{\{((?:.|\n)+?)\}\}/g;
 var regexEscapeRE = /[-.*+?^${}()|[\]\/\\]/g;
 
@@ -131098,6 +131958,8 @@ var buildRegex = cached(function (delimiters) {
   var close = delimiters[1].replace(regexEscapeRE, '\\$&');
   return new RegExp(open + '((?:.|\\n)+?)' + close, 'g')
 });
+
+
 
 function parseText (
   text,
@@ -131108,23 +131970,30 @@ function parseText (
     return
   }
   var tokens = [];
+  var rawTokens = [];
   var lastIndex = tagRE.lastIndex = 0;
-  var match, index;
+  var match, index, tokenValue;
   while ((match = tagRE.exec(text))) {
     index = match.index;
     // push text token
     if (index > lastIndex) {
-      tokens.push(JSON.stringify(text.slice(lastIndex, index)));
+      rawTokens.push(tokenValue = text.slice(lastIndex, index));
+      tokens.push(JSON.stringify(tokenValue));
     }
     // tag token
     var exp = parseFilters(match[1].trim());
     tokens.push(("_s(" + exp + ")"));
+    rawTokens.push({ '@binding': exp });
     lastIndex = index + match[0].length;
   }
   if (lastIndex < text.length) {
-    tokens.push(JSON.stringify(text.slice(lastIndex)));
+    rawTokens.push(tokenValue = text.slice(lastIndex));
+    tokens.push(JSON.stringify(tokenValue));
   }
-  return tokens.join('+')
+  return {
+    expression: tokens.join('+'),
+    tokens: rawTokens
+  }
 }
 
 /*  */
@@ -131133,8 +132002,8 @@ function transformNode (el, options) {
   var warn = options.warn || baseWarn;
   var staticClass = getAndRemoveAttr(el, 'class');
   if ("development" !== 'production' && staticClass) {
-    var expression = parseText(staticClass, options.delimiters);
-    if (expression) {
+    var res = parseText(staticClass, options.delimiters);
+    if (res) {
       warn(
         "class=\"" + staticClass + "\": " +
         'Interpolation inside attributes has been removed. ' +
@@ -131177,8 +132046,8 @@ function transformNode$1 (el, options) {
   if (staticStyle) {
     /* istanbul ignore if */
     if (true) {
-      var expression = parseText(staticStyle, options.delimiters);
-      if (expression) {
+      var res = parseText(staticStyle, options.delimiters);
+      if (res) {
         warn(
           "style=\"" + staticStyle + "\": " +
           'Interpolation inside attributes has been removed. ' +
@@ -131213,31 +132082,16 @@ var style$1 = {
   genData: genData$1
 };
 
-var modules$1 = [
-  klass$1,
-  style$1
-];
-
 /*  */
 
-function text (el, dir) {
-  if (dir.value) {
-    addProp(el, 'textContent', ("_s(" + (dir.value) + ")"));
+var decoder;
+
+var he = {
+  decode: function decode (html) {
+    decoder = decoder || document.createElement('div');
+    decoder.innerHTML = html;
+    return decoder.textContent
   }
-}
-
-/*  */
-
-function html (el, dir) {
-  if (dir.value) {
-    addProp(el, 'innerHTML', ("_s(" + (dir.value) + ")"));
-  }
-}
-
-var directives$1 = {
-  model: model,
-  text: text,
-  html: html
 };
 
 /*  */
@@ -131262,33 +132116,6 @@ var isNonPhrasingTag = makeMap(
   'optgroup,option,param,rp,rt,source,style,summary,tbody,td,tfoot,th,thead,' +
   'title,tr,track'
 );
-
-/*  */
-
-var baseOptions = {
-  expectHTML: true,
-  modules: modules$1,
-  directives: directives$1,
-  isPreTag: isPreTag,
-  isUnaryTag: isUnaryTag,
-  mustUseProp: mustUseProp,
-  canBeLeftOpenTag: canBeLeftOpenTag,
-  isReservedTag: isReservedTag,
-  getTagNamespace: getTagNamespace,
-  staticKeys: genStaticKeys(modules$1)
-};
-
-/*  */
-
-var decoder;
-
-var he = {
-  decode: function decode (html) {
-    decoder = decoder || document.createElement('div');
-    decoder.innerHTML = html;
-    return decoder.textContent
-  }
-};
 
 /**
  * Not type-checking this file because it's mostly vendor code.
@@ -131328,10 +132155,11 @@ var decodingMap = {
   '&gt;': '>',
   '&quot;': '"',
   '&amp;': '&',
-  '&#10;': '\n'
+  '&#10;': '\n',
+  '&#9;': '\t'
 };
 var encodedAttr = /&(?:lt|gt|quot|amp);/g;
-var encodedAttrWithNewLines = /&(?:lt|gt|quot|amp|#10);/g;
+var encodedAttrWithNewLines = /&(?:lt|gt|quot|amp|#10|#9);/g;
 
 // #5992
 var isIgnoreNewlineTag = makeMap('pre,textarea', true);
@@ -131522,12 +132350,12 @@ function parseHTML (html, options) {
         if (args[5] === '') { delete args[5]; }
       }
       var value = args[3] || args[4] || args[5] || '';
+      var shouldDecodeNewlines = tagName === 'a' && args[1] === 'href'
+        ? options.shouldDecodeNewlinesForHref
+        : options.shouldDecodeNewlines;
       attrs[i] = {
         name: args[1],
-        value: decodeAttr(
-          value,
-          options.shouldDecodeNewlines
-        )
+        value: decodeAttr(value, shouldDecodeNewlines)
       };
     }
 
@@ -131601,7 +132429,8 @@ function parseHTML (html, options) {
 var onRE = /^@|^v-on:/;
 var dirRE = /^v-|^@|^:/;
 var forAliasRE = /(.*?)\s+(?:in|of)\s+(.*)/;
-var forIteratorRE = /\((\{[^}]*\}|[^,]*),([^,]*)(?:,([^,]*))?\)/;
+var forIteratorRE = /,([^,\}\]]*)(?:,([^,\}\]]*))?$/;
+var stripParensRE = /^\(|\)$/g;
 
 var argRE = /:(.*)$/;
 var bindRE = /^:|^v-bind:/;
@@ -131618,6 +132447,23 @@ var postTransforms;
 var platformIsPreTag;
 var platformMustUseProp;
 var platformGetTagNamespace;
+
+
+
+function createASTElement (
+  tag,
+  attrs,
+  parent
+) {
+  return {
+    type: 1,
+    tag: tag,
+    attrsList: attrs,
+    attrsMap: makeAttrsMap(attrs),
+    parent: parent,
+    children: []
+  }
+}
 
 /**
  * Convert HTML string to AST.
@@ -131653,13 +132499,17 @@ function parse (
     }
   }
 
-  function endPre (element) {
+  function closeElement (element) {
     // check pre state
     if (element.pre) {
       inVPre = false;
     }
     if (platformIsPreTag(element.tag)) {
       inPre = false;
+    }
+    // apply post-transforms
+    for (var i = 0; i < postTransforms.length; i++) {
+      postTransforms[i](element, options);
     }
   }
 
@@ -131669,6 +132519,7 @@ function parse (
     isUnaryTag: options.isUnaryTag,
     canBeLeftOpenTag: options.canBeLeftOpenTag,
     shouldDecodeNewlines: options.shouldDecodeNewlines,
+    shouldDecodeNewlinesForHref: options.shouldDecodeNewlinesForHref,
     shouldKeepComment: options.comments,
     start: function start (tag, attrs, unary) {
       // check namespace.
@@ -131681,14 +132532,7 @@ function parse (
         attrs = guardIESVGBug(attrs);
       }
 
-      var element = {
-        type: 1,
-        tag: tag,
-        attrsList: attrs,
-        attrsMap: makeAttrsMap(attrs),
-        parent: currentParent,
-        children: []
-      };
+      var element = createASTElement(tag, attrs, currentParent);
       if (ns) {
         element.ns = ns;
       }
@@ -131704,7 +132548,7 @@ function parse (
 
       // apply pre-transforms
       for (var i = 0; i < preTransforms.length; i++) {
-        preTransforms[i](element, options);
+        element = preTransforms[i](element, options) || element;
       }
 
       if (!inVPre) {
@@ -131718,23 +132562,13 @@ function parse (
       }
       if (inVPre) {
         processRawAttrs(element);
-      } else {
+      } else if (!element.processed) {
+        // structural directives
         processFor(element);
         processIf(element);
         processOnce(element);
-        processKey(element);
-
-        // determine whether this is a plain element after
-        // removing structural attributes
-        element.plain = !element.key && !attrs.length;
-
-        processRef(element);
-        processSlot(element);
-        processComponent(element);
-        for (var i$1 = 0; i$1 < transforms.length; i$1++) {
-          transforms[i$1](element, options);
-        }
-        processAttrs(element);
+        // element-scope stuff
+        processElement(element, options);
       }
 
       function checkRootConstraints (el) {
@@ -131789,11 +132623,7 @@ function parse (
         currentParent = element;
         stack.push(element);
       } else {
-        endPre(element);
-      }
-      // apply post-transforms
-      for (var i$2 = 0; i$2 < postTransforms.length; i$2++) {
-        postTransforms[i$2](element, options);
+        closeElement(element);
       }
     },
 
@@ -131807,7 +132637,7 @@ function parse (
       // pop stack
       stack.length -= 1;
       currentParent = stack[stack.length - 1];
-      endPre(element);
+      closeElement(element);
     },
 
     chars: function chars (text) {
@@ -131839,11 +132669,12 @@ function parse (
         // only preserve whitespace if its not right after a starting tag
         : preserveWhitespace && children.length ? ' ' : '';
       if (text) {
-        var expression;
-        if (!inVPre && text !== ' ' && (expression = parseText(text, delimiters))) {
+        var res;
+        if (!inVPre && text !== ' ' && (res = parseText(text, delimiters))) {
           children.push({
             type: 2,
-            expression: expression,
+            expression: res.expression,
+            tokens: res.tokens,
             text: text
           });
         } else if (text !== ' ' || !children.length || children[children.length - 1].text !== ' ') {
@@ -131887,6 +132718,22 @@ function processRawAttrs (el) {
   }
 }
 
+function processElement (element, options) {
+  processKey(element);
+
+  // determine whether this is a plain element after
+  // removing structural attributes
+  element.plain = !element.key && !element.attrsList.length;
+
+  processRef(element);
+  processSlot(element);
+  processComponent(element);
+  for (var i = 0; i < transforms.length; i++) {
+    element = transforms[i](element, options) || element;
+  }
+  processAttrs(element);
+}
+
 function processKey (el) {
   var exp = getBindingAttr(el, 'key');
   if (exp) {
@@ -131908,26 +132755,34 @@ function processRef (el) {
 function processFor (el) {
   var exp;
   if ((exp = getAndRemoveAttr(el, 'v-for'))) {
-    var inMatch = exp.match(forAliasRE);
-    if (!inMatch) {
-      "development" !== 'production' && warn$2(
+    var res = parseFor(exp);
+    if (res) {
+      extend(el, res);
+    } else if (true) {
+      warn$2(
         ("Invalid v-for expression: " + exp)
       );
-      return
-    }
-    el.for = inMatch[2].trim();
-    var alias = inMatch[1].trim();
-    var iteratorMatch = alias.match(forIteratorRE);
-    if (iteratorMatch) {
-      el.alias = iteratorMatch[1].trim();
-      el.iterator1 = iteratorMatch[2].trim();
-      if (iteratorMatch[3]) {
-        el.iterator2 = iteratorMatch[3].trim();
-      }
-    } else {
-      el.alias = alias;
     }
   }
+}
+
+function parseFor (exp) {
+  var inMatch = exp.match(forAliasRE);
+  if (!inMatch) { return }
+  var res = {};
+  res.for = inMatch[2].trim();
+  var alias = inMatch[1].trim().replace(stripParensRE, '');
+  var iteratorMatch = alias.match(forIteratorRE);
+  if (iteratorMatch) {
+    res.alias = alias.replace(forIteratorRE, '');
+    res.iterator1 = iteratorMatch[1].trim();
+    if (iteratorMatch[2]) {
+      res.iterator2 = iteratorMatch[2].trim();
+    }
+  } else {
+    res.alias = alias;
+  }
+  return res
 }
 
 function processIf (el) {
@@ -132006,14 +132861,40 @@ function processSlot (el) {
       );
     }
   } else {
+    var slotScope;
+    if (el.tag === 'template') {
+      slotScope = getAndRemoveAttr(el, 'scope');
+      /* istanbul ignore if */
+      if ("development" !== 'production' && slotScope) {
+        warn$2(
+          "the \"scope\" attribute for scoped slots have been deprecated and " +
+          "replaced by \"slot-scope\" since 2.5. The new \"slot-scope\" attribute " +
+          "can also be used on plain elements in addition to <template> to " +
+          "denote scoped slots.",
+          true
+        );
+      }
+      el.slotScope = slotScope || getAndRemoveAttr(el, 'slot-scope');
+    } else if ((slotScope = getAndRemoveAttr(el, 'slot-scope'))) {
+      /* istanbul ignore if */
+      if ("development" !== 'production' && el.attrsMap['v-for']) {
+        warn$2(
+          "Ambiguous combined usage of slot-scope and v-for on <" + (el.tag) + "> " +
+          "(v-for takes higher priority). Use a wrapper <template> for the " +
+          "scoped slot to make it clearer.",
+          true
+        );
+      }
+      el.slotScope = slotScope;
+    }
     var slotTarget = getBindingAttr(el, 'slot');
     if (slotTarget) {
       el.slotTarget = slotTarget === '""' ? '"default"' : slotTarget;
       // preserve slot as an attribute for native shadow DOM compat
-      addAttr(el, 'slot', slotTarget);
-    }
-    if (el.tag === 'template') {
-      el.slotScope = getAndRemoveAttr(el, 'scope');
+      // only for non-scoped slots.
+      if (el.tag !== 'template' && !el.slotScope) {
+        addAttr(el, 'slot', slotTarget);
+      }
     }
   }
 }
@@ -132089,8 +132970,8 @@ function processAttrs (el) {
     } else {
       // literal attribute
       if (true) {
-        var expression = parseText(value, delimiters);
-        if (expression) {
+        var res = parseText(value, delimiters);
+        if (res) {
           warn$2(
             name + "=\"" + value + "\": " +
             'Interpolation inside attributes has been removed. ' +
@@ -132100,6 +132981,13 @@ function processAttrs (el) {
         }
       }
       addAttr(el, name, JSON.stringify(value));
+      // #6887 firefox doesn't update muted state if set via attribute
+      // even immediately after element creation
+      if (!el.component &&
+          name === 'muted' &&
+          platformMustUseProp(el.tag, el.attrsMap.type, name)) {
+        addProp(el, name, 'true');
+      }
     }
   }
 }
@@ -132184,6 +133072,120 @@ function checkForAliasModel (el, value) {
     _el = _el.parent;
   }
 }
+
+/*  */
+
+/**
+ * Expand input[v-model] with dyanmic type bindings into v-if-else chains
+ * Turn this:
+ *   <input v-model="data[type]" :type="type">
+ * into this:
+ *   <input v-if="type === 'checkbox'" type="checkbox" v-model="data[type]">
+ *   <input v-else-if="type === 'radio'" type="radio" v-model="data[type]">
+ *   <input v-else :type="type" v-model="data[type]">
+ */
+
+function preTransformNode (el, options) {
+  if (el.tag === 'input') {
+    var map = el.attrsMap;
+    if (map['v-model'] && (map['v-bind:type'] || map[':type'])) {
+      var typeBinding = getBindingAttr(el, 'type');
+      var ifCondition = getAndRemoveAttr(el, 'v-if', true);
+      var ifConditionExtra = ifCondition ? ("&&(" + ifCondition + ")") : "";
+      var hasElse = getAndRemoveAttr(el, 'v-else', true) != null;
+      var elseIfCondition = getAndRemoveAttr(el, 'v-else-if', true);
+      // 1. checkbox
+      var branch0 = cloneASTElement(el);
+      // process for on the main node
+      processFor(branch0);
+      addRawAttr(branch0, 'type', 'checkbox');
+      processElement(branch0, options);
+      branch0.processed = true; // prevent it from double-processed
+      branch0.if = "(" + typeBinding + ")==='checkbox'" + ifConditionExtra;
+      addIfCondition(branch0, {
+        exp: branch0.if,
+        block: branch0
+      });
+      // 2. add radio else-if condition
+      var branch1 = cloneASTElement(el);
+      getAndRemoveAttr(branch1, 'v-for', true);
+      addRawAttr(branch1, 'type', 'radio');
+      processElement(branch1, options);
+      addIfCondition(branch0, {
+        exp: "(" + typeBinding + ")==='radio'" + ifConditionExtra,
+        block: branch1
+      });
+      // 3. other
+      var branch2 = cloneASTElement(el);
+      getAndRemoveAttr(branch2, 'v-for', true);
+      addRawAttr(branch2, ':type', typeBinding);
+      processElement(branch2, options);
+      addIfCondition(branch0, {
+        exp: ifCondition,
+        block: branch2
+      });
+
+      if (hasElse) {
+        branch0.else = true;
+      } else if (elseIfCondition) {
+        branch0.elseif = elseIfCondition;
+      }
+
+      return branch0
+    }
+  }
+}
+
+function cloneASTElement (el) {
+  return createASTElement(el.tag, el.attrsList.slice(), el.parent)
+}
+
+var model$2 = {
+  preTransformNode: preTransformNode
+};
+
+var modules$1 = [
+  klass$1,
+  style$1,
+  model$2
+];
+
+/*  */
+
+function text (el, dir) {
+  if (dir.value) {
+    addProp(el, 'textContent', ("_s(" + (dir.value) + ")"));
+  }
+}
+
+/*  */
+
+function html (el, dir) {
+  if (dir.value) {
+    addProp(el, 'innerHTML', ("_s(" + (dir.value) + ")"));
+  }
+}
+
+var directives$1 = {
+  model: model,
+  text: text,
+  html: html
+};
+
+/*  */
+
+var baseOptions = {
+  expectHTML: true,
+  modules: modules$1,
+  directives: directives$1,
+  isPreTag: isPreTag,
+  isUnaryTag: isUnaryTag,
+  mustUseProp: mustUseProp,
+  canBeLeftOpenTag: canBeLeftOpenTag,
+  isReservedTag: isReservedTag,
+  getTagNamespace: getTagNamespace,
+  staticKeys: genStaticKeys(modules$1)
+};
 
 /*  */
 
@@ -132355,18 +133357,7 @@ function genHandlers (
 ) {
   var res = isNative ? 'nativeOn:{' : 'on:{';
   for (var name in events) {
-    var handler = events[name];
-    // #5330: warn click.right, since right clicks do not actually fire click events.
-    if ("development" !== 'production' &&
-      name === 'click' &&
-      handler && handler.modifiers && handler.modifiers.right
-    ) {
-      warn(
-        "Use \"contextmenu\" instead of \"click.right\" since right clicks " +
-        "do not actually fire \"click\" events."
-      );
-    }
-    res += "\"" + name + "\":" + (genHandler(name, handler)) + ",";
+    res += "\"" + name + "\":" + (genHandler(name, events[name])) + ",";
   }
   return res.slice(0, -1) + '}'
 }
@@ -132387,9 +133378,11 @@ function genHandler (
   var isFunctionExpression = fnExpRE.test(handler.value);
 
   if (!handler.modifiers) {
-    return isMethodPath || isFunctionExpression
-      ? handler.value
-      : ("function($event){" + (handler.value) + "}") // inline statement
+    if (isMethodPath || isFunctionExpression) {
+      return handler.value
+    }
+    /* istanbul ignore if */
+    return ("function($event){" + (handler.value) + "}") // inline statement
   } else {
     var code = '';
     var genModifierCode = '';
@@ -132401,6 +133394,14 @@ function genHandler (
         if (keyCodes[key]) {
           keys.push(key);
         }
+      } else if (key === 'exact') {
+        var modifiers = (handler.modifiers);
+        genModifierCode += genGuard(
+          ['ctrl', 'shift', 'alt', 'meta']
+            .filter(function (keyModifier) { return !modifiers[keyModifier]; })
+            .map(function (keyModifier) { return ("$event." + keyModifier + "Key"); })
+            .join('||')
+        );
       } else {
         keys.push(key);
       }
@@ -132417,6 +133418,7 @@ function genHandler (
       : isFunctionExpression
         ? ("(" + (handler.value) + ")($event)")
         : handler.value;
+    /* istanbul ignore if */
     return ("function($event){" + code + handlerCode + "}")
   }
 }
@@ -132430,8 +133432,13 @@ function genFilterCode (key) {
   if (keyVal) {
     return ("$event.keyCode!==" + keyVal)
   }
-  var alias = keyCodes[key];
-  return ("_k($event.keyCode," + (JSON.stringify(key)) + (alias ? ',' + JSON.stringify(alias) : '') + ")")
+  var code = keyCodes[key];
+  return (
+    "_k($event.keyCode," +
+    (JSON.stringify(key)) + "," +
+    (JSON.stringify(code)) + "," +
+    "$event.key)"
+  )
 }
 
 /*  */
@@ -132669,7 +133676,8 @@ function genData$2 (el, state) {
     data += (genHandlers(el.nativeEvents, true, state.warn)) + ",";
   }
   // slot target
-  if (el.slotTarget) {
+  // only for non-scoped slots
+  if (el.slotTarget && !el.slotScope) {
     data += "slot:" + (el.slotTarget) + ",";
   }
   // scoped slots
@@ -132727,7 +133735,7 @@ function genDirectives (el, state) {
 function genInlineTemplate (el, state) {
   var ast = el.children[0];
   if ("development" !== 'production' && (
-    el.children.length > 1 || ast.type !== 1
+    el.children.length !== 1 || ast.type !== 1
   )) {
     state.warn('Inline-template components must have exactly one child element.');
   }
@@ -132754,10 +133762,13 @@ function genScopedSlot (
   if (el.for && !el.forProcessed) {
     return genForScopedSlot(key, el, state)
   }
-  return "{key:" + key + ",fn:function(" + (String(el.attrsMap.scope)) + "){" +
+  var fn = "function(" + (String(el.slotScope)) + "){" +
     "return " + (el.tag === 'template'
-      ? genChildren(el, state) || 'void 0'
-      : genElement(el, state)) + "}}"
+      ? el.if
+        ? ((el.if) + "?" + (genChildren(el, state) || 'undefined') + ":undefined")
+        : genChildren(el, state) || 'undefined'
+      : genElement(el, state)) + "}";
+  return ("{key:" + key + ",fn:" + fn + "}")
 }
 
 function genForScopedSlot (
@@ -132885,7 +133896,10 @@ function genProps (props) {
   var res = '';
   for (var i = 0; i < props.length; i++) {
     var prop = props[i];
-    res += "\"" + (prop.name) + "\":" + (transformSpecialNewlines(prop.value)) + ",";
+    /* istanbul ignore if */
+    {
+      res += "\"" + (prop.name) + "\":" + (transformSpecialNewlines(prop.value)) + ",";
+    }
   }
   return res.slice(0, -1)
 }
@@ -132911,9 +133925,6 @@ var prohibitedKeywordRE = new RegExp('\\b' + (
 var unaryOperatorsRE = new RegExp('\\b' + (
   'delete,typeof,void'
 ).split(',').join('\\s*\\([^\\)]*\\)|\\b') + '\\s*\\([^\\)]*\\)');
-
-// check valid identifier for v-for
-var identRE = /[A-Za-z_$][\w$]*/;
 
 // strip strings in expressions
 var stripStringRE = /'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.)*\$\{|\}(?:[^`\\]|\\.)*`|`(?:[^`\\]|\\.)*`/g;
@@ -132972,9 +133983,18 @@ function checkFor (node, text, errors) {
   checkIdentifier(node.iterator2, 'v-for iterator', text, errors);
 }
 
-function checkIdentifier (ident, type, text, errors) {
-  if (typeof ident === 'string' && !identRE.test(ident)) {
-    errors.push(("invalid " + type + " \"" + ident + "\" in expression: " + (text.trim())));
+function checkIdentifier (
+  ident,
+  type,
+  text,
+  errors
+) {
+  if (typeof ident === 'string') {
+    try {
+      new Function(("var " + ident + "=_"));
+    } catch (e) {
+      errors.push(("invalid " + type + " \"" + ident + "\" in expression: " + (text.trim())));
+    }
   }
 }
 
@@ -132986,10 +134006,14 @@ function checkExpression (exp, text, errors) {
     if (keywordMatch) {
       errors.push(
         "avoid using JavaScript keyword as property name: " +
-        "\"" + (keywordMatch[0]) + "\" in expression " + (text.trim())
+        "\"" + (keywordMatch[0]) + "\"\n  Raw expression: " + (text.trim())
       );
     } else {
-      errors.push(("invalid expression: " + (text.trim())));
+      errors.push(
+        "invalid expression: " + (e.message) + " in\n\n" +
+        "    " + exp + "\n\n" +
+        "  Raw expression: " + (text.trim()) + "\n"
+      );
     }
   }
 }
@@ -133013,7 +134037,9 @@ function createCompileToFunctionFn (compile) {
     options,
     vm
   ) {
-    options = options || {};
+    options = extend({}, options);
+    var warn$$1 = options.warn || warn;
+    delete options.warn;
 
     /* istanbul ignore if */
     if (true) {
@@ -133022,7 +134048,7 @@ function createCompileToFunctionFn (compile) {
         new Function('return 1');
       } catch (e) {
         if (e.toString().match(/unsafe-eval|CSP/)) {
-          warn(
+          warn$$1(
             'It seems you are using the standalone build of Vue.js in an ' +
             'environment with Content Security Policy that prohibits unsafe-eval. ' +
             'The template compiler cannot work in this environment. Consider ' +
@@ -133047,7 +134073,7 @@ function createCompileToFunctionFn (compile) {
     // check compilation errors/tips
     if (true) {
       if (compiled.errors && compiled.errors.length) {
-        warn(
+        warn$$1(
           "Error compiling template:\n\n" + template + "\n\n" +
           compiled.errors.map(function (e) { return ("- " + e); }).join('\n') + '\n',
           vm
@@ -133072,7 +134098,7 @@ function createCompileToFunctionFn (compile) {
     /* istanbul ignore if */
     if (true) {
       if ((!compiled.errors || !compiled.errors.length) && fnGenErrors.length) {
-        warn(
+        warn$$1(
           "Failed to generate render function:\n\n" +
           fnGenErrors.map(function (ref) {
             var err = ref.err;
@@ -133113,7 +134139,7 @@ function createCompilerCreator (baseCompile) {
         // merge custom directives
         if (options.directives) {
           finalOptions.directives = extend(
-            Object.create(baseOptions.directives),
+            Object.create(baseOptions.directives || null),
             options.directives
           );
         }
@@ -133151,7 +134177,9 @@ var createCompiler = createCompilerCreator(function baseCompile (
   options
 ) {
   var ast = parse(template.trim(), options);
-  optimize(ast, options);
+  if (options.optimize !== false) {
+    optimize(ast, options);
+  }
   var code = generate(ast, options);
   return {
     ast: ast,
@@ -133164,6 +134192,21 @@ var createCompiler = createCompilerCreator(function baseCompile (
 
 var ref$1 = createCompiler(baseOptions);
 var compileToFunctions = ref$1.compileToFunctions;
+
+/*  */
+
+// check whether current browser encodes a char inside attribute values
+var div;
+function getShouldDecode (href) {
+  div = div || document.createElement('div');
+  div.innerHTML = href ? "<a href=\"\n\"/>" : "<div a=\"\n\"/>";
+  return div.innerHTML.indexOf('&#10;') > 0
+}
+
+// #3663: IE encodes newlines inside attribute values while other browsers don't
+var shouldDecodeNewlines = inBrowser ? getShouldDecode(false) : false;
+// #6828: chrome encodes content in a[href]
+var shouldDecodeNewlinesForHref = inBrowser ? getShouldDecode(true) : false;
 
 /*  */
 
@@ -133222,6 +134265,7 @@ Vue$3.prototype.$mount = function (
 
       var ref = compileToFunctions(template, {
         shouldDecodeNewlines: shouldDecodeNewlines,
+        shouldDecodeNewlinesForHref: shouldDecodeNewlinesForHref,
         delimiters: options.delimiters,
         comments: options.comments
       }, this);
@@ -133233,7 +134277,7 @@ Vue$3.prototype.$mount = function (
       /* istanbul ignore if */
       if ("development" !== 'production' && config.performance && mark) {
         mark('compile end');
-        measure(((this._name) + " compile"), 'compile', 'compile end');
+        measure(("vue " + (this._name) + " compile"), 'compile', 'compile end');
       }
     }
   }
@@ -133258,61 +134302,262 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45), __webpack_require__(595).setImmediate))
 
 /***/ }),
-/* 585 */
+/* 595 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var disposed = false
-var normalizeComponent = __webpack_require__(101)
-/* script */
-var __vue_script__ = __webpack_require__(591)
-/* template */
-var __vue_template__ = __webpack_require__(613)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\layout\\Navbar.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Navbar.vue: functional components are not supported with templates, they should use render functions.")}
+var apply = Function.prototype.apply;
 
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ca36a346", Component.options)
-  } else {
-    hotAPI.reload("data-v-ca36a346", Component.options)
+// DOM APIs, for completeness
+
+exports.setTimeout = function() {
+  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
+};
+exports.setInterval = function() {
+  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
+};
+exports.clearTimeout =
+exports.clearInterval = function(timeout) {
+  if (timeout) {
+    timeout.close();
   }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
+};
 
-module.exports = Component.exports
+function Timeout(id, clearFn) {
+  this._id = id;
+  this._clearFn = clearFn;
+}
+Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+Timeout.prototype.close = function() {
+  this._clearFn.call(window, this._id);
+};
+
+// Does not start the time, just sets up the members needed.
+exports.enroll = function(item, msecs) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = msecs;
+};
+
+exports.unenroll = function(item) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = -1;
+};
+
+exports._unrefActive = exports.active = function(item) {
+  clearTimeout(item._idleTimeoutId);
+
+  var msecs = item._idleTimeout;
+  if (msecs >= 0) {
+    item._idleTimeoutId = setTimeout(function onTimeout() {
+      if (item._onTimeout)
+        item._onTimeout();
+    }, msecs);
+  }
+};
+
+// setimmediate attaches itself to the global object
+__webpack_require__(596);
+exports.setImmediate = setImmediate;
+exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 586 */,
-/* 587 */,
-/* 588 */,
-/* 589 */,
-/* 590 */,
-/* 591 */
+/* 596 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+    "use strict";
+
+    if (global.setImmediate) {
+        return;
+    }
+
+    var nextHandle = 1; // Spec says greater than zero
+    var tasksByHandle = {};
+    var currentlyRunningATask = false;
+    var doc = global.document;
+    var registerImmediate;
+
+    function setImmediate(callback) {
+      // Callback can either be a function or a string
+      if (typeof callback !== "function") {
+        callback = new Function("" + callback);
+      }
+      // Copy function arguments
+      var args = new Array(arguments.length - 1);
+      for (var i = 0; i < args.length; i++) {
+          args[i] = arguments[i + 1];
+      }
+      // Store and register the task
+      var task = { callback: callback, args: args };
+      tasksByHandle[nextHandle] = task;
+      registerImmediate(nextHandle);
+      return nextHandle++;
+    }
+
+    function clearImmediate(handle) {
+        delete tasksByHandle[handle];
+    }
+
+    function run(task) {
+        var callback = task.callback;
+        var args = task.args;
+        switch (args.length) {
+        case 0:
+            callback();
+            break;
+        case 1:
+            callback(args[0]);
+            break;
+        case 2:
+            callback(args[0], args[1]);
+            break;
+        case 3:
+            callback(args[0], args[1], args[2]);
+            break;
+        default:
+            callback.apply(undefined, args);
+            break;
+        }
+    }
+
+    function runIfPresent(handle) {
+        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+        // So if we're currently running a task, we'll need to delay this invocation.
+        if (currentlyRunningATask) {
+            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+            // "too much recursion" error.
+            setTimeout(runIfPresent, 0, handle);
+        } else {
+            var task = tasksByHandle[handle];
+            if (task) {
+                currentlyRunningATask = true;
+                try {
+                    run(task);
+                } finally {
+                    clearImmediate(handle);
+                    currentlyRunningATask = false;
+                }
+            }
+        }
+    }
+
+    function installNextTickImplementation() {
+        registerImmediate = function(handle) {
+            process.nextTick(function () { runIfPresent(handle); });
+        };
+    }
+
+    function canUsePostMessage() {
+        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+        // where `global.postMessage` means something completely different and can't be used for this purpose.
+        if (global.postMessage && !global.importScripts) {
+            var postMessageIsAsynchronous = true;
+            var oldOnMessage = global.onmessage;
+            global.onmessage = function() {
+                postMessageIsAsynchronous = false;
+            };
+            global.postMessage("", "*");
+            global.onmessage = oldOnMessage;
+            return postMessageIsAsynchronous;
+        }
+    }
+
+    function installPostMessageImplementation() {
+        // Installs an event handler on `global` for the `message` event: see
+        // * https://developer.mozilla.org/en/DOM/window.postMessage
+        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+
+        var messagePrefix = "setImmediate$" + Math.random() + "$";
+        var onGlobalMessage = function(event) {
+            if (event.source === global &&
+                typeof event.data === "string" &&
+                event.data.indexOf(messagePrefix) === 0) {
+                runIfPresent(+event.data.slice(messagePrefix.length));
+            }
+        };
+
+        if (global.addEventListener) {
+            global.addEventListener("message", onGlobalMessage, false);
+        } else {
+            global.attachEvent("onmessage", onGlobalMessage);
+        }
+
+        registerImmediate = function(handle) {
+            global.postMessage(messagePrefix + handle, "*");
+        };
+    }
+
+    function installMessageChannelImplementation() {
+        var channel = new MessageChannel();
+        channel.port1.onmessage = function(event) {
+            var handle = event.data;
+            runIfPresent(handle);
+        };
+
+        registerImmediate = function(handle) {
+            channel.port2.postMessage(handle);
+        };
+    }
+
+    function installReadyStateChangeImplementation() {
+        var html = doc.documentElement;
+        registerImmediate = function(handle) {
+            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+            var script = doc.createElement("script");
+            script.onreadystatechange = function () {
+                runIfPresent(handle);
+                script.onreadystatechange = null;
+                html.removeChild(script);
+                script = null;
+            };
+            html.appendChild(script);
+        };
+    }
+
+    function installSetTimeoutImplementation() {
+        registerImmediate = function(handle) {
+            setTimeout(runIfPresent, 0, handle);
+        };
+    }
+
+    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
+
+    // Don't get fooled by e.g. browserify environments.
+    if ({}.toString.call(global.process) === "[object process]") {
+        // For Node.js before 0.9
+        installNextTickImplementation();
+
+    } else if (canUsePostMessage()) {
+        // For non-IE10 modern browsers
+        installPostMessageImplementation();
+
+    } else if (global.MessageChannel) {
+        // For web workers, where supported
+        installMessageChannelImplementation();
+
+    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+        // For IE 6–8
+        installReadyStateChangeImplementation();
+
+    } else {
+        // For older browsers
+        installSetTimeoutImplementation();
+    }
+
+    attachTo.setImmediate = setImmediate;
+    attachTo.clearImmediate = clearImmediate;
+}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45), __webpack_require__(104)))
+
+/***/ }),
+/* 597 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -133365,16 +134610,293 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    logeado: { type: String, Required: true }
+    logeado: { type: Number, Required: true }
   }
 });
 
 /***/ }),
-/* 592 */,
-/* 593 */
+/* 598 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "navbar-fixed" }, [
+    _c("nav", [
+      _c(
+        "div",
+        { staticClass: "nav-wrapper" },
+        [
+          _c("router-link", { staticClass: "brand-logo", attrs: { to: "/" } }, [
+            _c("img", {
+              staticStyle: { width: "75px", "margin-left": "10px" },
+              attrs: { src: "img/logo2.png" }
+            })
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm.logeado == "0"
+            ? _c("ul", { staticClass: "right hide-on-med-and-down" }, [
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: "/ingreso" } }, [
+                      _vm._v("Ingresar")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: "/registro" } }, [
+                      _vm._v("Registrarse")
+                    ])
+                  ],
+                  1
+                )
+              ])
+            : _c("ul", { staticClass: "right hide-on-med-and-down" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _vm._m(2),
+                _vm._v(" "),
+                _vm._m(3)
+              ]),
+          _vm._v(" "),
+          _vm.logeado == "0"
+            ? _c(
+                "ul",
+                { staticClass: "side-nav", attrs: { id: "slide-out-" } },
+                [_vm._m(4), _vm._v(" "), _vm._m(5)]
+              )
+            : _c(
+                "ul",
+                { staticClass: "side-nav", attrs: { id: "slide-out-" } },
+                [_vm._m(6), _vm._v(" "), _vm._m(7)]
+              )
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "button-collapse",
+        attrs: { href: "#", "data-activates": "slide-out-" }
+      },
+      [_c("i", { staticClass: "material-icons" }, [_vm._v("menu")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        {
+          staticClass: "button_edit_user",
+          attrs: { href: "#", "data-activates": "slide-out_" }
+        },
+        [
+          _c(
+            "i",
+            {
+              staticClass: "material-icons",
+              staticStyle: { "line-height": "inherit", height: "inherit" }
+            },
+            [_vm._v("account_circle")]
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("adhamchitoj")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "",
+            onclick:
+              "event.preventDefault();document.getElementById('logout-form').submit();"
+          }
+        },
+        [_vm._v("Salir")]
+      ),
+      _vm._v(" "),
+      _c("form", {
+        staticStyle: { display: "none" },
+        attrs: { id: "logout-form", action: "", method: "POST" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("Ingresar")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("Registrarse")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("asdfafa")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "",
+            onclick:
+              "event.preventDefault();document.getElementById('logout-form').submit();"
+          }
+        },
+        [_vm._v("Salir")]
+      ),
+      _vm._v(" "),
+      _c("form", {
+        staticStyle: { display: "none" },
+        attrs: { id: "logout-form", action: "", method: "POST" }
+      })
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3879865b", module.exports)
+  }
+}
+
+/***/ }),
+/* 599 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(44)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(600)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\layout\\Footer.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-cc713b34", Component.options)
+  } else {
+    hotAPI.reload("data-v-cc713b34", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 600 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "footer",
+      { staticClass: "page-footer", staticStyle: { "padding-top": "0px" } },
+      [
+        _c("div", { staticClass: "footer-copyright" }, [
+          _c("div", { staticClass: "container" }, [
+            _vm._v("\n    © 2018 Copyright Adham Gatriff  \n    "),
+            _c("a", { staticClass: "grey-text text-lighten-4 right" }, [
+              _vm._v("version 0.80 BETA")
+            ])
+          ])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-cc713b34", module.exports)
+  }
+}
+
+/***/ }),
+/* 601 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -136004,31 +137526,39 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 594 */
+/* 602 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue__ = __webpack_require__(595);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue__ = __webpack_require__(603);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Nay_vue__ = __webpack_require__(597);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Nay_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Nay_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Register_vue__ = __webpack_require__(638);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Register_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Register_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue__ = __webpack_require__(605);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Login_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Landing_vue__ = __webpack_require__(608);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Landing_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_Landing_vue__);
 
 
 
-var routes = [{ path: '/prueba', component: __WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue___default.a }, { path: '/', component: __WEBPACK_IMPORTED_MODULE_1__components_Nay_vue___default.a }];
+
+
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_Landing_vue___default.a, name: 'incio' }, { path: '/registro', component: __WEBPACK_IMPORTED_MODULE_1__components_Register_vue___default.a }, { path: '/ingreso', component: __WEBPACK_IMPORTED_MODULE_2__components_Login_vue___default.a, name: 'login' }, { path: '/Principal', component: __WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue___default.a }];
 
 /* harmony default export */ __webpack_exports__["a"] = (routes);
 
 /***/ }),
-/* 595 */
+/* 603 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(101)
+var normalizeComponent = __webpack_require__(44)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(596)
+var __vue_template__ = __webpack_require__(604)
+/* template functional */
+var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -136038,13 +137568,12 @@ var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __vue_script__,
   __vue_template__,
+  __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
 Component.options.__file = "resources\\assets\\js\\components\\Prueba.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Prueba.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -136053,9 +137582,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4dc6a079", Component.options)
+    hotAPI.createRecord("data-v-dc1594f0", Component.options)
   } else {
-    hotAPI.reload("data-v-4dc6a079", Component.options)
+    hotAPI.reload("data-v-dc1594f0", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -136066,7 +137595,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 596 */
+/* 604 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -136081,36 +137610,41 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-4dc6a079", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-dc1594f0", module.exports)
   }
 }
 
 /***/ }),
-/* 597 */
+/* 605 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(101)
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(636)
+}
+var normalizeComponent = __webpack_require__(44)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(606)
 /* template */
-var __vue_template__ = __webpack_require__(598)
+var __vue_template__ = __webpack_require__(635)
+/* template functional */
+var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-01e7f602"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __vue_script__,
   __vue_template__,
+  __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Nay.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Nay.vue: functional components are not supported with templates, they should use render functions.")}
+Component.options.__file = "resources\\assets\\js\\components\\Login.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -136119,9 +137653,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0df4cfa4", Component.options)
+    hotAPI.createRecord("data-v-01e7f602", Component.options)
   } else {
-    hotAPI.reload("data-v-0df4cfa4", Component.options)
+    hotAPI.reload("data-v-01e7f602", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -136132,100 +137666,1064 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 598 */
+/* 606 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_Navbar__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__layout_Navbar__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  props: {
+    logeado: { type: Number, Required: true }
+  },
+  components: { navbarDg: __WEBPACK_IMPORTED_MODULE_0__layout_Navbar___default.a },
+  data: function data() {
+    return {};
+  },
+  mounted: function mounted() {
+    // part.destroy()
+
+  }
+});
+
+/***/ }),
+/* 607 */,
+/* 608 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("p", [_vm._v("soy nay")])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
+var disposed = false
+var normalizeComponent = __webpack_require__(44)
+/* script */
+var __vue_script__ = __webpack_require__(609)
+/* template */
+var __vue_template__ = __webpack_require__(617)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Landing.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
   module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0df4cfa4", module.exports)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-35fb1d70", Component.options)
+  } else {
+    hotAPI.reload("data-v-35fb1d70", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 609 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_FooterLng__ = __webpack_require__(610);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_FooterLng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__layout_FooterLng__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: { footerLng: __WEBPACK_IMPORTED_MODULE_0__layout_FooterLng___default.a },
+  props: {
+    logeado: { type: Number, Required: true }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    $(".button-collapse").sideNav();
+
+    // const part = new particle.default(document.getElementById('particulas'), {
+    // 		dotColor: '#E91E63',
+    // 		lineColor: '#4b367c',
+    // 		density: 9000,
+    // 		parallax: true
+    //   });
+
+    var granimInstance = new granim({
+      element: '#primer',
+      direction: 'left-right',
+      opacity: [1, 1],
+      isPausedWhenNotInView: true,
+      states: {
+        "default-state": {
+          gradients: [['#311f5f', '#E91E63'], ['#E91E63', '#311f5f']], transitionSpeed: 1500
+        }
+      }
+    });
+
+    axios.post('api/datosDiag').then(function (response) {
+
+      _this.graficaDiag(response.data.er, response.data.dc);
+      _this.diagCreadosxUsuarios(response.data.dt, response.data.us);
+    }).catch(function (err) {
+      console.log(err);
+    });
+  },
+
+  methods: {
+    graficaDiag: function graficaDiag(er, dc) {
+      var myTorta = echarts.init(document.getElementById('graph1'));
+      var option_ = {
+        grid: {},
+        tooltip: {
+          trigger: 'item',
+          formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+          orient: 'vertical',
+          x: 'left',
+          data: ['Entidad-Relacion', 'Clases']
+        },
+        series: [{
+          name: 'Cantidad',
+          type: 'pie',
+          color: ['#E91E63', '#311f5f'],
+          radius: ['55%', '90%'],
+          avoidLabelOverlap: false,
+          label: {
+            normal: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              show: true,
+              textStyle: {
+                fontSize: '18',
+                fontWeight: 'bold'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: [{ value: er, name: 'Entidad-Relacion' }, { value: dc, name: 'Clases' }]
+        }]
+      };
+      myTorta.setOption(option_);
+    },
+    diagCreadosxUsuarios: function diagCreadosxUsuarios(dt, us) {
+      var myTorta = echarts.init(document.getElementById('graph2'));
+      var option = {
+        tooltip: {
+          trigger: 'item',
+          formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+          orient: 'vertical',
+          x: 'left',
+          data: ['Usuarios', 'Diagramas']
+        },
+        series: [{
+          name: 'Cantidad',
+          type: 'pie',
+          color: ['#E91E63', '#311f5f'],
+          radius: ['55%', '90%'],
+          avoidLabelOverlap: false,
+          label: {
+            normal: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              show: true,
+              textStyle: {
+                fontSize: '18',
+                fontWeight: 'bold'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: [{ value: us, name: 'Usuarios' }, { value: dt, name: 'Diagramas' }]
+        }]
+      };
+      myTorta.setOption(option);
+    }
+  }
+});
+
+/***/ }),
+/* 610 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(611)
+}
+var normalizeComponent = __webpack_require__(44)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(616)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-e3e92ee2"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\layout\\FooterLng.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e3e92ee2", Component.options)
+  } else {
+    hotAPI.reload("data-v-e3e92ee2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 611 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(612);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(614)("647f82db", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e3e92ee2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FooterLng.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e3e92ee2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FooterLng.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 612 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(613)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.page-footer[data-v-e3e92ee2] {\n  position: relative;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 613 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 614 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+var listToStyles = __webpack_require__(615)
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+module.exports = function (parentId, list, _isProduction) {
+  isProduction = _isProduction
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
   }
 }
 
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[data-vue-ssr-id~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
 /***/ }),
-/* 599 */
+/* 615 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+module.exports = function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
 
 /***/ }),
-/* 600 */,
-/* 601 */,
-/* 602 */,
-/* 603 */,
-/* 604 */,
-/* 605 */,
-/* 606 */,
-/* 607 */,
-/* 608 */,
-/* 609 */,
-/* 610 */,
-/* 611 */,
-/* 612 */,
-/* 613 */
+/* 616 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "navbar-fixed" }, [
-    _c("nav", [
-      _c("div", { staticClass: "nav-wrapper" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _vm.logeado == "0"
-          ? _c("ul", { staticClass: "right hide-on-med-and-down" }, [
-              _vm._m(2),
-              _vm._v(" "),
-              _vm._m(3)
-            ])
-          : _c("ul", { staticClass: "right hide-on-med-and-down" }, [
-              _vm._m(4),
-              _vm._v(" "),
-              _vm._m(5),
-              _vm._v(" "),
-              _vm._m(6)
-            ]),
-        _vm._v(" "),
-        _vm.logeado == "0"
-          ? _c("ul", { staticClass: "side-nav", attrs: { id: "slide-out-" } }, [
-              _vm._m(7),
-              _vm._v(" "),
-              _vm._m(8)
-            ])
-          : _c("ul", { staticClass: "side-nav", attrs: { id: "slide-out-" } }, [
-              _vm._m(9),
-              _vm._v(" "),
-              _vm._m(10)
-            ])
-      ])
-    ])
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "brand-logo" }, [
-      _c("img", {
-        staticStyle: { width: "75px", "margin-left": "10px" },
-        attrs: { src: "img/logo2.png" }
-      })
+    return _c("footer", { staticClass: "page-footer" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col l6 s12" }, [
+            _c("h5", { staticClass: "white-text" }, [_vm._v("Diagen")]),
+            _vm._v(" "),
+            _c("p", { staticClass: "grey-text text-lighten-4" }, [
+              _vm._v(
+                "Trabajo de Grado como requisito para optar al Título de Ingeniero de Sistemas. IUPSM barinas"
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v("Reporta errores a traves de este \n        \t"),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://bitbucket.org/adhamgatriff/diagen/issues",
+                    target: "_blank"
+                  }
+                },
+                [_vm._v("link")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col l4 offset-l2 s12" }, [
+            _c("h5", { staticClass: "white-text" }, [
+              _vm._v("Links Importantes")
+            ]),
+            _vm._v(" "),
+            _c("ul", [
+              _c("li", [
+                _c("a", { staticClass: "grey-text text-lighten-3" }, [
+                  _vm._v("Facebook")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "grey-text text-lighten-3" }, [
+                  _vm._v("Twitter")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "grey-text text-lighten-3" }, [
+                  _vm._v("Documentacion")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "grey-text text-lighten-3" }, [
+                  _vm._v("Otros proyectos")
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "footer-copyright" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._v("\n      © 2018 Copyright Adham Gatriff  \n      "),
+          _c("a", { staticClass: "grey-text text-lighten-4 right" }, [
+            _vm._v("version 0.80 BETA")
+          ])
+        ])
+      ])
     ])
-  },
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-e3e92ee2", module.exports)
+  }
+}
+
+/***/ }),
+/* 617 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { attrs: { id: "particulas" } },
+    [
+      _c("canvas", { attrs: { id: "primer" } }),
+      _vm._v(" "),
+      _c("div", { staticStyle: { position: "relative" } }, [
+        _c("div", { staticClass: "navbar" }, [
+          _c(
+            "nav",
+            { staticStyle: { "box-shadow": "none", background: "none" } },
+            [
+              _c("div", { staticClass: "nav-wrapper" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _vm.logeado == 0
+                  ? _c(
+                      "ul",
+                      { staticClass: "right hide-on-small-only" },
+                      [
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "waves-effect waves-light btn Wradius",
+                            staticStyle: {
+                              background: "white",
+                              color: "#311f5f",
+                              "box-shadow": "3px 3px 20px 0px #000"
+                            },
+                            attrs: { to: "ingreso" }
+                          },
+                          [_vm._v("Ingresar")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "waves-effect waves-light btn Wradius",
+                            staticStyle: {
+                              background: "white",
+                              color: "#E91E63",
+                              "box-shadow": "3px 3px 20px 0px #000"
+                            },
+                            attrs: { href: "" }
+                          },
+                          [_vm._v("Registrarse")]
+                        )
+                      ],
+                      1
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.logeado == 1
+                  ? _c("ul", { staticClass: "right hide-on-small-only" }, [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "",
+                              onclick:
+                                "event.preventDefault();document.getElementById('logout-form').submit();"
+                            }
+                          },
+                          [_vm._v("Salir")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "form",
+                          {
+                            staticStyle: { display: "none" },
+                            attrs: {
+                              id: "logout-form",
+                              action: "",
+                              method: "POST"
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\r\n                      " +
+                                _vm._s(_vm.csrf_field()) +
+                                "\r\n                  "
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.logeado == 0
+                  ? _c(
+                      "ul",
+                      { staticClass: "side-nav", attrs: { id: "mobile" } },
+                      [
+                        _vm._m(4),
+                        _vm._v(" "),
+                        _vm._m(5),
+                        _vm._v(" "),
+                        _vm._m(6)
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.logeado == 1
+                  ? _c(
+                      "ul",
+                      { staticClass: "side-nav", attrs: { id: "mobile" } },
+                      [
+                        _vm._m(7),
+                        _vm._v(" "),
+                        _vm._m(8),
+                        _vm._v(" "),
+                        _vm._m(9)
+                      ]
+                    )
+                  : _vm._e()
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(10),
+      _vm._v(" "),
+      _vm._m(11),
+      _vm._v(" "),
+      _c("footer-lng")
+    ],
+    1
+  )
+}
+var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -136233,11 +138731,59 @@ var staticRenderFns = [
     return _c(
       "a",
       {
-        staticClass: "button-collapse",
-        attrs: { href: "#", "data-activates": "slide-out-" }
+        staticClass: "button-collapse show-on-small",
+        attrs: { href: "#", "data-activates": "mobile" }
       },
       [_c("i", { staticClass: "material-icons" }, [_vm._v("menu")])]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "resources/Doc.pdf", target: "_blank" } }, [
+        _vm._v("Manual de Usuario")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        {
+          staticClass: "button_edit_user",
+          attrs: { href: "#", "data-activates": "slide-out_" }
+        },
+        [
+          _c(
+            "i",
+            {
+              staticClass: "material-icons",
+              staticStyle: { "line-height": "inherit", height: "inherit" }
+            },
+            [_vm._v("account_circle")]
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("afsdfa")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "" } }, [_vm._v("Manual de Usuario")])
+    ])
   },
   function() {
     var _vm = this
@@ -136279,7 +138825,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("adhamchitoj")])])
+    return _c("li", [_c("a", { attrs: { href: "" } })])
   },
   function() {
     var _vm = this
@@ -136308,41 +138854,463 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("Ingresar")])])
+    return _c(
+      "div",
+      { staticClass: "row", staticStyle: { "margin-top": "60px" } },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "col m11 s12 offset-m1",
+            staticStyle: { position: "relative" }
+          },
+          [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col m12 l6",
+                  staticStyle: { width: "inherit" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "responsive-img",
+                    staticStyle: {
+                      "min-width": "25%",
+                      width: "65%",
+                      display: "block",
+                      margin: "0 auto"
+                    },
+                    attrs: { src: "img/logo3.png" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col m12 l6 hide-on-small-only" }, [
+                _c(
+                  "h1",
+                  {
+                    staticStyle: {
+                      "font-weight": "300",
+                      color: "white",
+                      "text-align": "center",
+                      "text-shadow": "5px 3px 7px #0a0a0a"
+                    }
+                  },
+                  [_vm._v("Diagen")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h4",
+                  {
+                    staticStyle: {
+                      color: "white",
+                      "font-weight": "200",
+                      "text-align": "center",
+                      "text-shadow": "5px 3px 3px #0a0a0a"
+                    }
+                  },
+                  [_vm._v("Generador a partir de diagramas")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("Registrarse")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("asdfafa")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c(
-        "a",
-        {
-          attrs: {
-            href: "",
-            onclick:
-              "event.preventDefault();document.getElementById('logout-form').submit();"
-          }
-        },
-        [_vm._v("Salir")]
-      ),
+    return _c(
+      "div",
+      { staticClass: "row", staticStyle: { "margin-bottom": "0px" } },
+      [
+        _c(
+          "main",
+          {
+            staticClass: "col m10 s12 offset-m1",
+            staticStyle: {
+              "background-color": "#f5f0f0",
+              position: "relative",
+              "border-radius": "10px",
+              "border-bottom-right-radius": "0px",
+              "border-bottom-left-radius": "0px"
+            },
+            attrs: { id: "conent" }
+          },
+          [
+            _c(
+              "h4",
+              { staticStyle: { "font-weight": "400", "padding-left": "5px" } },
+              [_vm._v("Informacion General")]
+            ),
+            _vm._v(" "),
+            _c(
+              "p",
+              {
+                staticClass: "flow-text",
+                staticStyle: {
+                  "text-align": "justify",
+                  padding: "0 20px 0 20px"
+                }
+              },
+              [
+                _vm._v(
+                  "\r\n        Generador de código fuente de Sql, Php, Python y Java a partir de diagramas\r\n        entidad-relación y diagramas de clases creados por el usuario, destinado a ser utilizado\r\n        como herramienta de enseñanza para los estudiantes de bases de datos y programación\r\n        III en la carrera de Ingeniería de Sistemas del I.U.P.S.M extensión Barinas o como\r\n        apoyo en el proceso de desarrollo de software por programadores profesionales.\r\n      "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "h4",
+                {
+                  staticStyle: { "font-weight": "300", "text-align": "center" }
+                },
+                [_vm._v("Caracteristicas")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "row", staticStyle: { "margin-top": "40px" } },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col s6 m4",
+                      staticStyle: { color: "#E91E63" }
+                    },
+                    [
+                      _c("div", { staticClass: "center promo" }, [
+                        _c("i", { staticClass: "large material-icons" }, [
+                          _vm._v("flash_on")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "promo-caption" }, [
+                          _vm._v("Rapidez")
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col s6 m4",
+                      staticStyle: { color: "#4b367c" }
+                    },
+                    [
+                      _c("div", { staticClass: "center promo" }, [
+                        _c("i", { staticClass: "large material-icons" }, [
+                          _vm._v("pan_tool")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "promo-caption" }, [
+                          _vm._v("Versatilidad")
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col s6 m4",
+                      staticStyle: { color: "#E91E63" }
+                    },
+                    [
+                      _c("div", { staticClass: "center promo" }, [
+                        _c("i", { staticClass: "large material-icons" }, [
+                          _vm._v("storage")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "promo-caption" }, [
+                          _vm._v("Almacenamiento")
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col s6 m4",
+                      staticStyle: { color: "#4b367c" }
+                    },
+                    [
+                      _c("div", { staticClass: "center promo" }, [
+                        _c("i", { staticClass: "large material-icons" }, [
+                          _vm._v("airline_seat_individual_suite")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "promo-caption" }, [
+                          _vm._v("Comodidad")
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col s6 m4",
+                      staticStyle: { color: "#E91E63" }
+                    },
+                    [
+                      _c("div", { staticClass: "center promo" }, [
+                        _c("i", { staticClass: "large material-icons" }, [
+                          _vm._v("event_available")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "promo-caption" }, [
+                          _vm._v("Disponibilidad")
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col s6 m4",
+                      staticStyle: { color: "#4b367c" }
+                    },
+                    [
+                      _c("div", { staticClass: "center promo" }, [
+                        _c("i", { staticClass: "large material-icons" }, [
+                          _vm._v("style")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "promo-caption" }, [
+                          _vm._v("Estilo")
+                        ])
+                      ])
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticStyle: { "margin-top": "40px", "margin-bottom": "20px" }
+                },
+                [
+                  _c(
+                    "h4",
+                    {
+                      staticStyle: {
+                        "font-weight": "300",
+                        "text-align": "center"
+                      }
+                    },
+                    [_vm._v("Informacion del sistema")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col s12 m6",
+                      staticStyle: { "margin-bottom": "15px" }
+                    },
+                    [
+                      _c(
+                        "h5",
+                        {
+                          staticStyle: {
+                            "font-weight": "400",
+                            "text-align": "center"
+                          }
+                        },
+                        [_vm._v("Diagramas creados:  ER vs Clases ")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass: "col s12",
+                        staticStyle: {
+                          height: "300px",
+                          "background-color": "#f5f0f0"
+                        },
+                        attrs: { id: "graph1" }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col s12 m6",
+                      staticStyle: { "margin-bottom": "15px" }
+                    },
+                    [
+                      _c(
+                        "h5",
+                        {
+                          staticStyle: {
+                            "font-weight": "400",
+                            "text-align": "center"
+                          }
+                        },
+                        [_vm._v("Balance cantidad de diagramas por usuario")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass: "col s12",
+                        staticStyle: {
+                          height: "300px",
+                          "background-color": "#f5f0f0"
+                        },
+                        attrs: { id: "graph2" }
+                      })
+                    ]
+                  )
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "col m1 hide-on-small-only" })
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-35fb1d70", module.exports)
+  }
+}
+
+/***/ }),
+/* 618 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 619 */,
+/* 620 */,
+/* 621 */,
+/* 622 */,
+/* 623 */,
+/* 624 */,
+/* 625 */,
+/* 626 */,
+/* 627 */,
+/* 628 */,
+/* 629 */,
+/* 630 */,
+/* 631 */,
+/* 632 */,
+/* 633 */,
+/* 634 */,
+/* 635 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("navbar-dg", { attrs: { logeado: _vm.logeado } }),
       _vm._v(" "),
-      _c("form", {
-        staticStyle: { display: "none" },
-        attrs: { id: "logout-form", action: "", method: "POST" }
-      })
+      _vm._m(0)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c(
+        "form",
+        {
+          staticClass: "col l5 m9 s12 formlogin",
+          attrs: { method: "POST", action: "" }
+        },
+        [
+          _c("h4", { staticClass: "center" }, [_vm._v("Ingresar")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "input-field col s12 " }, [
+              _c("i", { staticClass: "material-icons prefix" }, [
+                _vm._v("account_circle")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  id: "username",
+                  type: "text",
+                  name: "username",
+                  value: "",
+                  required: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "username" } }, [
+                _vm._v("nombre de usuario")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "input-field col s12 " }, [
+              _c("i", { staticClass: "material-icons prefix" }, [
+                _vm._v("vpn_key")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  id: "password",
+                  type: "password",
+                  name: "password",
+                  required: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "password" } }, [
+                _vm._v("Contraseña")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col m6", attrs: { align: "center" } }, [
+              _c(
+                "button",
+                {
+                  staticClass: "waves-effect waves-light btn degradado Wradius",
+                  attrs: { type: "submit" }
+                },
+                [_vm._v("Entrar")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col m6", attrs: { align: "center" } }, [
+              _c(
+                "a",
+                {
+                  staticClass: "waves-effect waves-light btn degradado Wradius",
+                  attrs: { href: "" }
+                },
+                [_vm._v("Registrarse")]
+              )
+            ])
+          ])
+        ]
+      )
     ])
   }
 ]
@@ -136351,38 +139319,81 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-ca36a346", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-01e7f602", module.exports)
   }
 }
 
 /***/ }),
-/* 614 */,
-/* 615 */,
-/* 616 */
+/* 636 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(637);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(614)("727be991", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-01e7f602\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-01e7f602\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 637 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(613)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.formlogin[data-v-01e7f602] {\n  position: fixed;\n  z-index: 9;\n  background: white;\n  height: 100%;\n  opacity: 0.7;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 638 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(101)
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(641)
+}
+var normalizeComponent = __webpack_require__(44)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(639)
 /* template */
-var __vue_template__ = __webpack_require__(618)
+var __vue_template__ = __webpack_require__(643)
+/* template functional */
+var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-e24368cc"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __vue_script__,
   __vue_template__,
+  __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\layout\\Footer.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Footer.vue: functional components are not supported with templates, they should use render functions.")}
+Component.options.__file = "resources\\assets\\js\\components\\Register.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -136391,9 +139402,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-079aeb30", Component.options)
+    hotAPI.createRecord("data-v-e24368cc", Component.options)
   } else {
-    hotAPI.reload("data-v-079aeb30", Component.options)
+    hotAPI.reload("data-v-e24368cc", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -136404,35 +139415,300 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 617 */,
-/* 618 */
+/* 639 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_Navbar__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__layout_Navbar__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  components: { navbarDg: __WEBPACK_IMPORTED_MODULE_0__layout_Navbar___default.a },
+  props: {
+    logeado: { type: Number, Required: true }
+  },
+
+  data: function data() {
+
+    return {};
+  }
+});
+
+/***/ }),
+/* 640 */,
+/* 641 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(642);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(614)("1f7ad940", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e24368cc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Register.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e24368cc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Register.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 642 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(613)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.formlogin[data-v-e24368cc] {\n  position: fixed;\n  z-index: 9;\n  background: white;\n  height: 100%;\n  opacity: 0.7;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 643 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    [
+      _c("navbar-dg", { attrs: { logeado: _vm.logeado } }),
+      _vm._v(" "),
+      _vm._m(0)
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "footer",
-      { staticClass: "page-footer", staticStyle: { "padding-top": "0px" } },
-      [
-        _c("div", { staticClass: "footer-copyright" }, [
-          _c("div", { staticClass: "container" }, [
-            _vm._v("\n    © 2018 Copyright Adham Gatriff  \n    "),
-            _c("a", { staticClass: "grey-text text-lighten-4 right" }, [
-              _vm._v("version 0.80 BETA")
+    return _c("div", { staticClass: "row" }, [
+      _c(
+        "form",
+        {
+          staticClass: "col l5 m9 m5 offset-l7 offset-m3 s12 formlogin",
+          attrs: { method: "POST", action: "" }
+        },
+        [
+          _c("h4", { staticClass: "center" }, [_vm._v("Registarse")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "input-field col s12" }, [
+              _c("i", { staticClass: "material-icons prefix" }, [
+                _vm._v("account_box")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  id: "usuario",
+                  type: "text",
+                  name: "usuario",
+                  value: "",
+                  required: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "usuario" } }, [
+                _vm._v("Nombre de usuario")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "input-field col s6" }, [
+              _c("i", { staticClass: "material-icons prefix" }, [
+                _vm._v("face")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  id: "nombre",
+                  type: "text",
+                  name: "nombre",
+                  value: "",
+                  required: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "nombre" } }, [_vm._v("Nombre")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-field col s6" }, [
+              _c("i", { staticClass: "material-icons prefix" }, [
+                _vm._v("perm_identity")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  id: "apellido",
+                  type: "text",
+                  name: "apellido",
+                  value: "",
+                  required: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "apellido" } }, [_vm._v("Apellido")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "input-field col s12" }, [
+              _c("i", { staticClass: "material-icons prefix" }, [
+                _vm._v("email")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  id: "email",
+                  type: "email",
+                  name: "email",
+                  value: "",
+                  required: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "email" } }, [_vm._v("Email")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "input-field col s6" }, [
+              _c("i", { staticClass: "material-icons prefix" }, [
+                _vm._v("vpn_key")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  id: "password",
+                  type: "password",
+                  name: "password",
+                  required: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "password" } }, [
+                _vm._v("Contraseña")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-field col s6 " }, [
+              _c("i", { staticClass: "material-icons prefix" }, [
+                _vm._v("vpn_key")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  id: "password-confirm",
+                  type: "password",
+                  name: "password_confirmation",
+                  required: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "password-confirm" } }, [
+                _vm._v("Repita la contraseña")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col m12", attrs: { align: "center" } }, [
+              _c(
+                "button",
+                {
+                  staticClass: "waves-effect waves-light btn degradado Wradius",
+                  attrs: { type: "submit" }
+                },
+                [_vm._v("Registrarse")]
+              )
             ])
           ])
-        ])
-      ]
-    )
+        ]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -136440,7 +139716,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-079aeb30", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-e24368cc", module.exports)
   }
 }
 
