@@ -12,6 +12,11 @@
 */
 Route::get('/api/route/{name}', 'RouteController@index');
 
+Route::get('/sessionStatus', function() {
+	return ['user' => Auth::user() ? Auth::user() : null];
+});
+
+
 Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('/principal', 'Principal@ReturnDiagrams');

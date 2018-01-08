@@ -63,10 +63,6 @@
   export default {
 
     components: {navbarDg},
-    props: {
-      logeado: { type: Number, Required: true }
-    },
-
     data(){
 
       return{

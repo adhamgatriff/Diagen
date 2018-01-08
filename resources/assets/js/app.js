@@ -25,6 +25,7 @@ Vue.component('footerDg', require('./components/layout/Footer.vue'));
 import VueRouter from 'vue-router'
 import routes from './rutas'
 import VueRouteLaravel from 'vue-route-laravel'
+import isLoggedMixin from './mixins/isLogged'
 
 var config = {
 	baseroute: '/api/route/',
@@ -44,19 +45,36 @@ const router = new VueRouter({
 const app = new Vue({
 	el: '#app',
 	router,
+	mixins: [isLoggedMixin],
 	data(){
 		return{
 			isNavactive: false,
-			dir:this.$route.name
+			dir:this.$route.name,
+			user: false
 		}
+	},
+	created(){
+		this.checkIfLogged()
+			.then(response => {
+							this.user = response ? response : false;
+					})                    
+			.catch(error => console.log(error));
 	},
 	mounted(){
 		if(this.dir == 'login' || this.dir == "registro"){
 			this.isNavactive = true
+			
 		}
 	},
 	watch: {
 		'$route' (to, from) {
+
+			this.checkIfLogged()
+			.then(response => {
+					this.user = response ? response : false;
+							
+			})                    
+			.catch(error => console.log(error));
 
 			if(to.name=="login" ||to.name=="registro"){
 				this.isNavactive = true
@@ -73,6 +91,11 @@ const app = new Vue({
 					part.resizeHandler()							
 				}, 0);
 			}
+		}
+	},
+	methods: {
+		redirect(e){
+			router.push({name: e})
 		}
 	}
 });

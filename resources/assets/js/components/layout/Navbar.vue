@@ -6,7 +6,7 @@
 				<img src="img/logo2.png" style="width: 75px;margin-left: 10px;">
 			</router-link>
 			<a href="#" data-activates="slide-out-" class="button-collapse"><i class="material-icons">menu</i></a>
-			<ul class="right hide-on-med-and-down" v-if="logeado =='0'">
+			<ul class="right hide-on-med-and-down" v-if="!logeado">
         <li>
 					<router-link class="" to="/ingreso">Ingresar</router-link>
 				</li>
@@ -20,7 +20,7 @@
 							<i class="material-icons" style="line-height:inherit;height:inherit;">account_circle</i>
 						</a>
 					</li>
-					<li><a href="">adhamchitoj</a></li>
+					<li><a href="">{{logeado.username}}</a></li>
 					<li>
 						<a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
 						
@@ -29,12 +29,12 @@
 					</li>
       </ul>
 
-			<ul class="side-nav" id="slide-out-" v-if="logeado =='0'">
+			<ul class="side-nav" id="slide-out-" v-if="!logeado">
         <li><router-link class="" to="/ingreso">Ingresar</router-link></li>
         <li><router-link class="" to="/registro">Registrarse</router-link></li>
 			</ul>
 			<ul class="side-nav" id="slide-out-" v-else>
-					<li><a href="">asdfafa</a></li>
+					<li><a href="">{{logeado.username}}</a></li>
 					<li>
 						<a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
 						<form id="logout-form" action="" method="POST" style="display: none;">
@@ -52,7 +52,7 @@
 <script>
 export default {
   props: {
-    logeado: { type: Number, Required: true }
+    logeado: { Required: true }
   },
 }
 </script>

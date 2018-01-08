@@ -14,9 +14,10 @@
 </head>
 <body>
 		<main id="app">
-				<navbar-dg :logeado="{{ Auth::check() ? '1':'0' }}" v-show="isNavactive"></navbar-dg>
+				<navbar-dg :logeado="this.user" v-show="isNavactive"></navbar-dg>
+				{{--  @include('include.navbar')  --}}
 			<transition name="fade">
-				<router-view :logeado="{{ Auth::check() ? '1':'0' }}"></router-view>
+				<router-view :logeado="this.user" @select="redirect"></router-view>
 			</transition>
 		</main>
 	</div>

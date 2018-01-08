@@ -46523,6 +46523,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rutas__ = __webpack_require__(608);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_route_laravel__ = __webpack_require__(646);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_route_laravel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_route_laravel__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_isLogged__ = __webpack_require__(647);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -46550,6 +46551,7 @@ Vue.component('footerDg', __webpack_require__(605));
 
 
 
+
 var config = {
 	baseroute: '/api/route/',
 	axios: axios,
@@ -46567,11 +46569,22 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
 var app = new Vue({
 	el: '#app',
 	router: router,
+	mixins: [__WEBPACK_IMPORTED_MODULE_3__mixins_isLogged__["a" /* default */]],
 	data: function data() {
 		return {
 			isNavactive: false,
-			dir: this.$route.name
+			dir: this.$route.name,
+			user: false
 		};
+	},
+	created: function created() {
+		var _this = this;
+
+		this.checkIfLogged().then(function (response) {
+			_this.user = response ? response : false;
+		}).catch(function (error) {
+			return console.log(error);
+		});
 	},
 	mounted: function mounted() {
 		if (this.dir == 'login' || this.dir == "registro") {
@@ -46581,6 +46594,13 @@ var app = new Vue({
 
 	watch: {
 		'$route': function $route(to, from) {
+			var _this2 = this;
+
+			this.checkIfLogged().then(function (response) {
+				_this2.user = response ? response : false;
+			}).catch(function (error) {
+				return console.log(error);
+			});
 
 			if (to.name == "login" || to.name == "registro") {
 				this.isNavactive = true;
@@ -46597,6 +46617,11 @@ var app = new Vue({
 					part.resizeHandler();
 				}, 0);
 			}
+		}
+	},
+	methods: {
+		redirect: function redirect(e) {
+			router.push({ name: e });
 		}
 	}
 });
@@ -135457,7 +135482,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    logeado: { type: Number, Required: true }
+    logeado: { Required: true }
   }
 });
 
@@ -135484,7 +135509,7 @@ var render = function() {
           _vm._v(" "),
           _vm._m(0),
           _vm._v(" "),
-          _vm.logeado == "0"
+          !_vm.logeado
             ? _c("ul", { staticClass: "right hide-on-med-and-down" }, [
                 _c(
                   "li",
@@ -135509,12 +135534,16 @@ var render = function() {
             : _c("ul", { staticClass: "right hide-on-med-and-down" }, [
                 _vm._m(1),
                 _vm._v(" "),
-                _vm._m(2),
+                _c("li", [
+                  _c("a", { attrs: { href: "" } }, [
+                    _vm._v(_vm._s(_vm.logeado.username))
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(3)
+                _vm._m(2)
               ]),
           _vm._v(" "),
-          _vm.logeado == "0"
+          !_vm.logeado
             ? _c(
                 "ul",
                 { staticClass: "side-nav", attrs: { id: "slide-out-" } },
@@ -135543,7 +135572,15 @@ var render = function() {
             : _c(
                 "ul",
                 { staticClass: "side-nav", attrs: { id: "slide-out-" } },
-                [_vm._m(4), _vm._v(" "), _vm._m(5)]
+                [
+                  _c("li", [
+                    _c("a", { attrs: { href: "" } }, [
+                      _vm._v(_vm._s(_vm.logeado.username))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(3)
+                ]
               )
         ],
         1
@@ -135593,12 +135630,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("adhamchitoj")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("li", [
       _c(
         "a",
@@ -135617,12 +135648,6 @@ var staticRenderFns = [
         attrs: { id: "logout-form", action: "", method: "POST" }
       })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("asdfafa")])])
   },
   function() {
     var _vm = this
@@ -138660,10 +138685,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
 
   components: { navbarDg: __WEBPACK_IMPORTED_MODULE_0__layout_Navbar___default.a },
-  props: {
-    logeado: { type: Number, Required: true }
-  },
-
   data: function data() {
 
     return {};
@@ -139013,9 +139034,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mixins: [__WEBPACK_IMPORTED_MODULE_1_vue_form___default.a],
-  props: {
-    logeado: { type: Number, Required: true }
-  },
   components: { navbarDg: __WEBPACK_IMPORTED_MODULE_0__layout_Navbar___default.a },
   data: function data() {
     return {
@@ -139033,6 +139051,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     onSubmit: function onSubmit() {
+      var _this = this;
+
       if (this.formstate.$invalid) {
         // alert user and exit early
         return;
@@ -139041,7 +139061,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // otherwise submit form
       this.$routeLaravel('login').post({ username: this.model.username,
         password: this.model.pass
-      }).redirect();
+      }).then(function (response) {
+        // console.log(response.data)
+        _this.$emit('select', 'incio');
+      }).catch(function (response) {
+        // console.log(this.model.username)
+        // console.log(response.data)
+      });
     }
   }
 });
@@ -139446,7 +139472,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: { footerLng: __WEBPACK_IMPORTED_MODULE_0__layout_FooterLng___default.a },
   props: {
-    logeado: { type: Number, Required: true }
+    logeado: { Required: true }
   },
   mounted: function mounted() {
     var _this = this;
@@ -139778,7 +139804,7 @@ var render = function() {
               _c("div", { staticClass: "nav-wrapper" }, [
                 _vm._m(0),
                 _vm._v(" "),
-                _vm.logeado == 0
+                !_vm.logeado
                   ? _c(
                       "ul",
                       { staticClass: "right hide-on-small-only" },
@@ -139817,40 +139843,51 @@ var render = function() {
                     )
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.logeado == 1
-                  ? _c("ul", { staticClass: "right hide-on-small-only" }, [
-                      _vm._m(2),
-                      _vm._v(" "),
-                      _vm._m(3),
-                      _vm._v(" "),
-                      _vm._m(4)
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.logeado == 0
+                _vm.logeado
                   ? _c(
                       "ul",
-                      { staticClass: "side-nav", attrs: { id: "mobile" } },
+                      {
+                        staticClass: "right hide-on-small-only",
+                        staticStyle: { transform: "none !important" }
+                      },
                       [
-                        _vm._m(5),
+                        _vm._m(2),
                         _vm._v(" "),
-                        _vm._m(6),
+                        _c("li", [
+                          _c("a", { attrs: { href: "principal" } }, [
+                            _vm._v(_vm._s(_vm.logeado.username))
+                          ])
+                        ]),
                         _vm._v(" "),
-                        _vm._m(7)
+                        _vm._m(3)
                       ]
                     )
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.logeado == 1
+                !_vm.logeado
                   ? _c(
                       "ul",
                       { staticClass: "side-nav", attrs: { id: "mobile" } },
                       [
+                        _vm._m(4),
+                        _vm._v(" "),
+                        _vm._m(5),
+                        _vm._v(" "),
+                        _vm._m(6)
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.logeado
+                  ? _c(
+                      "ul",
+                      { staticClass: "side-nav", attrs: { id: "mobile" } },
+                      [
+                        _vm._m(7),
+                        _vm._v(" "),
                         _vm._m(8),
                         _vm._v(" "),
-                        _vm._m(9),
-                        _vm._v(" "),
-                        _vm._m(10)
+                        _vm._m(9)
                       ]
                     )
                   : _vm._e()
@@ -139860,9 +139897,9 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(11),
+      _vm._m(10),
       _vm._v(" "),
-      _vm._m(12),
+      _vm._m(11),
       _vm._v(" "),
       _c("footer-lng")
     ],
@@ -139915,14 +139952,6 @@ var staticRenderFns = [
           )
         ]
       )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "principal" } }, [_vm._v("afsdfa")])
     ])
   },
   function() {
@@ -142094,6 +142123,28 @@ VueRouteLaravel.install = function(Vue, config) {
 }
 
 module.exports = VueRouteLaravel;
+
+/***/ }),
+/* 647 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var isLoggedMixin = {
+  methods: {
+    checkIfLogged: function checkIfLogged() {
+      var vm = this;
+      return new Promise(function (resolve, reject) {
+        axios.get('/sessionStatus').then(function (response) {
+          resolve(response.data.user);
+        }).catch(function (error) {
+          reject(error.response.data);
+        });
+      });
+    }
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (isLoggedMixin);
 
 /***/ })
 /******/ ]);

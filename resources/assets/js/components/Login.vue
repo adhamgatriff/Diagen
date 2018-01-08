@@ -49,9 +49,6 @@ import VueForm from 'vue-form';
 
   export default {
     mixins: [VueForm],
-    props: {
-      logeado: { type: Number, Required: true }
-    },
     components: {navbarDg},
     data() {
       return {
@@ -67,7 +64,10 @@ import VueForm from 'vue-form';
  
     },
     methods: {
-    onSubmit: function () {
+    onSubmit: function () { 
+
+      
+
       if(this.formstate.$invalid) {
         // alert user and exit early
         return;
@@ -77,7 +77,14 @@ import VueForm from 'vue-form';
       this.$routeLaravel('login')
         .post({ username :this.model.username, 
           password: this.model.pass
-        }).redirect()
+        }).then(response => {
+            // console.log(response.data)
+           this.$emit('select', 'incio')
+
+        }).catch(response => {
+          // console.log(this.model.username)
+            // console.log(response.data)
+        })
       }
     }
   }

@@ -6,19 +6,19 @@
         <nav style="box-shadow: none; background: none;">
           <div class="nav-wrapper">
             <a href="#" data-activates="mobile" class="button-collapse show-on-small"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-small-only" v-if="logeado == 0">
+            <ul class="right hide-on-small-only" v-if="!logeado">
                 <li><a href="resources/Doc.pdf" target="_blank">Manual de Usuario</a></li>
                 <router-link class="waves-effect waves-light btn Wradius" style="background: white;color: #311f5f;box-shadow: 3px 3px 20px 0px #000;" to="ingreso">Ingresar</router-link>
                 <!-- <a href="" >Ingresar</a> -->
                 <router-link class="waves-effect waves-light btn Wradius" style="background: white;color: #E91E63;box-shadow: 3px 3px 20px 0px #000;" to="/registro">Registrarse</router-link>
             </ul>
-            <ul class="right hide-on-small-only" v-if="logeado == 1"> 
+            <ul class="right hide-on-small-only" style="transform: none !important;" v-if="logeado"> 
               <li>
                   <a href="#" data-activates="slide-out_" class="button_edit_user" >
                     <i class="material-icons" style="line-height: inherit;height: inherit;">account_circle</i>
                   </a>
                 </li>
-                <li><a href="principal">afsdfa</a></li>
+                <li><a href="principal">{{logeado.username}}</a></li>
                 <li>
                   <a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
                   
@@ -28,13 +28,13 @@
                 </li>
             </ul>
 
-            <ul class="side-nav" id="mobile" v-if="logeado == 0">
+            <ul class="side-nav" id="mobile" v-if="!logeado ">
               <li><a href="">Manual de Usuario</a></li>
                 <li><a href="">Ingresar</a></li>
                 <li><a href="">Registrarse</a></li>
             </ul>
 
-            <ul class="side-nav" id="mobile" v-if="logeado == 1">
+            <ul class="side-nav" id="mobile" v-if="logeado">
               <li>
                   <a href="#" data-activates="slide-out_" class="button_edit_user" >
                     <i class="material-icons" style="line-height: inherit;height: inherit;">account_circle</i>
@@ -150,7 +150,7 @@ import footerLng from './layout/FooterLng'
 export default {
   components: {footerLng},
   props: {
-    logeado: { type: Number, Required: true }
+    logeado: {  Required: true }
   },
   mounted() {
     $(".button-collapse").sideNav();
