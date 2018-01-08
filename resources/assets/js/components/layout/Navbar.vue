@@ -30,8 +30,8 @@
       </ul>
 
 			<ul class="side-nav" id="slide-out-" v-if="logeado =='0'">
-        <li><a href="">Ingresar</a></li>
-        <li><a href="">Registrarse</a></li>
+        <li><router-link class="" to="/ingreso">Ingresar</router-link></li>
+        <li><router-link class="" to="/registro">Registrarse</router-link></li>
 			</ul>
 			<ul class="side-nav" id="slide-out-" v-else>
 					<li><a href="">asdfafa</a></li>

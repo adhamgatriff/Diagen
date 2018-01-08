@@ -1,23 +1,32 @@
 <template>
   <div>
-    <navbar-dg :logeado="logeado"></navbar-dg>
-      <div class="row">
-    <form class="col l5 m9 s12 formlogin" method="POST" action="">
+    <!-- <transition name="fadeLeft"> -->
+      <!-- <navbar-dg :logeado="logeado"></navbar-dg> -->
+    <!-- </transition> -->
+      <div class="row" style="
+    margin-bottom: 0px;">
+    <vue-form class="col l5 m9 s12 formlogin" :state="formstate" @submit.prevent="onSubmit" style="
+    background: white; height=100px; ">
+    <!-- <form  method="POST" action="" > -->
       <h4 class="center">Ingresar</h4>
       <div class="row">
-        <div class="input-field col s12 ">
+        <validate class="input-field col s12 ">
           <i class="material-icons prefix">account_circle</i>
-          <input id="username" type="text" class="form-control" name="username" value="" required>
+          <input v-model="model.username" id="username" type="text" class="form-control" name="username" value="" required>
           <label for="username">nombre de usuario</label>
-        </div>
+
+          <field-messages name="username" show="$touched || $submitted" class="form-control-feedback">
+            <div slot="required" class="center-align" style="color:red;">El nombre de usuario es requerido</div>
+          </field-messages>
+        </validate>
       </div>
 
       <div class="row">
-        <div class="input-field col s12 ">
+        <validate class="input-field col s12 ">
           <i class="material-icons prefix">vpn_key</i>
-          <input id="password" type="password" class="form-control" name="password" required>
+          <input v-model="model.pass" id="password" type="password" class="form-control" name="password" required>
           <label for="password">Contraseña</label>
-        </div>
+        </validate>
       </div>
 
       <div class="row">
@@ -25,30 +34,51 @@
           <button type="submit" class="waves-effect waves-light btn degradado Wradius">Entrar</button>
         </div>
         <div class="col m6" align="center">
-          <a href="" class="waves-effect waves-light btn degradado Wradius">Registrarse</a>
+          	<router-link  class="waves-effect waves-light btn degradado Wradius" to="/registro">Registrarse</router-link>
         </div>
       </div>
-    </form>
+    <!-- </form> -->
+    </vue-form>
     </div>
   </div>
 </template>
 <script>
 
 import navbarDg from './layout/Navbar'
-  export default {
+import VueForm from 'vue-form';
 
+  export default {
+    mixins: [VueForm],
     props: {
       logeado: { type: Number, Required: true }
     },
     components: {navbarDg},
     data() {
       return {
-
+        formstate: {},
+        model: {
+          username: '',
+          pass: ''
+        }
       }
     },
     mounted(){
       // part.destroy()
  
+    },
+    methods: {
+    onSubmit: function () {
+      if(this.formstate.$invalid) {
+        // alert user and exit early
+        return;
+      }
+      
+      // otherwise submit form
+      this.$routeLaravel('login')
+        .post({ username :this.model.username, 
+          password: this.model.pass
+        }).redirect()
+      }
     }
   }
 </script>

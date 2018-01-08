@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/api/route/{name}', 'RouteController@index');
 
 Route::group(['middleware' => ['auth']], function () {
 

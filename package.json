@@ -29,6 +29,9 @@
         "popper.js": "^1.13.0",
         "validator": "^9.2.0",
         "vue": "^2.5.13",
-        "vue-router": "^3.0.1"
+        "vue-form": "^4.7.0",
+        "vue-route-laravel": "^1.0.4",
+        "vue-router": "^3.0.1",
+        "vue2-animate": "^1.0.4"
     }
 }

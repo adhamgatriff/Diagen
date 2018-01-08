@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+const queryString = require('query-string')
 
 
 /**
@@ -23,7 +24,17 @@ Vue.component('footerDg', require('./components/layout/Footer.vue'));
 
 import VueRouter from 'vue-router'
 import routes from './rutas'
+import VueRouteLaravel from 'vue-route-laravel'
 
+var config = {
+	baseroute: '/api/route/',
+	axios: axios,
+	queryString: queryString,
+	csrf_token: document.head.querySelector("[name=csrf-token]").content
+}
+
+//create method global
+Vue.use(VueRouteLaravel, config)
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -33,11 +44,35 @@ const router = new VueRouter({
 const app = new Vue({
 	el: '#app',
 	router,
+	data(){
+		return{
+			isNavactive: false,
+			dir:this.$route.name
+		}
+	},
+	mounted(){
+		if(this.dir == 'login' || this.dir == "registro"){
+			this.isNavactive = true
+		}
+	},
 	watch: {
 		'$route' (to, from) {
-			setTimeout(() => {
-				part.resizeHandler()							
-			}, 0);
+
+			if(to.name=="login" ||to.name=="registro"){
+				this.isNavactive = true
+			}else{
+				this.isNavactive = false
+			}
+			
+			if(from.name == "incio" && (to.name=="login" ||to.name=="registro") ){
+				setTimeout(() => {
+					part.resizeHandler()		
+				}, 1300);
+			}else{
+				setTimeout(() => {
+					part.resizeHandler()							
+				}, 0);
+			}
 		}
 	}
 });

@@ -5,7 +5,7 @@ import landing from './components/Landing.vue'
 
 const routes = [
   {path: '/', component: landing,name: 'incio'},
-  {path: '/registro', component: register },
+  {path: '/registro', component: register , name:'registro'},
   {path: '/ingreso', component: Login, name: 'login' },
   {path: '/Principal', component: Prueba },  
 ]

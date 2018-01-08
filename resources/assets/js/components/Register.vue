@@ -1,8 +1,11 @@
 <template>
   <div>
-    <navbar-dg :logeado="logeado"></navbar-dg>
-    <div class="row">
-    <form class="col l5 m9 m5 offset-l7 offset-m3 s12 formlogin" method="POST" action="">
+    <!-- <transition name="fadeLeft"> -->
+      <!-- <navbar-dg :logeado="logeado"></navbar-dg> -->
+    <!-- </transition> -->
+    <div class="row" style="
+    margin-bottom: 0px;">
+    <form class="col l5 m9 m5 offset-l7 offset-m3 s12 formlogin" method="POST" action="" style=" background: white;">
       <h4 class="center">Registarse</h4>
       <div class="row">
         <div class="input-field col s12">

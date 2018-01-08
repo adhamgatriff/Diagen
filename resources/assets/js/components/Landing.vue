@@ -10,7 +10,7 @@
                 <li><a href="resources/Doc.pdf" target="_blank">Manual de Usuario</a></li>
                 <router-link class="waves-effect waves-light btn Wradius" style="background: white;color: #311f5f;box-shadow: 3px 3px 20px 0px #000;" to="ingreso">Ingresar</router-link>
                 <!-- <a href="" >Ingresar</a> -->
-                <a href="" class="waves-effect waves-light btn Wradius" style="background: white;color: #E91E63;box-shadow: 3px 3px 20px 0px #000;">Registrarse</a>
+                <router-link class="waves-effect waves-light btn Wradius" style="background: white;color: #E91E63;box-shadow: 3px 3px 20px 0px #000;" to="/registro">Registrarse</router-link>
             </ul>
             <ul class="right hide-on-small-only" v-if="logeado == 1"> 
               <li>
@@ -18,12 +18,12 @@
                     <i class="material-icons" style="line-height: inherit;height: inherit;">account_circle</i>
                   </a>
                 </li>
-                <li><a href="">afsdfa</a></li>
+                <li><a href="principal">afsdfa</a></li>
                 <li>
                   <a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
                   
                   <form id="logout-form" action="" method="POST" style="display: none;">
-                      {{ csrf_field() }}
+                     
                   </form>
                 </li>
             </ul>
