@@ -1,13 +1,8 @@
 <template>
   <div>
-    <!-- <transition name="fadeLeft"> -->
-      <!-- <navbar-dg :logeado="logeado"></navbar-dg> -->
-    <!-- </transition> -->
-      <div class="row" style="
-    margin-bottom: 0px;">
+    <div class="row" style="margin-bottom: 0px;">
     <vue-form class="col l5 m9 s12 formlogin" :state="formstate" @submit.prevent="onSubmit" style="
     background: white; height=100px; ">
-    <!-- <form  method="POST" action="" > -->
       <h4 class="center">Ingresar</h4>
       <div class="row">
         <validate class="input-field col s12 ">
@@ -37,7 +32,6 @@
           	<router-link  class="waves-effect waves-light btn degradado Wradius" to="/registro">Registrarse</router-link>
         </div>
       </div>
-    <!-- </form> -->
     </vue-form>
     </div>
   </div>
@@ -65,8 +59,6 @@ import VueForm from 'vue-form';
     },
     methods: {
     onSubmit: function () { 
-
-      
 
       if(this.formstate.$invalid) {
         // alert user and exit early
