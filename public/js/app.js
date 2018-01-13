@@ -47855,6 +47855,18 @@ var app = new Vue({
 	}
 });
 
+router.beforeEach(function (to, from, next) {
+	if ((to.name == 'login' || to.name == 'registro') && app.user) {
+		Materialize.toast('No puedes acceder a esa ruta');
+		next({ name: 'incio' }); //principal
+	} else if (to.name == 'princ' && !app.user) {
+		Materialize.toast('No puedes acceder a esa ruta');
+		next({ name: 'login' });
+	} else {
+		next();
+	}
+});
+
 /***/ }),
 /* 197 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -140292,7 +140304,7 @@ var options = {
         nivel: '0',
         password: this.model.pass,
         password_confirmation: this.model.pass2
-      }).then(function (response) {
+      }).then(function () {
         _this.$router.push({ name: 'incio' });
       }).catch(function (error) {
         if (error.response.status == 422) {

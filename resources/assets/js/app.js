@@ -99,3 +99,16 @@ const app = new Vue({
 		}
 	}
 });
+
+router.beforeEach((to, from, next) => {
+  if ((to.name == 'login' || to.name == 'registro') && app.user) {
+  	Materialize.toast('No puedes acceder a esa ruta')
+  	next({ name: 'incio' }) //principal
+  }else if(to.name == 'princ' && !app.user){
+  	Materialize.toast('No puedes acceder a esa ruta')
+  	next({name: 'login'})
+  }else{
+  	next()	
+  }
+})
+
