@@ -61,21 +61,21 @@ import VueForm from 'vue-form';
     onSubmit: function () { 
 
       if(this.formstate.$invalid) {
-        // alert user and exit early
         return;
       }
-      
-      // otherwise submit form
-      this.$routeLaravel('login')
-        .post({ username :this.model.username, 
-          password: this.model.pass
-        }).then(response => {
-            // console.log(response.data)
-           this.$emit('select', 'incio')
 
-        }).catch(response => {
-          // console.log(this.model.username)
-            // console.log(response.data)
+      axios.post('login', {
+          username :this.model.username, 
+          password: this.model.pass
+        }).then( ()=>{
+          this.$router.push({name: 'incio'})
+        })
+        .catch( error =>{
+         if (error.response.status == 422) {
+          $.each(error.response.data.errors, (val, ind)=>{ 
+            Materialize.toast(ind,2300)
+            })
+          }
         })
       }
     }

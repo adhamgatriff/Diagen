@@ -20,11 +20,7 @@
                 </li>
                 <li><a href="principal">{{logeado.username}}</a></li>
                 <li>
-                  <a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
-                  
-                  <form id="logout-form" action="" method="POST" style="display: none;">
-                     
-                  </form>
+                  <a href="" @click="sacalo">Salir</a>
                 </li>
             </ul>
 
@@ -154,13 +150,6 @@ export default {
   },
   mounted() {
     $(".button-collapse").sideNav();
-
-    // const part = new particle.default(document.getElementById('particulas'), {
-		// 		dotColor: '#E91E63',
-		// 		lineColor: '#4b367c',
-		// 		density: 9000,
-		// 		parallax: true
-    //   });
   
     var granimInstance = new granim({
       element: '#primer',
@@ -187,6 +176,9 @@ export default {
     });
   },
   methods: {
+    sacalo(){
+      axios.post('sacalo')
+    },
     graficaDiag(er,dc){
       var myTorta = echarts.init(document.getElementById('graph1'));
      let option_ = {

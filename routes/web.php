@@ -19,6 +19,11 @@ Route::get('/sessionStatus', function() {
 
 Route::group(['middleware' => ['auth']], function () {
 
+	Route::post('sacalo', function() {
+	  Auth::logout();
+	  return 'ok';	
+	});
+
 	Route::get('/principal', 'Principal@ReturnDiagrams');
 	Route::post('updUsers', 'Principal@updUsuarios');
 	Route::post('delDiag', 'DiagramController@delDiagrama');

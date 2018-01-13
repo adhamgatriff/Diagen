@@ -14,6 +14,7 @@
 <body>
 		<main id="app">
 			<navbar-dg logeado="{{ Auth::check() ? '1':'0' }}"></navbar-dg>	
+			{{-- @include('include.navbar') --}}
 			@yield('main')
 			<footer-dg></footer-dg>
 		</main>

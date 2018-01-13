@@ -22,10 +22,7 @@
 					</li>
 					<li><a href="">{{logeado.username}}</a></li>
 					<li>
-						<a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
-						
-						<form id="logout-form" action="" method="POST" style="display: none;">
-						</form>
+						<a href="" @click="sacalo">Salir</a>
 					</li>
       </ul>
 
@@ -54,5 +51,14 @@ export default {
   props: {
     logeado: { Required: true }
   },
+  methods: {
+  	sacalo(){
+  		axios.post('sacalo')
+        .then(function (response) {
+          // console.log(response)
+          this.$emit('select', 'incio')
+        })
+  	}
+  }
 }
 </script>

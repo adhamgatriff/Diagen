@@ -15,7 +15,7 @@
 <body>
 		<main id="app">
 				<navbar-dg :logeado="this.user" v-show="isNavactive"></navbar-dg>
-				{{--  @include('include.navbar')  --}}
+				 {{-- @include('include.navbar')  --}}
 			<transition name="fade">
 				<router-view :logeado="this.user" @select="redirect"></router-view>
 			</transition>
@@ -29,7 +29,7 @@
 			const part = new particle.default(document.getElementById('app'), {
 					dotColor: '#E91E63',
 						lineColor: '#4b367c',
-						density: 9000,
+						density: 18000,
 						parallax: true
 					});
 

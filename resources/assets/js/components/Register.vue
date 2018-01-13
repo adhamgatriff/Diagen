@@ -119,7 +119,25 @@
           Materialize.toast('Corrija los errores',1300)
           return;
         }
-        console.log('asd')
+
+        axios.post('register', {
+          usuario :this.model.username, 
+          nombre :this.model.nombre, 
+          apellido :this.model.apellido, 
+          email :this.model.correo, 
+          nivel :'0', 
+          password: this.model.pass,
+          password_confirmation: this.model.pass2
+        })
+        .then((response) => {
+          this.$router.push({name: 'incio'})
+        }).catch((error) => {
+          if (error.response.status == 422) {
+            $.each(error.response.data.errors, (val, ind)=>{ 
+              Materialize.toast(ind,2300)
+            })
+          }
+        })
       },
     }
   }
