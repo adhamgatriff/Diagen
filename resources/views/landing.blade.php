@@ -159,7 +159,7 @@ $(document).ready(function() {
 	new particle.default(document.getElementById('app'), {
 	    dotColor: '#E91E63',
 	    lineColor: '#4b367c',
-	    density: 9000,
+	    density: 18000,
 	    parallax: true
 	});
 
