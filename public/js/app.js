@@ -47818,6 +47818,8 @@ var app = new Vue({
 	mounted: function mounted() {
 		if (this.dir == 'login' || this.dir == "registro") {
 			this.isNavactive = true;
+		} else if (this.dir == 'incio') {
+			document.title = 'Diagen';
 		}
 	},
 
@@ -47856,6 +47858,9 @@ var app = new Vue({
 });
 
 router.beforeEach(function (to, from, next) {
+
+	document.title = to.name == 'incio' ? 'Diagen' : to.name + ' - Diagen';
+
 	if ((to.name == 'login' || to.name == 'registro') && app.user) {
 		Materialize.toast('No puedes acceder a esa ruta');
 		next({ name: 'incio' }); //principal

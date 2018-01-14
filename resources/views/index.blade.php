@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-	<title>  @yield('title') - Diagen</title>
+	<title></title>
 	<link rel="icon" href="{{ asset('img/ico32x32.ico') }}" type="image/ico" sizes="32x32">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="csrf-token" content="{{ csrf_token() }}">

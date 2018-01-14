@@ -63,7 +63,8 @@ const app = new Vue({
 	mounted(){
 		if(this.dir == 'login' || this.dir == "registro"){
 			this.isNavactive = true
-			
+		}else if(this.dir == 'incio'){
+			document.title = 'Diagen'
 		}
 	},
 	watch: {
@@ -72,7 +73,6 @@ const app = new Vue({
 			this.checkIfLogged()
 			.then(response => {
 					this.user = response ? response : false;
-							
 			})                    
 			.catch(error => console.log(error));
 
@@ -101,6 +101,9 @@ const app = new Vue({
 });
 
 router.beforeEach((to, from, next) => {
+
+	document.title = (to.name =='incio') ? 'Diagen' : to.name+' - Diagen';
+
   if ((to.name == 'login' || to.name == 'registro') && app.user) {
   	Materialize.toast('No puedes acceder a esa ruta')
   	next({ name: 'incio' }) //principal
