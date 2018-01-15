@@ -15,15 +15,17 @@
 				</li>
 			</ul>
       <ul class="right hide-on-med-and-down" v-else>
-				 <li>
-						<a href="#" data-activates="slide-out_" class="button_edit_user" >
-							<i class="material-icons" style="line-height:inherit;height:inherit;">account_circle</i>
-						</a>
-					</li>
-					<li><a href="">{{logeado.username}}</a></li>
-					<li>
-						<a href="" @click="sacalo">Salir</a>
-					</li>
+				<li>
+					<a href="#" data-activates="slide-out_" class="button_edit_user" >
+						<i class="material-icons" style="line-height:inherit;height:inherit;">account_circle</i>
+					</a>
+				</li>
+				<li>
+					<router-link class="" to="/principal">{{logeado.username}}</router-link>
+				</li>
+				<li>
+					<a href="" @click="sacalo">Salir</a>
+				</li>
       </ul>
 
 			<ul class="side-nav" id="slide-out-" v-if="!logeado">
@@ -31,7 +33,9 @@
         <li><router-link class="" to="/registro">Registrarse</router-link></li>
 			</ul>
 			<ul class="side-nav" id="slide-out-" v-else>
-					<li><a href="">{{logeado.username}}</a></li>
+					<li>
+						<router-link class="" to="/principal">{{logeado.username}}</router-link>
+					</li>
 					<li>
 						<a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
 						<form id="logout-form" action="" method="POST" style="display: none;">

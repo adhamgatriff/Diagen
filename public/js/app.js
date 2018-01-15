@@ -47849,11 +47849,6 @@ var app = new Vue({
 				}, 0);
 			}
 		}
-	},
-	methods: {
-		redirect: function redirect(e) {
-			router.push({ name: e });
-		}
 	}
 });
 
@@ -139971,7 +139966,7 @@ if (inBrowser && window.Vue) {
 
 
 
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_Landing_vue___default.a, name: 'incio' }, { path: '/registro', component: __WEBPACK_IMPORTED_MODULE_1__components_Register_vue___default.a, name: 'registro' }, { path: '/ingreso', component: __WEBPACK_IMPORTED_MODULE_2__components_Login_vue___default.a, name: 'login' }, { path: '/Principal', component: __WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue___default.a }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_Landing_vue___default.a, name: 'incio' }, { path: '/registro', component: __WEBPACK_IMPORTED_MODULE_1__components_Register_vue___default.a, name: 'registro' }, { path: '/ingreso', component: __WEBPACK_IMPORTED_MODULE_2__components_Login_vue___default.a, name: 'login' }, { path: '/principal', component: __WEBPACK_IMPORTED_MODULE_0__components_Prueba_vue___default.a }];
 
 /* harmony default export */ __webpack_exports__["a"] = (routes);
 

@@ -135,21 +135,19 @@ body {
 }
 #primer{
 	width: 100%;
-    /* background-color: blue; */
-    height: 60vh;
-    position: absolute;
-    /*background: linear-gradient(196deg,#0d47a1,#42a5f5);*/
-    -webkit-transform: skewY(8deg);
-    transform: skewY(8deg);
-    -webkit-transform-origin: 100%;
-    transform-origin: 100%;
+  /* background-color: blue; */
+  height: 60vh;
+  position: absolute;
+  /*background: linear-gradient(196deg,#0d47a1,#42a5f5);*/
+  -webkit-transform: skewY(8deg);
+  transform: skewY(8deg);
+  -webkit-transform-origin: 100%;
+  transform-origin: 100%;
 }
-
 
 .degradado{
 	background: linear-gradient(to right, #E91E63,#311f5f);
  }
-
 
 .waves-effect.waves-moradito .waves-ripple {
   background-color: rgba(76, 55, 125, 0.85);

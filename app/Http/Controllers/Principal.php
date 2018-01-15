@@ -42,7 +42,7 @@ class Principal extends Controller
 			}
 		}
 		// se retorna la vista llamada principal con los datos de los diagramas y del usuario
-		return view('principal')->with(['datos' => $diagm, 'userData' =>Usuario::find(Auth::user()->id) ]);
+		return response()->json($diagm);
 	}
 
 	// metodo de actualizacion de datos del usuario

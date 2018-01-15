@@ -14,25 +14,21 @@
 </head>
 <body>
 		<main id="app">
-				<navbar-dg :logeado="this.user" v-show="isNavactive"></navbar-dg>
-				 {{-- @include('include.navbar')  --}}
+			<navbar-dg :logeado="this.user" v-show="isNavactive"></navbar-dg>
 			<transition name="fade">
-				<router-view :logeado="this.user" @select="redirect"></router-view>
+				<router-view :logeado="this.user"></router-view>
 			</transition>
 		</main>
 	</div>
-
 	<script src='{{mix("js/app.js")}}'></script>
 		<script type="text/javascript" src="{{ asset('js/mio.js') }}"></script>
 		<script>
-
 			const part = new particle.default(document.getElementById('app'), {
-					dotColor: '#E91E63',
-						lineColor: '#4b367c',
-						density: 18000,
-						parallax: true
-					});
-
+				dotColor: '#E91E63',
+				lineColor: '#4b367c',
+				density: 18000,
+				parallax: true
+			});
 	</script>
 	@yield('script')
 </body>

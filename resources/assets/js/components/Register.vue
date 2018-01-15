@@ -85,7 +85,6 @@
 </template>
 <script>
 
-  import navbarDg from './layout/Navbar'
   import VueForm from 'vue-form';
 
   var options = {
@@ -97,8 +96,6 @@
   }
 
   export default {
-
-    components: {navbarDg},
     mixins: [new VueForm(options)],
     data(){
       return{
@@ -130,7 +127,7 @@
           password_confirmation: this.model.pass2
         })
         .then(() => {
-          this.$router.push({name: 'incio'})
+          this.$router.push({path: '/principal'})
         }).catch( error => {
           if (error.response.status == 422) {
             $.each(error.response.data.errors, (val, ind)=>{ 

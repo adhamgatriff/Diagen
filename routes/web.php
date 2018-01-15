@@ -24,7 +24,7 @@ Route::group(['middleware' => ['auth']], function () {
 	  return 'ok';	
 	});
 
-	Route::get('/principal', 'Principal@ReturnDiagrams');
+	Route::get('api/diagrams', 'Principal@ReturnDiagrams');
 	Route::post('updUsers', 'Principal@updUsuarios');
 	Route::post('delDiag', 'DiagramController@delDiagrama');
   Route::get('/editor', function() {

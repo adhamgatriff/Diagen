@@ -18,7 +18,9 @@
                     <i class="material-icons" style="line-height: inherit;height: inherit;">account_circle</i>
                   </a>
                 </li>
-                <li><a href="principal">{{logeado.username}}</a></li>
+                <li>
+                  <router-link class="" to="/principal">{{logeado.username}}</router-link>
+                </li>
                 <li>
                   <a href="" @click="sacalo">Salir</a>
                 </li>

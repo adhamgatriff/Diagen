@@ -38,12 +38,10 @@
 </template>
 <script>
 
-import navbarDg from './layout/Navbar'
 import VueForm from 'vue-form';
 
   export default {
     mixins: [VueForm],
-    components: {navbarDg},
     data() {
       return {
         formstate: {},
@@ -68,7 +66,7 @@ import VueForm from 'vue-form';
           username :this.model.username, 
           password: this.model.pass
         }).then( ()=>{
-          this.$router.push({name: 'incio'})
+          this.$router.push({path: '/principal'})
         })
         .catch( error =>{
          if (error.response.status == 422) {
