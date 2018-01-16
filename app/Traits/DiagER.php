@@ -254,7 +254,6 @@ trait DiagER{
 
 									$cnx[$cxindex]['hasta'] = ['idtabla' => $idtabla, 'nombre' => $celdita['nombre']];
 								}else{
-									dd($conexiones);
 									$this->error = true; $conxErr = true;
 									$errores = 'Los campos no coinciden en el tipo de datos <a href="https://docs.microsoft.com/es-es/sql/t-sql/data-types/data-types-transact-sql" target="_blank"><strong>(Mas informacion)</strong></a>
 									 ';
