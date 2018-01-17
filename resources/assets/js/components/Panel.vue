@@ -29,7 +29,7 @@
 			</a>
 		</div>
 		<div class="fixed-action-btn modal-trigger" href="#modaladd">
-			<a id="Nuevo" class="btn-floating btn-large waves-effect waves-light degradado">
+			<a id="Nuevo" class="btn-floating btn-large waves-effect waves-light degradado" @click="NewDiagModal">
 				<i class="material-icons">add</i>
 			</a>
 		</div>
@@ -39,14 +39,21 @@
 				<p>Veo que no tienes diagramas :( <br>puedes crear uno nuevo presionando este boton.</p>
 			</div>
 		</div>
+		<new-diagrama></new-diagrama>
 	</div>
 </template>
 
 <script>
+
+import DeleteDiag from './modal/DeleteDiag'
+import ExportInd from './modal/ExportInd'
+import NewDiagrama from './modal/NewDiagrama'
+
+
 export default {
 
   name: 'Panel',
-
+  components: {DeleteDiag,ExportInd, NewDiagrama},
 
   data () {
     return {
@@ -54,8 +61,13 @@ export default {
     }
   },
   mounted(){
-    axios.get('api/diagrams').then( (resp)=>{ this.diagramas = resp.data })
+    axios.get('api/diagrams').then( resp =>{ this.diagramas = resp.data })
   },
+  methods: {
+  	NewDiagModal(){
+  		$('.modal').modal('open')
+  	}
+  }
 }
 </script>
 

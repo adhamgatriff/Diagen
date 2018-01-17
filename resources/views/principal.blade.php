@@ -1,4 +1,4 @@
-@extends('include.base')
+{{-- @extends('include.base')
 @section('title','principal')
 @section('main')
 @include('flash::message')
@@ -38,8 +38,8 @@
 			<h5>Hola!! </h5>
 			<p>Veo que no tienes diagramas :( <br>puedes crear uno nuevo presionando este boton.</p>
 		</div>
-	</div>
-  <div id="modaladd" class="modal">
+	</div> --}}
+{{--   <div id="modaladd" class="modal">
   	<div class="titulo-generico">
   		<h4 class="opensans">
   			Nuevo diagrama
@@ -59,8 +59,8 @@
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
       <a class="waves-effect waves-light btn degradado Wradius goEdit">Ir al editor</a>
     </div>
-  </div>
-	<div id="mdExpInd" class="modal modal-fixed-footer tinyModal">			
+  </div> --}}
+{{-- 	<div id="mdExpInd" class="modal modal-fixed-footer tinyModal">			
 		<div class="titulo-generico">
 			<h4 class="opensans">Exportar Diagrama</h4>
 		</div>
@@ -78,7 +78,7 @@
 				<i class="material-icons left">file_download</i>Exportar
 			</a>
 		</div>
-	</div>
+	</div> --}}
 	<div id="mdExpMult" class="modal modal-fixed-footer">
 		<div class="titulo-generico">
   		<h4 class="opensans">
@@ -136,7 +136,7 @@
 			</a>
 		</div>
 	</div>
-  <div id="deleteDmodal" class="modal bottom-sheet">
+{{--   <div id="deleteDmodal" class="modal bottom-sheet">
     <div class="titulo-generico" >
       <h4 class="opensans">Borrar diagrama</h4>
     	</div>
@@ -148,7 +148,7 @@
     	<a class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
     	<a class="waves-effect waves-light btn degradado Wradius borrarDg">Eliminar</a>
     </div>
-  </div>
+  </div> --}}
 
 	@include('include.sidenavEu')
 
