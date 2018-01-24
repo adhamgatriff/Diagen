@@ -73,7 +73,7 @@ trait DiagClases{
 	public function returnExt(int $lng=3){
 
     if($lng == 2){ $ext = '.py'; }else if($lng == 3){ $ext = '.php';}
-		else if($lng == 4){ $ext = '.class'; }else{ $ext = '.php';}
+		else if($lng == 4){ $ext = '.java'; }else{ $ext = '.php';}
 
 		return $ext;
 	}
@@ -86,7 +86,7 @@ trait DiagClases{
 		}else if($lng == 3){
 			$ext = '.php'; $method = 'php';
 		}else if($lng == 4){
-			$ext = '.class'; $method = 'java';
+			$ext = '.java'; $method = 'java';
 		}
 
 		foreach ($this->tablas as $key => $tabla) {
@@ -151,7 +151,7 @@ trait DiagClases{
 	private function HandleAggCom($idTabla, int $lng=3){
 
 		$import = []; $variable =[]; $method= [];$insConstr= [];
-
+		
 		foreach ($this->conexiones as $key => $conexion) {
 			unset($tablaHasta);
 			$tablaHasta = $this->tablas[$conexion['hasta']]['nombre'];

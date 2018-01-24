@@ -206,7 +206,7 @@ trait DiagER{
 			if ($this->primary != '') {
 				$string.= ",\r\n\t\nPRIMARY KEY(".$this->primary.")";
 			}
-			$string.= "\r\n) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;\r\n\r\n";
+			$string.= "\r\n);\r\n\r\n";
 			$this->primary = '';
 		}
 
