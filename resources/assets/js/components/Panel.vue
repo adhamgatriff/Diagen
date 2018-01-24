@@ -3,8 +3,8 @@
 		<h3 class="opensans" style="margin-left: 12px;">Tus diagramas</h3>
 		<div class="row">
 			<div v-for="(diagrama, index) in diagramas" >
-				<div class="col l3 m6 s12">
-					<div class="card">
+				<div class="col l3 m6 s12" >
+					<div class="card" @click="currDiagHandle(index)">
 						<div class="delete-diag" style="display: none;">
 							<a class="btn-floating btn-large waves-effect waves-light red a_card">
 								<i class="material-icons icon_card">delete</i>
@@ -40,6 +40,7 @@
 			</div>
 		</div>
 		<new-diagrama></new-diagrama>
+		<export-ind :currDiag="currDiagrama"></export-ind>
 	</div>
 </template>
 
@@ -49,7 +50,6 @@ import DeleteDiag from './modal/DeleteDiag'
 import ExportInd from './modal/ExportInd'
 import NewDiagrama from './modal/NewDiagrama'
 
-
 export default {
 
   name: 'Panel',
@@ -57,15 +57,27 @@ export default {
 
   data () {
     return {
-    	diagramas: null
+    	diagramas: null,
+    	currDiagrama: null,
     }
   },
   mounted(){
-    axios.get('api/diagrams').then( resp =>{ this.diagramas = resp.data })
+    axios.get('api/diagrams').then(resp => this.diagramas = resp.data )
+
+    if(this.diagramas)
+    	this.currDiagrama = this.diagramas[0]
   },
   methods: {
   	NewDiagModal(){
   		$('.modal').modal('open')
+  	},
+  	currDiagHandle(index){
+  		this.currDiagrama = this.diagramas[index]
+  		$('#mdExpInd').modal('open')
+  		setTimeout(function() {
+  			$('#langSelect').material_select()
+  		}, 10);
+  		
   	}
   }
 }

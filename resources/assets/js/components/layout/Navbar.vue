@@ -37,10 +37,7 @@
 						<router-link class="" to="/principal">{{logeado.username}}</router-link>
 					</li>
 					<li>
-						<a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
-						<form id="logout-form" action="" method="POST" style="display: none;">
-							
-						</form>
+						<a href="" @click="sacalo">Salir</a>
 					</li>
 			</ul>
 		</div>

@@ -221,15 +221,15 @@ $('.btn_expMult').on('click', evnt =>{
 	}
 });
 
-$('.goEdit').on('click', () => {
+// $('.goEdit').on('click', () => {
 
-	if($('#ediSelect').val()==''){
+// 	if($('#ediSelect').val()==''){
 
-		Materialize.toast('Seleccione un tipo de diagrama',1000);
-	}else{
-		$.redirect("{{ url('editor') }}",{t: $('#ediSelect').val()},'GET');
-	}
-});
+// 		Materialize.toast('Seleccione un tipo de diagrama',1000);
+// 	}else{
+// 		$.redirect("{{ url('editor') }}",{t: $('#ediSelect').val()},'GET');
+// 	}
+// });
 
 $('.exp-single').on('click', evnt => {
 

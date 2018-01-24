@@ -5,8 +5,17 @@
 	</div>
 	<div class="modal-content">
 		<div class="input-field col s12">
-			<select id='langSelect'>
+			<select id='langSelect' v-if="currDiag && currDiag.tipo== 0  ">
+				<option value="" disabled selected>Seleccione uno</option>
+				<option value='1' data-icon="img/sql2.png" class="left circle">SQL</option>
 			</select>
+			<select id='langSelect' v-else-if="currDiag && currDiag.tipo== 1">
+				<option value="" disabled selected>Seleccione uno</option>
+				<option value='2' data-icon="img/python1.png" class="left circle">Python</option>
+				<option value='3' data-icon="img/p1.png" class="left circle">PHP</option>
+				<option value='4' data-icon="img/java.jpg" class="left circle">Java</option>
+			</select>
+
 			<label>Seleccione lenguaje a exportar</label>
 		</div>
 		<input type="hidden" id="idd">
@@ -22,12 +31,20 @@
 
 <script>
 export default {
-
+	props: {
+	  currDiag: {
+	    required: true,
+	    default: null
+	  }
+	},
   name: 'ExportInd',
-
-  data () {
-    return {
-
+	mounted(){
+		$('#mdExpInd').modal()
+  	// $('#langSelect').material_select()
+  },
+  watch: {
+    currDiag: (val, oldVal) => {
+      // $('#langSelect').material_select()
     }
   }
 }
