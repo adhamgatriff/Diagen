@@ -29,25 +29,25 @@ trait DiagER{
 		$tipo = strtoupper($tipo);
 		$var='';
 		// tipo de dato numerico
-		if (str_contains($tipo, 'INT') || str_contains($tipo, 'IN')|| str_contains($tipo, 'IT')) {
-
-			$var = $this->ValidData($tipo,'INT');
-
-		}else if (str_contains($tipo, 'SMALLINT')|| str_contains($tipo, 'SINT')) {
+		 if (starts_with($tipo, 'SMALLINT')|| str_contains($tipo, 'SINT')) {
 
 			$var = $this->ValidData($tipo,'SMALLINT');
 
-		}else if (str_contains($tipo, 'TINYINT')|| str_contains($tipo, 'TINT')) {
+		}else if (starts_with($tipo, 'TINYINT')|| str_contains($tipo, 'TINT')) {
 
 			$var = $this->ValidData($tipo,'TINYINT');
 
-		}else if (str_contains($tipo, 'MEDIUMINT')|| str_contains($tipo, 'MINT')) {
+		}else if (starts_with($tipo, 'MEDIUMINT')|| str_contains($tipo, 'MINT')) {
 
 			$var = $this->ValidData($tipo,'MEDIUMINT');
 
-		}else if (str_contains($tipo, 'BIGINT')|| str_contains($tipo, 'BINT')) {
+		}else if (starts_with($tipo, 'BIGINT')|| str_contains($tipo, 'BINT')) {
 
 			$var = $this->ValidData($tipo,'BIGINT');
+
+		}else if (starts_with($tipo, 'INT') || str_contains($tipo, 'IN')|| str_contains($tipo, 'IT')) {
+
+			$var = $this->ValidData($tipo,'INT');
 
 		}else if (str_contains($tipo, 'DECIMAL')|| str_contains($tipo, 'DEC')) {
 
@@ -62,23 +62,23 @@ trait DiagER{
 			$var = 'DOUBLE';
 
 		}else if (str_contains($tipo, 'BIT')|| str_contains($tipo, 'BT')) {
-
+			$noPrimary= true;
 			$var = 'BIT';
 
 		}else if (ends_with($tipo, 'DATE')|| str_contains($tipo, 'DT')) {
-
+			$noPrimary= true;
 			$var = 'DATE';
 			// tipo de datos fecha
 		}else if (ends_with($tipo, 'DATETIME')|| str_contains($tipo, 'DTT')) {
-
+			$noPrimary= true;
 			$var = 'DATETIME';
 
 		}else if (ends_with($tipo, 'TIME')|| str_contains($tipo, 'TM')) {
-
+			$noPrimary= true;
 			$var = 'TIME';
 
 		}else if (ends_with($tipo, 'TIMESTAMP')|| str_contains($tipo, 'TMS')) {
-
+			$noPrimary= true;
 			$var = 'TIMESTAMP';
 
 		}else if (str_contains($tipo, 'YEAR')|| str_contains($tipo, 'YR')) {
@@ -86,27 +86,27 @@ trait DiagER{
 			$var = 'YEAR';
 
 		// tipo de datos string
-		}else if (str_contains($tipo, 'CHAR') || str_contains($tipo, 'CHR')) {
+		}else if (starts_with($tipo, 'CHAR') || str_contains($tipo, 'CHR')) {
 
 			$var = $this->ValidData($tipo,'CHAR');
 
-		}else if (str_contains($tipo, 'VARCHAR') || str_contains($tipo, 'VRCH') || str_contains($tipo, 'STR')) {
+		}else if (starts_with($tipo, 'VARCHAR') || str_contains($tipo, 'VRCH') || str_contains($tipo, 'STR')) {
 
 			$var = $this->ValidData($tipo,'VARCHAR');
 
-		}else if (str_contains($tipo, 'TINYBLOB')|| str_contains($tipo, 'TB')) {
+		}else if (starts_with($tipo, 'TINYBLOB')|| str_contains($tipo, 'TB')) {
 
 			$var = 'TINYBLOB';
 
-		}else if (str_contains($tipo, 'BLOB')|| str_contains($tipo, 'BB')) {
+		}else if (starts_with($tipo, 'BLOB')|| str_contains($tipo, 'BB')) {
 
 			$var = 'BLOB';
 
-		}else if (str_contains($tipo, 'MEDIUMBLOB')|| str_contains($tipo, 'MB')) {
+		}else if (starts_with($tipo, 'MEDIUMBLOB')|| str_contains($tipo, 'MB')) {
 
 			$var = 'MEDIUMBLOB';
 
-		}else if (str_contains($tipo, 'LONGBLOB')|| str_contains($tipo, 'LB')) {
+		}else if (starts_with($tipo, 'LONGBLOB')|| str_contains($tipo, 'LB')) {
 
 			$var = 'LONGBLOB';
 
@@ -140,7 +140,7 @@ trait DiagER{
 				$var.=' UNIQUE';
 			}else{
 				$this->error = true;
-				$this->erroresLog = 'este tipo de datos no puede ser primario';
+				$this->erroresLog = 'Este tipo de datos no puede ser primario';
 			}		
 		
 		}else if(str_contains($tipo, 'AI') || str_contains($tipo, 'AUTO_INCREMENT')){
@@ -155,11 +155,11 @@ trait DiagER{
 
 		}else if(str_contains($tipo, 'NN') || str_contains($tipo, 'NOT NULL')){
 
-			$var.= 'NOT NULL';
+			$var.= ' NOT NULL';
 
 		}else if(str_contains($tipo, 'UQ') || str_contains($tipo, 'UNIQUE')){
 
-			$var.= 'UNIQUE';
+			$var.= ' UNIQUE';
 			
 		}
 
