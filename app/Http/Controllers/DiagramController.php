@@ -220,6 +220,24 @@ class DiagramController extends Controller
 		}
 	}
 
+	function comprobarNombres(){
+
+		$arra = [];
+		$bool = false;
+
+		foreach ($this->tablas as $key => $value) {
+			
+			if(in_array($value['nombre'],$arra)){
+				$bool = true;
+				break;
+			}else{
+				array_push($arra,$value['nombre']);
+			}
+		}
+
+		return $bool;
+	}
+
 	function Laucher(Request $req) {
 
 	// diag_c diagrama xml
@@ -227,10 +245,20 @@ class DiagramController extends Controller
 
 		if ($this->generate($req->id_diag)) {
 			unset($f);
-			$f = $this->EntidadRelacion();
+			if(!$this->comprobarNombres()){
+				$f = $this->EntidadRelacion();
+			}else{
+				$this->error=true;
+				$this->erroresLog='Hay tablas con nombres iguales';
+			}
 		}else{
 			unset($f);
-			$f = $this->DiagramaClases($req->lng);
+			if(!$this->comprobarNombres()){
+				$f = $this->DiagramaClases($req->lng);
+			}else{
+				$this->error=true;
+				$this->erroresLog='Hay clases con nombres iguales';
+			}
 		}
 
 		if ($this->error ) {

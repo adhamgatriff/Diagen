@@ -92,7 +92,7 @@ trait DiagClases{
 		foreach ($this->tablas as $key => $tabla) {
 
 			unset($f,$string);
-			$filesName[$key] = $tabla['nombre'].Auth::user()->id.$key.$ext;
+			$filesName[$key] = $tabla['nombre'].$ext;
 
 			if ($method == 'php') {
 				$string = $this->genPhp($tabla);
@@ -115,10 +115,13 @@ trait DiagClases{
 		$conx ='';
 		foreach ($this->conexiones as $key => $conexion) {
 			$conexion['tipo'] = ($conexion['tipo']=='')?'ext':$conexion['tipo'];
+			// dd($this->conexiones, $this->tablas, $this->celdas);
 			if ($conexion['desde'] == $idTabla) {
-				if ($conexion['tipo']=='ext') {
+
+				if ($conexion['tipo']=='ext') { 
 					if ($this->tablas[$conexion['desde']]['interfaz']==0 && $this->tablas[$conexion['hasta']]['interfaz']==0) {
 						if($lng==3){
+
 							$conx.=' extends '.$this->tablas[$conexion['hasta']]['nombre'];
 						}else if($lng==4){
 							$conx.=' extends '.$this->tablas[$conexion['hasta']]['nombre'];
@@ -130,7 +133,9 @@ trait DiagClases{
 						$this->erroresLog.='Para usar extends las conexiones deben ser entre clases';
 					}
 				}else if($conexion['tipo']=='imp'){
+
 					if ($this->tablas[$conexion['hasta']]['interfaz']==1 && $this->tablas[$conexion['desde']]['interfaz']==0) {
+
 						if($lng==3){
 							$conx.=' implements '.$this->tablas[$conexion['hasta']]['nombre'];
 						}else if($lng==4){
@@ -140,9 +145,11 @@ trait DiagClases{
 						}
 					}else{
 						$this->error= true;
-						$this->erroresLog.='Para implementar una interfaz tiene que ser desde una clase hacia una interfaz';
+						$this->erroresLog.="Para implementar una interfaz tiene que ser desde una clase hacia una interfaz </br> <b>PHP:</b> <a href='http://php.net/manual/es/language.oop5.interfaces.php'>Ayuda de la documentacion oficial de PHP</a> </br> <b>JAVA</b>: <a href='https://docs.oracle.com/javase/tutorial/java/IandI/usinginterface.html'>Ayuda de la documentacion oficial de Java</a>";
 					}
 				}
+
+
 			}
 		}
 
@@ -163,7 +170,7 @@ trait DiagClases{
 
 							$variable[$key] ='private $_'.strtolower($tablaHasta).'= array();';
 							$method[$key]= 'public function add'.ucfirst(camel_case($tablaHasta)).'('.ucfirst(camel_case($tablaHasta)).' $'.$tablaHasta.'){'."\n\n\t\t\t";
-							$method[$key].= '$this->_'.$tablaHasta.'[] = $'.$tablaHasta.';'."\n\t\t}\n\n";
+							$method[$key].= '$this->_'.strtolower($tablaHasta).'[] = $'.$tablaHasta.';'."\n\t\t}\n\n";
 
 						}else if($lng==4){
 							$variable[$key] ='public '.ucfirst(camel_case($tablaHasta)).' '.strtolower($tablaHasta);
@@ -192,7 +199,7 @@ trait DiagClases{
 
 						}else if($lng==2){
 							$variable[$key] = strtolower($tablaHasta).' = None';
-							$method[$key]= 'def add'.ucfirst(camel_case($tablaHasta)).'(self)'."\n\t\t";
+							$method[$key]= 'def add'.ucfirst(camel_case($tablaHasta)).'(self):'."\n\t\t";
 							$method[$key].= 'self.'.strtolower($tablaHasta)."= ".ucfirst(camel_case($tablaHasta))."()\n\t\t\n";
 
 						}
@@ -202,29 +209,37 @@ trait DiagClases{
 					}
 				}
 
-				if($conexion['tipo']=='agg' || $conexion['tipo']=='com'){
+				if($conexion['tipo']=='imp' || $conexion['tipo']=='ext' || $conexion['tipo']==''){
+					if($lng==3){
+
+						$import[$key] = "require_once '".ucfirst(camel_case($tablaHasta)).".php';";
+					}else if($lng == 2){
+						$import[$key] = "from ".ucfirst(camel_case($tablaHasta))." import ".ucfirst(camel_case($tablaHasta));
+					}
+				}else if($conexion['tipo']=='agg' || $conexion['tipo']=='com'){
 					if($lng==3){
 						$import[$key] = "require_once '".ucfirst(camel_case($tablaHasta)).".php';";
 					}else if($lng==4){
 						$variable[$key] ='public '.ucfirst(camel_case($tablaHasta)).' '.strtolower($tablaHasta);
 					}else if($lng==2){
-
+						$import[$key] = "from ".ucfirst(camel_case($tablaHasta))." import ".ucfirst(camel_case($tablaHasta));
 					}
 				}
 			}
 		}
-
+		// dd($import);
 		return [ 'import' => $import, 'variable' => $variable, 'method' => $method,'insConstr' => $insConstr];
 	}
 	private function genPhp($tabla){
 
 		$arri = $this->HandleAggCom($tabla['id'],3);
-
 		if($tabla['interfaz']){
 			$codigo = "<?php\r\n\r\n\tinterface ".ucfirst(camel_case($tabla['nombre']))." {\r\r";
+
 		}else{
 
 			$codigo = "<?php";
+
 			if(count($arri['import'])>0){
 				foreach ($arri['import'] as $ind => $value) {
 					if (!last($arri['import'])==$ind) {
@@ -234,6 +249,7 @@ trait DiagClases{
 					}
 				}
 			}
+
 			$codigo .= "\r\n\r\n\tclass ".ucfirst(camel_case($tabla['nombre']));
 			$codigo.= $this->HandleConexion($tabla['id'],3)."{\n\n";
 			if(count($arri['variable'])>0){
@@ -332,15 +348,30 @@ trait DiagClases{
 	}
 	private function genPython($tabla){
 
+		$codigo ='';
 		$arri = $this->HandleAggCom($tabla['id'],2);
 
 		if($tabla['interfaz']){
 
-			$codigo ="from abc import ABCMeta, abstractmethod\r\r";
+			$codigo .="from abc import ABCMeta, abstractmethod\r\r";
 			$codigo .="class ".ucfirst(camel_case($tabla['nombre'])).":\r\t__metaclass__ = ABCMeta\r\r";
 
 		}else{
-			$codigo = "class ".ucfirst(camel_case($tabla['nombre']));
+
+
+			if(count($arri['import'])>0){
+
+				foreach ($arri['import'] as $ind => $value) {
+					if (!last($arri['import'])==$ind) {
+						$codigo .= $value."\r\n\n";
+					}else{
+						$codigo .= "\n\t".$value."";
+					}
+				}
+			}
+
+
+			$codigo .= "class ".ucfirst(camel_case($tabla['nombre']));
 			$codigo.= $this->HandleConexion($tabla['id'],2).":\n\n";
 
 			if(count($arri['variable'])>0){
