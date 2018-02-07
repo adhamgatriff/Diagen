@@ -2615,22 +2615,22 @@ Sidebar.prototype.addUmlPalette = function(expand)
 			// 	return sb.createVertexTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, 'Hierarchy'); 
 	  //  		}),
 			// this.createVertexTemplateEntry('shape=note;strokeWidth=2;fontSize=17;size=20;whiteSpace=wrap;html=1;', w, h, 'Note', 'Note', null, null, dt + 'note'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToMany;endFill=1;', w, h, '', '0 to Many Optional', null, dt + 'zero many optional'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERoneToMany;', w, h, '', '1 to Many', null, dt + 'one many'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmandOne;', w, h, '', '1 Mandatory', null, dt + 'one mandatory'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmandOne;startArrow=ERmandOne;', w, h, '', '1 to 1', null, dt + 'one'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERone;endFill=1;', w, h, '', '1', null, dt + 'one'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToOne;endFill=1;', w, h, '', '0 to 1', null, dt + 'zero one'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmany;', w, h, '', 'Many', null, dt + 'many'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmany;startArrow=ERmany;', w, h, '', 'Many to Many', null, dt + 'many'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;', w, h, '', '1 Optional to Many Optional', null, dt + 'one optional many'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;', w, h, '', '1 Mandatory to Many Optional', null, dt + 'one mandatory many optional'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToOne;startArrow=ERmandOne;', w, h, '', '1 Mandatory to 1 Optional', null, dt + 'one mandatory optional'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;', w, h, '', '1 Mandatory to Many Mandatory', null, dt + 'one mandatory many'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;', w, h, '', '1 Optional to Many Mandatory', null, dt + 'one optional mandatory many'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERoneToMany;startArrow=ERoneToMany;', w, h, '', 'Many Mandatory to Many Mandatory', null, dt + 'mandatory many'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERoneToMany;startArrow=ERzeroToMany;', w, h, '', 'Many Optional to Many Mandatory', null, dt + 'mandatory many optional'),
-		 	this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToMany;endFill=1;startArrow=ERzeroToMany;', w, h, '', 'Many Optional to Many Optional', null, dt + 'many optional')
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToMany;endFill=1;', w, h, '', '0 to Many Optional', null, dt + 'zero many optional'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERoneToMany;', w, h, '', '1 to Many', null, dt + 'one many'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmandOne;', w, h, '', '1 Mandatory', null, dt + 'one mandatory'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmandOne;startArrow=ERmandOne;', w, h, '', '1 to 1', null, dt + 'one'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERone;endFill=1;', w, h, '', '1', null, dt + 'one'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToOne;endFill=1;', w, h, '', '0 to 1', null, dt + 'zero one'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmany;', w, h, '', 'Many', null, dt + 'many'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmany;startArrow=ERmany;', w, h, '', 'Many to Many', null, dt + 'many'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;', w, h, '', '1 Optional to Many Optional', null, dt + 'one optional many'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;', w, h, '', '1 Mandatory to Many Optional', null, dt + 'one mandatory many optional'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToOne;startArrow=ERmandOne;', w, h, '', '1 Mandatory to 1 Optional', null, dt + 'one mandatory optional'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;', w, h, '', '1 Mandatory to Many Mandatory', null, dt + 'one mandatory many'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;', w, h, '', '1 Optional to Many Mandatory', null, dt + 'one optional mandatory many'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERoneToMany;startArrow=ERoneToMany;', w, h, '', 'Many Mandatory to Many Mandatory', null, dt + 'mandatory many'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERoneToMany;startArrow=ERzeroToMany;', w, h, '', 'Many Optional to Many Mandatory', null, dt + 'mandatory many optional'),
+		 	// this.createEdgeTemplateEntry('edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERzeroToMany;endFill=1;startArrow=ERzeroToMany;', w, h, '', 'Many Optional to Many Optional', null, dt + 'many optional')
 	 	];
 
 		this.addPaletteFunctions('er', mxResources.get('entityRelation'), true, fns);
