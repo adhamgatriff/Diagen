@@ -34,15 +34,19 @@
       </div>
 
       <div class="row">
-        <div class="input-field col s12 {{ $errors->has('password') ? ' has-error' : '' }}">
+        <div class="input-field col s11 {{ $errors->has('password') ? ' has-error' : '' }}">
           <i class="material-icons prefix">vpn_key</i>
           <input id="password" type="password" class="form-control" name="password" required>
           <label for="password">Contraseña</label>
+          
           @if ($errors->has('password'))
             <span class="help-block">
               <strong>{{ $errors->first('password') }}</strong>
             </span>
           @endif
+        </div>
+        <div class="col s1">
+          <i class="material-icons pasw_changer" style="line-height: 70px;color:#E91E63;cursor: pointer;">visibility</i>
         </div>
       </div>
 
@@ -62,7 +66,24 @@
       </div>
     </div> --}}
     </form>
-  </div>
+  </div>  
+    
+ 
+@endsection
+
+@section('morescript')
+
+  <script type="text/javascript">
+    $('.pasw_changer').on('click',()=>{
+      if($('.pasw_changer').text()=='visibility'){
+        $('.pasw_changer').text('visibility_off')
+        $('#password')[0].type='text';
+      }else{
+        $('.pasw_changer').text('visibility')
+        $('#password')[0].type='password';
+      }
+    })
+  </script>
 @endsection
 
 

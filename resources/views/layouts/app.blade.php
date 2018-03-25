@@ -35,5 +35,6 @@
 	  });
 
 	</script>
+	@yield('morescript')
 </body>
 </html>

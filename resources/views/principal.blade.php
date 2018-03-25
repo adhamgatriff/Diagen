@@ -422,5 +422,29 @@ $('.actUser').on('click', function(event) {
 		});
 	});
 });
+
+$('.pasw_changer').on('click',()=>{
+  if($('.pasw_changer').text()=='visibility'){
+    $('.pasw_changer').text('visibility_off')
+    $('#user_password')[0].type='text';
+  }else{
+    $('.pasw_changer').text('visibility')
+    $('#user_password')[0].type='password';
+  }
+})
+
+
+$('.pasw_changer_').on('click',()=>{
+  if($('.pasw_changer_').text()=='visibility'){
+    $('.pasw_changer_').text('visibility_off')
+    $('#user_password-confirm')[0].type='text';
+  }else{
+    $('.pasw_changer_').text('visibility')
+    $('#user_password-confirm')[0].type='password';
+  }
+})
+
+
+
 </script>
 @endsection

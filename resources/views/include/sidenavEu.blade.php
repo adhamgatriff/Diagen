@@ -30,15 +30,21 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s5">
           <i class="material-icons prefix">vpn_key</i>
           <input id="user_password" type="password" class="form-control" style="color: white">
           <label class="label-principal" for="password">Contraseña</label>
         </div>
-        <div class="input-field col s6 ">
+        <div class="col s1">
+          <i class="material-icons pasw_changer" style="line-height: 70px;color:#E91E63;cursor: pointer;">visibility</i>
+        </div>
+        <div class="input-field col s5 ">
           <i class="material-icons prefix">vpn_key</i>
           <input id="user_password-confirm" type="password" class="form-control" style="color: white">
           <label class="label-principal" for="password-confirm">Repita la contraseña</label>
+        </div>
+        <div class="col s1">
+          <i class="material-icons pasw_changer_" style="line-height: 70px;color:#E91E63;cursor: pointer;">visibility</i>
         </div>
       </div>
       <br>

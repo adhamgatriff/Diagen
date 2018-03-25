@@ -64,20 +64,26 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s6 {{ $errors->has('password') ? ' has-error' : '' }}">
+        <div class="input-field col s5 {{ $errors->has('password') ? ' has-error' : '' }}">
           <i class="material-icons prefix">vpn_key</i>
           <input id="password" type="password" class="form-control" name="password" required>
           <label for="password">Contraseña</label>
           @if ($errors->has('password'))
             <span class="help-block">
-                <strong>{{ $errors->first('password') }}</strong>
+              <strong>{{ $errors->first('password') }}</strong>
             </span>
           @endif
         </div>
-        <div class="input-field col s6 ">
+        <div class="col s1">
+          <i class="material-icons pasw_changer" style="line-height: 70px;color:#E91E63;cursor: pointer;">visibility</i>
+        </div>
+        <div class="input-field col s5 ">
           <i class="material-icons prefix">vpn_key</i>
           <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
           <label for="password-confirm">Repita la contraseña</label>
+        </div>
+        <div class="col s1">
+          <i class="material-icons pasw_changer_" style="line-height: 70px;color:#E91E63;cursor: pointer;">visibility</i>
         </div>
       </div>
 
@@ -88,4 +94,31 @@
       </div>
     </form>
   </div>
+@endsection
+
+@section('morescript')
+
+  <script type="text/javascript">
+    $('.pasw_changer').on('click',()=>{
+      if($('.pasw_changer').text()=='visibility'){
+        $('.pasw_changer').text('visibility_off')
+        $('#password')[0].type='text';
+      }else{
+        $('.pasw_changer').text('visibility')
+        $('#password')[0].type='password';
+      }
+    })
+
+
+    $('.pasw_changer_').on('click',()=>{
+      if($('.pasw_changer_').text()=='visibility'){
+        $('.pasw_changer_').text('visibility_off')
+        $('#password-confirm')[0].type='text';
+      }else{
+        $('.pasw_changer_').text('visibility')
+        $('#password-confirm')[0].type='password';
+      }
+    })
+
+  </script>
 @endsection
