@@ -39,6 +39,7 @@ Route::post('generarpost', 'DiagramController@Laucher');
 
 
 Route::get('expMultiple', 'DiagramController@launcherMultiple');
+Route::get('expMultipleTdo', 'DiagramController@launcherMultipleTdo');
 Route::post('unlinkZip', 'DiagramController@unlinkZip');
 
 

@@ -300,7 +300,6 @@ class DiagramController extends Controller
 				$sql_[$key] = $this->EntidadRelacion();
 			}
 
-		
 			Zipper::make('myzip/'.$fm)->add($sql_)->close();
 			array_map("unlink", $sql_);
 			return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);
@@ -319,6 +318,53 @@ class DiagramController extends Controller
 			return response()->download(public_path('myzip/'.$fm))->deleteFileAfterSend(true);
 		}
 	}
+
+	function launcherMultipleTdo(Request $req){
+
+		// dd($req);
+
+		$namesql = $req->namesql.'.zip';
+		$nameClass = $req->nameClass.'.zip';
+
+		if (!empty($req->diagSql)) {
+			$sql_ = [];
+			foreach ($req->diagSql as $key => $val) {
+				$this->generate($val);
+				$sql_[$key] = $this->EntidadRelacion();
+			}
+
+			Zipper::make('myzip/'.$namesql)->add($sql_)->close();
+			array_map("unlink", $sql_);
+
+			if (empty($req->diagClass)) {
+				return response()->download(public_path('myzip/'.$namesql))->deleteFileAfterSend(true);
+			}
+
+		}
+
+		if(!empty($req->diagClass)){
+
+			$dc_ = [];
+			foreach ($req->diagClass as $ke => $va) {
+				$this->generate($va);
+				$aux = $this->DiagramaClases($req->lng);
+				Zipper::make($this->nombre.'.zip')->add($aux)->close();
+				$dc_[$ke] = $this->nombre.'.zip';
+				array_map("unlink", $aux);
+			}
+			Zipper::make('myzip/'.$nameClass)->add($dc_)->close();
+			array_map("unlink", $dc_);
+
+			if (empty($req->diagSql)) {
+				return response()->download(public_path('myzip/'.$nameClass))->deleteFileAfterSend(true);
+			}
+		}
+
+		Zipper::make('myzip/DiagramasSeleccionados.zip')->add(['myzip/'.$nameClass,'myzip/'.$namesql])->close();
+		return response()->download(public_path('myzip/DiagramasSeleccionados.zip'))->deleteFileAfterSend(true);
+
+	}
+
 
 	public function unlinkZip(request $req){
 		unlink('myzip/'.$req->name.'.zip');

@@ -134,6 +134,9 @@
 			<a class="waves-effect waves-light btn degradado btn_expMult">
 				<i class="material-icons left">file_download</i>Exportar
 			</a>
+			<a class="waves-effect waves-light btn degradado btn_expMultTd">
+				<i class="material-icons left">file_download</i>Exportar todo
+			</a>
 		</div>
 	</div>
   <div id="deleteDmodal" class="modal bottom-sheet">
@@ -166,6 +169,59 @@ $(document).ready(function() {
 	$('#classSelect').material_select();
 	$('#sqlSelect').material_select();
 });
+
+$('.btn_expMultTd').on('click', evnt =>{
+	var nameSql, nameClass;
+	let diagSql = new Array(),diagClass= new Array(); let i = 0, j = 0;
+
+	if($('#sql .ExpNameFile').val() ==''){
+		Materialize.toast('Ingrese el nombre del archivo SQL',1300)
+		return false;
+	}
+	if($('#sqlSelect').val()=='' || $('#sqlSelect').val() === null ){
+		Materialize.toast('Seleccione el lenguaje a exportar los modelos',1300)
+		return false;
+	}
+	if($('#classSelect').val()=='' || $('#classSelect').val() === null){
+			Materialize.toast('Seleccione un lenguaje a exportar las clases',1300)
+			return false;
+	}
+	if($('#clases .ExpNameFile').val()==''){
+		Materialize.toast('Ingrese el nombre del archivo',1300)
+		return false;
+	}
+
+	nameSql = $('#sql .ExpNameFile').val()
+	nameClass = $('#clases .ExpNameFile').val()
+
+	$('.sqlHere > .col').each((inx,e)=> {
+		if($(e).children('input').is(':checked')){
+			diagSql[i] = ~~($(e).children('input').attr('id'));
+			i++
+		} 
+	});
+
+	$('.diagHere > .col').each((inx,e)=> {
+		if($(e).children('input').is(':checked')){
+			diagClass[j] = ~~($(e).children('input').attr('id'));
+			j++
+		} 
+	});
+
+
+	if(diagSql.length != 0 || diagClass.length != 0 ){
+		$.redirect("{{ url('expMultipleTdo') }}",{
+			diagSql,
+			diagClass,
+			'namesql': nameSql,
+			'nameClass': nameClass,
+			'lng': $('#classSelect').val()
+		},'GET','_blank');
+	}else{
+		Materialize.toast("No selecciono ningun diagrama",1200)
+	}
+});
+
 
 $('.btn_expMult').on('click', evnt =>{
 	var nameDiag;
